@@ -10,7 +10,7 @@ Default value for relative_alpha is 20 and relative_offset is 300. Larger number
 
 Allowed input formats: STL, OBJ, PLY, VTP, OFF
 
-Output format hardcoded to OBJ
+Output format hardcoded to OBJ, file name is input_file_wrapped.obj
 
 ## Install
 ```
