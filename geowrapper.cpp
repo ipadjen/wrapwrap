@@ -141,6 +141,7 @@ int main(int argc, char** argv) {
         std::cout << "Writing to " << output_name << std::endl;
         CGAL::IO::write_polygon_mesh(output_name, mesh, CGAL::parameters::stream_precision(17));
 
+        //-- Measure time and end
         auto endTime = std::chrono::steady_clock::now();
         auto diffTime = endTime - startTime;
         std::cout << "\nProgram executed in " << std::chrono::duration<double>(diffTime).count() << " s" << std::endl;
