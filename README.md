@@ -1,5 +1,5 @@
 # geowrapper
-Prototype that uses CGAL's Alpha Wrap
+Testing CGAL's Alpha Wrap
 
 ## Usage
 ```
@@ -17,6 +17,7 @@ Output format hardcoded to OBJ, file name is `input_file_wrapped.obj`
 mkdir build && cd build
 cmake ..
 make
+./geowrapper
 ```
 
 ## Dependencies

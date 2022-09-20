@@ -2,16 +2,8 @@ cmake_minimum_required(VERSION 3.1)
 
 project(geowrapper)
 
-#set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules/" ${CMAKE_MODULE_PATH})
-#set( CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS true )
-
 set(CMAKE_CXX_FLAGS "-O3")
 set(CMAKE_BUILD_TYPE "Release")
-#set(CMAKE_BUILD_TYPE "Debug")
-
-#if (COMMAND cmake_policy)
-#    cmake_policy(SET CMP0003 NEW)
-#endif()
 
 # BOOST
 #find_package(Boost 1.66 REQUIRED COMPONENTS filesystem locale)
@@ -33,12 +25,6 @@ if (CGAL_FOUND)
     endif ()
 endif ()
 
-# Third-party
-#add_subdirectory(${CMAKE_SOURCE_DIR}/thirdparty/LAStools)
-#include_directories(${CMAKE_SOURCE_DIR}/thirdparty)
-#include_directories(${CMAKE_SOURCE_DIR}/thirdparty/valijson)
-#include_directories(${Boost_INCLUDE_DIR})
-
 # Creating entries for target: geowrapper
 FILE(GLOB SRC_FILES "*.cpp")
 add_executable(geowrapper ${SRC_FILES})
@@ -50,9 +36,6 @@ set_target_properties(
 target_link_libraries(geowrapper
         ${CGAL_LIBRARIES}
         ${CGAL_3RD_PARTY_LIBRARIES}
-        #        ${Boost_SYSTEM_LIBRARY}
-        #        ${Boost_FILESYSTEM_LIBRARY}
-        #        ${Boost_LOCALE_LIBRARY}
         )
 
 install(TARGETS geowrapper DESTINATION bin)

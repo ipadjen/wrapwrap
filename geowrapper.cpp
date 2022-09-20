@@ -28,7 +28,7 @@ typedef std::vector<size_t>                                  CGAL_Polygon;
 typedef CGAL::Surface_mesh<Point>                            Mesh;
 
 void printWelcome() {
-    std::cout << "Hello to geowrapper!" << std::endl;
+    std::cout << "geowrapper" << std::endl;
 }
 
 void printHelp() {
