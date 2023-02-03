@@ -6,7 +6,7 @@ Testing CGAL's Alpha Wrap
 geowrapper input_file.obj relative_alpha[optional] relative_offset[optional]
 ```
 
-Default value for relative_alpha is 20 and relative_offset is 300. Larger numbers result in better geometries, but with a time penalty. My suggestion is to start with around 500 for relative_alpha and 12000 for relative_offset and raise numbers until you are satisfied with the results.
+Default value for relative_alpha is 20 and relative_offset is 300. Larger numbers result in better geometries, but with a time penalty. My suggestion is to start with around 500 for relative_alpha and 1200 for relative_offset and raise numbers until you are satisfied with the results.
 
 Allowed input formats: STL, OBJ, PLY, VTP, OFF
 
