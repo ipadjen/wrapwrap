@@ -5,9 +5,6 @@ project(geowrapper)
 set(CMAKE_CXX_FLAGS "-O3")
 set(CMAKE_BUILD_TYPE "Release")
 
-# BOOST
-#find_package(Boost 1.66 REQUIRED COMPONENTS filesystem locale)
-
 # CGAL
 find_package(CGAL REQUIRED QUIET COMPONENTS)
 if (CGAL_FOUND)
@@ -30,7 +27,7 @@ FILE(GLOB SRC_FILES "*.cpp")
 add_executable(geowrapper ${SRC_FILES})
 set_target_properties(
         geowrapper
-        PROPERTIES CXX_STANDARD 14
+        PROPERTIES CXX_STANDARD 17
 )
 
 target_link_libraries(geowrapper
