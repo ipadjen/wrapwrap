@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1)
 
-project(geowrapper)
+project(wrapwrap)
 
 set(CMAKE_CXX_FLAGS "-O2")
 set(CMAKE_BUILD_TYPE "Release")
@@ -36,17 +36,17 @@ else()
     endif ()
 endif ()
 
-# Creating entries for target: geowrapper
+# Creating entries for target: wrapwrap
 FILE(GLOB SRC_FILES "*.cpp")
-add_executable(geowrapper ${SRC_FILES})
+add_executable(wrapwrap ${SRC_FILES})
 set_target_properties(
-        geowrapper
+        wrapwrap
         PROPERTIES CXX_STANDARD 17
 )
 
-target_link_libraries(geowrapper
+target_link_libraries(wrapwrap
         ${CGAL_LIBRARIES}
         ${CGAL_3RD_PARTY_LIBRARIES}
         )
 
-install(TARGETS geowrapper DESTINATION bin)
+install(TARGETS wrapwrap DESTINATION bin)

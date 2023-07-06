@@ -1,11 +1,11 @@
 #include <iostream>
-#include <chrono>
 #include <algorithm>
 #include <vector>
 
 #include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
 #include <CGAL/Surface_mesh.h>
 #include <CGAL/alpha_wrap_3.h>
+#include <CGAL/Real_timer.h>
 
 #include <CGAL/Polygon_mesh_processing/bbox.h>
 #include <CGAL/Polygon_mesh_processing/repair_polygon_soup.h>
@@ -21,20 +21,20 @@ typedef CGAL::Exact_predicates_inexact_constructions_kernel  K;
 typedef K::FT                                                FT;
 
 typedef K::Point_3                                           Point;
-typedef std::array<FT, 3>                                    Custom_point;
+//typedef std::array<FT, 3>                                    Custom_point;
 
 typedef std::vector<size_t>                                  CGAL_Polygon;
 typedef CGAL::Surface_mesh<Point>                            Mesh;
 typedef boost::graph_traits<Mesh>::halfedge_descriptor       halfedge_descriptor;
 
 void printWelcome() {
-    std::cout << "geowrapper" << std::endl << std::endl;
+    std::cout << "wrapwrap" << std::endl << std::endl;
 }
 
 void printHelp() {
     auto helpMsg{
 R"(USAGE:
-    geowrapper -i input_file.obj -alpha realative_alpha -offset relative_offset -o output_file.obj
+    wrapwrap -i input_file.obj -alpha realative_alpha -offset relative_offset -o output_file.obj
 )"
     };
     std::cout << helpMsg;
@@ -116,7 +116,8 @@ void wrap(Mesh& mesh, const double relative_alpha, const double relative_offset)
 int main(int argc, char** argv) {
     std::cout.precision(6);
     try {
-        auto startTime = std::chrono::steady_clock::now();
+        CGAL::Real_timer timer;
+        timer.start();
         printWelcome();
         if (argc < 2) {
             printHelp();
@@ -145,7 +146,7 @@ int main(int argc, char** argv) {
         }
         // Check if all required arguments are provided
         if (inputFile.empty() || outputFile.empty() || !relativeAlpha || !relativeOffset) {
-            std::cout << "Missing or invalid arguments. Usage: geowrapper -i input_file.obj "
+            std::cout << "Missing or invalid arguments. Usage: wrapwrap -i input_file.obj "
                          "-alpha relative_alpha -offset relative_offset -o output_file" << std::endl;
             return 1;
         }
@@ -165,7 +166,7 @@ int main(int argc, char** argv) {
         //-- Hole filling
         fillHoles(mesh);
 
-        //-- Conduct alpha wrap
+        //-- Alpha wrapping
         wrap(mesh, relativeAlpha.value(), relativeOffset.value());
 
         //-- Output the data
@@ -174,9 +175,8 @@ int main(int argc, char** argv) {
         std::cout << "  done" << std::endl;
 
         //-- Measure time and end
-        auto endTime = std::chrono::steady_clock::now();
-        auto diffTime = endTime - startTime;
-        std::cout << "\nProgram executed in " << std::chrono::duration<double>(diffTime).count() << " s" << std::endl;
+        timer.stop();
+        std::cout << "\nProgram executed in " << timer.time() << " s" << std::endl;
         std:: cout << "End" << std::endl;
 
         return EXIT_SUCCESS;

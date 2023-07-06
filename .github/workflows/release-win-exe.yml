@@ -39,4 +39,4 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            ./Release/Release/geowrapper.exe
+            ./Release/Release/wrapwrap.exe
