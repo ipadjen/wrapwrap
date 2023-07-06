@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Partition_2/include/CGAL/Partition_2/Rotation_tree_2.h $
-// $Id: Rotation_tree_2.h 4bb0406 2021-02-04T18:12:12+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Partition_2/include/CGAL/Partition_2/Rotation_tree_2.h $
+// $Id: Rotation_tree_2.h b8aa255 2022-11-17T19:40:38+01:00 Sébastien Loriot
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -47,7 +47,8 @@ public:
    typedef typename Traits::Point_2                Point_2;
 
    using internal::vector< Rotation_tree_node_2<Traits_> >::push_back;
-      using internal::vector< Rotation_tree_node_2<Traits_> >::back;
+   using internal::vector< Rotation_tree_node_2<Traits_> >::back;
+   using internal::vector< Rotation_tree_node_2<Traits_> >::erase;
 
    class Greater {
       typename Traits::Less_xy_2 less;
@@ -78,7 +79,7 @@ public:
       Greater greater (traits.less_xy_2_object());
       Equal equal;
       std::sort(this->begin(), this->end(), greater);
-      std::unique(this->begin(), this->end(),equal);
+      this->erase(std::unique(this->begin(), this->end(),equal), this->end());
 
       // front() is the point with the largest x coordinate
 

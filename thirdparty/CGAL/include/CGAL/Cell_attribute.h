@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Combinatorial_map/include/CGAL/Cell_attribute.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Combinatorial_map/include/CGAL/Cell_attribute.h $
 // $Id: Cell_attribute.h 84ca88f 2021-10-19T20:16:43+02:00 Guillaume Damiand
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

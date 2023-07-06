@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Surface_mesh_parameterization/include/CGAL/Surface_mesh_parameterization/Orbifold_Tutte_parameterizer_3.h $
-// $Id: Orbifold_Tutte_parameterizer_3.h 4ffc949 2022-02-03T17:11:20+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_parameterization/include/CGAL/Surface_mesh_parameterization/Orbifold_Tutte_parameterizer_3.h $
+// $Id: Orbifold_Tutte_parameterizer_3.h 7564b76 2022-11-07T14:11:10+01:00 Mael Rouxel-Labbé
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mael Rouxel-Labbé
@@ -783,9 +783,13 @@ private:
       const int i = get(vimap, vi);
       const int j = get(vimap, vj);
 
-      if (i > j) continue;
-      const CGAL::Weights::Cotangent_weight<SeamMesh> cotangent_weight;
-      const NT w_ij = NT(2) * cotangent_weight(hd, mesh, pmap);
+      if (i > j)
+        continue;
+
+      const CGAL::Weights::Cotangent_weight<SeamMesh, PPM> cotangent_weight(mesh, pmap);
+
+      // x2 because Cotangent_weight returns 0.5 * (cot alpha + cot beta)...
+      const NT w_ij = NT(2) * cotangent_weight(hd);
 
       // ij
       M.set_coef(2*i, 2*j, w_ij, true /* new coef */);

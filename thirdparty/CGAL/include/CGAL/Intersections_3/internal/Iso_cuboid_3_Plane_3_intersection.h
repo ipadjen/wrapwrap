@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Intersections_3/include/CGAL/Intersections_3/internal/Iso_cuboid_3_Plane_3_intersection.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_3/include/CGAL/Intersections_3/internal/Iso_cuboid_3_Plane_3_intersection.h $
 // $Id: Iso_cuboid_3_Plane_3_intersection.h ba00534 2022-02-24T09:49:38+01:00 Laurent Rineau
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

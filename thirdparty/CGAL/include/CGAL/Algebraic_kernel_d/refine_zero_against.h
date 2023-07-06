@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d/refine_zero_against.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d/refine_zero_against.h $
 // $Id: refine_zero_against.h 3f8b32d 2022-03-16T14:53:06+01:00 Andreas Fabri
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

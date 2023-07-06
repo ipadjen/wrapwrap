@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Installation/include/CGAL/atomic.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Installation/include/CGAL/atomic.h $
 // $Id: atomic.h 429c764 2022-06-20T09:37:10+02:00 Laurent Rineau
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 

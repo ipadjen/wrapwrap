@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Filtered_kernel/include/CGAL/Filtered_kernel.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Filtered_kernel/include/CGAL/Filtered_kernel.h $
 // $Id: Filtered_kernel.h 561cc66 2022-06-29T12:30:35+02:00 Laurent Rineau
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

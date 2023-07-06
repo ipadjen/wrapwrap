@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Arrangement_on_surface_2/include/CGAL/Arr_linear_traits_2.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_linear_traits_2.h $
 // $Id: Arr_linear_traits_2.h c0838c5 2021-12-16T16:33:43+02:00 Efi Fogel
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Nef_3/include/CGAL/Nef_nary_intersection_3.h $
-// $Id: Nef_nary_intersection_3.h a86712d 2020-06-07T15:25:18+02:00 Thomas Krijnen
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_3/include/CGAL/Nef_nary_intersection_3.h $
+// $Id: Nef_nary_intersection_3.h 7b09c8e 2022-08-02T17:37:38+01:00 Andreas Fabri
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -56,7 +56,7 @@ class Nef_nary_intersection_3 {
       return empty;
     while(queue.size() > 1)
       intersect();
-    inserted = 0;
+    inserted = 1;
     return queue.front();
   }
 };

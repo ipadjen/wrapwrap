@@ -7,7 +7,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Cartesian_kernel/include/CGAL/Cartesian/Plane_3.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Cartesian_kernel/include/CGAL/Cartesian/Plane_3.h $
 // $Id: Plane_3.h 71bba3e 2022-03-17T22:35:09+01:00 Andreas Fabri
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

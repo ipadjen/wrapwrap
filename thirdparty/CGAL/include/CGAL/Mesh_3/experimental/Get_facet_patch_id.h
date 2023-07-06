@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Mesh_3/include/CGAL/Mesh_3/experimental/Get_facet_patch_id.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/Mesh_3/experimental/Get_facet_patch_id.h $
 // $Id: Get_facet_patch_id.h a2abc9b 2022-02-15T15:29:56+01:00 Jane Tournois
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Box_intersection_d/include/CGAL/Box_intersection_d/segment_tree.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Box_intersection_d/include/CGAL/Box_intersection_d/segment_tree.h $
 // $Id: segment_tree.h 79f9d82 2022-05-06T14:52:32+02:00 Sébastien Loriot
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

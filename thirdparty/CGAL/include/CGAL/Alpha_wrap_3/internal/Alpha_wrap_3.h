@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Alpha_wrap_3/include/CGAL/Alpha_wrap_3/internal/Alpha_wrap_3.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Alpha_wrap_3/include/CGAL/Alpha_wrap_3/internal/Alpha_wrap_3.h $
 // $Id: Alpha_wrap_3.h beeae18 2022-06-08T12:04:02+02:00 Mael Rouxel-Labbé
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

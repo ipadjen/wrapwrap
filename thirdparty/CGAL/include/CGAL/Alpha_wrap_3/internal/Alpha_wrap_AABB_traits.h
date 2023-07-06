@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Alpha_wrap_3/include/CGAL/Alpha_wrap_3/internal/Alpha_wrap_AABB_traits.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Alpha_wrap_3/include/CGAL/Alpha_wrap_3/internal/Alpha_wrap_AABB_traits.h $
 // $Id: Alpha_wrap_AABB_traits.h 3a64952 2022-05-24T14:31:00+02:00 Mael Rouxel-Labbé
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

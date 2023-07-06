@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Number_types/include/CGAL/FPU.h $
-// $Id: FPU.h 6486844 2022-05-10T11:30:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Number_types/include/CGAL/FPU.h $
+// $Id: FPU.h b363b7e 2022-11-25T10:14:18+01:00 Laurent Rineau
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -500,6 +500,7 @@ void
 FPU_set_cw (FPU_CW_t cw)
 {
 #ifdef CGAL_ALWAYS_ROUND_TO_NEAREST
+  CGAL_USE(cw);
   CGAL_assertion(cw == CGAL_FE_TONEAREST);
 #else
   CGAL_IA_SETFPCW(cw);
@@ -511,6 +512,7 @@ FPU_CW_t
 FPU_get_and_set_cw (FPU_CW_t cw)
 {
 #ifdef CGAL_ALWAYS_ROUND_TO_NEAREST
+    CGAL_USE(cw);
     CGAL_assertion(cw == CGAL_FE_TONEAREST);
     return CGAL_FE_TONEAREST;
 #else

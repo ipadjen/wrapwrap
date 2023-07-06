@@ -1,0 +1,61 @@
+name: build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build_linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: |
+            sudo apt-get update
+            sudo apt-get install libcgal-dev
+      - name: Build
+        run: |
+            mkdir build && cd build
+            cmake .. && make -j4
+
+  build_macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: |
+            brew update
+            brew install cmake cgal
+      - name: Build
+        run: |
+            mkdir build && cd build
+            cmake .. && make -j4
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Install boost
+        uses: MarkusJx/install-boost@v2.4.1
+        id: install-boost
+        with:
+         # REQUIRED: Specify the required boost version
+         # A list of supported versions can be found here:
+         # https://github.com/MarkusJx/prebuilt-boost/blob/main/versions-manifest.json
+         boost_version: 1.81.0
+         # OPTIONAL: Specify a platform version
+         platform_version: 2022  
+         # OPTIONAL: Specify a toolset
+         toolset: msvc
+         # OPTIONAL: Specify a custon install location
+         boost_install_dir: c:\
+      - uses: actions/checkout@v3
+      - name: Build
+        run: |
+          $env:BOOST_INCLUDEDIR = 'C:\boost\boost\'
+          $env:BOOST_LIBRARYDIR = 'C:\boost\boost\stage\lib'
+          $env:BOOST_ROOT = 'C:\boost\boost\'
+          mkdir Release
+          cd Release
+          cmake ..
+          cmake --build . --parallel 4 --config Release

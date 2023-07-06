@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Barycentric_coordinates_2/include/CGAL/Barycentric_coordinates_2/Harmonic_coordinates_2.h $
-// $Id: Harmonic_coordinates_2.h d03c669 2021-08-13T11:33:47+02:00 Dmitry Anisimov
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Barycentric_coordinates_2/include/CGAL/Barycentric_coordinates_2/Harmonic_coordinates_2.h $
+// $Id: Harmonic_coordinates_2.h 9ab7e1e 2022-10-20T17:21:43+02:00 Mael Rouxel-Labbé
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -587,8 +587,7 @@ namespace Barycentric_coordinates {
             const auto& p0 = m_domain.vertex(neighbors[jm]);
             const auto& p1 = m_domain.vertex(neighbors[j]);
             const auto& p2 = m_domain.vertex(neighbors[jp]);
-            const FT w = -Weights::cotangent_weight(
-              p0, p1, p2, query, m_traits) / FT(2);
+            const FT w = -Weights::cotangent_weight(p0, p1, p2, query, m_traits) / FT(2);
             W -= w;
 
             if (m_domain.is_on_boundary(idx)) {

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/Corefinement/face_graph_utils.h $
-// $Id: face_graph_utils.h 373decc 2022-06-29T10:36:34+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/Corefinement/face_graph_utils.h $
+// $Id: face_graph_utils.h a4f6f58 2022-10-04T13:50:24+02:00 Laurent Rineau
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -780,6 +780,7 @@ struct Patch_container{
     Patch_description<PolygonMesh>& patch=this->operator[](i);
 
     std::stringstream ss;
+    ss.precision(17);
     std::map<vertex_descriptor, int> vertexid;
     int id=0;
     for(vertex_descriptor vh : patch.interior_vertices)

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Tetrahedral_remeshing/include/CGAL/Tetrahedral_remeshing/internal/collapse_short_edges.h $
-// $Id: collapse_short_edges.h 4ffc949 2022-02-03T17:11:20+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Tetrahedral_remeshing/include/CGAL/Tetrahedral_remeshing/internal/collapse_short_edges.h $
+// $Id: collapse_short_edges.h 4b87443 2022-12-05T12:20:06+01:00 Laurent Rineau
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -745,10 +745,11 @@ void merge_surface_patch_indices(const typename C3t3::Facet& f1,
   }
 }
 
-template<typename C3t3>
+template<typename C3t3, typename CellSelector>
 typename C3t3::Vertex_handle
 collapse(const typename C3t3::Cell_handle ch,
          const int to, const int from,
+         CellSelector& cell_selector,
          C3t3& c3t3)
 {
   typedef typename C3t3::Triangulation Tr;
@@ -914,8 +915,7 @@ collapse(const typename C3t3::Cell_handle ch,
   for (Cell_handle cell_to_remove : cells_to_remove)
   {
     // remove cell
-    if (c3t3.is_in_complex(cell_to_remove))
-      c3t3.remove_from_complex(cell_to_remove);
+    treat_before_delete(cell_to_remove, cell_selector, c3t3);
     c3t3.triangulation().tds().delete_cell(cell_to_remove);
   }
 
@@ -928,9 +928,10 @@ collapse(const typename C3t3::Cell_handle ch,
 }
 
 
-template<typename C3t3>
+template<typename C3t3, typename CellSelector>
 typename C3t3::Vertex_handle collapse(typename C3t3::Edge& edge,
                                       const Collapse_type& collapse_type,
+                                      CellSelector& cell_selector,
                                       C3t3& c3t3)
 {
   typedef typename C3t3::Vertex_handle Vertex_handle;
@@ -954,7 +955,7 @@ typename C3t3::Vertex_handle collapse(typename C3t3::Edge& edge,
     vh0->set_point(new_position);
     vh1->set_point(new_position);
 
-    vh = collapse(edge.first, edge.second, edge.third, c3t3);
+    vh = collapse(edge.first, edge.second, edge.third, cell_selector, c3t3);
     c3t3.set_dimension(vh, (std::min)(dim_vh0, dim_vh1));
   }
   else //Collapse at vertex
@@ -962,7 +963,7 @@ typename C3t3::Vertex_handle collapse(typename C3t3::Edge& edge,
     if (collapse_type == TO_V1)
     {
       vh0->set_point(p1);
-      vh = collapse(edge.first, edge.third, edge.second, c3t3);
+      vh = collapse(edge.first, edge.third, edge.second, cell_selector, c3t3);
       c3t3.set_dimension(vh, (std::min)(dim_vh0, dim_vh1));
     }
     else //Collapse at v0
@@ -970,7 +971,7 @@ typename C3t3::Vertex_handle collapse(typename C3t3::Edge& edge,
       if (collapse_type == TO_V0)
       {
         vh1->set_point(p0);
-        vh = collapse(edge.first, edge.second, edge.third, c3t3);
+        vh = collapse(edge.first, edge.second, edge.third, cell_selector, c3t3);
         c3t3.set_dimension(vh, (std::min)(dim_vh0, dim_vh1));
       }
       else
@@ -1134,7 +1135,7 @@ typename C3t3::Vertex_handle collapse_edge(typename C3t3::Edge& edge,
       if (in_cx)
         nb_valid_collapse++;
 #endif
-      return collapse(edge, collapse_type, c3t3);
+      return collapse(edge, collapse_type, cell_selector, c3t3);
     }
   }
 #ifdef CGAL_DEBUG_TET_REMESHING_IN_PLUGIN

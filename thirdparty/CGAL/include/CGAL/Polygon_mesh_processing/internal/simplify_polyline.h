@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/simplify_polyline.h $
-// $Id: simplify_polyline.h 75b03e6 2022-01-10T15:33:04+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/simplify_polyline.h $
+// $Id: simplify_polyline.h 5a992f6 2022-11-22T10:31:34+01:00 Sébastien Loriot
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -13,7 +13,7 @@
 #ifndef CGAL_POLYGON_MESH_PROCESSING_SIMPLIFY_POLYLINE_H
 #define CGAL_POLYGON_MESH_PROCESSING_SIMPLIFY_POLYLINE_H
 
-#include <CGAL/license/Polygon_mesh_processing/repair.h>
+#include <CGAL/license/Polygon_mesh_processing/geometric_repair.h>
 
 #include <CGAL/Named_function_parameters.h>
 #include <CGAL/boost/graph/named_params_helper.h>

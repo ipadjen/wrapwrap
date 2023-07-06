@@ -2,7 +2,7 @@
 //
 // This file is part of CGAL (www.cgal.org);
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Stream_support/include/CGAL/IO/OFF.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Stream_support/include/CGAL/IO/OFF.h $
 // $Id: OFF.h 10b0af3 2022-01-13T14:43:34+01:00 Sébastien Loriot
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

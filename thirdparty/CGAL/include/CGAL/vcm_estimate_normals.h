@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Point_set_processing_3/include/CGAL/vcm_estimate_normals.h $
-// $Id: vcm_estimate_normals.h 75b03e6 2022-01-10T15:33:04+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_processing_3/include/CGAL/vcm_estimate_normals.h $
+// $Id: vcm_estimate_normals.h bccf399 2022-11-08T10:51:46+01:00 Jane Tournois
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Jocelyn Meyron and Quentin Mérigot
@@ -321,7 +321,7 @@ vcm_estimate_normals_internal (PointRange& points,
     typedef typename NP_helper::Geom_traits Kernel;
     typedef typename GetDiagonalizeTraits<NamedParameters, double, 3>::type DiagonalizeTraits;
 
-    CGAL_static_assertion_msg(NP_helper::has_normal_map(), "Error: no normal map");
+    CGAL_assertion_msg(NP_helper::has_normal_map(points, np), "Error: no normal map");
 
     PointMap point_map = NP_helper::get_point_map(points, np);
     NormalMap normal_map = NP_helper::get_normal_map(points, np);

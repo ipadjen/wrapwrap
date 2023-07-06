@@ -7,7 +7,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Number_types/include/CGAL/Quotient.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Number_types/include/CGAL/Quotient.h $
 // $Id: Quotient.h a037ca1 2021-10-04T17:01:41+02:00 Dmitry Anisimov
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d/Bitstream_descartes.h $
-// $Id: Bitstream_descartes.h 521c72d 2021-10-04T13:22:00+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d/Bitstream_descartes.h $
+// $Id: Bitstream_descartes.h 7322c79 2022-11-21T14:09:08+01:00 Sébastien Loriot
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -1147,8 +1147,8 @@ public:
   Bitstream_descartes() : Base(new Rep()) {}
 
   //! Copy constructor
-  Bitstream_descartes(const Self& other) : Base(static_cast<const Base&>(other))
-  {}
+  Bitstream_descartes(const Self& other) = default;
+  Bitstream_descartes& operator=(const Self& other) = default;
 
   /*!
    * \brief Constructor for a polynomial \c f

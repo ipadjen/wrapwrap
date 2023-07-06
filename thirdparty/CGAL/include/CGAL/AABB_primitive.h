@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/AABB_tree/include/CGAL/AABB_primitive.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/AABB_tree/include/CGAL/AABB_primitive.h $
 // $Id: AABB_primitive.h 3b52e46 2022-05-24T10:02:15+02:00 Mael Rouxel-Labbé
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

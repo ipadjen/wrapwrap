@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Orthtree/include/CGAL/Orthtree/Node.h $
-// $Id: Node.h 8f8679e 2021-04-13T09:42:15+02:00 Simon Giraudot
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Orthtree/include/CGAL/Orthtree/Node.h $
+// $Id: Node.h d1eca83 2022-11-07T17:34:54+00:00 Andreas Fabri
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Jackson Campolattaro, Cédric Portaneri, Tong Zhao
@@ -345,7 +345,7 @@ public:
   }
 
   /*!
-    \brief returns the nth child fo this node.
+    \brief returns the nth child of this node.
 
     \pre `!is_null()`
     \pre `!is_leaf()`

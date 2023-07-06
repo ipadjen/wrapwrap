@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Surface_mesh/include/CGAL/Surface_mesh/IO/PLY.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh/include/CGAL/Surface_mesh/IO/PLY.h $
 // $Id: PLY.h 10b0af3 2022-01-13T14:43:34+01:00 Sébastien Loriot
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

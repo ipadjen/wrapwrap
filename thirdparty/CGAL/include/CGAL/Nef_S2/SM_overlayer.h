@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Nef_S2/include/CGAL/Nef_S2/SM_overlayer.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_S2/include/CGAL/Nef_S2/SM_overlayer.h $
 // $Id: SM_overlayer.h 6e8f312 2022-06-20T11:57:23+02:00 Laurent Rineau
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

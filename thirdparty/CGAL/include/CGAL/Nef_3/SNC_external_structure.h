@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Nef_3/include/CGAL/Nef_3/SNC_external_structure.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_3/include/CGAL/Nef_3/SNC_external_structure.h $
 // $Id: SNC_external_structure.h 9567522 2022-04-19T17:02:20+01:00 Andreas Fabri
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

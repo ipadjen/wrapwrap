@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/AABB_tree/include/CGAL/AABB_tree/internal/AABB_traversal_traits.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/AABB_tree/include/CGAL/AABB_tree/internal/AABB_traversal_traits.h $
 // $Id: AABB_traversal_traits.h 678b9d8 2022-06-24T11:09:06+02:00 Sébastien Loriot
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

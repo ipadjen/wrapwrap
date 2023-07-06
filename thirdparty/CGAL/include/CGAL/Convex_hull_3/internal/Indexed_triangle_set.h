@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Convex_hull_3/include/CGAL/Convex_hull_3/internal/Indexed_triangle_set.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Convex_hull_3/include/CGAL/Convex_hull_3/internal/Indexed_triangle_set.h $
 // $Id: Indexed_triangle_set.h cb4f549 2021-12-07T16:03:18+01:00 Sébastien Loriot
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

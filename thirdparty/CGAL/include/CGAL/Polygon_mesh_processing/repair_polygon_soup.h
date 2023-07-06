@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/repair_polygon_soup.h $
-// $Id: repair_polygon_soup.h b25217e 2022-07-07T13:42:37+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/repair_polygon_soup.h $
+// $Id: repair_polygon_soup.h 5a992f6 2022-11-22T10:31:34+01:00 Sébastien Loriot
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mael Rouxel-Labbé
@@ -12,7 +12,7 @@
 #ifndef CGAL_POLYGON_MESH_PROCESSING_REPAIR_POLYGON_SOUP
 #define CGAL_POLYGON_MESH_PROCESSING_REPAIR_POLYGON_SOUP
 
-#include <CGAL/license/Polygon_mesh_processing/repair.h>
+#include <CGAL/license/Polygon_mesh_processing/combinatorial_repair.h>
 
 #include <CGAL/Named_function_parameters.h>
 #include <CGAL/Polygon_mesh_processing/internal/named_params_helper.h>

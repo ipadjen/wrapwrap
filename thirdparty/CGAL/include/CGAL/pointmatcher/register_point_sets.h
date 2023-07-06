@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Point_set_processing_3/include/CGAL/pointmatcher/register_point_sets.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_processing_3/include/CGAL/pointmatcher/register_point_sets.h $
 // $Id: register_point_sets.h 75b03e6 2022-01-10T15:33:04+01:00 Sébastien Loriot
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

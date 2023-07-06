@@ -7,7 +7,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Cartesian_kernel/include/CGAL/Cartesian/Vector_3.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Cartesian_kernel/include/CGAL/Cartesian/Vector_3.h $
 // $Id: Vector_3.h cca0a19 2022-04-12T16:14:39+02:00 Sébastien Loriot
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

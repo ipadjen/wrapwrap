@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Surface_mesh_parameterization/include/CGAL/Surface_mesh_parameterization/Discrete_authalic_parameterizer_3.h $
-// $Id: Discrete_authalic_parameterizer_3.h cac04ed 2021-06-08T13:36:09+02:00 Dmitry Anisimov
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_parameterization/include/CGAL/Surface_mesh_parameterization/Discrete_authalic_parameterizer_3.h $
+// $Id: Discrete_authalic_parameterizer_3.h 936b02b 2022-10-20T17:30:18+02:00 Mael Rouxel-Labbé
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Laurent Saboret, Pierre Alliez, Bruno Levy
@@ -187,7 +187,7 @@ protected:
     ++next_vertex_v_l;
     const Point_3& position_v_l = get(ppmap, *next_vertex_v_l);
 
-    return CGAL::Weights::authalic_weight(position_v_k, position_v_j, position_v_l, position_v_i) / NT(2);
+    return CGAL::Weights::authalic_weight(position_v_l, position_v_j, position_v_k, position_v_i) / NT(2);
   }
 };
 

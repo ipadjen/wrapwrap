@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Nef_S2/include/CGAL/Nef_S2/Sphere_map.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_S2/include/CGAL/Nef_S2/Sphere_map.h $
 // $Id: Sphere_map.h 16bed97 2022-03-17T20:21:12+00:00 Giles Bathgate
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

@@ -2,7 +2,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/STL_Extension/include/CGAL/Modifiable_priority_queue.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/STL_Extension/include/CGAL/Modifiable_priority_queue.h $
 // $Id: Modifiable_priority_queue.h 87233c6 2022-03-18T20:02:29+01:00 Mael Rouxel-Labbé
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

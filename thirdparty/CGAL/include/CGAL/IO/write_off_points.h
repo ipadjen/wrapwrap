@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Point_set_processing_3/include/CGAL/IO/write_off_points.h $
-// $Id: write_off_points.h 477353d 2022-04-20T15:55:50+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_processing_3/include/CGAL/IO/write_off_points.h $
+// $Id: write_off_points.h 38fd07d 2022-11-08T10:24:43+01:00 Jane Tournois
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Pierre Alliez and Laurent Saboret
@@ -46,7 +46,7 @@ bool write_OFF_PSP(std::ostream& os,
   typedef typename NP_helper::Const_point_map PointMap;
   typedef typename NP_helper::Normal_map NormalMap;
 
-  const bool has_normals = !(is_default_parameter<CGAL_NP_CLASS, internal_np::normal_t>::value);
+  const bool has_normals = NP_helper::has_normal_map(points, np);
 
   PointMap point_map = NP_helper::get_const_point_map(points, np);
   NormalMap normal_map = NP_helper::get_normal_map(points, np);

@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Mesh_3/include/CGAL/remove_far_points_in_mesh_3.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/remove_far_points_in_mesh_3.h $
 // $Id: remove_far_points_in_mesh_3.h bad72db 2021-09-17T16:03:06+02:00 Jane Tournois
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

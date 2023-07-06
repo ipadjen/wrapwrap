@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/connected_components.h $
-// $Id: connected_components.h 477353d 2022-04-20T15:55:50+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/connected_components.h $
+// $Id: connected_components.h 87f16af 2022-10-04T13:50:15+02:00 Laurent Rineau
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -418,11 +418,12 @@ std::size_t keep_largest_connected_components(PolygonMesh& pmesh,
 
   // vector_property_map
   boost::vector_property_map<std::size_t, FaceIndexMap> face_cc(static_cast<unsigned>(num_faces(pmesh)), fimap);
-  std::size_t num = connected_components(pmesh, face_cc, np);
 
   // Even if we do not want to keep anything we need to first
   // calculate the number of existing connected_components to get the
   // correct return value.
+  const std::size_t num = connected_components(pmesh, face_cc, np);
+
   if(nb_components_to_keep == 0)
   {
     CGAL::clear(pmesh);
@@ -445,12 +446,12 @@ std::size_t keep_largest_connected_components(PolygonMesh& pmesh,
 
   if(dry_run)
   {
-    std::vector<bool> is_to_be_removed(num, false);
+    std::vector<bool> is_to_be_kept(num, false);
     for(std::size_t i=0; i<nb_components_to_keep; ++i)
-      is_to_be_removed[component_size[i].first] = true;
+      is_to_be_kept[component_size[i].first] = true;
 
     for(face_descriptor f : faces(pmesh))
-      if(is_to_be_removed[face_cc[f]])
+      if(!is_to_be_kept[face_cc[f]])
         *out++ = f;
   }
   else

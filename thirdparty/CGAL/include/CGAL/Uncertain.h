@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/STL_Extension/include/CGAL/Uncertain.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/STL_Extension/include/CGAL/Uncertain.h $
 // $Id: Uncertain.h 6acb3a1 2022-07-11T10:35:09+02:00 Sébastien Loriot
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

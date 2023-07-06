@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Boolean_set_operations_2/include/CGAL/Boolean_set_operations_2/Gps_on_surface_base_2.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Boolean_set_operations_2/include/CGAL/Boolean_set_operations_2/Gps_on_surface_base_2.h $
 // $Id: Gps_on_surface_base_2.h 4dbf509 2021-11-03T16:47:12+02:00 Efi Fogel
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

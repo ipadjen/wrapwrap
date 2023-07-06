@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Poisson_surface_reconstruction_3/include/CGAL/poisson_refine_triangulation.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Poisson_surface_reconstruction_3/include/CGAL/poisson_refine_triangulation.h $
 // $Id: poisson_refine_triangulation.h 3ad94a7 2022-05-17T12:04:52+01:00 Andreas Fabri
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

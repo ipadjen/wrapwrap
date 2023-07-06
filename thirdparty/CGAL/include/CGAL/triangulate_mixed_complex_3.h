@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Skin_surface_3/include/CGAL/triangulate_mixed_complex_3.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Skin_surface_3/include/CGAL/triangulate_mixed_complex_3.h $
 // $Id: triangulate_mixed_complex_3.h 7a1aaa4 2022-03-09T13:11:19+00:00 Andreas Fabri
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

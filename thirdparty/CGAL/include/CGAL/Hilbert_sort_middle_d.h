@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Spatial_sorting/include/CGAL/Hilbert_sort_middle_d.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Spatial_sorting/include/CGAL/Hilbert_sort_middle_d.h $
 // $Id: Hilbert_sort_middle_d.h f60dfa8 2022-04-04T10:00:16+02:00 Sébastien Loriot
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

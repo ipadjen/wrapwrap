@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Intersections_3/include/CGAL/Intersections_3/internal/Iso_cuboid_3_Sphere_3_do_intersect.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_3/include/CGAL/Intersections_3/internal/Iso_cuboid_3_Sphere_3_do_intersect.h $
 // $Id: Iso_cuboid_3_Sphere_3_do_intersect.h a7ff075 2022-02-03T13:21:11+00:00 Andreas Fabri
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

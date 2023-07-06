@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/repair_extra.h $
-// $Id: repair_extra.h 258d704 2022-02-24T19:57:17+01:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/repair_extra.h $
+// $Id: repair_extra.h 5a992f6 2022-11-22T10:31:34+01:00 Sébastien Loriot
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -14,7 +14,7 @@
 #ifndef CGAL_POLYGON_MESH_PROCESSING_INTERNAL_REPAIR_EXTRA_H
 #define CGAL_POLYGON_MESH_PROCESSING_INTERNAL_REPAIR_EXTRA_H
 
-#include <CGAL/license/Polygon_mesh_processing/repair.h>
+#include <CGAL/license/Polygon_mesh_processing/geometric_repair.h>
 
 #include <CGAL/boost/graph/named_params_helper.h>
 #include <CGAL/box_intersection_d.h>

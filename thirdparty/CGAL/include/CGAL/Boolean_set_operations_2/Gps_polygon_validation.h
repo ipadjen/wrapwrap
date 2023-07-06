@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Boolean_set_operations_2/include/CGAL/Boolean_set_operations_2/Gps_polygon_validation.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Boolean_set_operations_2/include/CGAL/Boolean_set_operations_2/Gps_polygon_validation.h $
 // $Id: Gps_polygon_validation.h 6fd9388 2021-11-03T18:32:40+02:00 Efi Fogel
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

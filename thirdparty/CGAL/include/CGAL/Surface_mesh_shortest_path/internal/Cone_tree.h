@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Surface_mesh_shortest_path/include/CGAL/Surface_mesh_shortest_path/internal/Cone_tree.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_shortest_path/include/CGAL/Surface_mesh_shortest_path/internal/Cone_tree.h $
 // $Id: Cone_tree.h 89b7bb1 2022-07-05T15:39:29+02:00 Mael Rouxel-Labbé
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

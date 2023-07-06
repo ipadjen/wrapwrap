@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Triangulation/include/CGAL/Triangulation_data_structure.h $
-// $Id: Triangulation_data_structure.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Triangulation/include/CGAL/Triangulation_data_structure.h $
+// $Id: Triangulation_data_structure.h 29d543c 2022-10-04T09:16:32+02:00 Sébastien Loriot
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)    : Samuel Hornus
@@ -1364,6 +1364,7 @@ Triangulation_data_structure<Dimen, Vb, Fcb>
             else
                 read(is, index);
             s->set_vertex(j, vertices[index]);
+            s->vertex(j)->set_full_cell(s);
         }
         // read other non-combinatorial information for the full_cells
         is >> (*s);

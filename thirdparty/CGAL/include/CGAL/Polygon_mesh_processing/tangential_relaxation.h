@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/tangential_relaxation.h $
-// $Id: tangential_relaxation.h f6f158a 2022-03-29T15:15:54+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/tangential_relaxation.h $
+// $Id: tangential_relaxation.h d7d439f 2022-07-28T14:26:40+02:00 Jane Tournois
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -132,6 +132,7 @@ void tangential_relaxation(const VertexRange& vertices,
   using parameters::choose_parameter;
 
   typedef typename GetGeomTraits<TriangleMesh, NamedParameters>::type GT;
+  GT gt = choose_parameter(get_parameter(np, internal_np::geom_traits), GT());
 
   typedef typename GetVertexPointMap<TriangleMesh, NamedParameters>::type VPMap;
   VPMap vpm = choose_parameter(get_parameter(np, internal_np::vertex_point),
@@ -212,6 +213,7 @@ void tangential_relaxation(const VertexRange& vertices,
 
     typedef std::tuple<vertex_descriptor, Vector_3, Point_3> VNP;
     std::vector< VNP > barycenters;
+    auto gt_barycenter = gt.construct_barycenter_3_object();
 
     // at each vertex, compute vertex normal
     std::unordered_map<vertex_descriptor, Vector_3> vnormals;
@@ -263,7 +265,8 @@ void tangential_relaxation(const VertexRange& vertices,
           //check squared cosine is < 0.25 (~120 degrees)
           if (0.25 < dot*dot / ( squared_distance(get(vpm,ph0), get(vpm, v)) *
                                  squared_distance(get(vpm,ph1), get(vpm, v))) )
-            barycenters.emplace_back(v, vn, barycenter(get(vpm, ph0), 0.25, get(vpm, ph1), 0.25, get(vpm, v), 0.5));
+            barycenters.emplace_back(v, vn,
+              gt_barycenter(get(vpm, ph0), 0.25, get(vpm, ph1), 0.25, get(vpm, v), 0.5));
         }
       }
     }

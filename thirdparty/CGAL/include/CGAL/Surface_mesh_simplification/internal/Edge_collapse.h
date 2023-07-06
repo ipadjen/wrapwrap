@@ -2,7 +2,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Surface_mesh_simplification/include/CGAL/Surface_mesh_simplification/internal/Edge_collapse.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_simplification/include/CGAL/Surface_mesh_simplification/internal/Edge_collapse.h $
 // $Id: Edge_collapse.h 45193b1 2022-03-10T10:50:06+05:30 G Yuvan Shankar
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

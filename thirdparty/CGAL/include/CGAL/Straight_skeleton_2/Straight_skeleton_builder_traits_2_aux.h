@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Straight_skeleton_2/include/CGAL/Straight_skeleton_2/Straight_skeleton_builder_traits_2_aux.h $
-// $Id: Straight_skeleton_builder_traits_2_aux.h c8624ee 2021-09-09T11:01:03+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Straight_skeleton_2/include/CGAL/Straight_skeleton_2/Straight_skeleton_builder_traits_2_aux.h $
+// $Id: Straight_skeleton_builder_traits_2_aux.h c38ff2b 2023-01-04T16:26:31+01:00 Mael Rouxel-Labbé
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Fernando Cacciola <fernando_cacciola@ciudad.com.ar>
@@ -189,23 +189,6 @@ class Rational
 
     NT mN, mD ;
 } ;
-
-template <class K>
-struct Segment_2_with_ID
-  : public Segment_2<K>
-{
-  typedef Segment_2<K> Base;
-  typedef typename K::Point_2 Point_2;
-
-public:
-  Segment_2_with_ID() : Base(), mID(-1) { }
-  Segment_2_with_ID(Base const& aS) : Base(aS), mID(-1) { }
-  Segment_2_with_ID(Base const& aS, const std::size_t aID) : Base(aS), mID(aID) { }
-  Segment_2_with_ID(Point_2 const& aP, Point_2 const& aQ, const std::size_t aID) : Base(aP, aQ), mID(aID) { }
-
-public:
-  std::size_t mID;
-};
 
 template <class Info>
 struct No_cache

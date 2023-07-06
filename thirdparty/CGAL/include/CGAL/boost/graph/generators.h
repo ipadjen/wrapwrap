@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/BGL/include/CGAL/boost/graph/generators.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/BGL/include/CGAL/boost/graph/generators.h $
 // $Id: generators.h 0994eed 2022-03-02T11:23:49+01:00 Mael Rouxel-Labbé
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

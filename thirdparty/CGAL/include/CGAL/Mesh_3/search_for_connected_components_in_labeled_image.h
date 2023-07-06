@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Mesh_3/include/CGAL/Mesh_3/search_for_connected_components_in_labeled_image.h $
-// $Id: search_for_connected_components_in_labeled_image.h c32e2b1 2022-07-11T10:17:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/Mesh_3/search_for_connected_components_in_labeled_image.h $
+// $Id: search_for_connected_components_in_labeled_image.h a8877c5 2022-10-25T17:24:57+02:00 Jane Tournois
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -34,14 +34,12 @@
 template <typename PointsOutputIterator,
           typename DomainsOutputIterator,
           typename TransformOperator,
-          typename Construct_point,
           typename Image_word_type>
 void
 search_for_connected_components_in_labeled_image(const CGAL::Image_3& image,
                                                  PointsOutputIterator it,
                                                  DomainsOutputIterator dom_it,
                                                  TransformOperator transform,
-                                                 Construct_point point,
                                                  Image_word_type)
 {
   const std::size_t nx = image.xdim();
@@ -210,8 +208,7 @@ search_for_connected_components_in_labeled_image(const CGAL::Image_3& image,
             {
 //               if(nb_voxels >= 100)
               {
-                *it++ = std::make_pair(point(i, j, k),
-                                       depth+1);
+                *it++ = { i, j, k, std::size_t(depth + 1) };
 #if CGAL_MESH_3_SEARCH_FOR_CONNECTED_COMPONENTS_IN_LABELED_IMAGE_VERBOSE > 1
                 std::cerr << boost::format("Found seed %5%, which is voxel "
                                            "(%1%, %2%, %3%), value=%4%\n")

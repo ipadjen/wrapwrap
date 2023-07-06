@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/AABB_tree/include/CGAL/AABB_tree/internal/triangle_datum_covering.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/AABB_tree/include/CGAL/AABB_tree/internal/triangle_datum_covering.h $
 // $Id: triangle_datum_covering.h 1375a0a 2022-03-24T16:10:36+01:00 Mael Rouxel-Labbé
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Surface_mesh_deformation/include/CGAL/Deformation_Eigen_closest_rotation_traits_3.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_deformation/include/CGAL/Deformation_Eigen_closest_rotation_traits_3.h $
 // $Id: Deformation_Eigen_closest_rotation_traits_3.h a98b548 2022-05-12T16:03:53+02:00 Sven Oesau
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

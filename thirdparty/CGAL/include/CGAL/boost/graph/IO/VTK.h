@@ -2,7 +2,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/BGL/include/CGAL/boost/graph/IO/VTK.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/BGL/include/CGAL/boost/graph/IO/VTK.h $
 // $Id: VTK.h 10b0af3 2022-01-13T14:43:34+01:00 Sébastien Loriot
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

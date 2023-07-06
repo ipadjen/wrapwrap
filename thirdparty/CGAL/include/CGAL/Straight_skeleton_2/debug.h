@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Straight_skeleton_2/include/CGAL/Straight_skeleton_2/debug.h $
-// $Id: debug.h 7513752 2020-10-05T18:35:08+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Straight_skeleton_2/include/CGAL/Straight_skeleton_2/debug.h $
+// $Id: debug.h b1b7cac 2023-01-04T16:26:09+01:00 Mael Rouxel-Labbé
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Fernando Cacciola <fernando_cacciola@ciudad.com.ar>
@@ -187,8 +187,8 @@ inline std::string e2str( E const& e )
     ss << "B" << e.id()
        << "[E" << e.defining_contour_edge()->id()
        << ",E" << e.opposite()->defining_contour_edge()->id() << "]"
-       << " (/" << ( e.slope() == CGAL::ZERO ? "·" : ( e.slope() == CGAL::NEGATIVE ? "-" : "+" ) )
-       << " " << e.opposite()->vertex()->time() << "->" << e.vertex()->time() << ")" ;
+       << " (S " << ( e.slope() == CGAL::ZERO ? "0" : ( e.slope() == CGAL::NEGATIVE ? "-" : "+" ) )
+       << "; T " << e.opposite()->vertex()->time() << " -> " << e.vertex()->time() << ")" ;
   }
   else
   {
@@ -263,7 +263,7 @@ inline std::string newn2str( char const* name, VH const& v, Triedge const& aTrie
 #endif
 
 #ifdef CGAL_STRAIGHT_SKELETON_TRAITS_ENABLE_TRACE
-bool sEnableTraitsTrace = false;
+bool sEnableTraitsTrace = true;
 #  define CGAL_STSKEL_TRAITS_ENABLE_TRACE sEnableTraitsTrace = true ;
 #  define CGAL_STSKEL_TRAITS_ENABLE_TRACE_IF(cond) if ((cond)) sEnableTraitsTrace = true ;
 #  define CGAL_STSKEL_TRAITS_DISABLE_TRACE sEnableTraitsTrace = false;

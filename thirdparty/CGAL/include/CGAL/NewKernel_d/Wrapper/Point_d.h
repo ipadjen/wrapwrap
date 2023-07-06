@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/NewKernel_d/include/CGAL/NewKernel_d/Wrapper/Point_d.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/NewKernel_d/include/CGAL/NewKernel_d/Wrapper/Point_d.h $
 // $Id: Point_d.h cca0a19 2022-04-12T16:14:39+02:00 Sébastien Loriot
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

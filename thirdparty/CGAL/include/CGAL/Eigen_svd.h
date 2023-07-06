@@ -2,7 +2,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Solver_interface/include/CGAL/Eigen_svd.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Solver_interface/include/CGAL/Eigen_svd.h $
 // $Id: Eigen_svd.h a98b548 2022-05-12T16:03:53+02:00 Sven Oesau
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Bounding_volumes/include/CGAL/Approximate_min_ellipsoid_d.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Bounding_volumes/include/CGAL/Approximate_min_ellipsoid_d.h $
 // $Id: Approximate_min_ellipsoid_d.h 2b31362 2022-06-22T07:53:20+01:00 Andreas Fabri
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

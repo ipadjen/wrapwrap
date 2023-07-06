@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Spatial_sorting/include/CGAL/Spatial_sort_traits_adapter_2.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Spatial_sorting/include/CGAL/Spatial_sort_traits_adapter_2.h $
 // $Id: Spatial_sort_traits_adapter_2.h 8a252f1 2022-03-31T07:07:01+02:00 Sébastien Loriot
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

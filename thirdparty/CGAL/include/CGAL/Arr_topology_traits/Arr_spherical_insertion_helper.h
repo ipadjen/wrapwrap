@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Arrangement_on_surface_2/include/CGAL/Arr_topology_traits/Arr_spherical_insertion_helper.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_topology_traits/Arr_spherical_insertion_helper.h $
 // $Id: Arr_spherical_insertion_helper.h 295e9b9 2022-02-02T15:44:48+02:00 Efi Fogel
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

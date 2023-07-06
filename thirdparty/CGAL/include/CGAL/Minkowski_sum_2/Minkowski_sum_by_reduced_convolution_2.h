@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Minkowski_sum_2/include/CGAL/Minkowski_sum_2/Minkowski_sum_by_reduced_convolution_2.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Minkowski_sum_2/include/CGAL/Minkowski_sum_2/Minkowski_sum_by_reduced_convolution_2.h $
 // $Id: Minkowski_sum_by_reduced_convolution_2.h 4ffc949 2022-02-03T17:11:20+01:00 Sébastien Loriot
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

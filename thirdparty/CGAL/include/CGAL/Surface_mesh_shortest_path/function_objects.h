@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Surface_mesh_shortest_path/include/CGAL/Surface_mesh_shortest_path/function_objects.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_shortest_path/include/CGAL/Surface_mesh_shortest_path/function_objects.h $
 // $Id: function_objects.h 64b9bbd 2022-06-28T15:48:56+02:00 Mael Rouxel-Labbé
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

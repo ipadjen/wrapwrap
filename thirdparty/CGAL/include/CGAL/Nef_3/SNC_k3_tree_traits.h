@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Nef_3/include/CGAL/Nef_3/SNC_k3_tree_traits.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_3/include/CGAL/Nef_3/SNC_k3_tree_traits.h $
 // $Id: SNC_k3_tree_traits.h 263c168 2022-03-10T18:24:07+00:00 Giles Bathgate
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

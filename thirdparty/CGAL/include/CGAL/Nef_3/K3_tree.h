@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Nef_3/include/CGAL/Nef_3/K3_tree.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_3/include/CGAL/Nef_3/K3_tree.h $
 // $Id: K3_tree.h 68d896b 2022-04-13T11:53:02+01:00 Andreas Fabri
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

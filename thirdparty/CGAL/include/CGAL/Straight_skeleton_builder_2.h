@@ -3,8 +3,8 @@
 // This file is part of CGAL (www.cgal.org).
 //
 
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Straight_skeleton_2/include/CGAL/Straight_skeleton_builder_2.h $
-// $Id: Straight_skeleton_builder_2.h 1f45360 2021-01-26T09:05:24+01:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Straight_skeleton_2/include/CGAL/Straight_skeleton_builder_2.h $
+// $Id: Straight_skeleton_builder_2.h b2d562e 2023-01-04T16:38:15+01:00 Mael Rouxel-Labbé
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Fernando Cacciola <fernando_cacciola@ciudad.com.ar>
@@ -633,7 +633,10 @@ private :
 
   void SetTrisegment ( Vertex_handle aV, Trisegment_2_ptr const& aTrisegment )
   {
+    // @todo could get rid of the 'mTrisegment' in vertex data
+    // since it's also stored in the vertex directly (to be used during offset construction...)
     GetVertexData(aV).mTrisegment = aTrisegment ;
+    aV->set_trisegment(aTrisegment) ;
   }
 
   // Null if aV is a contour node

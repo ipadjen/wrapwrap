@@ -7,7 +7,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Homogeneous_kernel/include/CGAL/Homogeneous_converter.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Homogeneous_kernel/include/CGAL/Homogeneous_converter.h $
 // $Id: Homogeneous_converter.h 3a0a4a6 2021-12-17T12:22:40+01:00 Mael Rouxel-Labbé
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

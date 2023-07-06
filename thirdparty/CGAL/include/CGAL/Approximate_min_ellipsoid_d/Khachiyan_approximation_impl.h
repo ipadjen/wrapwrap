@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Bounding_volumes/include/CGAL/Approximate_min_ellipsoid_d/Khachiyan_approximation_impl.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Bounding_volumes/include/CGAL/Approximate_min_ellipsoid_d/Khachiyan_approximation_impl.h $
 // $Id: Khachiyan_approximation_impl.h 54529af 2022-06-01T10:53:10+01:00 Andreas Fabri
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

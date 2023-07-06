@@ -6,7 +6,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Stream_support/include/CGAL/IO/polygon_soup_io.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Stream_support/include/CGAL/IO/polygon_soup_io.h $
 // $Id: polygon_soup_io.h 10b0af3 2022-01-13T14:43:34+01:00 Sébastien Loriot
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

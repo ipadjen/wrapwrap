@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Mesh_3/include/CGAL/Mesh_3/vertex_perturbation.h $
-// $Id: vertex_perturbation.h 315a0b5 2020-01-29T16:27:53+01:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/Mesh_3/vertex_perturbation.h $
+// $Id: vertex_perturbation.h 9ab7e1e 2022-10-20T17:21:43+02:00 Mael Rouxel-Labbé
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -1058,7 +1058,7 @@ private:
    */
   FT cotangent(const FT& value) const
   {
-    return FT(1/std::tan(CGAL::to_double(value)));
+    return FT(1./std::tan(CGAL::to_double(value)));
   }
 
   /**

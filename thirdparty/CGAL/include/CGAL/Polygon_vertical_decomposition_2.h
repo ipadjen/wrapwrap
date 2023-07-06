@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Minkowski_sum_2/include/CGAL/Polygon_vertical_decomposition_2.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Minkowski_sum_2/include/CGAL/Polygon_vertical_decomposition_2.h $
 // $Id: Polygon_vertical_decomposition_2.h 414103f 2022-02-21T17:17:34+02:00 Efi Fogel
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

@@ -14,8 +14,8 @@
  * WWW URL: http://cs.nyu.edu/exact/
  * Email: exact@cs.nyu.edu
  *
- * $URL: https://github.com/CGAL/cgal/blob/v5.5/CGAL_Core/include/CGAL/CORE/CoreIO_impl.h $
- * $Id: CoreIO_impl.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+ * $URL: https://github.com/CGAL/cgal/blob/v5.5.2/CGAL_Core/include/CGAL/CORE/CoreIO_impl.h $
+ * $Id: CoreIO_impl.h 8d4aaa9 2022-11-30T11:55:32+00:00 Andreas Fabri
  * SPDX-License-Identifier: LGPL-3.0-or-later
  ***************************************************************************/
 
@@ -103,7 +103,7 @@ int skip_comment_line (std::istream & in) {
     }
   } while (c == ' ' || c == '\t' || c == '\n');
 
-  if (c == EOF)
+  if (in.eof())
     core_io_error_handler("CoreIO::read_from_file()","unexpected end of file.");
 
   in.putback(c);
@@ -191,7 +191,11 @@ void read_base_number(std::istream& in, BigInt& m, long length, long maxBits) {
 
   buffer = new char[size+2];
   // read digits
-  for (int i=0; (i<size)&&((c=skip_backslash_new_line(in)) != EOF ); i++) {
+  for (int i=0; i<size; i++) {
+    c=skip_backslash_new_line(in);
+    if(in.eof()){
+      break;
+    }
     if (c != ' ' && c != '\t' && c != '\n')
       append_char(buffer, size, pos++, c);
   }

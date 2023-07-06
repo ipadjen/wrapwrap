@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Nef_3/include/CGAL/Nef_3/SNC_intersection.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_3/include/CGAL/Nef_3/SNC_intersection.h $
 // $Id: SNC_intersection.h dc18d7a 2022-03-22T21:00:57+00:00 Giles Bathgate
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Arrangement_on_surface_2/include/CGAL/Arr_tracing_traits_2.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_tracing_traits_2.h $
 // $Id: Arr_tracing_traits_2.h 97b35b7 2022-03-13T11:52:42+02:00 Efi Fogel
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Surface_mesh_approximation/include/CGAL/Surface_mesh_approximation/approximate_triangle_mesh.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_approximation/include/CGAL/Surface_mesh_approximation/approximate_triangle_mesh.h $
 // $Id: approximate_triangle_mesh.h 477353d 2022-04-20T15:55:50+02:00 Mael Rouxel-Labbé
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Number_types/include/CGAL/GMP/Gmpzf_type.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Number_types/include/CGAL/GMP/Gmpzf_type.h $
 // $Id: Gmpzf_type.h 45b5fd4 2022-07-06T12:58:49+02:00 Sébastien Loriot
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

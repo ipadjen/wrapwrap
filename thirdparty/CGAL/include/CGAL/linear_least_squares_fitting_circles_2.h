@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Principal_component_analysis/include/CGAL/linear_least_squares_fitting_circles_2.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Principal_component_analysis/include/CGAL/linear_least_squares_fitting_circles_2.h $
 // $Id: linear_least_squares_fitting_circles_2.h e07672a 2022-01-26T21:04:59+05:30 G Yuvan Shankar
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

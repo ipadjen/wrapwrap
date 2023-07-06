@@ -9,8 +9,8 @@
 //          Andrew Lumsdaine
 //=======================================================================
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/STL_Extension/include/CGAL/STL_Extension/internal/boost/relaxed_heap.hpp $
-// $Id: relaxed_heap.hpp 440a8df 2022-02-03T08:41:04+00:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/STL_Extension/include/CGAL/STL_Extension/internal/boost/relaxed_heap.hpp $
+// $Id: relaxed_heap.hpp 4143d14 2022-08-16T17:23:07+02:00 Sébastien Loriot
 // SPDX-License-Identifier: BSL-1.0
 //
 // NOTE: this file has been taken from boost 1.77 to use
@@ -194,7 +194,7 @@ public:
     void remove(const value_type& x)
     {
         group* a = &index_to_group[get(id, x) / log_n];
-        CGAL_assertion(groups[get(id, x)]);
+        CGAL_assertion(static_cast< bool >(groups[get(id, x)]));
         a->value = x;
         a->kind = smallest_key;
         promote(a);

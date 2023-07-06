@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Alpha_wrap_3/include/CGAL/Alpha_wrap_3/internal/Segment_soup_oracle.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Alpha_wrap_3/include/CGAL/Alpha_wrap_3/internal/Segment_soup_oracle.h $
 // $Id: Segment_soup_oracle.h 9fbfd9a 2022-05-24T10:08:56+02:00 Mael Rouxel-Labbé
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

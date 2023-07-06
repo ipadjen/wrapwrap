@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Mesh_3/include/CGAL/Mesh_domain_with_polyline_features_3.h $
-// $Id: Mesh_domain_with_polyline_features_3.h 8166579 2021-10-11T19:58:07+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/Mesh_domain_with_polyline_features_3.h $
+// $Id: Mesh_domain_with_polyline_features_3.h 67a5a69 2022-08-25T10:29:04+02:00 Laurent Rineau
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -373,16 +373,23 @@ private:
 
       if(nearest_is_a_segment)
       {
-        if(compare_distance(p, seg, nearest_segment) == CGAL::SMALLER)
-        {
-          nearest_segment = seg;
-          result = previous;
-        }
         if(compare_distance(p, *it, nearest_segment) == CGAL::SMALLER)
         {
           nearest_vertex = it;
           nearest_is_a_segment = false;
           result = it;
+          if (possibly(angle(*previous, *it, p) == CGAL::ACUTE) &&
+              compare_distance(p, seg, *nearest_vertex) == CGAL::SMALLER)
+          {
+            nearest_segment = seg;
+            nearest_is_a_segment = true;
+            result = previous;
+          }
+        }
+        else if(compare_distance(p, seg, nearest_segment) == CGAL::SMALLER)
+        {
+          nearest_segment = seg;
+          result = previous;
         }
       }
       else {
@@ -391,7 +398,9 @@ private:
           nearest_vertex = it;
           result = it;
         }
-        if(compare_distance(p, seg, *nearest_vertex) == CGAL::SMALLER)
+        if ((nearest_vertex != it ||
+             possibly(angle(*previous, *it, p) == CGAL::ACUTE)) &&
+            compare_distance(p, seg, *nearest_vertex) == CGAL::SMALLER)
         {
           nearest_segment = seg;
           nearest_is_a_segment = true;

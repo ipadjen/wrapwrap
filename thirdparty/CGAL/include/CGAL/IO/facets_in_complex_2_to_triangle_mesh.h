@@ -4,7 +4,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Surface_mesher/include/CGAL/IO/facets_in_complex_2_to_triangle_mesh.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesher/include/CGAL/IO/facets_in_complex_2_to_triangle_mesh.h $
 // $Id: facets_in_complex_2_to_triangle_mesh.h e7bf5b6 2022-02-04T10:22:26+01:00 Sébastien Loriot
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

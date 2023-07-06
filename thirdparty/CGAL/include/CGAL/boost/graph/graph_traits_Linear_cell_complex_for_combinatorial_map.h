@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Linear_cell_complex/include/CGAL/boost/graph/graph_traits_Linear_cell_complex_for_combinatorial_map.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Linear_cell_complex/include/CGAL/boost/graph/graph_traits_Linear_cell_complex_for_combinatorial_map.h $
 // $Id: graph_traits_Linear_cell_complex_for_combinatorial_map.h 238a2e1 2022-05-03T17:01:00+01:00 Andreas Fabri
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

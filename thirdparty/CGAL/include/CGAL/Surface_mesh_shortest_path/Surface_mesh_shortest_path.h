@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Surface_mesh_shortest_path/include/CGAL/Surface_mesh_shortest_path/Surface_mesh_shortest_path.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_shortest_path/include/CGAL/Surface_mesh_shortest_path/Surface_mesh_shortest_path.h $
 // $Id: Surface_mesh_shortest_path.h c519bde 2022-07-08T20:21:02+02:00 Sébastien Loriot
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

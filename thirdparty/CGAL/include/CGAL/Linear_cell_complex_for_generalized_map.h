@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Linear_cell_complex/include/CGAL/Linear_cell_complex_for_generalized_map.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Linear_cell_complex/include/CGAL/Linear_cell_complex_for_generalized_map.h $
 // $Id: Linear_cell_complex_for_generalized_map.h 54142fd 2022-01-27T15:16:16+01:00 Guillaume Damiand
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

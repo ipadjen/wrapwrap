@@ -6,8 +6,8 @@
  This file is part of a fork of the QGLViewer library version 2.7.0.
 
 *****************************************************************************/
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/GraphicsView/include/CGAL/Qt/qglviewer_impl.h $
-// $Id: qglviewer_impl.h 37390bb 2022-06-08T12:03:25+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/GraphicsView/include/CGAL/Qt/qglviewer_impl.h $
+// $Id: qglviewer_impl.h 3a0a7fe 2022-10-04T13:50:20+02:00 Laurent Rineau
 // SPDX-License-Identifier: GPL-3.0-only
 
 #ifdef CGAL_HEADER_ONLY
@@ -217,9 +217,7 @@ void CGAL::QGLViewer::initializeGL() {
 
     QSurfaceFormat cur_f = QOpenGLContext::currentContext()->format();
     const char* rt =(cur_f.renderableType() == QSurfaceFormat::OpenGLES) ? "GLES" : "GL";
-    qDebug()<<"Using context "
-           <<cur_f.majorVersion()<<"."<<cur_f.minorVersion()
-          << rt;
+    qDebug().noquote() <<tr("Using OpenGL context %1.%2 %3").arg(cur_f.majorVersion()).arg(cur_f.minorVersion()).arg(rt);
   }
   else
   {

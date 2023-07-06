@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Point_set_processing_3/include/CGAL/mst_orient_normals.h $
-// $Id: mst_orient_normals.h b0e4eeb 2022-05-13T15:53:02+02:00 Sebastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_processing_3/include/CGAL/mst_orient_normals.h $
+// $Id: mst_orient_normals.h bccf399 2022-11-08T10:51:46+01:00 Jane Tournois
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Laurent Saboret and Andreas Fabri
@@ -631,7 +631,7 @@ mst_orient_normals(
     typedef typename NP_helper::Geom_traits Kernel;
     typedef typename Point_set_processing_3::GetIsConstrainedMap<PointRange, NamedParameters>::type ConstrainedMap;
 
-    CGAL_static_assertion_msg(NP_helper::has_normal_map(), "Error: no normal map");
+    CGAL_assertion_msg(NP_helper::has_normal_map(points, np), "Error: no normal map");
 
     PointMap point_map = NP_helper::get_point_map(points, np);
     NormalMap normal_map = NP_helper::get_normal_map(points, np);

@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Mesh_3/include/CGAL/facets_in_complex_3_to_triangle_mesh.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/facets_in_complex_3_to_triangle_mesh.h $
 // $Id: facets_in_complex_3_to_triangle_mesh.h ab03816 2022-04-20T10:26:26+02:00 Mael
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

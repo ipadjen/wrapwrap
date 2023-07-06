@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Boolean_set_operations_2/include/CGAL/Boolean_set_operations_2/do_intersect.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Boolean_set_operations_2/include/CGAL/Boolean_set_operations_2/do_intersect.h $
 // $Id: do_intersect.h 7ba4fbc 2022-06-07T20:57:57+02:00 Sébastien Loriot
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

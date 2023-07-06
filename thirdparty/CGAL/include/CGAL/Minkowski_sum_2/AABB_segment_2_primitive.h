@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Minkowski_sum_2/include/CGAL/Minkowski_sum_2/AABB_segment_2_primitive.h $
-// $Id: AABB_segment_2_primitive.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Minkowski_sum_2/include/CGAL/Minkowski_sum_2/AABB_segment_2_primitive.h $
+// $Id: AABB_segment_2_primitive.h 7322c79 2022-11-21T14:09:08+01:00 Sébastien Loriot
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s): Sebastian Morr    <sebastian@morr.cc>
@@ -35,10 +35,8 @@ public:
   {
   }
 
-  AABB_segment_2_primitive(const AABB_segment_2_primitive &primitive)
-  {
-    m_it = primitive.id();
-  }
+  AABB_segment_2_primitive(const AABB_segment_2_primitive& primitive) = default;
+  AABB_segment_2_primitive& operator=(const AABB_segment_2_primitive& primitive) = default;
 
   const Id &id() const
   {

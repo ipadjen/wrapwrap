@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Surface_mesh_topology/include/CGAL/Surface_mesh_topology/internal/Path_generators.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_topology/include/CGAL/Surface_mesh_topology/internal/Path_generators.h $
 // $Id: Path_generators.h 440a8df 2022-02-03T08:41:04+00:00 Andreas Fabri
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

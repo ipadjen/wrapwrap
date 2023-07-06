@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Intersections_3/include/CGAL/Intersections_3/internal/Bbox_3_Segment_3_do_intersect.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_3/include/CGAL/Intersections_3/internal/Bbox_3_Segment_3_do_intersect.h $
 // $Id: Bbox_3_Segment_3_do_intersect.h 35eee1b 2022-02-03T15:47:17+00:00 Andreas Fabri
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

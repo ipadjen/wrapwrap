@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Point_set_processing_3/include/CGAL/bilateral_smooth_point_set.h $
-// $Id: bilateral_smooth_point_set.h 75b03e6 2022-01-10T15:33:04+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_processing_3/include/CGAL/bilateral_smooth_point_set.h $
+// $Id: bilateral_smooth_point_set.h 38fd07d 2022-11-08T10:24:43+01:00 Jane Tournois
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Shihao Wu, Clement Jamin, Pierre Alliez
@@ -278,7 +278,7 @@ bilateral_smooth_point_set(
   typedef typename Kernel::Point_3 Point_3;
   typedef typename Kernel::Vector_3 Vector_3;
 
-  CGAL_static_assertion_msg(NP_helper::has_normal_map(), "Error: no normal map");
+  CGAL_assertion_msg(NP_helper::has_normal_map(points, np), "Error: no normal map");
 
   typedef typename Kernel::FT FT;
 

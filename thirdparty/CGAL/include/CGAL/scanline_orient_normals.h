@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Point_set_processing_3/include/CGAL/scanline_orient_normals.h $
-// $Id: scanline_orient_normals.h 75b03e6 2022-01-10T15:33:04+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_processing_3/include/CGAL/scanline_orient_normals.h $
+// $Id: scanline_orient_normals.h bccf399 2022-11-08T10:51:46+01:00 Jane Tournois
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Simon Giraudot
@@ -478,7 +478,7 @@ void scanline_orient_normals (PointRange& points, const NamedParameters& np = pa
     <internal_np::scanline_id_t, NamedParameters, No_map>::type;
   using Fallback_scanline_ID = Boolean_tag<std::is_same<ScanlineIDMap, No_map>::value>;
 
-  CGAL_static_assertion_msg(NP_helper::has_normal_map(), "Error: no normal map");
+  CGAL_assertion_msg(NP_helper::has_normal_map(points, np), "Error: no normal map");
 
   PointMap point_map = NP_helper::get_point_map(points, np);
   NormalMap normal_map = NP_helper::get_normal_map(points, np);

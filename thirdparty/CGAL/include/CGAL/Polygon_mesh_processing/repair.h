@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/repair.h $
-// $Id: repair.h 477353d 2022-04-20T15:55:50+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/repair.h $
+// $Id: repair.h 5a992f6 2022-11-22T10:31:34+01:00 Sébastien Loriot
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -14,7 +14,7 @@
 #ifndef CGAL_POLYGON_MESH_PROCESSING_REPAIR_H
 #define CGAL_POLYGON_MESH_PROCESSING_REPAIR_H
 
-#include <CGAL/license/Polygon_mesh_processing/repair.h>
+#include <CGAL/license/Polygon_mesh_processing/geometric_repair.h>
 
 #include <CGAL/Polygon_mesh_processing/manifoldness.h>
 #include <CGAL/Polygon_mesh_processing/repair_degeneracies.h>
@@ -218,7 +218,7 @@ std::size_t remove_connected_components_of_negligible_size(TriangleMesh& tmesh,
     area_threshold = CGAL::square(threshold_value);
 
   if(is_default_volume_threshold)
-    volume_threshold = CGAL::square(threshold_value);
+    volume_threshold = CGAL::square(threshold_value) * threshold_value;
 
   const bool use_areas = (is_default_area_threshold || area_threshold > 0);
   const bool use_volumes = (is_default_volume_threshold || volume_threshold > 0);

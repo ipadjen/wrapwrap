@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Barycentric_coordinates_2/include/CGAL/Barycentric_coordinates_2/triangle_coordinates_2.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Barycentric_coordinates_2/include/CGAL/Barycentric_coordinates_2/triangle_coordinates_2.h $
 // $Id: triangle_coordinates_2.h 0e84898 2022-05-13T15:50:21+02:00 Sebastien Loriot
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

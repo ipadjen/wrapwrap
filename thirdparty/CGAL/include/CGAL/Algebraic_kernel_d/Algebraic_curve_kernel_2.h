@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d/Algebraic_curve_kernel_2.h $
-// $Id: Algebraic_curve_kernel_2.h 1faa0e2 2021-04-28T10:55:26+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d/Algebraic_curve_kernel_2.h $
+// $Id: Algebraic_curve_kernel_2.h 7322c79 2022-11-21T14:09:08+01:00 Sébastien Loriot
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -356,10 +356,10 @@ public:
                      const OuterFunctor& outer)
          : _inner(inner), _outer(outer) {}
 
-       Unary_compose(const Unary_compose& other)
-         : _inner(other._inner), _outer(other._outer) {}
+       Unary_compose(const Unary_compose& other) = default;
+       Unary_compose& operator=(const Unary_compose& other) = default;
 
-         Unary_compose() : _inner(::boost::none),_outer(::boost::none) {}
+       Unary_compose() : _inner(::boost::none),_outer(::boost::none) {}
 
        typedef typename InnerFunctor::argument_type argument_type;
        typedef typename OuterFunctor::result_type result_type;

@@ -7,7 +7,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Kernel_23/include/CGAL/Vector_2.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Kernel_23/include/CGAL/Vector_2.h $
 // $Id: Vector_2.h 2884569 2022-04-27T16:32:06+02:00 Laurent Rineau
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

@@ -7,7 +7,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Cartesian_kernel/include/CGAL/constructions/kernel_ftC3.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Cartesian_kernel/include/CGAL/constructions/kernel_ftC3.h $
 // $Id: kernel_ftC3.h 1916290 2022-03-21T18:04:03+01:00 Mael Rouxel-Labbé
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

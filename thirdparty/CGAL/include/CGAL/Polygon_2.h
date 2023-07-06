@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Polygon/include/CGAL/Polygon_2.h $
-// $Id: Polygon_2.h 3c8d97c 2022-03-04T09:57:53+00:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon/include/CGAL/Polygon_2.h $
+// $Id: Polygon_2.h 81f127d 2023-01-31T08:36:31+00:00 Andreas Fabri
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -238,8 +238,11 @@ class Polygon_2 {
     /// Erases the vertex pointed to by `i`.
     Vertex_circulator erase(Vertex_circulator i)
       {
-        return Vertex_circulator(&d_container,
-                                 d_container.erase(i.mod_iterator()));
+        auto it = d_container.erase(i.mod_iterator());
+        if(it == d_container.end()){
+          it = d_container.begin();
+        }
+        return Vertex_circulator(&d_container, it);
       }
 
     /// Erases the vertices in the range `[first, last)`.

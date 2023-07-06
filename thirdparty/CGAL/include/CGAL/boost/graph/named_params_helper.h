@@ -1,7 +1,7 @@
 // Copyright (c) 2007-2015  GeometryFactory (France).  All rights reserved.
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/BGL/include/CGAL/boost/graph/named_params_helper.h $
-// $Id: named_params_helper.h 477353d 2022-04-20T15:55:50+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/BGL/include/CGAL/boost/graph/named_params_helper.h $
+// $Id: named_params_helper.h 38fd07d 2022-11-08T10:24:43+01:00 Jane Tournois
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Andreas Fabri, Fernando Cacciola, Jane Tournois
@@ -336,10 +336,10 @@ struct Point_set_processing_3_np_helper
     return parameters::choose_parameter<Geom_traits>(parameters::get_parameter(np, internal_np::geom_traits));
   }
 
-  static constexpr bool has_normal_map()
+  static constexpr bool has_normal_map(const PointRange&, const NamedParameters&)
   {
-    return !boost::is_same< typename internal_np::Get_param<typename NamedParameters::base, internal_np::normal_t>::type,
-                            internal_np::Param_not_found> ::value;
+    using CGAL::parameters::is_default_parameter;
+    return !(is_default_parameter<NamedParameters, internal_np::normal_t>::value);
   }
 };
 

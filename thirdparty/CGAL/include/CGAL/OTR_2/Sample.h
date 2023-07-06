@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Optimal_transportation_reconstruction_2/include/CGAL/OTR_2/Sample.h $
-// $Id: Sample.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Optimal_transportation_reconstruction_2/include/CGAL/OTR_2/Sample.h $
+// $Id: Sample.h 939a6a2 2023-01-02T13:17:17+00:00 Andreas Fabri
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Fernando de Goes, Pierre Alliez, Ivo Vigan, Clément Jamin
@@ -39,6 +39,9 @@ private:
   FT m_backup_coord;
 
 public:
+  Sample()
+  {}
+
   Sample(const Point& point,
       const FT mass = FT(1))
   : m_point(point),
@@ -94,23 +97,20 @@ public:
   typedef typename Sample_::FT FT;
 
 private:
-  Sample_* m_sample;
+  int m_sample;
   FT m_priority;
 
 public:
-  Sample_with_priority(Sample_* sample, const FT priority = FT(0))
-  {
-    m_sample   = sample;
-    m_priority = priority;
-  }
+  Sample_with_priority(int sample, const FT priority = FT(0))
+    : m_sample(sample), m_priority(priority)
+  {}
 
   Sample_with_priority(const Sample_with_priority& psample)
-  {
-    m_sample   = psample.sample();
-    m_priority = psample.priority();
-  }
+    : m_sample(psample.sample()), m_priority(psample.priority())
+  {}
 
-  ~Sample_with_priority() { }
+  ~Sample_with_priority()
+  {}
 
   Sample_with_priority& operator = (const Sample_with_priority& psample)
   {
@@ -119,7 +119,7 @@ public:
     return *this;
   }
 
-  Sample_* sample() const { return m_sample; }
+  int sample() const { return m_sample; }
 
   const FT priority() const { return m_priority; }
 };

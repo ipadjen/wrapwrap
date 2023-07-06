@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/STL_Extension/include/CGAL/Handle.h $
-// $Id: Handle.h 8fa0f55 2021-05-27T10:27:38+02:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/STL_Extension/include/CGAL/Handle.h $
+// $Id: Handle.h 4d797b5 2022-11-17T19:03:30+01:00 Sébastien Loriot
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -122,7 +122,7 @@ class Handle
     int
     refs()  const noexcept { return PTR->count.load(std::memory_order_relaxed); }
 
-    Id_type id() const noexcept { return PTR - static_cast<Rep*>(0); }
+    Id_type id() const noexcept { return std::distance(static_cast<Rep*>(0), PTR); }
 
     bool identical(const Handle& h) const noexcept { return PTR == h.PTR; }
 

@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Surface_mesh_approximation/include/CGAL/Surface_mesh_approximation/L2_metric_plane_proxy.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_approximation/include/CGAL/Surface_mesh_approximation/L2_metric_plane_proxy.h $
 // $Id: L2_metric_plane_proxy.h 4ffc949 2022-02-03T17:11:20+01:00 Sébastien Loriot
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

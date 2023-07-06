@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Convex_hull_3/include/CGAL/convex_hull_3.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Convex_hull_3/include/CGAL/convex_hull_3.h $
 // $Id: convex_hull_3.h 9bb36b0 2022-02-01T08:58:25+01:00 Laurent Rineau
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

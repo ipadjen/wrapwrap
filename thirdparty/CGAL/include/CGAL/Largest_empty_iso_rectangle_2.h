@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Inscribed_areas/include/CGAL/Largest_empty_iso_rectangle_2.h $
-// $Id: Largest_empty_iso_rectangle_2.h 0fcbaf5 2020-05-24T11:15:12+02:00 Marc Glisse
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Inscribed_areas/include/CGAL/Largest_empty_iso_rectangle_2.h $
+// $Id: Largest_empty_iso_rectangle_2.h 9dbf5c8 2023-01-27T13:37:34+00:00 Andreas Fabri
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -762,7 +762,7 @@ bool
 Largest_empty_iso_rectangle_2<T>::insert(const Point_2& _p)
 {
   // check that the point is inside the bounding box
-  if(bbox_p.has_on_unbounded_side(_p)) {
+  if(! bbox_p.has_on_bounded_side(_p)) {
     return(false);
   }
 

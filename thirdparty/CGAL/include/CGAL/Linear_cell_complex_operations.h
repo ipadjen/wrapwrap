@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Linear_cell_complex/include/CGAL/Linear_cell_complex_operations.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Linear_cell_complex/include/CGAL/Linear_cell_complex_operations.h $
 // $Id: Linear_cell_complex_operations.h 440a8df 2022-02-03T08:41:04+00:00 Andreas Fabri
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //

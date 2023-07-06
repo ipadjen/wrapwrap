@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Straight_skeleton_2/include/CGAL/Trisegment_2.h $
-// $Id: Trisegment_2.h b43e578 2020-11-27T14:00:24+01:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Straight_skeleton_2/include/CGAL/Trisegment_2.h $
+// $Id: Trisegment_2.h b1b7cac 2023-01-04T16:26:09+01:00 Mael Rouxel-Labbé
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Fernando Cacciola <fernando_cacciola@ciudad.com.ar>
@@ -60,7 +60,7 @@ struct Minmax_traits< Trisegment_collinearity >
   static const Trisegment_collinearity max = TRISEGMENT_COLLINEARITY_ALL;
 };
 
-}
+} // namespace internal
 
 template<class K, typename Segment>
 class Trisegment_2
@@ -181,10 +181,22 @@ public:
       os << *aTriPtr ;
 
       if ( aTriPtr->child_l() )
+      {
+        os << " \nleft child:" ;
         recursive_print(os,aTriPtr->child_l(),aDepth+1);
+      }
 
       if ( aTriPtr->child_r() )
+      {
+        os << " \nright child:" ;
         recursive_print(os,aTriPtr->child_r(),aDepth+1);
+      }
+
+      if ( aTriPtr->child_t() )
+      {
+        os << " \nthird child:" ;
+        recursive_print(os,aTriPtr->child_t(),aDepth+1);
+      }
     }
     else
     {

@@ -3,7 +3,7 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Arrangement_on_surface_2/include/CGAL/Arr_geodesic_arc_on_sphere_traits_2.h $
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_geodesic_arc_on_sphere_traits_2.h $
 // $Id: Arr_geodesic_arc_on_sphere_traits_2.h 7d4a8e5 2022-04-06T09:12:02+02:00 Laurent Rineau
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //

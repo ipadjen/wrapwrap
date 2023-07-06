@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/STL_Extension/include/CGAL/STL_Extension/internal/parameters_interface.h $
-// $Id: parameters_interface.h 6869bdd 2022-06-07T16:15:53+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/STL_Extension/include/CGAL/STL_Extension/internal/parameters_interface.h $
+// $Id: parameters_interface.h f372bbe 2022-12-19T14:35:16+01:00 Sébastien Loriot
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -144,6 +144,7 @@ CGAL_add_named_parameter(random_seed_t, random_seed, random_seed)
 CGAL_add_named_parameter(do_lock_mesh_t, do_lock_mesh, do_lock_mesh)
 CGAL_add_named_parameter(do_simplify_border_t, do_simplify_border, do_simplify_border)
 CGAL_add_named_parameter(algorithm_t, algorithm, algorithm)
+CGAL_add_named_parameter(use_smoothing_t, use_smoothing, use_smoothing)
 
 //internal
 CGAL_add_named_parameter(weight_calculator_t, weight_calculator, weight_calculator)

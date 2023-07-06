@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Point_set_processing_3/include/CGAL/structure_point_set.h $
-// $Id: structure_point_set.h 477353d 2022-04-20T15:55:50+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_processing_3/include/CGAL/structure_point_set.h $
+// $Id: structure_point_set.h bccf399 2022-11-08T10:51:46+01:00 Jane Tournois
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -234,7 +234,7 @@ public:
     typedef typename Point_set_processing_3::GetPlaneMap<PlaneRange, NamedParameters>::type PlaneMap;
     typedef typename Point_set_processing_3::GetPlaneIndexMap<NamedParameters>::type PlaneIndexMap;
 
-    CGAL_static_assertion_msg(NP_helper::has_normal_map(), "Error: no normal map");
+    CGAL_assertion_msg(NP_helper::has_normal_map(points, np), "Error: no normal map");
     CGAL_static_assertion_msg((!is_default_parameter<NamedParameters, internal_np::plane_index_t>::value),
                               "Error: no plane index map");
 

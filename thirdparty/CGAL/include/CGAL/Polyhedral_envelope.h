@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5/Polygon_mesh_processing/include/CGAL/Polyhedral_envelope.h $
-// $Id: Polyhedral_envelope.h 477353d 2022-04-20T15:55:50+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polyhedral_envelope.h $
+// $Id: Polyhedral_envelope.h 9159816 2022-12-07T08:02:35+00:00 Andreas Fabri
 // SPDX-License-Identifier: ( GPL-3.0-or-later OR LicenseRef-Commercial ) AND MIT
 //
 // Author(s)     : Andreas Fabri
@@ -864,7 +864,11 @@ private:
   Implicit_Seg_Facet_interpoint_Out_Prism_return_local_id(const ePoint_3 &ip,
                                                           const std::vector<unsigned int> &prismindex, const unsigned int &jump, int &id) const
   {
-    Oriented_side ori;
+    Oriented_side ori = ON_POSITIVE_SIDE; // The compiler sees the
+                                          // possibility that the
+                                          // nested for loop body is
+                                          // not executed and warns that
+                                          // ori may not be initialized
 
     for (unsigned int i = 0; i < prismindex.size(); i++){
       if (prismindex[i] == jump){
