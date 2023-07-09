@@ -59,3 +59,8 @@ jobs:
           cd Release
           cmake ..
           cmake --build . --parallel 4 --config Release
+      - name: Upload binary file as an artifact
+        uses: actions/upload-artifact@main
+        with:
+          name: wrapwrap-win64
+          path: ./Release/Release/wrapwrap.exe

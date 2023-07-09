@@ -181,8 +181,6 @@ int main(int argc, char** argv) {
 
         return EXIT_SUCCESS;
     } catch (std::exception& e) {
-        //-- Output log
-
         std::cerr << "\nProgram failed! Reason: " << e.what() << std::endl;
         std::cout << "End" << std::endl;
         return EXIT_FAILURE;

@@ -284,6 +284,7 @@ public:
     std::cout << "Flood filling took: " << t.time() << " s." << std::endl;
 #endif
 
+    std::cout << "  enforcing manifoldness and extracting surface..." << std::endl;
     if(do_enforce_manifoldness)
     {
 #ifdef CGAL_AW3_DEBUG_MANIFOLDNESS
@@ -1047,9 +1048,16 @@ private:
 
     visitor.on_flood_fill_begin(*this);
 
+    int curr_iter = 0;
     // Explore all finite cells that are reachable from one of the initial outside cells.
     while(!m_queue.empty())
     {
+      if ((curr_iter % 3000) == 0)
+      {
+        std::cout << "\r" "  cells to visit: " << m_queue.size()
+        << "              "      << std::flush;
+      } ++curr_iter;
+
 #ifdef CGAL_AW3_DEBUG_QUEUE_PP
       check_queue_sanity();
 #endif
@@ -1189,6 +1197,8 @@ private:
         }
       }
     } // while(!queue.empty())
+    std::cout << "\r" "  cells to visit: 0"
+              << "                 "      << std::endl;
 
     visitor.on_flood_fill_end(*this);
 
