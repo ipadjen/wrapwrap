@@ -32,7 +32,7 @@ jobs:
             mkdir build && cd build
             cmake .. && make -j4
 
-  build-windows:
+  build_windows:
     runs-on: windows-latest
     steps:
       - name: Install boost
