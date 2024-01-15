@@ -89,7 +89,7 @@ void fillHoles(Mesh& mesh) {
 
     // fill using boundary halfedges
     for(halfedge_descriptor h : border_cycles)
-      PMP::triangulate_hole(mesh, h, CGAL::Emptyset_iterator());
+      PMP::triangulate_hole(mesh, h);
 
     std::cout << "  done" << std::endl;
   }
