@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_topology_traits/Arr_inc_insertion_zone_visitor.h $
-// $Id: Arr_inc_insertion_zone_visitor.h 6e1fc8a 2021-09-02T16:53:07+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_topology_traits/Arr_inc_insertion_zone_visitor.h $
+// $Id: include/CGAL/Arr_topology_traits/Arr_inc_insertion_zone_visitor.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -59,8 +59,8 @@ private:
   const Vertex_handle invalid_v;        // An invalid vertex handle.
   const Halfedge_handle invalid_he;     // An invalid halfedge handle.
 
-  X_monotone_curve_2 m_sub_cv1;           // Auxiliary varibale (for splitting).
-  X_monotone_curve_2 m_sub_cv2;           // Auxiliary varibale (for splitting).
+  X_monotone_curve_2 m_sub_cv1;           // Auxiliary variable (for splitting).
+  X_monotone_curve_2 m_sub_cv2;           // Auxiliary variable (for splitting).
 
 public:
   /*! Constructor. */

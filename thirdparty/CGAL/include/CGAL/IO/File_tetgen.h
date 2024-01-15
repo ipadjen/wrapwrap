@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/IO/File_tetgen.h $
-// $Id: File_tetgen.h fb6f703 2021-05-04T14:07:49+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/SMDS_3/include/CGAL/IO/File_tetgen.h $
+// $Id: include/CGAL/IO/File_tetgen.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -13,7 +13,7 @@
 #ifndef CGAL_IO_FILE_TETGEN_H
 #define CGAL_IO_FILE_TETGEN_H
 
-#include <CGAL/license/Mesh_3.h>
+#include <CGAL/license/SMDS_3.h>
 
 #include <CGAL/Time_stamper.h>
 #include <CGAL/IO/File_medit.h>
@@ -25,7 +25,7 @@
 
 namespace CGAL {
 
-namespace Mesh_3 {
+namespace SMDS_3 {
 
 template <class C3T3, bool rebind, bool no_patch>
 void
@@ -185,10 +185,22 @@ output_to_tetgen(std::string filename,
   //-------------------------------------------------------
 } // end output_to_tetgen(...)
 
-} // end namespace Mesh_3
+} // end namespace SMDS_3
 
 namespace IO {
 
+
+/**
+ * \ingroup PkgSMDS3ExportFunctions
+ * @brief exports a mesh complex to tetgen format
+ * @param filename the path to the output files, without the extension.
+ * @param c3t3 the mesh complex
+ * @param rebind if true, labels of cells are rebinded into [1..nb_of_labels]
+ * @param show_patches if true, patches are labeled with different labels than
+ * cells. If false, each surface facet is written twice, using the label of
+ * each adjacent cell.
+ * \see \ref IOStreamTetgen
+ */
 template <class C3T3>
 void
 output_to_tetgen(std::string filename,
@@ -199,16 +211,16 @@ output_to_tetgen(std::string filename,
   if ( rebind )
   {
     if ( show_patches )
-      Mesh_3::output_to_tetgen<C3T3,true,false>(filename,c3t3);
+      SMDS_3::output_to_tetgen<C3T3,true,false>(filename,c3t3);
     else
-      Mesh_3::output_to_tetgen<C3T3,true,true>(filename,c3t3);
+      SMDS_3::output_to_tetgen<C3T3,true,true>(filename,c3t3);
   }
   else
   {
     if ( show_patches )
-      Mesh_3::output_to_tetgen<C3T3,false,false>(filename,c3t3);
+      SMDS_3::output_to_tetgen<C3T3,false,false>(filename,c3t3);
     else
-      Mesh_3::output_to_tetgen<C3T3,false,true>(filename,c3t3);
+      SMDS_3::output_to_tetgen<C3T3,false,true>(filename,c3t3);
   }
 }
 

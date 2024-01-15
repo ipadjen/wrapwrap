@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/Mesh_3/experimental/Get_curve_index.h $
-// $Id: Get_curve_index.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_3/include/CGAL/Mesh_3/experimental/Get_curve_index.h $
+// $Id: include/CGAL/Mesh_3/experimental/Get_curve_index.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -57,14 +57,12 @@ get(Get_curve_index<Primitive>, const typename Primitive::Id id) {
 
 }} // end namespace CGAL::Mesh_3
 
-#include <boost/type_traits/remove_const.hpp>
-
 namespace boost {
   // specialization for using pointers as property maps
   template <typename Primitive>
   struct property_traits<CGAL::Mesh_3::Get_curve_index<Primitive> > {
     typedef typename std::iterator_traits<typename Primitive::Id::first_type>::value_type ConstPair;
-    typedef typename boost::remove_const<typename ConstPair::first_type>::type value_type;
+    typedef std::remove_const_t<typename ConstPair::first_type> value_type;
     typedef value_type& reference;
     typedef typename Primitive::Id key_type;
     typedef readable_property_map_tag category;

@@ -16,11 +16,11 @@
  *       Zilin Du <zilin@cs.nyu.edu>
  *       Sylvain Pion <pion@cs.nyu.edu>
  *
- * WWW URL: http://cs.nyu.edu/exact/
+ * WWW URL: https://cs.nyu.edu/exact/
  * Email: exact@cs.nyu.edu
  *
- * $URL: https://github.com/CGAL/cgal/blob/v5.5.2/CGAL_Core/include/CGAL/CORE/RealRep.h $
- * $Id: RealRep.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+ * $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/CGAL_Core/include/CGAL/CORE/RealRep.h $
+ * $Id: include/CGAL/CORE/RealRep.h a484bfa $
  * SPDX-License-Identifier: LGPL-3.0-or-later
  ***************************************************************************/
 #ifndef _CORE_REALREP_H_
@@ -459,7 +459,7 @@ inline unsigned long RealBigFloat::length() const {
   // The BigRat(BigFloat) actually is a
   // conversion operator (defined in BigFloat.h), _NOT_
   // an ordinary class constructor! The C++ language
-  // specify that an intialization is not an assignment
+  // specify that an initialization is not an assignment
   // but a constructor operation!
   // Considering that BigRat(BigFloat) is a conversion
   // operator not really a constructor. The programmer's

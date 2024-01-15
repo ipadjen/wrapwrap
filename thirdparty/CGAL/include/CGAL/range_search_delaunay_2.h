@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_2/include/CGAL/range_search_delaunay_2.h $
-// $Id: range_search_delaunay_2.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Point_set_2/include/CGAL/range_search_delaunay_2.h $
+// $Id: include/CGAL/range_search_delaunay_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -204,7 +204,7 @@ OutputIterator range_search(Dt& delau,
 // and then performs a range query with this circle.
 // When vertices of the trinagulation are on the circle the outcome
 // is not deterministic.
-// A solution would be to not constuct a circle, but to use the
+// A solution would be to not construct a circle, but to use the
 // function CGAL::side_of_bounded_circle
 
 template<class Dt, class OutputIterator>

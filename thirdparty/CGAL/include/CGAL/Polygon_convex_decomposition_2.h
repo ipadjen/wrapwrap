@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Minkowski_sum_2/include/CGAL/Polygon_convex_decomposition_2.h $
-// $Id: Polygon_convex_decomposition_2.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Minkowski_sum_2/include/CGAL/Polygon_convex_decomposition_2.h $
+// $Id: include/CGAL/Polygon_convex_decomposition_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Ron Wein   <wein_r@yahoo.com>
@@ -22,7 +22,7 @@ namespace CGAL {
 
 /*!
  * \class
- * The O(n^4) optimal strategy for decomposing a polygon into convex
+ * The \cgalBigO{n^4} optimal strategy for decomposing a polygon into convex
  * sub-polygons.
  */
 template <typename Kernel_,
@@ -39,7 +39,7 @@ public:
 
 /*!
  * \class
- * Hertel and Mehlhorn's O(n) approximation strategy for decomposing a
+ * Hertel and Mehlhorn's \cgalBigO{n} approximation strategy for decomposing a
  * polygon into convex sub-polygons.
  */
 template <typename Kernel_,
@@ -56,7 +56,7 @@ public:
 
 /*!
  * \class
- * Greene's O(n log(n)) approximation strategy for decomposing a polygon into
+ * Greene's \cgalBigO{n log(n)} approximation strategy for decomposing a polygon into
  * convex sub-polygons.
  */
 template <typename Kernel_,

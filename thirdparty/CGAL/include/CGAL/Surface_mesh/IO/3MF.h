@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh/include/CGAL/Surface_mesh/IO/3MF.h $
-// $Id: 3MF.h 56025fb 2021-05-04T14:38:47+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh/include/CGAL/Surface_mesh/IO/3MF.h $
+// $Id: include/CGAL/Surface_mesh/IO/3MF.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Maxime Gimeno

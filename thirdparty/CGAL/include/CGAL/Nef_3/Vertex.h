@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_3/include/CGAL/Nef_3/Vertex.h $
-// $Id: Vertex.h 2d4a857 2022-03-12T12:06:17+00:00 Giles Bathgate
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Nef_3/include/CGAL/Nef_3/Vertex.h $
+// $Id: include/CGAL/Nef_3/Vertex.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -30,7 +30,7 @@
 #include <CGAL/Nef_2/debug.h>
 
 #ifndef CGAL_I_DO_WANT_TO_USE_GENINFO
-#include <boost/any.hpp>
+#include <any>
 #endif
 
 namespace CGAL {
@@ -41,7 +41,7 @@ class Vertex_base {
   #ifdef CGAL_I_DO_WANT_TO_USE_GENINFO
   typedef void* GenPtr;
   #else
-  typedef boost::any GenPtr;
+  typedef std::any GenPtr;
   #endif
   typedef typename Refs::Mark  Mark;
   typedef typename Refs::Point_3 Point_3;
@@ -128,7 +128,7 @@ class Vertex_base {
       Refs*& sncp() { return sncp_; }
 
       /* all sobjects of the local graph are stored in a global list
-         where each vertex has a continous range in each list for its
+         where each vertex has a continuous range in each list for its
          sobjects. All objects of the range [sxxx_begin_,sxxx_last_]
          belong to a vertex. This range is empty iff
          sxxx_begin_ == sxxx_last_ == sncp()->sxxx_end()

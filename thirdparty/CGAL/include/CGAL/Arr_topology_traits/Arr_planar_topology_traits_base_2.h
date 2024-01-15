@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_topology_traits/Arr_planar_topology_traits_base_2.h $
-// $Id: Arr_planar_topology_traits_base_2.h 6e1fc8a 2021-09-02T16:53:07+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_topology_traits/Arr_planar_topology_traits_base_2.h $
+// $Id: include/CGAL/Arr_topology_traits/Arr_planar_topology_traits_base_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -71,8 +71,8 @@ protected:
   Dcel m_dcel;                           // The DCEL.
 
   const Traits_adaptor_2* m_geom_traits; // The geometry-traits adaptor.
-  bool m_own_geom_traits;                // Inidicate whether we should
-                                         // evetually free the traits object.
+  bool m_own_geom_traits;                // Indicate whether we should
+                                         // eventually free the traits object.
 
   // Copy constructor and assignment operator - not supported.
   Arr_planar_topology_traits_base_2(const Self&);

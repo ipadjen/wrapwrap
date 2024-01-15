@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Kernel_23/include/CGAL/Iso_rectangle_2.h $
-// $Id: Iso_rectangle_2.h 4e519a3 2021-05-05T13:15:37+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Kernel_23/include/CGAL/Iso_rectangle_2.h $
+// $Id: include/CGAL/Iso_rectangle_2.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -18,7 +18,6 @@
 #define CGAL_ISO_RECTANGLE_2_H
 
 #include <CGAL/assertions.h>
-#include <boost/type_traits/is_same.hpp>
 #include <CGAL/Kernel/Return_base_tag.h>
 #include <CGAL/Bbox_2.h>
 #include <CGAL/Dimension.h>
@@ -34,7 +33,7 @@ class Iso_rectangle_2 : public R_::Kernel_base::Iso_rectangle_2
   typedef typename R_::Aff_transformation_2  Aff_transformation_2;
 
   typedef Iso_rectangle_2                    Self;
-  CGAL_static_assertion((boost::is_same<Self, typename R_::Iso_rectangle_2>::value));
+  static_assert(std::is_same<Self, typename R_::Iso_rectangle_2>::value);
 
 public:
 
@@ -79,7 +78,9 @@ public:
     : Rep(typename R::Construct_iso_rectangle_2()(Return_base_tag(), min_hx, min_hy, max_hx, max_hy, hw)) {}
 
   Iso_rectangle_2(const Bbox_2& bbox)
-    : Rep(typename R::Construct_iso_rectangle_2()(Return_base_tag(), bbox.xmin(), bbox.ymin(), bbox.xmax(), bbox.ymax())) {}
+    : Rep(typename R::Construct_iso_rectangle_2()(Return_base_tag(),
+                                                  typename R::Construct_point_2()(FT(bbox.xmin()), FT(bbox.ymin())),
+                                                  typename R::Construct_point_2()(FT(bbox.xmax()), FT(bbox.ymax())))) {}
 
   decltype(auto)
   min BOOST_PREVENT_MACRO_SUBSTITUTION () const

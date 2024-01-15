@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_topology_traits/Arr_unb_planar_construction_helper.h $
-// $Id: Arr_unb_planar_construction_helper.h 5985db1 2021-07-28T16:17:10+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_topology_traits/Arr_unb_planar_construction_helper.h $
+// $Id: include/CGAL/Arr_topology_traits/Arr_unb_planar_construction_helper.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -165,7 +165,7 @@ public:
   {
     // If we insert an edge whose right end lies on the top edge of the
     // ficititous bounding rectangle, we have to flip the order of predecessor
-    // halfegdes.
+    // halfedges.
     return ((event->parameter_space_in_x() == ARR_INTERIOR) &&
             (event->parameter_space_in_y() == ARR_TOP_BOUNDARY));
   }
@@ -272,6 +272,21 @@ before_handle_event(Event* event)
     if (m_prev_minus_inf_x_event != nullptr)
       m_prev_minus_inf_x_event->set_halfedge_handle(m_lh->next());
     m_prev_minus_inf_x_event = event;
+
+    // If the event lies also on the top boundary, associate all curve indices
+    // of subcurves that "see" m_th from below with the top fictitious halfedge
+    // (m_th->next()).
+    if (ps_y == ARR_TOP_BOUNDARY) {
+      if (m_he_ind_map_p != nullptr) {
+        Indices_list& list_ref = (*m_he_ind_map_p)[m_th];
+        list_ref.clear();
+        list_ref.splice(list_ref.end(), m_subcurves_at_ubf);
+      }
+      else {
+        m_subcurves_at_ubf.clear();
+      }
+      CGAL_assertion(m_subcurves_at_ubf.empty());
+    }
     return;
 
    case ARR_RIGHT_BOUNDARY:

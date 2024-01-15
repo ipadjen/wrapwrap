@@ -4,8 +4,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/CGAL_ImageIO/include/CGAL/Image_3.h $
-// $Id: Image_3.h 4ffc949 2022-02-03T17:11:20+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/CGAL_ImageIO/include/CGAL/Image_3.h $
+// $Id: include/CGAL/Image_3.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -87,7 +87,7 @@ public:
 protected:
   Image_shared_ptr image_ptr;
 
-   // implementation in src/CGAL_ImageIO/Image_3.cpp
+   // implementation in Image_3_impl.h
   bool private_read(_image* im, Own own_the_data = OWN_THE_DATA);
 
 public:
@@ -149,6 +149,10 @@ public:
   float tx() const { return image_ptr->tx; }
   float ty() const { return image_ptr->ty; }
   float tz() const { return image_ptr->tz; }
+
+  float& tx(){ return image_ptr->tx; }
+  float& ty(){ return image_ptr->ty; }
+  float& tz(){ return image_ptr->tz; }
 
   float value(const std::size_t i,
               const std::size_t j,

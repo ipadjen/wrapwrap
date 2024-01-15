@@ -18,11 +18,11 @@
  *       Sylvain Pion <pion@cs.nyu.edu>
  *       Vikram Sharma<sharma@cs.nyu.edu>
  *
- * WWW URL: http://cs.nyu.edu/exact/
+ * WWW URL: https://cs.nyu.edu/exact/
  * Email: exact@cs.nyu.edu
  *
- * $URL: https://github.com/CGAL/cgal/blob/v5.5.2/CGAL_Core/include/CGAL/CORE/ExprRep.h $
- * $Id: ExprRep.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+ * $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/CGAL_Core/include/CGAL/CORE/ExprRep.h $
+ * $Id: include/CGAL/CORE/ExprRep.h a484bfa $
  * SPDX-License-Identifier: LGPL-3.0-or-later
  ***************************************************************************/
 
@@ -145,7 +145,7 @@ struct NodeInfo {
 // class Expr;
 
 /// \class ExprRep
-/// \brief The sharable, internal representation of expressions
+/// \brief The shareable, internal representation of expressions
 //  Members: private: int refCount,
 //            public:  NodeInfo* nodeInfo,
 //                     filteredFp ffVal.
@@ -425,7 +425,7 @@ public:
   extLong computeBound();
   /// driver function to approximate
   void approx(const extLong& relPrec, const extLong& absPrec);
-  /// compute an approximate value satifying the specified precisions
+  /// compute an approximate value satisfying the specified precisions
   virtual void computeApproxValue(const extLong&, const extLong&) = 0;
   /// Test whether the current approx. value satisfies [relPrec, absPrec]
   bool withinKnownPrecision(const extLong&, const extLong&);
@@ -1340,7 +1340,7 @@ inline int ExprRep::getExactSign() {
 }
 
 // Chee, 7/17/02: degreeBound() function is now
-// taken out of "computeExactFlags()
+// taken out of "computeExactFlags()"
 inline int ExprRep::getSign() {
   if (ffVal.isOK())
     return ffVal.sign();

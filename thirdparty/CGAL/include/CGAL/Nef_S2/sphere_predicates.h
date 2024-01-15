@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_S2/include/CGAL/Nef_S2/sphere_predicates.h $
-// $Id: sphere_predicates.h 31e4638 2020-11-11T18:47:25+00:00 Giles Bathgate
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Nef_S2/include/CGAL/Nef_S2/sphere_predicates.h $
+// $Id: include/CGAL/Nef_S2/sphere_predicates.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -51,7 +51,7 @@ points are part of the equator first. Otherwise we sort according to
 the angle of the halfcircle through $S$, $N$, and the points with
 respect to the xy-plane. If both lie on the same halfcircle then the
 angle with respect to $OS$ decides. The parameter $pos=1$ does
-everthing in the positive halfsphere. If $pos=-1$ then we rotate the
+everything in the positive halfsphere. If $pos=-1$ then we rotate the
 whole scenery around the y-axis by $\pi$. Then the x-axis points left
 and the z-axis into the equatorial plane. */
 

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/IO/Arrangement_2_writer.h $
-// $Id: Arrangement_2_writer.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/IO/Arrangement_2_writer.h $
+// $Id: include/CGAL/IO/Arrangement_2_writer.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Ron Wein           <wein@post.tau.ac.il>
@@ -63,7 +63,7 @@ namespace CGAL {
     typedef std::map<const DVertex*, int>                 Vertex_index_map;
     typedef std::map<const DHalfedge*, int>               Halfedge_index_map;
 
-    // Data memebrs:
+    // Data members:
     const Arrangement_2&   m_arr;
     const Dcel*            m_dcel;
     int                    m_curr_v;
@@ -307,7 +307,7 @@ namespace CGAL {
       return (pos->second);
     }
 
-    /*! Get the mapped index of a given halfegde. */
+    /*! Get the mapped index of a given halfedge. */
     int _index(const DHalfedge* he) const
     {
       typename Halfedge_index_map::const_iterator  pos = m_he_index.find(he);

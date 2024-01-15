@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_point_location/Arr_simple_point_location_impl.h $
-// $Id: Arr_simple_point_location_impl.h 0626eb0 2020-06-11T12:32:33+03:00 Efi Fogel
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_point_location/Arr_simple_point_location_impl.h $
+// $Id: include/CGAL/Arr_point_location/Arr_simple_point_location_impl.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -92,7 +92,7 @@ Arr_simple_point_location<Arrangement>::locate(const Point_2& p) const
 
 //-----------------------------------------------------------------------------
 // Locate the arrangement feature which a vertical ray emanating from the
-// given point hits (not inculding isolated vertices).
+// given point hits (not including isolated vertices).
 //
 template <class Arrangement>
 typename Arr_simple_point_location<Arrangement>::Optional_result_type
@@ -155,7 +155,7 @@ _base_vertical_ray_shoot(const Point_2& p, bool shoot_up) const
         cl_vt = vt;
       }
       else {
-        // Compare with the vertically closest curve so far and detemine the
+        // Compare with the vertically closest curve so far and determine the
         // curve closest to p. We first check the case that the two curves
         // have a common endpoint (note that the two curves do not intersect
         // in their interiors). Observe that if such a common vertex exists,
@@ -192,7 +192,7 @@ _base_vertical_ray_shoot(const Point_2& p, bool shoot_up) const
           // In case the two curves do not have a common endpoint, but overlap
           // in their x-range (both contain p), just compare their positions.
           // Note that in this case one of the edges may be fictitious, so we
-          // preform the comparsion symbolically in this case.
+          // perform the comparison symbolically in this case.
           y_res = (closest_he->has_null_curve()) ? curve_above_under :
             ((eit->has_null_curve()) ? point_above_under :
              compare_y_position(closest_he->curve(), eit->curve()));

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d/Xy_coordinate_2.h $
-// $Id: Xy_coordinate_2.h 4e519a3 2021-05-05T13:15:37+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d/Xy_coordinate_2.h $
+// $Id: include/CGAL/Algebraic_kernel_d/Xy_coordinate_2.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -81,10 +81,10 @@ public:
     mutable int _m_arcno;
 
     // y-coordinate
-    mutable boost::optional< Algebraic_real_1 > _m_y;
+    mutable std::optional< Algebraic_real_1 > _m_y;
 
     //! A bounding box for the given point
-    mutable boost::optional< std::pair<double,Bbox_2> > _m_bbox_2_pair;
+    mutable std::optional< std::pair<double,Bbox_2> > _m_bbox_2_pair;
 
 };
 
@@ -233,7 +233,7 @@ public:
     }
 
     /*!\brief
-     * constructs a point from a given represenation
+     * constructs a point from a given representation
      */
     Xy_coordinate_2(Rep rep) :
         Base(rep) {
@@ -254,7 +254,7 @@ public:
     /*!
      * \brief y-coordinate of this point
      *
-     * Note: In general, this method results in a extremly large polynomial
+     * Note: In general, this method results in an extremely large polynomial
      * for the y-coordinate. It is recommended to use it carefully,
      * and using get_approximation_y() instead whenever approximations suffice.
      */
@@ -762,7 +762,7 @@ std::istream& operator >> (
 
   is >> arcno;
 
-  // read the ")
+  // read the ")"
   swallow(is, ')');
 
   pt = Xy_coordinate_2(x, curve, arcno);

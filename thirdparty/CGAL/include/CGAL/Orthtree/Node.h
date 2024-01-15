@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Orthtree/include/CGAL/Orthtree/Node.h $
-// $Id: Node.h d1eca83 2022-11-07T17:34:54+00:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Orthtree/include/CGAL/Orthtree/Node.h $
+// $Id: include/CGAL/Orthtree/Node.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Jackson Campolattaro, Cédric Portaneri, Tong Zhao
@@ -44,6 +44,26 @@ struct Node_access
 
   template <typename Node>
   static void split(Node node) { return node.split(); }
+
+  template <typename Node>
+  static void free(Node node)
+  {
+    typedef Dimension_tag<(2 << (Node::Dimension::value - 1))> Degree;
+    std::queue<Node> nodes;
+    nodes.push(node);
+    while (!nodes.empty())
+    {
+      Node node = nodes.front();
+      nodes.pop();
+      if (!node.is_leaf()){
+        for (std::size_t i = 0; i < Degree::value; ++ i){
+          nodes.push (node[i]);
+        }
+      }
+      node.free();
+    }
+  }
+
 };
 
 } // namespace Orthtrees
@@ -57,7 +77,7 @@ struct Node_access
   A `Node` is a lightweight object and thus generally passed by
   copy. It is also a model of `ConstRange` with value type `Traits::Point_d`.
 
-  \cgalModels `ConstRange`
+  \cgalModels{ConstRange}
  */
 template<typename Traits, typename PointRange, typename PointMap>
 class Orthtree<Traits, PointRange, PointMap>::Node

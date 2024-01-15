@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Orthtree/include/CGAL/Orthtree/Traversals.h $
-// $Id: Traversals.h 4d761ed 2021-04-01T14:21:01+02:00 Simon Giraudot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Orthtree/include/CGAL/Orthtree/Traversals.h $
+// $Id: include/CGAL/Orthtree/Traversals.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Jackson Campolattaro, Cédric Portaneri, Tong Zhao
@@ -123,7 +123,7 @@ Node first_child_at_depth(Node n, std::size_t depth) {
 
   A preorder traversal starts from the root towards the leaves.
 
-  \cgalModels `OrthtreeTraversal`
+  \cgalModels{OrthtreeTraversal}
  */
 struct Preorder_traversal {
 
@@ -156,7 +156,7 @@ struct Preorder_traversal {
 
   A postorder traversal starts from the leaves towards the root.
 
-  \cgalModels `OrthtreeTraversal`
+  \cgalModels{OrthtreeTraversal}
  */
 struct Postorder_traversal {
 
@@ -184,7 +184,7 @@ struct Postorder_traversal {
 
   All non-leave nodes are ignored.
 
-  \cgalModels `OrthtreeTraversal`
+  \cgalModels{OrthtreeTraversal}
  */
 struct Leaves_traversal {
 
@@ -213,7 +213,7 @@ struct Leaves_traversal {
   All trees at another depth are ignored. If the selected depth is
   higher than the maximum depth of the orthtree, no node will be traversed.
 
-  \cgalModels `OrthtreeTraversal`
+  \cgalModels{OrthtreeTraversal}
  */
 struct Level_traversal {
 

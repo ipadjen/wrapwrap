@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_topology/include/CGAL/Surface_mesh_topology/internal/Generic_map_selector.h $
-// $Id: Generic_map_selector.h faadbaa 2022-02-09T09:37:41+01:00 Guillaume Damiand
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_topology/include/CGAL/Surface_mesh_topology/internal/Generic_map_selector.h $
+// $Id: include/CGAL/Surface_mesh_topology/internal/Generic_map_selector.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Thien Hoang <thienvhoang99@gmail.com>
@@ -43,11 +43,11 @@ namespace internal {
   {
     using Mesh_original              = Mesh_;
     using Generic_map                = CGAL::Generalized_map<2, Items_>;
-    using Dart_const_handle_original = typename Mesh_original::Dart_const_handle;
-    using Copy_to_origin_map         = std::unordered_map<typename Generic_map::Dart_handle,
-                                                            Dart_const_handle_original>;
-    using Origin_to_copy_map         = std::unordered_map<Dart_const_handle_original,
-                                                            typename Generic_map::Dart_handle>;
+    using Dart_const_descriptor_original = typename Mesh_original::Dart_const_descriptor;
+    using Copy_to_origin_map         = std::unordered_map<typename Generic_map::Dart_descriptor,
+                                                            Dart_const_descriptor_original>;
+    using Origin_to_copy_map         = std::unordered_map<Dart_const_descriptor_original,
+                                                            typename Generic_map::Dart_descriptor>;
 
     static void copy(Generic_map& target, const Mesh_original& source,
                      Origin_to_copy_map& origin_to_copy,
@@ -63,11 +63,11 @@ namespace internal {
   {
     using Mesh_original              = Mesh_;
     using Generic_map                = CGAL::Combinatorial_map<2, Items_>;
-    using Dart_const_handle_original = typename Mesh_original::Dart_const_handle;
-    using Copy_to_origin_map         = std::unordered_map<typename Generic_map::Dart_handle,
-                                                            Dart_const_handle_original>;
-    using Origin_to_copy_map         = std::unordered_map<Dart_const_handle_original,
-                                                            typename Generic_map::Dart_handle>;
+    using Dart_const_descriptor_original = typename Mesh_original::Dart_const_descriptor;
+    using Copy_to_origin_map         = std::unordered_map<typename Generic_map::Dart_descriptor,
+                                                            Dart_const_descriptor_original>;
+    using Origin_to_copy_map         = std::unordered_map<Dart_const_descriptor_original,
+                                                            typename Generic_map::Dart_descriptor>;
 
     static void copy(Generic_map& target, const Mesh_original& source,
                      Origin_to_copy_map& origin_to_copy, Copy_to_origin_map& copy_to_origin,
@@ -82,11 +82,11 @@ namespace internal {
   {
     using Mesh_original              = Mesh_;
     using Generic_map                = CGAL::Combinatorial_map<2, Items_>;
-    using Dart_const_handle_original = typename boost::graph_traits<Mesh_original>::halfedge_descriptor;
-    using Copy_to_origin_map         = std::unordered_map<typename Generic_map::Dart_handle,
-                                                            Dart_const_handle_original>;
-    using Origin_to_copy_map         = std::unordered_map<Dart_const_handle_original,
-                                                            typename Generic_map::Dart_handle>;
+    using Dart_const_descriptor_original = typename boost::graph_traits<Mesh_original>::halfedge_descriptor;
+    using Copy_to_origin_map         = std::unordered_map<typename Generic_map::Dart_descriptor,
+                                                            Dart_const_descriptor_original>;
+    using Origin_to_copy_map         = std::unordered_map<Dart_const_descriptor_original,
+                                                            typename Generic_map::Dart_descriptor>;
 
     static void copy(Generic_map& target, const Mesh_original& source,
                      Origin_to_copy_map& origin_to_copy, Copy_to_origin_map& copy_to_origin,

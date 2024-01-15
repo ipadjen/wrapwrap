@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/Polygon_mesh_slicer/Axis_parallel_plane_traits.h $
-// $Id: Axis_parallel_plane_traits.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/Polygon_mesh_slicer/Axis_parallel_plane_traits.h $
+// $Id: include/CGAL/Polygon_mesh_processing/internal/Polygon_mesh_slicer/Axis_parallel_plane_traits.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -14,8 +14,8 @@
 #include <CGAL/Bbox_3.h>
 #include <CGAL/array.h>
 
-#include <boost/optional.hpp>
-#include <boost/variant.hpp>
+#include <optional>
+#include <variant>
 
 
 #ifndef CGAL_INTERNAL_POLYGON_MESH_SLICER_AXIS_PARALLEL_PLANE_TRAITS_H
@@ -95,8 +95,8 @@ public:
     const typename Traits::Construct_source_3 m_source_3;
     const typename Traits::Construct_target_3 m_target_3;
 
-    typedef boost::variant<typename Traits::Point_3, typename Traits::Segment_3> Variant_type;
-    typedef boost::optional< Variant_type > result_type;
+    typedef std::variant<typename Traits::Point_3, typename Traits::Segment_3> Variant_type;
+    typedef std::optional< Variant_type > result_type;
 
     Intersect_3(const Axis_parallel_plane_traits<Traits>& traits)
       : m_cst_coord(traits.m_cst_coord)

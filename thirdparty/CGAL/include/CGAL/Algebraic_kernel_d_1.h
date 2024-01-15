@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d_1.h $
-// $Id: Algebraic_kernel_d_1.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d_1.h $
+// $Id: include/CGAL/Algebraic_kernel_d_1.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -111,7 +111,7 @@ public:
 
       void operator()( Type& t, int rel_prec ) const {
         // If t is zero, we can refine the interval to
-        //  infinite precission
+        //  infinite precision
         if( CGAL::is_zero( t ) ) {
           t = Type(0);
         } else {

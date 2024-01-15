@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Shape_detection/include/CGAL/Shape_detection/Efficient_RANSAC/Octree.h $
-// $Id: Octree.h 8e7ea14 2021-04-14T10:57:53+02:00 Simon Giraudot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Shape_detection/include/CGAL/Shape_detection/Efficient_RANSAC/Octree.h $
+// $Id: include/CGAL/Shape_detection/Efficient_RANSAC/Octree.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

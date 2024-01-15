@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_2/include/CGAL/Delaunay_mesh_vertex_base_2.h $
-// $Id: Delaunay_mesh_vertex_base_2.h e3934f1 2021-05-12T15:20:27+02:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_2/include/CGAL/Delaunay_mesh_vertex_base_2.h $
+// $Id: include/CGAL/Delaunay_mesh_vertex_base_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

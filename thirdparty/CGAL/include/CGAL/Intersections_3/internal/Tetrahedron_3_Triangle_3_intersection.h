@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_3/include/CGAL/Intersections_3/internal/Tetrahedron_3_Triangle_3_intersection.h $
-// $Id: Tetrahedron_3_Triangle_3_intersection.h d896940 2022-09-07T16:08:58+02:00 Sebastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_3/include/CGAL/Intersections_3/internal/Tetrahedron_3_Triangle_3_intersection.h $
+// $Id: include/CGAL/Intersections_3/internal/Tetrahedron_3_Triangle_3_intersection.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -148,7 +148,7 @@ intersection(const typename K::Tetrahedron_3& tet,
     supporting_planes.swap(current_sp);
 
     if (res.empty())
-      return boost::none;
+      return std::nullopt;
   }
 
   switch(res.size())

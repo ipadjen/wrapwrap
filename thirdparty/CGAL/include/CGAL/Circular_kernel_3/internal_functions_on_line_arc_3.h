@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Circular_kernel_3/include/CGAL/Circular_kernel_3/internal_functions_on_line_arc_3.h $
-// $Id: internal_functions_on_line_arc_3.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Circular_kernel_3/include/CGAL/Circular_kernel_3/internal_functions_on_line_arc_3.h $
+// $Id: include/CGAL/Circular_kernel_3/internal_functions_on_line_arc_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Monique Teillaud, Sylvain Pion, Pedro Machado
@@ -83,7 +83,6 @@ namespace CGAL {
       typedef typename SK::Circular_arc_point_3 Circular_arc_point_3;
       typedef typename SK::Line_3 Line_3;
       typedef typename SK::Line_arc_3 Line_arc_3;
-      typedef typename SK3_Intersection_traits<SK, Line_arc_3, Line_arc_3>::type result_type;
 
       typename Intersection_traits<SK, Line_3, Line_3>::result_type o =
         SK().intersect_3_object()(l1.supporting_line(),
@@ -96,7 +95,7 @@ namespace CGAL {
           Circular_arc_point_3 p = *inters_p;
         if(!SK().has_on_3_object()(l1,p,true)) return res;
         if(!SK().has_on_3_object()(l2,p,true)) return res;
-          *res++ = CGAL::internal::sk3_intersection_return<result_type>(std::make_pair(p,1u));
+          *res++ = std::make_pair(p,1u);
       } else if( CGAL::Intersections::internal::intersect_get<Line_3>(o) ) {
         if(SK().compare_xyz_3_object()(l1.lower_xyz_extremity(),
                                        l2.lower_xyz_extremity()) < 0) {
@@ -106,15 +105,15 @@ namespace CGAL {
           if(comparison < 0) {
             if(SK().compare_xyz_3_object()(l1.higher_xyz_extremity(),
                                            l2.higher_xyz_extremity()) <= 0) {
-              *res++ = CGAL::internal::sk3_intersection_return<result_type>
-                (Line_arc_3(l1.supporting_line(),
-                            l2.lower_xyz_extremity(),
-                            l1.higher_xyz_extremity()));
+              *res++ =
+                Line_arc_3(l1.supporting_line(),
+                           l2.lower_xyz_extremity(),
+                           l1.higher_xyz_extremity());
             } else {
-              *res++ = CGAL::internal::sk3_intersection_return<result_type>(l2);
+              *res++ = l2;
             }
           } else if (comparison == 0) {
-            *res++ = CGAL::internal::sk3_intersection_return<result_type>(std::make_pair(l2.lower_xyz_extremity(),1u));
+            *res++ = std::make_pair(l2.lower_xyz_extremity(),1u);
           }
         }
         else {
@@ -124,16 +123,16 @@ namespace CGAL {
           if(comparison < 0){
             if(SK().compare_xyz_3_object()(l1.higher_xyz_extremity(),
                                            l2.higher_xyz_extremity()) <= 0) {
-              *res++ = CGAL::internal::sk3_intersection_return<result_type>(l1);
+              *res++ = l1;
             } else {
-              *res++ = CGAL::internal::sk3_intersection_return<result_type>
-                (Line_arc_3(l1.supporting_line(),
-                            l1.lower_xyz_extremity(),
-                            l2.higher_xyz_extremity() ));
+              *res++ =
+                Line_arc_3(l1.supporting_line(),
+                           l1.lower_xyz_extremity(),
+                           l2.higher_xyz_extremity() );
             }
           }
           else if (comparison == 0){
-            *res++ = CGAL::internal::sk3_intersection_return<result_type>(std::make_pair(l1.lower_xyz_extremity(),1u));
+            *res++ = std::make_pair(l1.lower_xyz_extremity(),1u);
           }
         }
       }
@@ -149,8 +148,6 @@ namespace CGAL {
       typedef typename SK::Point_3 Point_3;
       typedef typename SK::Circular_arc_point_3 Circular_arc_point_3;
       typedef typename SK::Line_3 Line_3;
-      typedef typename SK::Line_arc_3 Line_arc_3;
-      typedef typename SK3_Intersection_traits<SK, Line_3, Line_arc_3>::type result_type;
 
       typename Intersection_traits<SK, Line_3, Line_3>::result_type o =
         SK().intersect_3_object()(l, la.supporting_line());
@@ -159,11 +156,11 @@ namespace CGAL {
         return res;
 
       if(const Line_3* inters_l = CGAL::Intersections::internal::intersect_get<Line_3>(o)) {
-        *res++ = CGAL::internal::sk3_intersection_return<result_type>(la);
+        *res++ = la;
       } else if(const Point_3* inters_p = CGAL::Intersections::internal::intersect_get<Point_3>(o)) {
         Circular_arc_point_3 p = *inters_p;
         if(!SK().has_on_3_object()(la,p,true)) return res;
-        *res++ = CGAL::internal::sk3_intersection_return<result_type>(std::make_pair(p,1u));
+        *res++ = std::make_pair(p,1u);
       }
 
       return res;

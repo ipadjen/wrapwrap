@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Kernel_23/include/CGAL/Triangle_3.h $
-// $Id: Triangle_3.h 4e519a3 2021-05-05T13:15:37+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Kernel_23/include/CGAL/Triangle_3.h $
+// $Id: include/CGAL/Triangle_3.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -18,10 +18,11 @@
 #define CGAL_TRIANGLE_3_H
 
 #include <CGAL/assertions.h>
-#include <boost/type_traits/is_same.hpp>
 #include <CGAL/Kernel/Return_base_tag.h>
 #include <CGAL/Bbox_3.h>
 #include <CGAL/Dimension.h>
+
+#include <type_traits>
 
 namespace CGAL {
 
@@ -35,7 +36,7 @@ class Triangle_3 : public R_::Kernel_base::Triangle_3
   typedef typename R_::Aff_transformation_3  Aff_transformation_3;
 
   typedef Triangle_3                         Self;
-  CGAL_static_assertion((boost::is_same<Self, typename R_::Triangle_3>::value));
+  static_assert(std::is_same<Self, typename R_::Triangle_3>::value);
 
 public:
 
@@ -105,7 +106,7 @@ public:
     return R().construct_bbox_3_object()(*this);
   }
 
-  FT squared_area() const // TODO : use Qrt
+  decltype(auto) squared_area() const
   {
     return R().compute_squared_area_3_object()(*this);
   }

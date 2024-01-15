@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Kernel_d/include/CGAL/Kernel_d/Segment_d.h $
-// $Id: Segment_d.h 152a084 2021-09-21T13:34:58+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Kernel_d/include/CGAL/Kernel_d/Segment_d.h $
+// $Id: include/CGAL/Kernel_d/Segment_d.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -45,7 +45,7 @@ class Segment_d : public Handle_for< Pair_d<p_R> > {
 
 /*{\Mdefinition
 An instance $s$ of the data type |Segment_d| is a directed straight
-line segment in $d$-dimensional Euclidian space connecting two points
+line segment in $d$-dimensional Euclidean space connecting two points
 $p$ and $q$. $p$ is called the source point and $q$ is called
 the target point of $s$, both points are called endpoints of $s$. A
 segment whose endpoints are equal is called \emph{degenerate}.}*/

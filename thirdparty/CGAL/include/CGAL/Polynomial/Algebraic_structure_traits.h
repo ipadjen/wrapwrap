@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polynomial/include/CGAL/Polynomial/Algebraic_structure_traits.h $
-// $Id: Algebraic_structure_traits.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polynomial/include/CGAL/Polynomial/Algebraic_structure_traits.h $
+// $Id: include/CGAL/Polynomial/Algebraic_structure_traits.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -273,9 +273,9 @@ class Polynomial_algebraic_structure_traits_base< POLY, Field_tag >
         template < class NT1, class NT2 >
         void operator()( const NT1& x, const NT2& y,
                          POLY& q, POLY& r ) const {
-          CGAL_static_assertion((::boost::is_same<
+          static_assert(::std::is_same<
                   typename Coercion_traits< NT1, NT2 >::Type, POLY
-                                               >::value));
+                                               >::value);
 
           typename Coercion_traits< NT1, NT2 >::Cast cast;
           operator()( cast(x), cast(y), q, r );

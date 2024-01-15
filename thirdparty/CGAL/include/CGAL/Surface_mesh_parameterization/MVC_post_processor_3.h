@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_parameterization/include/CGAL/Surface_mesh_parameterization/MVC_post_processor_3.h $
-// $Id: MVC_post_processor_3.h 4ffc949 2022-02-03T17:11:20+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_parameterization/include/CGAL/Surface_mesh_parameterization/MVC_post_processor_3.h $
+// $Id: include/CGAL/Surface_mesh_parameterization/MVC_post_processor_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mael Rouxel-Labbé
@@ -61,7 +61,7 @@ namespace Surface_mesh_parameterization {
 /// the convexification of the initial (2D) parameterization and the resolution
 /// of a linear system with coefficients based on Mean Value Coordinates.
 ///
-/// \cgalModels `Parameterizer_3`
+/// \cgalModels{Parameterizer_3}
 ///
 /// \tparam TriangleMesh_ must be a model of `FaceGraph`.
 ///
@@ -460,7 +460,7 @@ private:
     CGAL_precondition(!ct.is_infinite(fh));
     typedef typename CT::Vertex_handle                    Vertex_handle;
 
-    // Doing it explicitely rather than a loop for clarity
+    // Doing it explicitly rather than a loop for clarity
     Vertex_handle vh0 = fh->vertex(0);
     Vertex_handle vh1 = fh->vertex(1);
     Vertex_handle vh2 = fh->vertex(2);
@@ -598,7 +598,7 @@ private:
   {
     Error_code status = OK;
 
-    NT Du, Dv;
+    double Du, Dv;
     if(!get_linear_algebra_traits().linear_solver(A, Bu, Xu, Du) ||
        !get_linear_algebra_traits().linear_solver(A, Bv, Xv, Dv)) {
       status = ERROR_CANNOT_SOLVE_LINEAR_SYSTEM;
@@ -726,8 +726,8 @@ public:
   ///
   /// \param mesh a triangulated surface.
   /// \param bhd a halfedge descriptor on the boundary of `mesh`.
-  /// \param uvmap an instanciation of the class `VertexUVmap`.
-  /// \param vimap an instanciation of the class `VertexIndexMap`.
+  /// \param uvmap an instantiation of the class `VertexUVmap`.
+  /// \param vimap an instantiation of the class `VertexIndexMap`.
   ///
   template <typename VertexUVMap,
             typename VertexIndexMap>

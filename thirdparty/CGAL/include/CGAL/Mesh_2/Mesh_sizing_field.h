@@ -4,8 +4,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_2/include/CGAL/Mesh_2/Mesh_sizing_field.h $
-// $Id: Mesh_sizing_field.h 0ac4bf6 2021-09-10T11:28:13+02:00 Jane Tournois
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_2/include/CGAL/Mesh_2/Mesh_sizing_field.h $
+// $Id: include/CGAL/Mesh_2/Mesh_sizing_field.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -57,20 +57,20 @@ public:
   }
 
   /**
-   * Returns size at point \c p.
+   * Returns size at point `p`.
    */
   FT operator()(const Point_2& p) const
   { return this->operator()(p, last_face_); }
 
   /**
-   * Returns size at point \c p, using \c v to accelerate \c p location
+   * Returns size at point `p`, using `v` to accelerate `p` location
    * in triangulation
    */
   FT operator()(const Point_2& p, const Vertex_handle& v) const
   { return this->operator()(p, v->face()); }
 
   /**
-   * Returns size at point \c p.
+   * Returns size at point `p`.
    */
   FT operator()(const Point_2& p, const Face_handle& c) const
   {
@@ -99,7 +99,7 @@ public:
 
 private:
   /**
-   * Returns size at point \c p, by interpolation inside facet
+   * Returns size at point `p`, by interpolation inside facet.
    */
   FT interpolate_on_face_vertices(const Point_2&
 #ifdef CGAL_MESH_2_SIZING_FIELD_USE_BARYCENTRIC_COORDINATES
@@ -128,8 +128,8 @@ private:
   }
 
   /**
-   * Returns size at point \c p, by interpolation inside edge
-   * (\c e f is assumed to be an infinite face)
+   * Returns size at point `p`, by interpolation inside edge
+   * (`f` is assumed to be an infinite face)
    */
   FT interpolate_on_edge_vertices(const Point_2&
 #ifdef CGAL_MESH_2_SIZING_FIELD_USE_BARYCENTRIC_COORDINATES

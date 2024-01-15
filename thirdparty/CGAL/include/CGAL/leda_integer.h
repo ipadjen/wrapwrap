@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Number_types/include/CGAL/leda_integer.h $
-// $Id: leda_integer.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Number_types/include/CGAL/leda_integer.h $
+// $Id: include/CGAL/leda_integer.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -93,7 +93,7 @@ template <> class Algebraic_structure_traits< leda_integer >
     // Div defined via base using Div_mod
     // Mod defined via base using Div_mod
 
-    // This code results in an inconsisten div/mod for some leda versions
+    // This code results in an inconsistent div/mod for some leda versions
     // TODO: reactivate this code
 
 //     typedef INTERN_AST::Div_per_operator< Type > Div;

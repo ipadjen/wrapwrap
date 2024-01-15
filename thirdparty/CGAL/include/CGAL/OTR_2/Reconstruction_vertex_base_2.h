@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Optimal_transportation_reconstruction_2/include/CGAL/OTR_2/Reconstruction_vertex_base_2.h $
-// $Id: Reconstruction_vertex_base_2.h d6ec192 2022-12-22T14:22:40+00:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Optimal_transportation_reconstruction_2/include/CGAL/OTR_2/Reconstruction_vertex_base_2.h $
+// $Id: include/CGAL/OTR_2/Reconstruction_vertex_base_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Fernando de Goes, Pierre Alliez, Ivo Vigan, Clément Jamin

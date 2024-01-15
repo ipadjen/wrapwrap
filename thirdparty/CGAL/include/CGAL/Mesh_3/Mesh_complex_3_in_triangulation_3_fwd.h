@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Installation/include/CGAL/Mesh_3/Mesh_complex_3_in_triangulation_3_fwd.h $
-// $Id: Mesh_complex_3_in_triangulation_3_fwd.h c863ee6 2021-05-04T17:28:52+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Installation/include/CGAL/Mesh_3/Mesh_complex_3_in_triangulation_3_fwd.h $
+// $Id: include/CGAL/Mesh_3/Mesh_complex_3_in_triangulation_3_fwd.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 

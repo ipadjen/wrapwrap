@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/Mesh_3/radius_ratio.h $
-// $Id: radius_ratio.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_3/include/CGAL/Mesh_3/radius_ratio.h $
+// $Id: include/CGAL/Mesh_3/radius_ratio.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -29,8 +29,7 @@ radius_ratio(const typename K::Point_3& p0,
              K k = K())
 {
   typedef typename K::FT FT;
-  typename K::Compute_squared_distance_3 sq_distance =
-    k.compute_squared_distance_3_object();
+
   typename K::Compute_squared_radius_3 comp_sq_circumradius =
     k.compute_squared_radius_3_object();
   typename K::Compute_volume_3 volume =

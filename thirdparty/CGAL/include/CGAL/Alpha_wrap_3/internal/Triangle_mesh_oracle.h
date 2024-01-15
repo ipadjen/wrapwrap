@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Alpha_wrap_3/include/CGAL/Alpha_wrap_3/internal/Triangle_mesh_oracle.h $
-// $Id: Triangle_mesh_oracle.h 9fbfd9a 2022-05-24T10:08:56+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Alpha_wrap_3/include/CGAL/Alpha_wrap_3/internal/Triangle_mesh_oracle.h $
+// $Id: include/CGAL/Alpha_wrap_3/internal/Triangle_mesh_oracle.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mael Rouxel-Labbé
@@ -14,7 +14,7 @@
 
 #include <CGAL/license/Alpha_wrap_3.h>
 
-#include <CGAL/Alpha_wrap_3/internal/Alpha_wrap_AABB_traits.h>
+#include <CGAL/Alpha_wrap_3/internal/Alpha_wrap_AABB_geom_traits.h>
 #include <CGAL/Alpha_wrap_3/internal/Oracle_base.h>
 #include <CGAL/Alpha_wrap_3/internal/splitting_helper.h>
 
@@ -29,6 +29,8 @@
 #include <type_traits>
 #include <vector>
 
+#include <CGAL/IO/Progress_bar.h>
+
 namespace CGAL {
 namespace Alpha_wraps_3 {
 namespace internal {
@@ -37,7 +39,7 @@ namespace internal {
 template <typename GT_>
 struct TM_oracle_traits
 {
-  using Geom_traits = Alpha_wrap_AABB_traits<GT_>; // Wrap the kernel to add Ball_3 + custom Do_intersect_3
+  using Geom_traits = Alpha_wrap_AABB_geom_traits<GT_>; // Wrap the kernel to add Ball_3 + custom Do_intersect_3
 
   using Point_3 = typename Geom_traits::Point_3;
   using AABB_traits = typename AABB_tree_splitter_traits<Point_3, Geom_traits>::AABB_traits;
@@ -135,7 +137,7 @@ public:
     if(is_empty(tmesh))
     {
 #ifdef CGAL_AW3_DEBUG
-      std::cout << "Warning: Input is empty " << std::endl;
+      std::cout << "Warning: Input is empty (TM)" << std::endl;
 #endif
       return;
     }
@@ -146,14 +148,21 @@ public:
 
     VPM vpm = choose_parameter(get_parameter(np, internal_np::vertex_point),
                                get_const_property_map(vertex_point, tmesh));
-    CGAL_static_assertion((std::is_same<typename boost::property_traits<VPM>::value_type, Point_3>::value));
+    static_assert(std::is_same<typename boost::property_traits<VPM>::value_type, Point_3>::value);
 
     Splitter_base::reserve(num_faces(tmesh));
 
+    std::cout << "  preparing triangle data structure for wrapping..." << std::endl;
+    CGAL::IO::Progress_bar progress_bar(faces(tmesh).size(), 100);
     for(face_descriptor f : faces(tmesh))
     {
       if(Polygon_mesh_processing::is_degenerate_triangle_face(f, tmesh, np))
+      {
+#ifdef CGAL_AW3_DEBUG
+        std::cerr << "Warning: ignoring degenerate face " << f << std::endl;
+#endif
         continue;
+      }
 
       const Point_ref p0 = get(vpm, source(halfedge(f, tmesh), tmesh));
       const Point_ref p1 = get(vpm, target(halfedge(f, tmesh), tmesh));
@@ -162,7 +171,16 @@ public:
       const Triangle_3 tr = this->geom_traits().construct_triangle_3_object()(p0, p1, p2);
 
       Splitter_base::split_and_insert_datum(tr, this->tree(), this->geom_traits());
+
+      progress_bar.increment_and_print();
     }
+    progress_bar.finish();
+
+    // Manually constructing it here purely for profiling reasons: if we keep the lazy approach,
+    // it will be done at the first treatment of a facet that needs a Steiner point.
+    // So if one wanted to bench the flood fill runtime, it would be skewed by the time it takes
+    // to accelerate the tree.
+    this->tree().accelerate_distance_queries();
 
 #ifdef CGAL_AW3_DEBUG
     std::cout << "Tree: " << this->tree().size() << " primitives (" << num_faces(tmesh) << " faces in input)" << std::endl;

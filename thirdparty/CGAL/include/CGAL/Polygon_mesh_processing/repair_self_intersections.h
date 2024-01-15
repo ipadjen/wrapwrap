@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/repair_self_intersections.h $
-// $Id: repair_self_intersections.h 898142d 2022-12-22T09:49:35+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/repair_self_intersections.h $
+// $Id: include/CGAL/Polygon_mesh_processing/repair_self_intersections.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Sebastien Loriot,
@@ -178,7 +178,7 @@ FaceOutputIterator replace_faces_with_patch(const std::vector<typename boost::gr
                                             VertexPointMap vpm,
                                             FaceOutputIterator out)
 {
-  CGAL_static_assertion((std::is_same<typename boost::property_traits<VertexPointMap>::value_type, Point>::value));
+  static_assert(std::is_same<typename boost::property_traits<VertexPointMap>::value_type, Point>::value);
 
   typedef typename boost::graph_traits<PolygonMesh>::vertex_descriptor      vertex_descriptor;
   typedef typename boost::graph_traits<PolygonMesh>::halfedge_descriptor    halfedge_descriptor;
@@ -251,7 +251,6 @@ FaceOutputIterator replace_faces_with_patch(const std::vector<typename boost::gr
   Vertex_pair_halfedge_map halfedge_map;
 
   // register border halfedges
-  int i = 0;
   for(halfedge_descriptor h : border_hedges)
   {
     const vertex_descriptor vs = source(h, pmesh);
@@ -259,7 +258,6 @@ FaceOutputIterator replace_faces_with_patch(const std::vector<typename boost::gr
     halfedge_map.emplace(std::make_pair(vs, vt), h);
 
     set_halfedge(target(h, pmesh), h, pmesh); // update vertex halfedge pointer
-    ++i;
   }
 
   face_descriptor f = boost::graph_traits<PolygonMesh>::null_face();
@@ -818,7 +816,7 @@ void dump_cc(const std::string filename,
 // Similarly if the edge is an internal sharp edge, we don't really want to use the opposite face because
 // there is by definition a strong discontinuity and it might thus mislead the hole filling algorithm.
 //
-// Rather, we construct an artifical third point that is in the same plane as the face incident to `h`,
+// Rather, we construct an artificial third point that is in the same plane as the face incident to `h`,
 // defined as the third point of the imaginary equilateral triangle incident to opp(h, tmesh)
 template <typename TriangleMesh, typename VertexPointMap, typename GeomTraits>
 typename boost::property_traits<VertexPointMap>::value_type
@@ -1152,6 +1150,9 @@ bool adapt_patch(std::vector<std::vector<Point> >& point_patch,
     put(local_vpm, v, projector(get(local_vpm, v)));
 
   // The projector can create degenerate faces
+  for (halfedge_descriptor h : border_hedges)
+    if (is_degenerate_triangle_face(face(opposite(h, local_mesh), local_mesh), local_mesh))
+      return !has_SI;
   if(!remove_degenerate_faces(local_mesh))
     return !has_SI;
 
@@ -1586,7 +1587,6 @@ bool fill_hole_with_constraints(std::vector<typename boost::graph_traits<Triangl
   std::set<face_descriptor> visited_faces;
   std::vector<std::vector<Point> > patch;
 
-  int cc_counter = 0;
   for(face_descriptor f : cc_faces)
   {
     if(!visited_faces.insert(f).second) // already visited that face
@@ -1598,7 +1598,6 @@ bool fill_hole_with_constraints(std::vector<typename boost::graph_traits<Triangl
                                                  CGAL::parameters::edge_is_constrained_map(eif));
 
     visited_faces.insert(sub_cc.begin(), sub_cc.end());
-    ++cc_counter;
 
 #ifdef CGAL_PMP_REMOVE_SELF_INTERSECTION_OUTPUT
     dump_cc("results/current_cc.off", sub_cc, tmesh, vpm);
@@ -2035,7 +2034,7 @@ remove_self_intersections_one_step(std::set<typename boost::graph_traits<Triangl
 
 #ifdef CGAL_PMP_REMOVE_SELF_INTERSECTION_OUTPUT_INTERMEDIATE_FULL_MESH
     fname = "results/mesh_at_step_"+std::to_string(step)+"_CC_"+std::to_string(cc_id)+".off";
-    CGAL::IO::write_polygon_mesh(fname, tmesh, CGAL::parameters::stream_precision);
+    CGAL::IO::write_polygon_mesh(fname, tmesh, CGAL::parameters::stream_precision(17));
 #endif
 
     // expand the region to be filled

@@ -6,8 +6,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Kernel_d/include/CGAL/Kernel_d/Cartesian_converter_d.h $
-// $Id: Cartesian_converter_d.h 3a0a4a6 2021-12-17T12:22:40+01:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Kernel_d/include/CGAL/Kernel_d/Cartesian_converter_d.h $
+// $Id: include/CGAL/Kernel_d/Cartesian_converter_d.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Sylvain Pion <Sylvain.Pion@sophia.inria.fr>
@@ -102,7 +102,7 @@ public:
     template <typename T>
     T
     operator()(const T t,
-               typename std::enable_if<std::is_fundamental<T>::value>::type* = nullptr) const
+               std::enable_if_t<std::is_fundamental<T>::value>* = nullptr) const
     {
         return t;
     }

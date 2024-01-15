@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_point_location/Arr_landmarks_pl_impl.h $
-// $Id: Arr_landmarks_pl_impl.h 0626eb0 2020-06-11T12:32:33+03:00 Efi Fogel
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_point_location/Arr_landmarks_pl_impl.h $
+// $Id: include/CGAL/Arr_point_location/Arr_landmarks_pl_impl.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Idit Haran   <haranidi@post.tau.ac.il>
@@ -47,7 +47,7 @@ Arr_landmarks_point_location<Arr, Gen>::locate(const Point_2& p) const
     return lm_location_obj;
 
   // Walk from the nearest_vertex to the point p, using walk algorithm,
-  // and find the location of the query point p. Note that the set fo edges
+  // and find the location of the query point p. Note that the set of edges
   // we have crossed so far is initially empty.
   Halfedge_set                   crossed_edges;
   result_type                    out_obj;
@@ -100,7 +100,7 @@ _walk_from_vertex(Vertex_const_handle nearest_vertex,
   CGAL_assertion_msg(! vh->is_at_open_boundary(),
                      "_walk_from_vertex() from a vertex at infinity.");
 
-  // Check if the qurey point p conincides with the vertex.
+  // Check if the query point p coincides with the vertex.
   if (m_traits->equal_2_object()(vh->point(), p))
     return make_result(vh);
 
@@ -231,7 +231,7 @@ _find_face_around_vertex(Vertex_const_handle vh,
     }
 
     // In case the curves are not equal, just return the incident face of
-    // the single halfegde (note that this is also the incident face of its
+    // the single halfedge (note that this is also the incident face of its
     // twin, as v is the tip of an "antenna").
     if (! equal_curr) {
       CGAL_assertion(curr->face() == curr->twin()->face());
@@ -251,7 +251,7 @@ _find_face_around_vertex(Vertex_const_handle vh,
                            (next->direction() == ARR_RIGHT_TO_LEFT),
                            vp, eq_curr, eq_next))
     {
-      // Break the loop if seg equals one of the halfegdes next to v.
+      // Break the loop if seg equals one of the halfedges next to v.
       if (eq_curr) {
         equal_curr = true;
         break;
@@ -276,7 +276,7 @@ _find_face_around_vertex(Vertex_const_handle vh,
     }
 
     // In case seg is not equal to curr's curve, just return the incident face
-    // of the halfegde we have located.
+    // of the halfedge we have located.
     if (! equal_curr)
       return make_result(curr->face());
   }

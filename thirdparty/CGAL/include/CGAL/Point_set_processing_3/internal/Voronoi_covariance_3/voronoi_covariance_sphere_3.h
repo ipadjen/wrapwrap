@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_processing_3/include/CGAL/Point_set_processing_3/internal/Voronoi_covariance_3/voronoi_covariance_sphere_3.h $
-// $Id: voronoi_covariance_sphere_3.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Point_set_processing_3/include/CGAL/Point_set_processing_3/internal/Voronoi_covariance_3/voronoi_covariance_sphere_3.h $
+// $Id: include/CGAL/Point_set_processing_3/internal/Voronoi_covariance_3/voronoi_covariance_sphere_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Jocelyn Meyron and Quentin Mérigot

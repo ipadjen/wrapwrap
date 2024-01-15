@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Surface_sweep_2/Arr_construction_subcurve.h $
-// $Id: Arr_construction_subcurve.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Surface_sweep_2/Arr_construction_subcurve.h $
+// $Id: include/CGAL/Surface_sweep_2/Arr_construction_subcurve.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Tali Zvi <talizvi@post.tau.ac.il>
@@ -200,7 +200,7 @@ public:
   typedef typename Base::Event_ptr                      Event_ptr;
   typedef typename Base::Halfedge_indices_list          Halfedge_indices_list;
 
-  /*! Construct deafult. */
+  /*! Construct default. */
   Arr_construction_subcurve() {}
 
   /*! Constructor from an x-monotone curve. */

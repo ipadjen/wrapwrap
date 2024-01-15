@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/BGL/include/CGAL/boost/graph/internal/initialized_index_maps_helpers.h $
-// $Id: initialized_index_maps_helpers.h 6d3176e 2022-01-07T14:42:25+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/BGL/include/CGAL/boost/graph/internal/initialized_index_maps_helpers.h $
+// $Id: include/CGAL/boost/graph/internal/initialized_index_maps_helpers.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Mael Rouxel-Labbé
@@ -276,8 +276,8 @@ class GetInitializedIndexMap
 {
 public:
   // Check if there is an internal property map; if not, we must a dynamic property map
-  typedef typename boost::mpl::if_c<
-      CGAL::graph_has_property<Graph, Tag>::value, Tag, DynamicTag>::type    Final_tag;
+  typedef std::conditional_t<
+      CGAL::graph_has_property<Graph, Tag>::value, Tag, DynamicTag>    Final_tag;
 
   typedef typename internal_np::Lookup_named_param_def<
       PropertyTag,

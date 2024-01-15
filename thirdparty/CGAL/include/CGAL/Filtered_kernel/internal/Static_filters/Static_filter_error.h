@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Filtered_kernel/include/CGAL/Filtered_kernel/internal/Static_filters/Static_filter_error.h $
-// $Id: Static_filter_error.h 5945e48 2021-09-17T08:14:06+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Filtered_kernel/include/CGAL/Filtered_kernel/internal/Static_filters/Static_filter_error.h $
+// $Id: include/CGAL/Filtered_kernel/internal/Static_filters/Static_filter_error.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -129,7 +129,7 @@ private:
   //    variable.
   // _e is a bound on the absolute error (difference between _b and the
   //    _real_ value of the variable.
-  // _d is the degree of the variable, it allows some additionnal checks.
+  // _d is the degree of the variable, it allows some additional checks.
   double _b, _e;
   int _d;
 };

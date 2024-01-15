@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Curved_kernel_via_analysis_2/Fig_stream_Curve_renderer_2.h $
-// $Id: Fig_stream_Curve_renderer_2.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Curved_kernel_via_analysis_2/Fig_stream_Curve_renderer_2.h $
+// $Id: include/CGAL/Curved_kernel_via_analysis_2/Fig_stream_Curve_renderer_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Ophir Setter           <ophir.setter@cs.tau.ac.il>
@@ -43,7 +43,7 @@ operator <<
     typedef std::pair< int, int > Coord_2;
     typedef std::vector< Coord_2 > Coord_vec_2;
 
-    boost::optional < Coord_2 > p1, p2;
+    std::optional < Coord_2 > p1, p2;
     std::list<Coord_vec_2> points;
 
     Bbox_2 bbox (CGAL::to_double(ws.bounding_rect().xmin()),

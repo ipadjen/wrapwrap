@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Straight_skeleton_2/include/CGAL/draw_straight_skeleton_2.h $
-// $Id: draw_straight_skeleton_2.h 2bbcabe 2021-11-11T17:23:37+01:00 Guillaume Damiand
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Straight_skeleton_2/include/CGAL/draw_straight_skeleton_2.h $
+// $Id: include/CGAL/draw_straight_skeleton_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Guillaume Damiand <guillaume.damiand@liris.cnrs.fr>
@@ -96,6 +96,8 @@ protected:
       add_point(vh->point(), CGAL::IO::Color(10,10,180)); // blue, but not flashy
     else if(vh->has_infinite_time())
       add_point(vh->point(), CGAL::IO::orange());
+    else if(vh->is_contour())
+      add_point(vh->point(), CGAL::IO::black());
     else
       add_point(vh->point(), CGAL::IO::Color(10,180,10)); // green, but not flashy
   }

@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Algebraic_kernel_d/include/CGAL/RS/rs2_calls.h $
-// $Id: rs2_calls.h 52164b1 2019-10-19T15:34:59+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Algebraic_kernel_d/include/CGAL/RS/rs2_calls.h $
+// $Id: include/CGAL/RS/rs2_calls.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author: Luis Peñaranda <luis.penaranda@gmx.com>
@@ -29,8 +29,7 @@
 // the version of MPFR is one of those buggy versions, abort the compilation
 // and instruct the user to update MPFR or don't use RS3.
 #ifdef CGAL_USE_RS3
-#include <boost/static_assert.hpp>
-BOOST_STATIC_ASSERT_MSG(
+static_assert(
         MPFR_VERSION_MAJOR!=3 ||
         MPFR_VERSION_MINOR!=1 ||
         MPFR_VERSION_PATCHLEVEL<3 || MPFR_VERSION_PATCHLEVEL>6,

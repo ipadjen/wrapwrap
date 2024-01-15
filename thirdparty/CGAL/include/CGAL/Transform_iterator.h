@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Matrix_search/include/CGAL/Transform_iterator.h $
-// $Id: Transform_iterator.h 4b472db 2021-02-03T10:57:36+00:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Matrix_search/include/CGAL/Transform_iterator.h $
+// $Id: include/CGAL/Transform_iterator.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -16,7 +16,6 @@
 #include <CGAL/license/Matrix_search.h>
 
 
-#include <CGAL/Optimisation/assertions.h>
 #include <CGAL/circulator_bases.h>
 #include <iterator>
 

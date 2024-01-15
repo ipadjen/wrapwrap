@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Number_types/include/CGAL/number_type_config.h $
-// $Id: number_type_config.h 52164b1 2019-10-19T15:34:59+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Number_types/include/CGAL/number_type_config.h $
+// $Id: include/CGAL/number_type_config.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -19,7 +19,10 @@
 
 #include <CGAL/config.h>
 
-#define CGAL_PI 3.14159265358979323846
+#define CGAL_PI 3.141592653589793238462643383279502884
+#define CGAL_SQRT2 1.414213562373095048801688724209698078
+#define CGAL_SQRT3 1.732050807568877293527446341505872366
+#define CGAL_SQRT5 2.236067977499789696409173668731276235
 
 
 #ifdef CGAL_USE_NTS_NAMESPACE

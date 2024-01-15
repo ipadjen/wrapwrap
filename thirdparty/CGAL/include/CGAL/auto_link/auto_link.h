@@ -9,8 +9,8 @@
 //  (C) Copyright John Maddock 2003.
 //
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Installation/include/CGAL/auto_link/auto_link.h $
-// $Id: auto_link.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Installation/include/CGAL/auto_link/auto_link.h $
+// $Id: include/CGAL/auto_link/auto_link.h a484bfa $
 // SPDX-License-Identifier: BSL-1.0
 //
  /*
@@ -93,7 +93,7 @@ CGAL_VERSION:        Defined in <CGAL/version.h>
 #  endif
 #elif defined(_MSC_VER) && !defined(__MWERKS__) && !defined(__EDG_VERSION__)
 //
-// C language compatability (no, honestly)
+// C language compatibility (no, honestly)
 //
 #  define BOOST_MSVC _MSC_VER
 #  define BOOST_STRINGIZE(X) BOOST_DO_STRINGIZE(X)

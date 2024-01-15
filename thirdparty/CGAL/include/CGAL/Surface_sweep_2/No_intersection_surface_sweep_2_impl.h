@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_sweep_2/include/CGAL/Surface_sweep_2/No_intersection_surface_sweep_2_impl.h $
-// $Id: No_intersection_surface_sweep_2_impl.h facabca 2021-09-10T17:47:17+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_sweep_2/include/CGAL/Surface_sweep_2/No_intersection_surface_sweep_2_impl.h $
+// $Id: include/CGAL/Surface_sweep_2/No_intersection_surface_sweep_2_impl.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Baruch Zukerman  <baruchzu@post.tau.ac.il>
@@ -70,7 +70,7 @@ No_intersection_surface_sweep_2(const Gt2* traits, Visitor* visitor) :
 { m_visitor->attach(this); }
 
 //-----------------------------------------------------------------------------
-// Destrcutor.
+// Destructor.
 //
 template <typename Vis>
 No_intersection_surface_sweep_2<Vis>::~No_intersection_surface_sweep_2()
@@ -402,7 +402,7 @@ void No_intersection_surface_sweep_2<Vis>::_handle_left_curves()
                 { print_event_info(m_currentEvent); });
 
   // Use the status-line to sort all left subcurves incident to the current
-  // event (no geometric comparisons are neede at all).
+  // event (no geometric comparisons are needed at all).
   _sort_left_curves();
 
   // Now the event is updated, with its left subcurved properly sorted, and

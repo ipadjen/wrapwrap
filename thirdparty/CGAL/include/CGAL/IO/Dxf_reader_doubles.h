@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Circular_kernel_2/include/CGAL/IO/Dxf_reader_doubles.h $
-// $Id: Dxf_reader_doubles.h 4e519a3 2021-05-05T13:15:37+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Circular_kernel_2/include/CGAL/IO/Dxf_reader_doubles.h $
+// $Id: include/CGAL/IO/Dxf_reader_doubles.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Monique Teillaud, Sylvain Pion, Andreas Fabri
@@ -16,8 +16,7 @@
 // (ACS -- Algorithms for Complex Shapes)
 
 // Descriptions of the file format can be found at
-// http://www.autodesk.com/techpubs/autocad/acad2000/dxf/
-// http://www.tnt.uni-hannover.de/soft/compgraph/fileformats/docs/DXF.ascii
+// https://images.autodesk.com/adsk/files/autocad_2012_pdf_dxf-reference_enu.pdf
 
 #ifndef CGAL_IO_DXF_READER_DOUBLES_H
 #define CGAL_IO_DXF_READER_DOUBLES_H

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_3/include/CGAL/Intersections_3/internal/Iso_cuboid_3_Sphere_3_do_intersect.h $
-// $Id: Iso_cuboid_3_Sphere_3_do_intersect.h a7ff075 2022-02-03T13:21:11+00:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_3/include/CGAL/Intersections_3/internal/Iso_cuboid_3_Sphere_3_do_intersect.h $
+// $Id: include/CGAL/Intersections_3/internal/Iso_cuboid_3_Sphere_3_do_intersect.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -22,10 +22,11 @@ namespace Intersections {
 namespace internal {
 
 template <class K, class BFT> // Iso_cuboid_3 or Bbox_3
-bool do_intersect_sphere_box_3(const typename K::Sphere_3& sphere,
-                               const BFT bxmin, const BFT bymin, const BFT bzmin,
-                               const BFT bxmax, const BFT bymax, const BFT bzmax,
-                               const K&)
+typename K::Boolean
+do_intersect_sphere_box_3(const typename K::Sphere_3& sphere,
+                          const BFT bxmin, const BFT bymin, const BFT bzmin,
+                          const BFT bxmax, const BFT bymax, const BFT bzmax,
+                          const K&)
 {
   typedef typename K::FT SFT;
   typedef typename Coercion_traits<SFT, BFT>::Type FT;
@@ -94,9 +95,10 @@ bool do_intersect_sphere_box_3(const typename K::Sphere_3& sphere,
 }
 
 template <class K>
-bool do_intersect(const typename K::Sphere_3& sphere,
-                  const typename K::Iso_cuboid_3& ic,
-                  const K& k)
+typename K::Boolean
+do_intersect(const typename K::Sphere_3& sphere,
+             const typename K::Iso_cuboid_3& ic,
+             const K& k)
 {
   return do_intersect_sphere_box_3(sphere,
                                    (ic.min)().x(), (ic.min)().y(), (ic.min)().z(),
@@ -105,9 +107,10 @@ bool do_intersect(const typename K::Sphere_3& sphere,
 }
 
 template <class K>
-bool do_intersect(const typename K::Iso_cuboid_3& ic,
-                  const typename K::Sphere_3& sphere,
-                  const K& k)
+typename K::Boolean
+do_intersect(const typename K::Iso_cuboid_3& ic,
+             const typename K::Sphere_3& sphere,
+             const K& k)
 {
   return do_intersect(sphere, ic, k);
 }

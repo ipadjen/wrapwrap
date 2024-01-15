@@ -3,15 +3,18 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_2/include/CGAL/Nef_2/debug.h $
-// $Id: debug.h ce7d06d 2020-12-05T08:12:56+00:00 Giles Bathgate
-// SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Nef_2/include/CGAL/Nef_2/debug.h $
+// $Id: include/CGAL/Nef_2/debug.h a484bfa $
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Michael Seel <seel@mpi-sb.mpg.de>
 
 #ifndef CGAL_NEF_2_DEBUG_H
 #define CGAL_NEF_2_DEBUG_H
+
+#include <CGAL/license/Nef_2.h>
+
 
 #include <iostream>
 

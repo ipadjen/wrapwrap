@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Classification/include/CGAL/Classification/Label.h $
-// $Id: Label.h c863ee6 2021-05-04T17:28:52+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Classification/include/CGAL/Classification/Label.h $
+// $Id: include/CGAL/Classification/Label.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Simon Giraudot
@@ -105,7 +105,7 @@ public:
 
   \brief %Handle to a classification `Label`.
 
-  \cgalModels Handle
+  \cgalModels{Handle}
 */
 class Label_handle { };
 #else

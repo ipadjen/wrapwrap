@@ -2,9 +2,9 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/GraphicsView/include/CGAL/export/Qt.h $
-// $Id: Qt.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
-// SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/GraphicsView/include/CGAL/export/Qt.h $
+// $Id: include/CGAL/export/Qt.h a484bfa $
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Andreas Fabri
@@ -12,13 +12,16 @@
 #ifndef CGAL_QT_EXPORT_H
 #define CGAL_QT_EXPORT_H
 
+#include <CGAL/license/GraphicsView.h>
+
+
 #include <CGAL/config.h>
 #include <CGAL/export/helpers.h>
 
 #if ( defined(CGAL_BUILD_SHARED_LIBS) && ( ! defined(CGAL_HEADER_ONLY) ) ) \
-  || defined(CGAL_USE_Qt5_RESOURCES)
+  || defined(CGAL_USE_Qt6_RESOURCES)
 
-#  if defined(CGAL_Qt5_EXPORTS) || defined(CGAL_USE_Qt5_RESOURCES)
+#  if defined(CGAL_Qt6_EXPORTS) || defined(CGAL_USE_Qt6_RESOURCES)
 // defined by CMake or in cpp files of the dll
 
 #    define CGAL_QT_EXPORT CGAL_DLL_EXPORT

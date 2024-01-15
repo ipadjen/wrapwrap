@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_rat_arc/Base_rational_arc_ds_1.h $
-// $Id: Base_rational_arc_ds_1.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_rat_arc/Base_rational_arc_ds_1.h $
+// $Id: include/CGAL/Arr_rat_arc/Base_rational_arc_ds_1.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Oren Salzman <orenzalz@post.tau.ac.il >
@@ -18,6 +18,7 @@
 
 #include <vector>
 #include <ostream>
+#include <type_traits>
 #include <CGAL/Arr_enums.h>
 #include <CGAL/tags.h>
 #include <CGAL/Arr_tags.h>
@@ -25,8 +26,6 @@
 #include <CGAL/Fraction_traits.h>
 #include <CGAL/Arithmetic_kernel.h>
 #include <CGAL/Algebraic_kernel_d_1.h>
-
-#include <boost/type_traits/is_same.hpp>
 
 namespace CGAL {
 namespace Arr_rational_arc {
@@ -63,9 +62,9 @@ public:
   typedef std::vector<std::pair<Algebraic_real_1, Multiplicity> >
                                                         Root_multiplicity_vector;
 
-  CGAL_static_assertion((boost::is_same<Integer,Coefficient>::value));
-  CGAL_static_assertion((boost::is_same<Polynomial_1,
-                       typename FT_poly_rat_1::Numerator_type>::value));
+  static_assert(std::is_same<Integer,Coefficient>::value);
+  static_assert(std::is_same<Polynomial_1,
+                       typename FT_poly_rat_1::Numerator_type>::value);
 
 public:
 

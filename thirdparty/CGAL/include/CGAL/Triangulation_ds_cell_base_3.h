@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/TDS_3/include/CGAL/Triangulation_ds_cell_base_3.h $
-// $Id: Triangulation_ds_cell_base_3.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/TDS_3/include/CGAL/Triangulation_ds_cell_base_3.h $
+// $Id: include/CGAL/Triangulation_ds_cell_base_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Monique Teillaud <Monique.Teillaud@sophia.inria.fr>
@@ -19,7 +19,7 @@
 
 
 #include <CGAL/basic.h>
-#include <CGAL/triangulation_assertions.h>
+#include <CGAL/assertions.h>
 #include <CGAL/TDS_3/internal/Dummy_tds_3.h>
 
 namespace CGAL {
@@ -66,7 +66,7 @@ public:
 
   Vertex_handle vertex(int i) const
   {
-    CGAL_triangulation_precondition( i >= 0 && i <= 3 );
+    CGAL_precondition( i >= 0 && i <= 3 );
     CGAL_assume( i >= 0 && i <= 3 );
     return V[i];
   }
@@ -90,13 +90,13 @@ public:
     if (v == V[0]) { return 0; }
     if (v == V[1]) { return 1; }
     if (v == V[2]) { return 2; }
-    CGAL_triangulation_assertion( v == V[3] );
+    CGAL_assertion( v == V[3] );
     return 3;
   }
 
   Cell_handle neighbor(int i) const
   {
-    CGAL_triangulation_precondition( i >= 0 && i <= 3);
+    CGAL_precondition( i >= 0 && i <= 3);
     return N[i];
   }
 
@@ -119,7 +119,7 @@ public:
     if (n == N[0]) return 0;
     if (n == N[1]) return 1;
     if (n == N[2]) return 2;
-    CGAL_triangulation_assertion( n == N[3] );
+    CGAL_assertion( n == N[3] );
     return 3;
   }
 
@@ -127,14 +127,14 @@ public:
 
   void set_vertex(int i, Vertex_handle v)
   {
-    CGAL_triangulation_precondition( i >= 0 && i <= 3);
+    CGAL_precondition( i >= 0 && i <= 3);
     V[i] = v;
   }
 
   void set_neighbor(int i, Cell_handle n)
   {
-    CGAL_triangulation_precondition( i >= 0 && i <= 3);
-    CGAL_triangulation_precondition( this != n.operator->() );
+    CGAL_precondition( i >= 0 && i <= 3);
+    CGAL_precondition( this != n.operator->() );
     N[i] = n;
   }
 
@@ -160,10 +160,10 @@ public:
   void set_neighbors(Cell_handle n0, Cell_handle n1,
                      Cell_handle n2, Cell_handle n3)
   {
-    CGAL_triangulation_precondition( this != n0.operator->() );
-    CGAL_triangulation_precondition( this != n1.operator->() );
-    CGAL_triangulation_precondition( this != n2.operator->() );
-    CGAL_triangulation_precondition( this != n3.operator->() );
+    CGAL_precondition( this != n0.operator->() );
+    CGAL_precondition( this != n1.operator->() );
+    CGAL_precondition( this != n2.operator->() );
+    CGAL_precondition( this != n3.operator->() );
     N[0] = n0;
     N[1] = n1;
     N[2] = n2;

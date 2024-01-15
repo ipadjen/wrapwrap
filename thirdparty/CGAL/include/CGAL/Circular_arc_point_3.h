@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Circular_kernel_3/include/CGAL/Circular_arc_point_3.h $
-// $Id: Circular_arc_point_3.h acdf4c6 2020-07-22T15:23:09+02:00 Dmitry Anisimov
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Circular_kernel_3/include/CGAL/Circular_arc_point_3.h $
+// $Id: include/CGAL/Circular_arc_point_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Monique Teillaud, Sylvain Pion, Pedro Machado,

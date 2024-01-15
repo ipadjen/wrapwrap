@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/STL_Extension/include/CGAL/type_traits.h $
-// $Id: type_traits.h 52164b1 2019-10-19T15:34:59+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/STL_Extension/include/CGAL/type_traits.h $
+// $Id: include/CGAL/type_traits.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Andreas Meyer
@@ -12,20 +12,33 @@
 #ifndef CGAL_TYPE_TRAITS_H
 #define CGAL_TYPE_TRAITS_H
 
-#include <boost/type_traits/is_same.hpp>
 #include <boost/type_traits/is_base_and_derived.hpp>
 #include <boost/mpl/or.hpp>
+
+#include <type_traits>
 
 namespace CGAL {
 
 template< class Base, class Derived >
 struct is_same_or_derived :
-  public ::boost::mpl::or_<
-    ::boost::is_same< Base, Derived >,
-    ::boost::is_base_and_derived< Base, Derived >
-  >::type
+  public std::bool_constant<
+    ::std::is_same_v< Base, Derived > ||
+    ::boost::is_base_and_derived< Base, Derived >::value
+  >
 {};
 
-}
+namespace cpp20 {
+
+  template< class T >
+  struct remove_cvref {
+      typedef std::remove_cv_t<std::remove_reference_t<T>> type;
+  };
+
+  template< class T >
+  using remove_cvref_t = typename remove_cvref<T>::type;
+
+} // end namespace cpp20
+
+} // end namespace CGAL
 
 #endif // CGAL_TYPE_TRAITS_H

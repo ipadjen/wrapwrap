@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/Mesh_error_code.h $
-// $Id: Mesh_error_code.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_3/include/CGAL/Mesh_error_code.h $
+// $Id: include/CGAL/Mesh_error_code.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Laurent Rineau
@@ -14,16 +14,12 @@
 
 #include <CGAL/license/Mesh_3.h>
 
+#include <CGAL/STL_Extension/internal/mesh_option_classes.h>
+
 #include <string>
 #include <sstream>
 
 namespace CGAL {
-
-enum Mesh_error_code {
-  CGAL_MESH_3_NO_ERROR = 0,
-  CGAL_MESH_3_MAXIMAL_NUMBER_OF_VERTICES_REACHED,
-  CGAL_MESH_3_STOPPED
-};
 
 inline
 std::string mesh_error_string(const Mesh_error_code& error_code) {

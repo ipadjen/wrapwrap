@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org);
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Stream_support/include/CGAL/IO/VRML/VRML_2_ostream.h $
-// $Id: VRML_2_ostream.h 5ecd852 2021-04-26T21:37:02+01:00 Giles Bathgate
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Stream_support/include/CGAL/IO/VRML/VRML_2_ostream.h $
+// $Id: include/CGAL/IO/VRML/VRML_2_ostream.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Andreas Fabri
@@ -57,7 +57,7 @@ public:
   {
     // The behaviour if m_os == nullptr could be changed to return
     // cerr or a file handle to /dev/null. The latter one would
-    // mimick the behaviour that one can still use a stream with
+    // mimic the behaviour that one can still use a stream with
     // an invalid stream, but without producing any output.
     CGAL_assertion( m_os != nullptr );
     return *m_os;

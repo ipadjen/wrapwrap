@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Number_types/include/CGAL/mpq_class.h $
-// $Id: mpq_class.h fa6818b 2021-04-06T19:43:42+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Number_types/include/CGAL/mpq_class.h $
+// $Id: include/CGAL/mpq_class.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -35,8 +35,8 @@
 // while ::__gmp_expr<T, U> is the others "expressions".
 
 #define CGAL_CHECK_GMP_EXPR_MPQ_CLASS                                     \
-    CGAL_static_assertion(                                                \
-            (::boost::is_same< ::__gmp_expr< T , T >,Type>::value ));
+    static_assert(                                                \
+            (::std::is_same< ::__gmp_expr< T , T >,Type>::value ));
 
 namespace CGAL {
 

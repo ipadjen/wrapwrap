@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Homogeneous_kernel/include/CGAL/Homogeneous/PointH2.h $
-// $Id: PointH2.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Homogeneous_kernel/include/CGAL/Homogeneous/PointH2.h $
+// $Id: include/CGAL/Homogeneous/PointH2.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -18,10 +18,10 @@
 #define CGAL_HOMOGENEOUS_POINT_2_H
 
 #include <CGAL/Origin.h>
-#include <boost/utility/enable_if.hpp>
-#include <boost/type_traits/is_convertible.hpp>
 #include <boost/mpl/and.hpp>
 #include <boost/mpl/logical.hpp>
+
+#include <type_traits>
 
 namespace CGAL {
 
@@ -53,8 +53,8 @@ public:
 
     template < typename Tx, typename Ty >
     PointH2(const Tx & x, const Ty & y,
-            typename boost::enable_if< boost::mpl::and_<boost::is_convertible<Tx, RT>,
-                                                        boost::is_convertible<Ty, RT> > >::type* = 0)
+            std::enable_if_t< std::is_convertible_v<Tx, RT> &&
+                              std::is_convertible_v<Ty, RT> >* = 0)
       : base(x, y) {}
 
     PointH2(const FT& x, const FT& y)

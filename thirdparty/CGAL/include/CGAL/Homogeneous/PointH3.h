@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Homogeneous_kernel/include/CGAL/Homogeneous/PointH3.h $
-// $Id: PointH3.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Homogeneous_kernel/include/CGAL/Homogeneous/PointH3.h $
+// $Id: include/CGAL/Homogeneous/PointH3.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -18,9 +18,10 @@
 #define CGAL_HOMOGENEOUS_POINT_3_H
 
 #include <CGAL/Origin.h>
-#include <boost/utility/enable_if.hpp>
 #include <boost/mpl/and.hpp>
 #include <boost/mpl/logical.hpp>
+
+#include <type_traits>
 
 namespace CGAL {
 
@@ -51,9 +52,9 @@ public:
 
   template < typename Tx, typename Ty, typename Tz >
   PointH3(const Tx & x, const Ty & y, const Tz & z,
-          typename boost::enable_if< boost::mpl::and_< boost::mpl::and_< boost::is_convertible<Tx, RT>,
-                                                                         boost::is_convertible<Ty, RT> >,
-                                                       boost::is_convertible<Tz, RT> > >::type* = 0)
+          std::enable_if_t<std::is_convertible_v<Tx, RT> &&
+                           std::is_convertible_v<Ty, RT> &&
+                           std::is_convertible_v<Tz, RT>>* = 0)
     : base(x, y, z) {}
 
   PointH3(const FT& x, const FT& y, const FT& z)

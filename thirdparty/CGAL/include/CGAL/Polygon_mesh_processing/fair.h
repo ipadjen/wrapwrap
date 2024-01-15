@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/fair.h $
-// $Id: fair.h 7564b76 2022-11-07T14:11:10+01:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/fair.h $
+// $Id: include/CGAL/Polygon_mesh_processing/fair.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -19,14 +19,14 @@
 
 #include <CGAL/Polygon_mesh_processing/internal/fair_impl.h>
 #include <CGAL/Named_function_parameters.h>
-#include <CGAL/Polygon_mesh_processing/internal/named_params_helper.h>
+#include <CGAL/boost/graph/named_params_helper.h>
 #include <CGAL/Weights/cotangent_weights.h>
 
 #if defined(CGAL_EIGEN3_ENABLED)
 #include <CGAL/Eigen_solver_traits.h>  // for sparse linear system solver
 #endif
 
-#include <boost/type_traits/is_same.hpp>
+#include <type_traits>
 
 namespace CGAL {
 
@@ -76,7 +76,7 @@ bool fair(TriangleMesh& tmesh,
   do not suffice to solve constructed linear system.
 
   Note that if the vertex range to which fairing is applied contains all the vertices of the triangle mesh,
-  fairing does not fail, but the mesh gets shrinked to `CGAL::ORIGIN`.
+  fairing does not fail, but the mesh gets shrunk to `CGAL::ORIGIN`.
 
   @tparam TriangleMesh a model of `FaceGraph` and `MutableFaceGraph`
   @tparam VertexRange a range of vertex descriptors of `TriangleMesh`, model of `Range`.
@@ -98,8 +98,8 @@ bool fair(TriangleMesh& tmesh,
     \cgalParamNEnd
 
     \cgalParamNBegin{fairing_continuity}
-      \cgalParamDescription{A value controling the tangential continuity of the output surface patch.
-                            The possible values are 0, 1 and 2, refering to the  C<sup>0</sup>, C<sup>1</sup>
+      \cgalParamDescription{A value controlling the tangential continuity of the output surface patch.
+                            The possible values are 0, 1 and 2, referring to the  C<sup>0</sup>, C<sup>1</sup>
                             and C<sup>2</sup> continuity.}
       \cgalParamType{unsigned int}
       \cgalParamDefault{`1`}
@@ -151,12 +151,12 @@ bool fair(TriangleMesh& tmesh,
 #endif
 
 #if defined(CGAL_EIGEN3_ENABLED)
-    CGAL_static_assertion_msg(
-      (!boost::is_same<typename GetSolver<NamedParameters, Default_solver>::type, bool>::value) || EIGEN_VERSION_AT_LEAST(3, 2, 0),
+    static_assert(
+      (!std::is_same<typename GetSolver<NamedParameters, Default_solver>::type, bool>::value) || EIGEN_VERSION_AT_LEAST(3, 2, 0),
       "The function `fair` requires Eigen3 version 3.2 or later.");
 #else
-    CGAL_static_assertion_msg(
-      (!boost::is_same<typename GetSolver<NamedParameters, Default_solver>::type, bool>::value),
+    static_assert(
+      (!std::is_same<typename GetSolver<NamedParameters, Default_solver>::type, bool>::value),
       "The function `fair` requires Eigen3 version 3.2 or later.");
 #endif
 

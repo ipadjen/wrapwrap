@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arrangement_2/Arr_with_history_accessor.h $
-// $Id: Arr_with_history_accessor.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arrangement_2/Arr_with_history_accessor.h $
+// $Id: include/CGAL/Arrangement_2/Arr_with_history_accessor.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -25,7 +25,7 @@ namespace CGAL {
 /*! \class
  * A class that provides access to some of the internal methods of the
  * Arrangement_on_surface_with_history_2 class.
- * Used mostly by the global functions that operate on arrangments with
+ * Used mostly by the global functions that operate on arrangements with
  * history objects.
  */
 template <class ArrWithHistory_>

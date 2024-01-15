@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_2/include/CGAL/Nef_2/geninfo.h $
-// $Id: geninfo.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Nef_2/include/CGAL/Nef_2/geninfo.h $
+// $Id: include/CGAL/Nef_2/geninfo.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -17,7 +17,7 @@
 
 #define CGAL_DEPRECATED_HEADER "<CGAL/Nef_2/geninfo.h>"
 #define CGAL_DEPRECATED_MESSAGE_DETAILS \
-  "Something like boost::any or boost::variant should be used instead."
+  "Something like std::any or std::variant should be used instead."
 #include <CGAL/Installation/internal/deprecation_warning.h>
 
 #include <CGAL/config.h>

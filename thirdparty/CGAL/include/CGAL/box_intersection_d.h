@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Box_intersection_d/include/CGAL/box_intersection_d.h $
-// $Id: box_intersection_d.h 8773cee 2020-02-05T10:54:11+01:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Box_intersection_d/include/CGAL/box_intersection_d.h $
+// $Id: include/CGAL/box_intersection_d.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -63,10 +63,10 @@ void box_intersection_segment_tree_d(
   const NT sup = Box_intersection_d::box_limits<NT>::sup();
 
 #ifndef CGAL_LINKED_WITH_TBB
-  CGAL_static_assertion_msg (!(boost::is_convertible<ConcurrencyTag, Parallel_tag>::value),
-                             "Parallel_tag is enabled but TBB is unavailable.");
+  static_assert (!std::is_convertible<ConcurrencyTag, Parallel_tag>::value,
+                 "Parallel_tag is enabled but TBB is unavailable.");
 #else // CGAL_LINKED_WITH_TBB
-  if(boost::is_convertible<ConcurrencyTag, Parallel_tag>::value)
+  if(std::is_convertible<ConcurrencyTag, Parallel_tag>::value)
   {
     // Here is an illustration for n=2.
     //

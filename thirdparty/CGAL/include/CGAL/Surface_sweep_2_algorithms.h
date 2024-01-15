@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_sweep_2/include/CGAL/Surface_sweep_2_algorithms.h $
-// $Id: Surface_sweep_2_algorithms.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_sweep_2/include/CGAL/Surface_sweep_2_algorithms.h $
+// $Id: include/CGAL/Surface_sweep_2_algorithms.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -33,6 +33,7 @@
 #include <CGAL/Arr_conic_traits_2.h>
 #include <CGAL/Arr_circle_segment_traits_2.h>
 #include <CGAL/Arr_linear_traits_2.h>
+#include <CGAL/Arr_polyline_traits_2.h>
 
 namespace CGAL {
 
@@ -54,16 +55,18 @@ struct Default_arr_traits<CGAL::Arr_segment_2<Kernel> >
   typedef CGAL::Arr_segment_traits_2<Kernel>                            Traits;
 };
 
-template <typename SubcurveTraits>
-struct Default_arr_traits<CGAL::internal::Polycurve_2
-                          <SubcurveTraits, typename SubcurveTraits::Point_2> >
+template <typename Kernel>
+struct Default_arr_traits<CGAL::internal::Polycurve_2<
+                            CGAL::Arr_segment_2<Kernel>,
+                            typename Kernel::Point_2>>
 {
-  typedef CGAL::Arr_polyline_traits_2<SubcurveTraits>                   Traits;
+  using Subtraits = CGAL::Arr_segment_traits_2<Kernel>;
+  typedef CGAL::Arr_polyline_traits_2<Subtraits>                        Traits;
 };
 
 template <typename Rat_kernel_, class Alg_kernel_, class Nt_traits_>
-struct Default_arr_traits<CGAL::_Conic_arc_2<Rat_kernel_, Alg_kernel_,
-                                             Nt_traits_> >
+struct Default_arr_traits<CGAL::Conic_arc_2<Rat_kernel_, Alg_kernel_,
+                                            Nt_traits_> >
 {
   typedef CGAL::Arr_conic_traits_2<Rat_kernel_, Alg_kernel_, Nt_traits_>
                                                                         Traits;

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_landmarks_point_location.h $
-// $Id: Arr_landmarks_point_location.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_landmarks_point_location.h $
+// $Id: include/CGAL/Arr_landmarks_point_location.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -262,7 +262,7 @@ protected:
    * \param new_vertex Output: if found a closer vertex to the query point.
    * \param cv_is_contained_in_seg Output: Whether cv is contained inside seg.
    * \return A handle to the halfedge (if no intersecting edge is found, the
-   *         function returns an ivalid halfedge handle).
+   *         function returns an invalid halfedge handle).
    */
   Halfedge_const_handle
   _intersection_with_ccb(Ccb_halfedge_const_circulator circ,

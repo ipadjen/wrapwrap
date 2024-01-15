@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polynomial/include/CGAL/Polynomial/resultant.h $
-// $Id: resultant.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polynomial/include/CGAL/Polynomial/resultant.h $
+// $Id: include/CGAL/Polynomial/resultant.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -45,8 +45,8 @@ namespace CGAL {
 // all other functions are used for dispatching.
 // The implementation uses interpolatation for multivariate polynomials
 // Due to the recursive structuture of CGAL::Polynomial<Coeff> it is better
-// to write the function such that the inner most variabel is eliminated.
-// However,  CGAL::internal::resultant(F,G) eliminates the outer most variabel.
+// to write the function such that the inner most variable is eliminated.
+// However,  CGAL::internal::resultant(F,G) eliminates the outer most variable.
 // This is due to backward compatibility issues with code base on EXACUS.
 // In turn CGAL::internal::resultant_(F,G) eliminates the innermost variable.
 
@@ -390,7 +390,7 @@ inline
 Coeff  resultant(
         const CGAL::Polynomial<Coeff>& F_,
         const CGAL::Polynomial<Coeff>& G_){
-  // make the variable to be elimnated the innermost one.
+  // make the variable to be eliminated the innermost one.
     typedef CGAL::Polynomial_traits_d<CGAL::Polynomial<Coeff> > PT;
     CGAL::Polynomial<Coeff> F = typename PT::Move()(F_, PT::d-1, 0);
     CGAL::Polynomial<Coeff> G = typename PT::Move()(G_, PT::d-1, 0);

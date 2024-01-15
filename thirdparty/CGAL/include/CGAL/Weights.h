@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Weights/include/CGAL/Weights.h $
-// $Id: Weights.h 12bf0e9 2021-10-18T17:31:59+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Weights/include/CGAL/Weights.h $
+// $Id: include/CGAL/Weights.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

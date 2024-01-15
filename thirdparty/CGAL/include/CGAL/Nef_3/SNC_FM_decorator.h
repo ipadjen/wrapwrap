@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_3/include/CGAL/Nef_3/SNC_FM_decorator.h $
-// $Id: SNC_FM_decorator.h 0a8ef64 2022-03-11T22:48:44+00:00 Giles Bathgate
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Nef_3/include/CGAL/Nef_3/SNC_FM_decorator.h $
+// $Id: include/CGAL/Nef_3/SNC_FM_decorator.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -18,7 +18,7 @@
 #ifdef CGAL_I_DO_WANT_TO_USE_GENINFO
 #include <CGAL/Nef_2/geninfo.h>
 #else
-#include <boost/any.hpp>
+#include <any>
 #endif
 #include <CGAL/Nef_2/Segment_overlay_traits.h>
 #include <CGAL/Nef_3/SNC_decorator.h>
@@ -413,7 +413,7 @@ protected:
     #ifdef CGAL_I_DO_WANT_TO_USE_GENINFO
       Edge_of[geninfo<unsigned>::access(info(e_min->twin()->source()->twin()->source()))];
     #else
-      Edge_of[ boost::any_cast<unsigned>(info(e_min->twin()->source()->twin()->source())) ];
+      Edge_of[ std::any_cast<unsigned>(info(e_min->twin()->source()->twin()->source())) ];
     #endif
     CGAL_assertion( e_below != SHalfedge_handle() );
     CGAL_NEF_TRACEN("  edge below " << debug(e_below));
@@ -652,7 +652,7 @@ create_facet_objects(const Plane_3& plane_supporting_facet,
     #ifdef CGAL_I_DO_WANT_TO_USE_GENINFO
       Edge_of[geninfo<unsigned>::access(info(l->incident_sface()->center_vertex()))];
     #else
-      Edge_of[ boost::any_cast<unsigned>(info(l->incident_sface()->center_vertex())) ];
+      Edge_of[ std::any_cast<unsigned>(info(l->incident_sface()->center_vertex())) ];
     #endif
 
     CGAL_assertion( e_below != SHalfedge_handle() );

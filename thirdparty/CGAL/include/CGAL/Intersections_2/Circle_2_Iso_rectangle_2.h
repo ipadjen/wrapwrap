@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_2/include/CGAL/Intersections_2/Circle_2_Iso_rectangle_2.h $
-// $Id: Circle_2_Iso_rectangle_2.h 52164b1 2019-10-19T15:34:59+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_2/include/CGAL/Intersections_2/Circle_2_Iso_rectangle_2.h $
+// $Id: include/CGAL/Intersections_2/Circle_2_Iso_rectangle_2.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -24,9 +24,9 @@ namespace internal {
 
 // Circle_2 is not a disk, thus if the box is contained within the circle, there is no intersection.
 template <class K>
-bool do_intersect_circle_iso_rectangle_2(const typename K::Circle_2& circle,
-                                         const typename K::Iso_rectangle_2& rec,
-                                         const K&)
+typename K::Boolean do_intersect_circle_iso_rectangle_2(const typename K::Circle_2& circle,
+                                                        const typename K::Iso_rectangle_2& rec,
+                                                        const K&)
 {
   typedef typename K::FT                                          FT;
   typedef typename K::Point_2                                     Point;
@@ -92,18 +92,17 @@ bool do_intersect_circle_iso_rectangle_2(const typename K::Circle_2& circle,
 }
 
 template <class K>
-bool do_intersect(const typename K::Iso_rectangle_2& rec,
-                  const typename K::Circle_2& circle,
-                  const K&)
+typename K::Boolean do_intersect(const typename K::Iso_rectangle_2& rec,
+                                 const typename K::Circle_2& circle,
+                                 const K&)
 {
   return do_intersect_circle_iso_rectangle_2(circle, rec, K());
 }
 
-
 template <class K>
-bool do_intersect(const typename K::Circle_2& circle,
-                  const typename K::Iso_rectangle_2& rec,
-                  const K&)
+typename K::Boolean do_intersect(const typename K::Circle_2& circle,
+                                 const typename K::Iso_rectangle_2& rec,
+                                 const K&)
 {
   return do_intersect_circle_iso_rectangle_2(circle, rec, K());
 }

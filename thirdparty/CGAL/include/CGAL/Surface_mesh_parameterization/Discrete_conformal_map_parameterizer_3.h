@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_parameterization/include/CGAL/Surface_mesh_parameterization/Discrete_conformal_map_parameterizer_3.h $
-// $Id: Discrete_conformal_map_parameterizer_3.h 936b02b 2022-10-20T17:30:18+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_parameterization/include/CGAL/Surface_mesh_parameterization/Discrete_conformal_map_parameterizer_3.h $
+// $Id: include/CGAL/Surface_mesh_parameterization/Discrete_conformal_map_parameterizer_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Laurent Saboret, Pierre Alliez, Bruno Levy
@@ -50,11 +50,11 @@ namespace Surface_mesh_parameterization {
 /// - implements `compute_w_ij()` to compute `w_ij`, the `(i,j)`-coefficient of matrix `A`,
 ///   for `j` neighbor vertex of `i`, based on Discrete Conformal Map method.
 ///
-/// \cgalModels `Parameterizer_3`
+/// \cgalModels{Parameterizer_3}
 ///
 /// \tparam TriangleMesh_ must be a model of `FaceGraph`
 ///
-/// \tparam BorderParameterizer_ is a Strategy to parameterize the surface border
+/// \tparam BorderParameterizer_ is a strategy to parameterize the surface border
 ///         and must be a model of `Parameterizer_3`.<br>
 ///         <b>%Default:</b>
 /// \code

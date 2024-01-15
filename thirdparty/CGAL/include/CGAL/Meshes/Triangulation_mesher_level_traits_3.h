@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesher_level/include/CGAL/Meshes/Triangulation_mesher_level_traits_3.h $
-// $Id: Triangulation_mesher_level_traits_3.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesher_level/include/CGAL/Meshes/Triangulation_mesher_level_traits_3.h $
+// $Id: include/CGAL/Meshes/Triangulation_mesher_level_traits_3.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Laurent RINEAU
@@ -76,7 +76,7 @@ struct Triangulation_mesher_level_traits_3 :
       internal_facets.reserve(64);
     }
 
-    Locate_type locate_type;
+    Locate_type locate_type = Tr::OUTSIDE_AFFINE_HULL;
     Cell_handle cell;
     int i, j;
 

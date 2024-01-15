@@ -2,13 +2,15 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Triangulation_2/include/CGAL/boost/graph/internal/graph_traits_2D_triangulation.h $
-// $Id: graph_traits_2D_triangulation.h 52164b1 2019-10-19T15:34:59+02:00 Sébastien Loriot
-// SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Triangulation_2/include/CGAL/boost/graph/internal/graph_traits_2D_triangulation.h $
+// $Id: include/CGAL/boost/graph/internal/graph_traits_2D_triangulation.h a484bfa $
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mael Rouxel-Labbé,
 //                 Andreas Fabri,
 //                 Fernando Cacciola
+
+#include <CGAL/license/Triangulation_2.h>
 
 #ifndef CGAL_2D_TRIANGULATION_TEMPLATE_PARAMETERS
   #error CGAL_2D_TRIANGULATION_TEMPLATE_PARAMETERS is not defined

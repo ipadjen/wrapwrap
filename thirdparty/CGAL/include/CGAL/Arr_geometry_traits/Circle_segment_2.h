@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_geometry_traits/Circle_segment_2.h $
-// $Id: Circle_segment_2.h 58276ed 2020-03-31T18:34:28+03:00 Efi Fogel
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_geometry_traits/Circle_segment_2.h $
+// $Id: include/CGAL/Arr_geometry_traits/Circle_segment_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -995,9 +995,6 @@ public:
   OutputIterator intersect(const Self& cv, OutputIterator oi,
                            Intersection_map* inter_map = nullptr) const
   {
-    typedef std::pair<Point_2, Multiplicity>            Intersection_point;
-    typedef boost::variant<Intersection_point, Self>    Intersection_result;
-
     // First check whether the two arcs have the same supporting curve.
     if (has_same_supporting_curve(cv)) {
       // Check for overlaps between the two arcs.
@@ -1005,7 +1002,7 @@ public:
 
       if (_compute_overlap(cv, overlap)) {
         // There can be just a single overlap between two x-monotone arcs:
-        *oi++ = Intersection_result(overlap);
+        *oi++ = overlap;
         return oi;
       }
 
@@ -1016,11 +1013,11 @@ public:
       // intersection points we report.
       Multiplicity mult = 0;
       if (left().equals(cv.left()) || left().equals(cv.right())) {
-        *oi++ = Intersection_result(std::make_pair(left(), mult));
+        *oi++ = std::make_pair(left(), mult);
       }
 
       if (right().equals(cv.right()) || right().equals(cv.left())) {
-        *oi++ = Intersection_result(std::make_pair(right(), mult));
+        *oi++ = std::make_pair(right(), mult);
       }
 
       return oi;
@@ -1072,7 +1069,7 @@ public:
       if (this->_is_between_endpoints (iter->first) &&
           cv._is_between_endpoints (iter->first))
       {
-        *oi++ = Intersection_result(*iter);
+        *oi++ = *iter;
       }
     }
 
@@ -1705,7 +1702,7 @@ protected:
   }
 
   /*! Compute the intersections between the supporting circle of (*this) and
-   * the supporting line of the segement cv.
+   * the supporting line of the segment cv.
    */
   void _circ_line_intersect(const Self& cv,
                             Intersection_list& inter_list) const

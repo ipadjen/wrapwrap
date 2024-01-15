@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Poisson_surface_reconstruction_3/include/CGAL/Lightweight_vector_3.h $
-// $Id: Lightweight_vector_3.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Poisson_surface_reconstruction_3/include/CGAL/Lightweight_vector_3.h $
+// $Id: include/CGAL/Lightweight_vector_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -27,7 +27,7 @@ namespace CGAL {
 /// The purpose of this class is to save memory as the actual vector
 /// is allocated only when needed.
 ///
-/// \cgalModels `Kernel::Vector_3`
+/// \cgalModels{Kernel::Vector_3}
 ///
 /// @tparam Gt   Geometric traits class.
 template<class Gt>

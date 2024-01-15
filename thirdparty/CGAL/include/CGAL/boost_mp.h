@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Number_types/include/CGAL/boost_mp.h $
-// $Id: boost_mp.h 6486844 2022-05-10T11:30:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Number_types/include/CGAL/boost_mp.h $
+// $Id: include/CGAL/boost_mp.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Marc Glisse
@@ -20,8 +20,18 @@
 // easy solution.
 // MSVC had trouble with versions <= 1.69:
 // https://github.com/boostorg/multiprecision/issues/98
+//
+// Disable also on Windows 32 bits
+// because CGAL/cpp_float.h assumes _BitScanForward64 is available
+// See https://learn.microsoft.com/en-us/cpp/intrinsics/bitscanforward-bitscanforward64
+//
+// Disable also with PowerPC processors, with Boost<1.80 because of that bug:
+// https://github.com/boostorg/multiprecision/pull/421
+//
 #if !defined CGAL_DO_NOT_USE_BOOST_MP && \
-    (!defined _MSC_VER || BOOST_VERSION >= 107000)
+    (!defined _MSC_VER || BOOST_VERSION >= 107000) && \
+    (!defined _WIN32 || defined _WIN64) && \
+    (BOOST_VERSION >= 108000 || (!defined _ARCH_PPC && !defined _ARCH_PPC64))
 #define CGAL_USE_BOOST_MP 1
 
 #include <CGAL/Quotient.h>
@@ -897,6 +907,7 @@ template< > class Real_embeddable_traits< Quotient<boost::multiprecision::cpp_in
 } //namespace CGAL
 
 #include <CGAL/BOOST_MP_arithmetic_kernel.h>
+#include <CGAL/cpp_float.h>
 
 #endif // BOOST_VERSION
 #endif

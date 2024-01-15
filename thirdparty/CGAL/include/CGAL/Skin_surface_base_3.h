@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Skin_surface_3/include/CGAL/Skin_surface_base_3.h $
-// $Id: Skin_surface_base_3.h 74c029c 2021-09-09T11:44:36+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Skin_surface_3/include/CGAL/Skin_surface_base_3.h $
+// $Id: include/CGAL/Skin_surface_base_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -42,7 +42,6 @@
 
 #include <CGAL/STL_Extension/internal/Has_nested_type_Bare_point.h>
 
-#include <boost/mpl/if.hpp>
 #include <boost/mpl/identity.hpp>
 
 namespace CGAL {
@@ -655,8 +654,8 @@ locate_in_tmc(const Bare_point &p0, TMC_Cell_handle start) const
   if (start->has_vertex(_tmc.infinite_vertex(), ind_inf) )
     start = start->neighbor(ind_inf);
 
-  CGAL_triangulation_precondition(start != TMC_Cell_handle());
-  CGAL_triangulation_precondition(!start->has_vertex(_tmc.infinite_vertex()));
+  CGAL_precondition(start != TMC_Cell_handle());
+  CGAL_precondition(!start->has_vertex(_tmc.infinite_vertex()));
 
   // We implement the remembering visibility/stochastic walk.
 

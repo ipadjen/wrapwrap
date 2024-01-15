@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Convex_decomposition_3/include/CGAL/Convex_decomposition_3/Single_wall_creator2.h $
-// $Id: Single_wall_creator2.h 30e536b 2021-03-01T08:06:48+00:00 Giles Bathgate
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Convex_decomposition_3/include/CGAL/Convex_decomposition_3/Single_wall_creator2.h $
+// $Id: include/CGAL/Convex_decomposition_3/Single_wall_creator2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -14,10 +14,12 @@
 
 #include <CGAL/license/Convex_decomposition_3.h>
 
-
+#include <CGAL/Modifier_base.h>
 #include <CGAL/Nef_3/SNC_decorator.h>
+#include <CGAL/Nef_3/SNC_point_locator.h>
 #include <CGAL/Nef_3/SNC_intersection.h>
 #include <CGAL/Nef_S2/Normalizing.h>
+#include <CGAL/Convex_decomposition_3/Ray_hit_generator.h>
 #include <CGAL/Convex_decomposition_3/SM_walls.h>
 
 #undef CGAL_NEF_DEBUG

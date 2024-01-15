@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polyline_simplification_2/include/CGAL/Polyline_simplification_2/Vertex_base_2.h $
-// $Id: Vertex_base_2.h 53cb7cd 2021-02-16T13:41:28+00:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polyline_simplification_2/include/CGAL/Polyline_simplification_2/Vertex_base_2.h $
+// $Id: include/CGAL/Polyline_simplification_2/Vertex_base_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Philipp Moeller
@@ -25,7 +25,7 @@ namespace Polyline_simplification_2 {
 
 /// A vertex base class with data members needed by the simplification algorithm.
 /// \tparam Vb must be a model of the concept `TriangulationVertexBase_2`
-/// \cgalModels `PolylineSimplificationVertexBase_2`.
+/// \cgalModels{PolylineSimplificationVertexBase_2}
   template<class K, class Vb = CGAL::Triangulation_vertex_base_2<K> >
 class Vertex_base_2
   : public Vb

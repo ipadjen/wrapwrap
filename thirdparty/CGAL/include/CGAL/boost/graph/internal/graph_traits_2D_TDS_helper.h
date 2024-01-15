@@ -2,9 +2,9 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/TDS_2/include/CGAL/boost/graph/internal/graph_traits_2D_TDS_helper.h $
-// $Id: graph_traits_2D_TDS_helper.h 129f427 2021-12-16T13:48:01+01:00 Mael Rouxel-Labbé
-// SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/TDS_2/include/CGAL/boost/graph/internal/graph_traits_2D_TDS_helper.h $
+// $Id: include/CGAL/boost/graph/internal/graph_traits_2D_TDS_helper.h a484bfa $
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mael Rouxel-Labbé
 
@@ -19,8 +19,11 @@
 #include <iterator>
 #include <utility>
 
-#ifndef CGAL_GRAPH_TRAITS_2D_TDS_HELPERS
-#define CGAL_GRAPH_TRAITS_2D_TDS_HELPERS
+#ifndef CGAL_GRAPH_TRAITS_2D_TDS_HELPERS_H
+#define CGAL_GRAPH_TRAITS_2D_TDS_HELPERS_H
+
+#include <CGAL/license/TDS_2.h>
+
 
 namespace CGAL {
 namespace internal {
@@ -285,7 +288,7 @@ public:
 
 namespace std {
 
-// workaround a bug detected on at least g++ 4.4 where boost::next(Iterator)
+// workaround a bug detected on at least g++ 4.4 where std::next(Iterator)
 // is picked as a candidate for next(h,g)
 template <typename TDS>
 struct iterator_traits< CGAL::internal::TDS2_halfedge_descriptor<TDS> >
@@ -319,4 +322,4 @@ struct hash<CGAL::internal::TDS2_halfedge_descriptor<TDS> >
 
 } // namespace std
 
-#endif // CGAL_GRAPH_TRAITS_2D_TDS_HELPERS
+#endif // CGAL_GRAPH_TRAITS_2D_TDS_HELPERS_H

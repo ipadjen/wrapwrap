@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_processing_3/include/CGAL/radial_orient_normals.h $
-// $Id: radial_orient_normals.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Point_set_processing_3/include/CGAL/radial_orient_normals.h $
+// $Id: include/CGAL/radial_orient_normals.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Laurent Saboret
@@ -19,7 +19,7 @@
 #include <CGAL/Origin.h>
 #include <CGAL/IO/trace.h>
 #include <CGAL/property_map.h>
-#include <CGAL/point_set_processing_assertions.h>
+#include <CGAL/assertions.h>
 
 #include <deque>
 #include <math.h>
@@ -72,7 +72,7 @@ radial_orient_normals(
     typedef typename Kernel::FT FT;
 
     // Precondition: at least one element in the container.
-    CGAL_point_set_processing_precondition(first != beyond);
+    CGAL_precondition(first != beyond);
 
     // Find points barycenter.
     // Note: We should use CGAL::centroid() from PCA component.

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Spatial_searching/include/CGAL/Kd_tree_node.h $
-// $Id: Kd_tree_node.h c4e816e 2021-11-23T14:17:39+01:00 Dmitry Anisimov
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Spatial_searching/include/CGAL/Kd_tree_node.h $
+// $Id: include/CGAL/Kd_tree_node.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -175,14 +175,14 @@ namespace CGAL {
     }
 
 
-    boost::optional<Point_d>
+    std::optional<Point_d>
     any_tree_item() const {
-      boost::optional<Point_d> result = boost::none;
+      std::optional<Point_d> result = std::nullopt;
       if (is_leaf()) {
          Leaf_node_const_handle node =
           static_cast<Leaf_node_const_handle>(this);
          if (node->size()>0){
-           return boost::make_optional(*(node->begin()));
+           return std::make_optional(*(node->begin()));
          }
         }
       else {
@@ -273,14 +273,14 @@ namespace CGAL {
 
 
     template <class FuzzyQueryItem>
-    boost::optional<Point_d>
+    std::optional<Point_d>
     search_any_point(const FuzzyQueryItem& q,
                      Kd_tree_rectangle<FT,D>& b,
                      typename Kdt::const_iterator tree_points_begin,
                      typename std::vector<FT>::const_iterator cache_begin,
                      int dim) const
     {
-      boost::optional<Point_d> result = boost::none;
+      std::optional<Point_d> result = std::nullopt;
       if (is_leaf()) {
         Leaf_node_const_handle node =
           static_cast<Leaf_node_const_handle>(this);
@@ -376,7 +376,7 @@ namespace CGAL {
 
     // With cache
     template<class FuzzyQueryItem>
-    boost::optional<Point_d> search_any_point_in_leaf(
+    std::optional<Point_d> search_any_point_in_leaf(
       Leaf_node_const_handle node,
       const FuzzyQueryItem &q,
       typename Kdt::const_iterator tree_points_begin,
@@ -384,7 +384,7 @@ namespace CGAL {
       int dim,
       Tag_true /*has_points_cache*/) const
     {
-      boost::optional<Point_d> result = boost::none;
+      std::optional<Point_d> result = std::nullopt;
       typename Kdt::iterator it_node_point = node->begin(), it_node_point_end = node->end();
       typename std::vector<FT>::const_iterator cache_point_it = cache_begin + dim*(it_node_point - tree_points_begin);
       for (; it_node_point != it_node_point_end; ++it_node_point, cache_point_it += dim)
@@ -401,7 +401,7 @@ namespace CGAL {
 
     // Without cache
     template<class FuzzyQueryItem>
-    boost::optional<Point_d> search_any_point_in_leaf(
+    std::optional<Point_d> search_any_point_in_leaf(
       Leaf_node_const_handle node,
       const FuzzyQueryItem &q,
       typename Kdt::const_iterator /*tree_points_begin*/,
@@ -409,7 +409,7 @@ namespace CGAL {
       int /*dim*/,
       Tag_false /*has_points_cache*/) const
     {
-      boost::optional<Point_d> result = boost::none;
+      std::optional<Point_d> result = std::nullopt;
       for (iterator i = node->begin(); i != node->end(); ++i)
       {
         if (q.contains(*i))
@@ -435,7 +435,7 @@ namespace CGAL {
   private:
 
     // private variables for leaf nodes
-    boost::int32_t n; // denotes number of items in a leaf node
+    std::int32_t n; // denotes number of items in a leaf node
     iterator data; // iterator to data in leaf node
 
 
@@ -503,7 +503,7 @@ namespace CGAL {
   private:
 
        // private variables for internal nodes
-    boost::int32_t cut_dim;
+    std::int32_t cut_dim;
     FT cut_val;
     Node_handle lower_ch, upper_ch;
 
@@ -653,7 +653,7 @@ namespace CGAL {
   private:
 
        // private variables for internal nodes
-    boost::uint8_t cut_dim;
+    std::uint8_t cut_dim;
     FT cut_val;
 
     Node_handle lower_ch, upper_ch;
@@ -714,7 +714,7 @@ namespace CGAL {
 
     inline
     void set_separator(Separator& sep){
-      cut_dim = static_cast<boost::uint8_t>(sep.cutting_dimension());
+      cut_dim = static_cast<std::uint8_t>(sep.cutting_dimension());
       cut_val = sep.cutting_value();
     }
 

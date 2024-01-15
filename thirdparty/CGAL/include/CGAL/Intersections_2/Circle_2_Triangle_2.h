@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_2/include/CGAL/Intersections_2/Circle_2_Triangle_2.h $
-// $Id: Circle_2_Triangle_2.h 7e62c02 2021-04-12T14:02:37+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_2/include/CGAL/Intersections_2/Circle_2_Triangle_2.h $
+// $Id: include/CGAL/Intersections_2/Circle_2_Triangle_2.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -25,7 +25,7 @@ namespace Intersections {
 namespace internal {
 
 template <class K>
-bool
+typename K::Boolean
 do_intersect(const typename K::Circle_2 & c,
              const typename K::Triangle_2& t,
              const K&)
@@ -48,9 +48,9 @@ do_intersect(const typename K::Circle_2 & c,
 }
 
 template <class K>
-bool
+typename K::Boolean
 do_intersect(const typename K::Triangle_2& t,
-             const typename K::Circle_2 & c,
+             const typename K::Circle_2& c,
              const K&)
 {
   return do_intersect(c,t);
@@ -62,4 +62,5 @@ do_intersect(const typename K::Triangle_2& t,
 CGAL_DO_INTERSECT_FUNCTION(Circle_2, Triangle_2, 2)
 
 } // namespace CGAL
+
 #endif // CGAL_INTERSECTIONS_2_CIRCLE_2_TRIANGLE_2_H

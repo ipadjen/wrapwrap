@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Three/include/CGAL/Three/TextRenderer.h $
-// $Id: TextRenderer.h 3b70343 2020-11-16T16:19:43+01:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Three/include/CGAL/Three/TextRenderer.h $
+// $Id: include/CGAL/Three/TextRenderer.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -38,7 +38,7 @@ public :
    */
     TextItem() {}
     /*!
-     * \brief The construtor for the TextItem
+     * \brief The constructor for the TextItem
      * \param p_x, p_y, p_z the coordinates of the TextItem.
      * \param p_text the text to render.
      * \param p_3D
@@ -183,7 +183,7 @@ protected:
     QList<TextListItem*> textItems;
     //!\brief List of `TextItem`s
     //!
-    //! Usually fed by the viewer, it holds the text informations from the
+    //! Usually fed by the viewer, it holds the text information from the
     //! viewer that are displayed directly on the screen, like the fps,
     //! the distances, etc.
     QList<TextItem*> local_textItems;

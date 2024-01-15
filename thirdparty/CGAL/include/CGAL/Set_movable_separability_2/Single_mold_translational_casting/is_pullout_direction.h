@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Set_movable_separability_2/include/CGAL/Set_movable_separability_2/Single_mold_translational_casting/is_pullout_direction.h $
-// $Id: is_pullout_direction.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Set_movable_separability_2/include/CGAL/Set_movable_separability_2/Single_mold_translational_casting/is_pullout_direction.h $
+// $Id: include/CGAL/Set_movable_separability_2/Single_mold_translational_casting/is_pullout_direction.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s): Shahar    <shasha94@gmail.com>
@@ -151,7 +151,7 @@ is_pullout_direction(const CGAL::Polygon_2<CastingTraits_2>& pgn,
                                     segment_outer_circle.second,
                                     segment_outer_circle.first);
     if (!isordered) {
-      // unlikely, this if must be true atleast once for any polygon - add ref
+      // unlikely, this if must be true at least once for any polygon - add ref
       // to paper
       if (top_edge== pgn.edges_end()) top_edge=e_it;
       else return pgn.edges_end();
@@ -198,7 +198,7 @@ is_pullout_direction(const CGAL::Polygon_2<CastingTraits_2>& pgn,
 }
 
 } // namespace Single_mold_translational_casting
-} // namesapce Set_movable_separability_2
-} // namesapce CGAL
+} // namespace Set_movable_separability_2
+} // namespace CGAL
 
 #endif

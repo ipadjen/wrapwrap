@@ -2,14 +2,17 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Triangulation_2/include/CGAL/boost/graph/properties_Constrained_Delaunay_triangulation_2.h $
-// $Id: properties_Constrained_Delaunay_triangulation_2.h 52164b1 2019-10-19T15:34:59+02:00 Sébastien Loriot
-// SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Triangulation_2/include/CGAL/boost/graph/properties_Constrained_Delaunay_triangulation_2.h $
+// $Id: include/CGAL/boost/graph/properties_Constrained_Delaunay_triangulation_2.h a484bfa $
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mael Rouxel-Labbé
 
 #ifndef CGAL_PROPERTIES_CONSTRAINED_DELAUNAY_TRIANGULATION_2_H
 #define CGAL_PROPERTIES_CONSTRAINED_DELAUNAY_TRIANGULATION_2_H
+
+#include <CGAL/license/Triangulation_2.h>
+
 
 #include <CGAL/Constrained_Delaunay_triangulation_2.h>
 

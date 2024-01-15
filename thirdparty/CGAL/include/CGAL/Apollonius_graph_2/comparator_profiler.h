@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Apollonius_graph_2/include/CGAL/Apollonius_graph_2/comparator_profiler.h $
-// $Id: comparator_profiler.h 3e03d50 2021-05-05T15:32:22+02:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Apollonius_graph_2/include/CGAL/Apollonius_graph_2/comparator_profiler.h $
+// $Id: include/CGAL/Apollonius_graph_2/comparator_profiler.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

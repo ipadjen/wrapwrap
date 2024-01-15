@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Periodic_3_triangulation_3/include/CGAL/Periodic_3_regular_triangulation_traits_3.h $
-// $Id: Periodic_3_regular_triangulation_traits_3.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Periodic_3_triangulation_3/include/CGAL/Periodic_3_regular_triangulation_traits_3.h $
+// $Id: include/CGAL/Periodic_3_regular_triangulation_traits_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -85,6 +85,8 @@ public:
       Compute_power_distance_to_power_sphere_3;
   typedef Functor_with_offset_weighted_points_adaptor_3<Self, typename Kernel::Compute_squared_distance_3>
       Compute_squared_distance_3;
+  typedef Functor_with_offset_weighted_points_adaptor_3<Self, typename Kernel::Compare_squared_distance_3>
+      Compare_squared_distance_3;
 
   // Operations
   Construct_weighted_point_3 construct_weighted_point_3_object() const {
@@ -108,6 +110,12 @@ public:
   Compute_squared_distance_3 compute_squared_distance_3_object() const {
     return Compute_squared_distance_3(
       this->Base::compute_squared_distance_3_object(),
+      this->construct_point_3_object(), construct_weighted_point_3_object());
+  }
+
+  Compare_squared_distance_3 compare_squared_distance_3_object() const {
+    return Compare_squared_distance_3(
+      this->Base::compare_squared_distance_3_object(),
       this->construct_point_3_object(), construct_weighted_point_3_object());
   }
 

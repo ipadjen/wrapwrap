@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d/Bitstream_descartes.h $
-// $Id: Bitstream_descartes.h 7322c79 2022-11-21T14:09:08+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d/Bitstream_descartes.h $
+// $Id: include/CGAL/Algebraic_kernel_d/Bitstream_descartes.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -1217,7 +1217,7 @@ public:
    *
    * The polynomial \c f must have exactly \c m real roots, counted without
    * multiplicity, and the degree of <tt>gcd(f,f')</tt> must be \c k. In this
-   * case, the constructor either isolates the real roots of \c f sucessfully
+   * case, the constructor either isolates the real roots of \c f successfully
    * or a Non_generic_position_exception is thrown. Such an exception
    * certainly occurs if \c f has more than one multiple real root. If \c f
    * has at most one multiple root over the complex numbers, the roots are

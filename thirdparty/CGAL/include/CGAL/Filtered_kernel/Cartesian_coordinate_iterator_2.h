@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Filtered_kernel/include/CGAL/Filtered_kernel/Cartesian_coordinate_iterator_2.h $
-// $Id: Cartesian_coordinate_iterator_2.h 66c20ba 2021-08-03T16:30:18+02:00 Dmitry Anisimov
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Filtered_kernel/include/CGAL/Filtered_kernel/Cartesian_coordinate_iterator_2.h $
+// $Id: include/CGAL/Filtered_kernel/Cartesian_coordinate_iterator_2.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -15,14 +15,14 @@
 
 #include <cstddef>
 #include <iterator>
-#include <boost/variant.hpp>
+#include <variant>
 
 namespace CGAL {
 
 // This class should go away.
 // It is now only used by the Filtered_kernel.
 // It allows to iterate over the coordinates of both a Point_2 and a Vector_2,
-// using a boost::variant, as the iterator types are the same at the kernel level.
+// using a std::variant, as the iterator types are the same at the kernel level.
 
 template <class K>
 class Cartesian_coordinate_iterator_2
@@ -31,7 +31,7 @@ class Cartesian_coordinate_iterator_2
 protected:
   typedef typename K::Point_2 P;
   typedef typename K::Vector_2 V;
-  boost::variant<const P*, const V*> var;
+  std::variant<const P*, const V*> var;
   int index;
   typedef Cartesian_coordinate_iterator_2<K> Self;
 
@@ -57,9 +57,9 @@ public:
 
   reference
   operator*() const {
-    if (const P* const* p = boost::get<const P*>(&var))
+    if (const P* const* p = std::get_if<const P*>(&var))
       return (*p)->cartesian(index);
-    const V* const* v = boost::get<const V*>(&var);
+    const V* const* v = std::get_if<const V*>(&var);
     CGAL_assertion(v != 0);
     return (*v)->cartesian(index);
   }

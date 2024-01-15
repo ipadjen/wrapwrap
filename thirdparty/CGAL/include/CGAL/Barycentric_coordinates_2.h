@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Barycentric_coordinates_2/include/CGAL/Barycentric_coordinates_2.h $
-// $Id: Barycentric_coordinates_2.h 698a4d3 2021-06-30T12:01:04+02:00 Dmitry Anisimov
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Barycentric_coordinates_2/include/CGAL/Barycentric_coordinates_2.h $
+// $Id: include/CGAL/Barycentric_coordinates_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

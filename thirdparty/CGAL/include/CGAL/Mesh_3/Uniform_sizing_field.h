@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/Mesh_3/Uniform_sizing_field.h $
-// $Id: Uniform_sizing_field.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_3/include/CGAL/Mesh_3/Uniform_sizing_field.h $
+// $Id: include/CGAL/Mesh_3/Uniform_sizing_field.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -27,9 +27,9 @@ namespace Mesh_3 {
 template <typename Tr>
 class Uniform_sizing_field
 {
-  typedef typename Tr::Geom_traits    Gt;
+  typedef typename Tr::Geom_traits    GT;
   typedef typename Tr::Weighted_point Weighted_point;
-  typedef typename Gt::FT             FT;
+  typedef typename GT::FT             FT;
 
 public:
   // Vertices of mesh triangulation do not need to be updated

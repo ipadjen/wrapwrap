@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Kernel_23/include/CGAL/Point_3.h $
-// $Id: Point_3.h 2884569 2022-04-27T16:32:06+02:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Kernel_23/include/CGAL/Point_3.h $
+// $Id: include/CGAL/Point_3.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -20,7 +20,6 @@
 #include <CGAL/Origin.h>
 #include <CGAL/representation_tags.h>
 #include <CGAL/assertions.h>
-#include <boost/type_traits/is_same.hpp>
 #include <CGAL/Kernel/Return_base_tag.h>
 #include <CGAL/Bbox_3.h>
 #include <CGAL/Dimension.h>
@@ -35,7 +34,7 @@ class Point_3 : public R_::Kernel_base::Point_3
   typedef typename R_::Aff_transformation_3  Aff_transformation_3;
 
   typedef Point_3                            Self;
-  CGAL_static_assertion((boost::is_same<Self, typename R_::Point_3>::value));
+  static_assert(std::is_same<Self, typename R_::Point_3>::value);
 
 public:
 

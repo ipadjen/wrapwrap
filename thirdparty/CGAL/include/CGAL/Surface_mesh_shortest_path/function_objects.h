@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_shortest_path/include/CGAL/Surface_mesh_shortest_path/function_objects.h $
-// $Id: function_objects.h 64b9bbd 2022-06-28T15:48:56+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_shortest_path/include/CGAL/Surface_mesh_shortest_path/function_objects.h $
+// $Id: include/CGAL/Surface_mesh_shortest_path/function_objects.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Stephen Kiazyk
@@ -465,7 +465,7 @@ public:
     CGAL_assertion(bool(intersectResult1));
     if (!intersectResult1) return CGAL::SMALLER;
 
-    const Point_2* p1_ptr = boost::get<Point_2>(&*intersectResult1);
+    const Point_2* p1_ptr = std::get_if<Point_2>(&*intersectResult1);
 
     CGAL_assertion(p1_ptr && "Intersection should have been a point");
     if (!p1_ptr) return CGAL::SMALLER;
@@ -477,7 +477,7 @@ public:
     CGAL_assertion(bool(intersectResult2));
     if (!intersectResult2) return CGAL::SMALLER;
 
-    const Point_2* p2_ptr = boost::get<Point_2>(&*intersectResult2);
+    const Point_2* p2_ptr = std::get_if<Point_2>(&*intersectResult2);
 
     CGAL_assertion(p2_ptr && "Intersection should have been a point");
     if (!p2_ptr) return CGAL::SMALLER;

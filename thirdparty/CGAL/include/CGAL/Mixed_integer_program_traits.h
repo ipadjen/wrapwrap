@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Solver_interface/include/CGAL/Mixed_integer_program_traits.h $
-// $Id: Mixed_integer_program_traits.h a5b03d5 2022-04-30T14:09:18+02:00 albert-github
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Solver_interface/include/CGAL/Mixed_integer_program_traits.h $
+// $Id: include/CGAL/Mixed_integer_program_traits.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Liangliang Nan
@@ -100,7 +100,7 @@ namespace CGAL {
         ///
         /// The variable of a mixed integer program.
         ///
-        /// \cgalModels `MixedIntegerProgramVariable`
+        /// \cgalModels{MixedIntegerProgramVariable}
         template <typename FT>
         class Variable : public Solver_entry<FT>, public Bound<FT>
         {
@@ -199,7 +199,7 @@ namespace CGAL {
         ///
         /// The linear constraint of a mixed integer program.
         ///
-        /// \cgalModels `MixedIntegerProgramLinearConstraint`
+        /// \cgalModels{MixedIntegerProgramLinearConstraint}
         template <typename FT>
         class Linear_constraint : public Linear_expression<FT>, public Bound<FT>
         {
@@ -231,7 +231,7 @@ namespace CGAL {
         ///
         /// The linear objective of a mixed integer program.
         ///
-        /// \cgalModels `MixedIntegerProgramLinearObjective`
+        /// \cgalModels{MixedIntegerProgramLinearObjective}
         ///
         template <typename FT>
         class Linear_objective : public Linear_expression<FT>
@@ -281,7 +281,7 @@ namespace CGAL {
         /// \tparam FT Number type
         /// \endcond
         ///
-        /// \cgalModels `MixedIntegerProgramTraits`
+        /// \cgalModels{MixedIntegerProgramTraits}
         template <typename FT>
         class Mixed_integer_program_traits
         {

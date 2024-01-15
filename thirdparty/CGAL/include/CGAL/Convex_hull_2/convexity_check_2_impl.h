@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Convex_hull_2/include/CGAL/Convex_hull_2/convexity_check_2_impl.h $
-// $Id: convexity_check_2_impl.h 4bb0406 2021-02-04T18:12:12+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Convex_hull_2/include/CGAL/Convex_hull_2/convexity_check_2_impl.h $
+// $Id: include/CGAL/Convex_hull_2/convexity_check_2_impl.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -181,8 +181,6 @@ ch_brute_force_chain_check_2(ForwardIterator1 first1,
                                   ForwardIterator2 last2,
                                   const Traits& ch_traits )
 {
-  using namespace boost;
-
   typedef  typename Traits::Left_turn_2     Left_turn_2;
 
   ForwardIterator1 iter11;

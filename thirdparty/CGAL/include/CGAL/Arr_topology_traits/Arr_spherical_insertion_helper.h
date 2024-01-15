@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_topology_traits/Arr_spherical_insertion_helper.h $
-// $Id: Arr_spherical_insertion_helper.h 295e9b9 2022-02-02T15:44:48+02:00 Efi Fogel
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_topology_traits/Arr_spherical_insertion_helper.h $
+// $Id: include/CGAL/Arr_topology_traits/Arr_spherical_insertion_helper.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -163,7 +163,7 @@ before_handle_event_imp(Event* event, Arr_not_all_sides_oblivious_tag)
   if (event->is_isolated()) return;
 
   if (ps_y == ARR_BOTTOM_BOUNDARY) {
-    // Process bootom contraction boundary:
+    // Process bottom contraction boundary:
     // The event has only one right curve, as there is exactly one curve
     // incident to an event with boundary conditions.
     CGAL_assertion((event->number_of_left_curves() == 0) &&

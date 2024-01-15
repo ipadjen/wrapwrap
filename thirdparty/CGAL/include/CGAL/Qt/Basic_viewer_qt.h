@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/GraphicsView/include/CGAL/Qt/Basic_viewer_qt.h $
-// $Id: Basic_viewer_qt.h 0b63b76 2022-07-25T16:51:38+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/GraphicsView/include/CGAL/Qt/Basic_viewer_qt.h $
+// $Id: include/CGAL/Qt/Basic_viewer_qt.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -34,7 +34,7 @@
 #include <CGAL/Qt/manipulatedFrame.h>
 #include <QKeyEvent>
 #include <QOpenGLVertexArrayObject>
-#include <QGLBuffer>
+#include <QOpenGLBuffer>
 #include <QOpenGLShaderProgram>
 
 #ifdef __GNUC__
@@ -1779,9 +1779,9 @@ protected:
   static const unsigned int NB_VBO_BUFFERS=(END_POS-BEGIN_POS)+
     (END_COLOR-BEGIN_COLOR)+2; // +2 for 2 vectors of normals
 
-  QGLBuffer buffers[NB_VBO_BUFFERS];
+  QOpenGLBuffer buffers[NB_VBO_BUFFERS];
 
-  // The following enum gives the indices of the differents vao.
+  // The following enum gives the indices of the different vao.
   enum
     { VAO_MONO_POINTS=0,
       VAO_COLORED_POINTS,
@@ -1816,8 +1816,8 @@ protected:
 namespace CGAL
 {
 
-  template<class T>
-  void draw(const T&, const char* ="", bool=false)
+  template<class ... T>
+  void draw(T...)
   {
     std::cerr<<"Impossible to draw, CGAL_USE_BASIC_VIEWER is not defined."<<std::endl;
   }

@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_skeletonization/include/CGAL/Surface_mesh_skeletonization/internal/Curve_skeleton.h $
-// $Id: Curve_skeleton.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_skeletonization/include/CGAL/Surface_mesh_skeletonization/internal/Curve_skeleton.h $
+// $Id: include/CGAL/Surface_mesh_skeletonization/internal/Curve_skeleton.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Xiang Gao <gaox@ethz.ch>
@@ -214,16 +214,16 @@ private:
     MCFSKEL_DEBUG( std::cerr <<"init" << std::endl; )
 
     int nb_edges = static_cast<int>(num_edges(hg));
-    int num_faces = static_cast<int>(hg.size_of_facets());
+    int nb_faces = static_cast<int>(num_faces(hg));
     int nb_vertices = static_cast<int>(num_vertices(hg));
     edge_to_face.resize(nb_edges);
     edge_to_vertex.resize(nb_edges);
     vertex_to_edge.resize(nb_vertices);
-    face_to_edge.resize(num_faces);
+    face_to_edge.resize(nb_faces);
 
     is_vertex_deleted.resize(nb_vertices, false);
     is_edge_deleted.resize(nb_edges, false);
-    is_face_deleted.resize(num_faces, false);
+    is_face_deleted.resize(nb_faces, false);
 
     record.resize(nb_vertices);
     for (size_t i = 0; i < record.size(); ++i)

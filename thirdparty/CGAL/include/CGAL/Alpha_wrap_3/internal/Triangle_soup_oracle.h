@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Alpha_wrap_3/include/CGAL/Alpha_wrap_3/internal/Triangle_soup_oracle.h $
-// $Id: Triangle_soup_oracle.h 964bcd8 2022-05-25T09:37:37+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Alpha_wrap_3/include/CGAL/Alpha_wrap_3/internal/Triangle_soup_oracle.h $
+// $Id: include/CGAL/Alpha_wrap_3/internal/Triangle_soup_oracle.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mael Rouxel-Labbé
@@ -14,7 +14,7 @@
 
 #include <CGAL/license/Alpha_wrap_3.h>
 
-#include <CGAL/Alpha_wrap_3/internal/Alpha_wrap_AABB_traits.h>
+#include <CGAL/Alpha_wrap_3/internal/Alpha_wrap_AABB_geom_traits.h>
 #include <CGAL/Alpha_wrap_3/internal/Oracle_base.h>
 #include <CGAL/Alpha_wrap_3/internal/splitting_helper.h>
 
@@ -38,7 +38,7 @@ namespace internal {
 template <typename GT_>
 struct TS_oracle_traits
 {
-  using Geom_traits = Alpha_wrap_AABB_traits<GT_>; // Wrap the kernel to add Ball_3 + custom Do_intersect_3
+  using Geom_traits = Alpha_wrap_AABB_geom_traits<GT_>; // Wrap the kernel to add Ball_3 + custom Do_intersect_3
   using Point_3 = typename Geom_traits::Point_3;
   using AABB_traits = typename AABB_tree_splitter_traits<Point_3, Geom_traits>::AABB_traits;
   using AABB_tree = typename AABB_tree_splitter_traits<Point_3, Geom_traits>::AABB_tree;
@@ -133,7 +133,7 @@ public:
     if(points.empty() || faces.empty())
     {
 #ifdef CGAL_AW3_DEBUG
-      std::cout << "Warning: Input is empty " << std::endl;
+      std::cout << "Warning: Input is empty (TS)" << std::endl;
 #endif
       return;
     }
@@ -143,7 +143,7 @@ public:
 #endif
 
     PPM pm = choose_parameter<PPM>(get_parameter(np, internal_np::point_map));
-    CGAL_static_assertion((std::is_same<typename boost::property_traits<PPM>::value_type, Point_3>::value));
+    static_assert(std::is_same<typename boost::property_traits<PPM>::value_type, Point_3>::value);
 
     Splitter_base::reserve(faces.size());
 
@@ -164,10 +164,21 @@ public:
 
       const Triangle_3 tr = triangle(p0, p1, p2);
       if(is_degenerate(tr))
+      {
+#ifdef CGAL_AW3_DEBUG
+        std::cerr << "Warning: ignoring degenerate face " << tr << std::endl;
+#endif
         continue;
+      }
 
       Splitter_base::split_and_insert_datum(tr, this->tree(), this->geom_traits());
     }
+
+    // Manually constructing it here purely for profiling reasons: if we keep the lazy approach,
+    // it will be done at the first treatment of a facet that needs a Steiner point.
+    // So if one wanted to bench the flood fill runtime, it would be skewed by the time it takes
+    // to accelerate the tree.
+    this->tree().accelerate_distance_queries();
 
 #ifdef CGAL_AW3_DEBUG
     std::cout << "Tree: " << this->tree().size() << " primitives (" << faces.size() << " faces in input)" << std::endl;
@@ -179,12 +190,31 @@ public:
   void add_triangle_soup(const TriangleRange& triangles,
                          const CGAL_NP_CLASS& /*np*/ = CGAL::parameters::default_values())
   {
+    if(triangles.empty())
+    {
+#ifdef CGAL_AW3_DEBUG
+      std::cout << "Warning: Input is empty (TS)" << std::endl;
+#endif
+      return;
+    }
+
+#ifdef CGAL_AW3_DEBUG
+    std::cout << "Insert into AABB Tree (triangles)..." << std::endl;
+#endif
+
     typename Geom_traits::Is_degenerate_3 is_degenerate = this->geom_traits().is_degenerate_3_object();
+
+    Splitter_base::reserve(triangles.size());
 
     for(const Triangle_3& tr : triangles)
     {
       if(is_degenerate(tr))
+      {
+#ifdef CGAL_AW3_DEBUG
+        std::cerr << "Warning: ignoring degenerate triangle " << tr << std::endl;
+#endif
         continue;
+      }
 
       Splitter_base::split_and_insert_datum(tr, this->tree(), this->geom_traits());
     }

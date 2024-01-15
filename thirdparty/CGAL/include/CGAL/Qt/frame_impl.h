@@ -6,8 +6,8 @@
  This file is part of a fork of the QGLViewer library version 2.7.0.
 
 *****************************************************************************/
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/GraphicsView/include/CGAL/Qt/frame_impl.h $
-// $Id: frame_impl.h c9a020b 2021-02-09T12:12:56+01:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/GraphicsView/include/CGAL/Qt/frame_impl.h $
+// $Id: include/CGAL/Qt/frame_impl.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-only
 
 #ifdef CGAL_HEADER_ONLY
@@ -717,7 +717,7 @@ bool Frame::settingAsReferenceFrameWillCreateALoop(const Frame *const frame) {
 /*! Returns the Frame coordinates of a point \p src defined in the world
  coordinate system (converts from world to Frame).
 
- inverseCoordinatesOf() performs the inverse convertion. transformOf() converts
+ inverseCoordinatesOf() performs the inverse conversion. transformOf() converts
  3D vectors instead of 3D coordinates.
 
  See the <a href="../examples/frameTransform.html">frameTransform example</a>
@@ -733,7 +733,7 @@ Vec Frame::coordinatesOf(const Vec &src) const {
 /*! Returns the world coordinates of the point whose position in the Frame
   coordinate system is \p src (converts from Frame to world).
 
-  coordinatesOf() performs the inverse convertion. Use inverseTransformOf() to
+  coordinatesOf() performs the inverse conversion. Use inverseTransformOf() to
   transform 3D vectors instead of 3D coordinates. */
 CGAL_INLINE_FUNCTION
 Vec Frame::inverseCoordinatesOf(const Vec &src) const {
@@ -749,7 +749,7 @@ Vec Frame::inverseCoordinatesOf(const Vec &src) const {
 /*! Returns the Frame coordinates of a point \p src defined in the
   referenceFrame() coordinate system (converts from referenceFrame() to Frame).
 
-  localInverseCoordinatesOf() performs the inverse convertion. See also
+  localInverseCoordinatesOf() performs the inverse conversion. See also
   localTransformOf(). */
 CGAL_INLINE_FUNCTION
 Vec Frame::localCoordinatesOf(const Vec &src) const {
@@ -759,7 +759,7 @@ Vec Frame::localCoordinatesOf(const Vec &src) const {
 /*! Returns the referenceFrame() coordinates of a point \p src defined in the
  Frame coordinate system (converts from Frame to referenceFrame()).
 
- localCoordinatesOf() performs the inverse convertion. See also
+ localCoordinatesOf() performs the inverse conversion. See also
  localInverseTransformOf(). */
 CGAL_INLINE_FUNCTION
 Vec Frame::localInverseCoordinatesOf(const Vec &src) const {

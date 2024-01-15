@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_processing_3/include/CGAL/vcm_estimate_normals.h $
-// $Id: vcm_estimate_normals.h bccf399 2022-11-08T10:51:46+01:00 Jane Tournois
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Point_set_processing_3/include/CGAL/vcm_estimate_normals.h $
+// $Id: include/CGAL/vcm_estimate_normals.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Jocelyn Meyron and Quentin Mérigot
@@ -20,7 +20,7 @@
 #include <CGAL/Point_set_processing_3/internal/Voronoi_covariance_3/voronoi_covariance_3.h>
 
 #include <CGAL/property_map.h>
-#include <CGAL/point_set_processing_assertions.h>
+#include <CGAL/assertions.h>
 #include <CGAL/Delaunay_triangulation_3.h>
 #include <CGAL/Kd_tree.h>
 #include <CGAL/Search_traits_3.h>

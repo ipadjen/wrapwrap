@@ -3,8 +3,8 @@
 //
 // This file is part of the ImageIO Library, and as been adapted for CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/CGAL_ImageIO/include/CGAL/ImageIO/gif_impl.h $
-// $Id: gif_impl.h bdecbc9 2020-10-16T10:47:54+02:00 Raphael Grimm
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/CGAL_ImageIO/include/CGAL/ImageIO/gif_impl.h $
+// $Id: include/CGAL/ImageIO/gif_impl.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later
 //
 //
@@ -413,7 +413,7 @@ int   gif89 = 0;
 
 
 
-  /* Start reading the raster data. First we get the intial code size
+  /* Start reading the raster data. First we get the initial code size
    * and compute decompressor constant values, based on this code size.
    */
 

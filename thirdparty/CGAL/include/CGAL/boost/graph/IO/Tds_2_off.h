@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/BGL/include/CGAL/boost/graph/IO/Tds_2_off.h $
-// $Id: Tds_2_off.h 5948bc8 2021-01-11T13:12:18+01:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/BGL/include/CGAL/boost/graph/IO/Tds_2_off.h $
+// $Id: include/CGAL/boost/graph/IO/Tds_2_off.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Maxime Gimeno
@@ -109,7 +109,7 @@ off_file_input( std::istream& is, Triangulation_data_structure_2<Vb,Fb>& tds, bo
      tds.set_adjacency(fn, 2, inf_edge_map);
      edge_map.erase(edge_map.begin());
    }
-   CGAL_triangulation_assertion(inf_edge_map.empty());
+   CGAL_assertion(inf_edge_map.empty());
   }
 
 

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_segmentation/include/CGAL/Surface_mesh_segmentation/internal/Expectation_maximization.h $
-// $Id: Expectation_maximization.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_segmentation/include/CGAL/Surface_mesh_segmentation/internal/Expectation_maximization.h $
+// $Id: include/CGAL/Surface_mesh_segmentation/internal/Expectation_maximization.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Ilker O. Yaz
@@ -66,7 +66,7 @@ private:
     }
     /**
      * Probability density function (pdf).
-     * Note that result is not devided to \f$ \sqrt {2\pi}  \f$ , since it does not effect EM algorithm.
+     * Note that result is not divided to \f$ \sqrt {2\pi}  \f$ , since it does not effect EM algorithm.
      * @param x data
      * @return pdf result (without dividing \f$ \sqrt {2\pi}  \f$)
      */
@@ -238,7 +238,7 @@ private:
     for(std::size_t i = 0; i < centers.size(); ++i) {
       if(member_count[i] == 0) {
         CGAL_assertion( false &&
-                        "There is a cluster which does not contain any points, it will not cause an error but associated probabilites to this cluster will be 0.");
+                        "There is a cluster which does not contain any points, it will not cause an error but associated probabilities to this cluster will be 0.");
       } else {
         centers[i].deviation = std::sqrt(centers[i].deviation / member_count[i]);
       }

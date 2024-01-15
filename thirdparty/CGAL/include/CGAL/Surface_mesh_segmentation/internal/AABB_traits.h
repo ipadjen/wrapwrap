@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_segmentation/include/CGAL/Surface_mesh_segmentation/internal/AABB_traits.h $
-// $Id: AABB_traits.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_segmentation/include/CGAL/Surface_mesh_segmentation/internal/AABB_traits.h $
+// $Id: include/CGAL/Surface_mesh_segmentation/internal/AABB_traits.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Ilker O. Yaz
@@ -17,8 +17,9 @@
 
 
 #include <CGAL/AABB_traits.h>
-#include <boost/utility/enable_if.hpp>
 #include <boost/type_traits.hpp>
+
+#include <type_traits>
 
 namespace CGAL
 {
@@ -45,9 +46,9 @@ public:
 
     // activate functions below if K::FT is floating point and fast_bbox_intersection = true
     template <class K>
-    typename boost::enable_if_c<
-      boost::is_floating_point<typename K::FT>::value && fast_bbox_intersection,
-          bool >::type
+    std::enable_if_t<
+      std::is_floating_point<typename K::FT>::value && fast_bbox_intersection,
+          bool >
     operator()(const CGAL::Segment_3<K>& segment, const Bounding_box& bbox) const {
       const Point_3& p = segment.source();
       const Point_3& q = segment.target();
@@ -63,9 +64,9 @@ public:
     }
 
     template <class K>
-    typename boost::enable_if_c<
-      boost::is_floating_point<typename K::FT>::value && fast_bbox_intersection,
-          bool >::type
+    std::enable_if_t<
+      std::is_floating_point<typename K::FT>::value && fast_bbox_intersection,
+          bool >
     operator()(const CGAL::Ray_3<K>& ray, const Bounding_box& bbox) const {
       const Point_3& p = ray.source();
       const Point_3& q = ray.second_point();

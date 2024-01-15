@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Number_types/include/CGAL/known_bit_size_integers.h $
-// $Id: known_bit_size_integers.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Number_types/include/CGAL/known_bit_size_integers.h $
+// $Id: include/CGAL/known_bit_size_integers.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -34,19 +34,19 @@
 
 namespace CGAL {
 
-  typedef boost::int8_t    Integer8;
-  typedef boost::int16_t   Integer16;
-  typedef boost::int32_t   Integer32;
+  typedef std::int8_t    Integer8;
+  typedef std::int16_t   Integer16;
+  typedef std::int32_t   Integer32;
 
-  typedef boost::uint8_t   UInteger8;
-  typedef boost::uint16_t  UInteger16;
-  typedef boost::uint32_t  UInteger32;
+  typedef std::uint8_t   UInteger8;
+  typedef std::uint16_t  UInteger16;
+  typedef std::uint32_t  UInteger32;
 
 #ifndef BOOST_NO_INT64_T
 // this macro is still provided but its use is discouraged
 #   define CGAL_HAS_INTEGER64
-  typedef boost::int64_t   Integer64;
-  typedef boost::uint64_t  UInteger64;
+  typedef std::int64_t   Integer64;
+  typedef std::uint64_t  UInteger64;
 #endif
 
 } //namespace CGAL

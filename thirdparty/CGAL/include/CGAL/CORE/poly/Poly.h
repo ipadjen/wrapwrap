@@ -36,11 +36,11 @@
  * Author: Chee Yap
  * Date:   May 28, 2002
  *
- * WWW URL: http://cs.nyu.edu/exact/
+ * WWW URL: https://cs.nyu.edu/exact/
  * Email: exact@cs.nyu.edu
  *
- * $URL: https://github.com/CGAL/cgal/blob/v5.5.2/CGAL_Core/include/CGAL/CORE/poly/Poly.h $
- * $Id: Poly.h bd172e5 2020-07-21T17:15:45+02:00 Laurent Rineau
+ * $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/CGAL_Core/include/CGAL/CORE/poly/Poly.h $
+ * $Id: include/CGAL/CORE/poly/Poly.h a484bfa $
  * SPDX-License-Identifier: LGPL-3.0-or-later
  ***************************************************************************/
 

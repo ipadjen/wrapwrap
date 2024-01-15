@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_dcel_base.h $
-// $Id: Arr_dcel_base.h 4ea5251 2022-06-10T16:44:17+02:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_dcel_base.h $
+// $Id: include/CGAL/Arr_dcel_base.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -38,7 +38,7 @@ namespace CGAL {
 
 inline void* _clean_pointer(const void* p)
 {
-  CGAL_static_assertion(sizeof(void*) == sizeof(size_t));
+  static_assert(sizeof(void*) == sizeof(size_t));
   const size_t  mask = ~1;
   const size_t  val = (reinterpret_cast<size_t>(p) & mask);
 

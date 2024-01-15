@@ -9,8 +9,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_3/include/CGAL/Intersections_3/Iso_cuboid_3_Triangle_3.h $
-// $Id: Iso_cuboid_3_Triangle_3.h c2d1adf 2021-06-23T17:34:48+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_3/include/CGAL/Intersections_3/Iso_cuboid_3_Triangle_3.h $
+// $Id: include/CGAL/Intersections_3/Iso_cuboid_3_Triangle_3.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -34,4 +34,4 @@ CGAL_INTERSECTION_FUNCTION(Iso_cuboid_3, Triangle_3, 3)
 
 } // namespace CGAL
 
-#endif // CGAL_INTERSECTIONS_3_BBOX_3_TRIANGLE_3_H
+#endif // CGAL_INTERSECTIONS_3_ISO_CUBOID_3_TRIANGLE_3_H

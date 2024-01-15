@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Envelope_2/include/CGAL/envelope_2.h $
-// $Id: envelope_2.h a46398d 2020-08-25T13:43:49+02:00 Ahmed Essam
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Envelope_2/include/CGAL/envelope_2.h $
+// $Id: include/CGAL/envelope_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Ron Wein   <wein@post.tau.ac.il>

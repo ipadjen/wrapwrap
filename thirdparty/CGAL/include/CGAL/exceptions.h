@@ -4,8 +4,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/STL_Extension/include/CGAL/exceptions.h $
-// $Id: exceptions.h 04305dc 2020-06-13T23:39:35+05:30 Abhay Raj Singh
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/STL_Extension/include/CGAL/exceptions.h $
+// $Id: include/CGAL/exceptions.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -14,26 +14,13 @@
 #ifndef CGAL_EXCEPTIONS_H
 #define CGAL_EXCEPTIONS_H
 
-#include <CGAL/config.h>
 #include <stdexcept>
 #include <string>
-
-// Address the warning C4003: not enough actual parameters for macro 'BOOST_PP_SEQ_DETAIL_IS_NOT_EMPTY'
-// lexical_cast.hpp includes files from boost/preprocessor
-// This concerns boost 1_67_0
-#if defined(BOOST_MSVC)
-#  pragma warning(push)
-#  pragma warning(disable: 4003)
-#endif
-#include <boost/lexical_cast.hpp>
-#if defined(BOOST_MSVC)
-#  pragma warning(pop)
-#endif
 
 
 namespace CGAL {
 
-// [Sylvain] This was originaly written in the Exacus library.
+// [Sylvain] This was originally written in the Exacus library.
 // I kept most doxygen comments.
 
 
@@ -87,7 +74,7 @@ public:
     std::logic_error( lib + std::string( " ERROR: ") + kind + std::string( "!")
         + ((expr.empty()) ? (std::string("")) : (std::string("\nExpr: ")+expr))
         + std::string( "\nFile: ") + file
-        + std::string( "\nLine: ") + boost::lexical_cast<std::string>(line)
+        + std::string( "\nLine: ") + std::to_string(line)
         + ((msg.empty()) ? (std::string(""))
                          : (std::string("\nExplanation: ") + msg))),
     m_lib( lib),

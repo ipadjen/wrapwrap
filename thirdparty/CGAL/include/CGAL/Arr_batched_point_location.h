@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_batched_point_location.h $
-// $Id: Arr_batched_point_location.h 0626eb0 2020-06-11T12:32:33+03:00 Efi Fogel
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_batched_point_location.h $
+// $Id: include/CGAL/Arr_batched_point_location.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Baruch Zukerman <baruchzu@post.tau.ac.il>
@@ -26,7 +26,6 @@
 #include <CGAL/Surface_sweep_2/Arr_batched_pl_ss_visitor.h>
 
 #include <vector>
-#include <boost/mpl/if.hpp>
 #include <boost/type_traits.hpp>
 
 namespace CGAL {
@@ -41,7 +40,7 @@ namespace Ss2 = Surface_sweep_2;
  * \param oi Output: An output iterator for the query results.
  * \pre The value-type of PointsIterator is Arrangement::Point_2,
  *      and the value-type of OutputIterator is is pair<Point_2, Result>,
- *      where Result is boost::optional<boost::variant<Vertex_const_handle,
+ *      where Result is std::optional<std::variant<Vertex_const_handle,
  *                                      Halfedge_const_handle,
  *                                      Face_const_handle> >.
  *      It represents the arrangement feature containing the point.
@@ -105,7 +104,7 @@ locate(const Arrangement_on_surface_2<GeometryTraits_2, TopologyTraits>& arr,
     }
   }
 
-  // Obtain a extended traits-class object.
+  // Obtain an extended traits-class object.
   const Gt2* geom_traits = arr.geometry_traits();
 
   /* We would like to avoid copy construction of the geometry traits class.
@@ -120,7 +119,7 @@ locate(const Arrangement_on_surface_2<GeometryTraits_2, TopologyTraits>& arr,
    * Use the form 'A a(*b);' and not ''A a = b;' to handle the case where A has
    * only an implicit constructor, (which takes *b as a parameter).
    */
-  typename boost::mpl::if_<boost::is_same<Gt2, Bgt2>, const Bgt2&, Bgt2>::type
+  std::conditional_t<std::is_same_v<Gt2, Bgt2>, const Bgt2&, Bgt2>
     ex_traits(*geom_traits);
 
   // Define the sweep-line visitor and perform the sweep.

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Classification/include/CGAL/Classification/Local_eigen_analysis.h $
-// $Id: Local_eigen_analysis.h 350b917 2021-04-11T14:50:44+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Classification/include/CGAL/Classification/Local_eigen_analysis.h $
+// $Id: include/CGAL/Classification/Local_eigen_analysis.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Simon Giraudot
@@ -265,7 +265,7 @@ public:
     out.m_content->mean_range = 0.;
 
 #ifndef CGAL_LINKED_WITH_TBB
-    CGAL_static_assertion_msg (!(std::is_convertible<ConcurrencyTag, Parallel_tag>::value),
+    static_assert (!(std::is_convertible<ConcurrencyTag, Parallel_tag>::value),
                                "Parallel_tag is enabled but TBB is unavailable.");
 #else
     if (std::is_convertible<ConcurrencyTag,Parallel_tag>::value)
@@ -353,7 +353,7 @@ public:
     out.m_content->mean_range = 0.;
 
 #ifndef CGAL_LINKED_WITH_TBB
-    CGAL_static_assertion_msg (!(std::is_convertible<ConcurrencyTag, Parallel_tag>::value),
+    static_assert (!(std::is_convertible<ConcurrencyTag, Parallel_tag>::value),
                                "Parallel_tag is enabled but TBB is unavailable.");
 #else
     if (std::is_convertible<ConcurrencyTag,Parallel_tag>::value)
@@ -431,7 +431,7 @@ public:
 
 
 #ifndef CGAL_LINKED_WITH_TBB
-    CGAL_static_assertion_msg (!(std::is_convertible<ConcurrencyTag, Parallel_tag>::value),
+    static_assert (!(std::is_convertible<ConcurrencyTag, Parallel_tag>::value),
                                "Parallel_tag is enabled but TBB is unavailable.");
 #else
     if (std::is_convertible<ConcurrencyTag,Parallel_tag>::value)

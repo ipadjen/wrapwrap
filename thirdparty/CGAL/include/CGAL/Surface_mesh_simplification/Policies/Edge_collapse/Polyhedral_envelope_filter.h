@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Surface_mesh_simplification/Policies/Edge_collapse/Polyhedral_envelope_filter.h $
-// $Id: Polyhedral_envelope_filter.h 02db50a 2021-01-04T10:36:14+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon_mesh_processing/include/CGAL/Surface_mesh_simplification/Policies/Edge_collapse/Polyhedral_envelope_filter.h $
+// $Id: include/CGAL/Surface_mesh_simplification/Policies/Edge_collapse/Polyhedral_envelope_filter.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Andreas Fabri
@@ -21,7 +21,7 @@
 
 #include <CGAL/Polyhedral_envelope.h>
 
-#include <boost/optional.hpp>
+#include <optional>
 
 #include <vector>
 #include <type_traits>
@@ -34,15 +34,15 @@ namespace internal {
   struct Dummy_filter2 {
   template <typename Profile>
   inline
-  const boost::optional<typename Profile::Point>
-  operator()(const Profile&, const boost::optional<typename Profile::Point>& op) const
+  const std::optional<typename Profile::Point>
+  operator()(const Profile&, const std::optional<typename Profile::Point>& op) const
   {
     return op;
   }
 
 };
 
-} // namesapce internal
+} // namespace internal
 
 template<typename GeomTraits,typename BaseFilter = internal::Dummy_filter2>
 class Polyhedral_envelope_filter
@@ -58,7 +58,7 @@ private:
   template <typename Profile>
   void initialize_envelope(const Profile& profile) const
   {
-    CGAL_static_assertion((std::is_same<GeomTraits, typename Profile::Geom_traits>::value));
+    static_assert(std::is_same<GeomTraits, typename Profile::Geom_traits>::value);
 
     typedef typename Profile::Triangle_mesh                                   Triangle_mesh;
     typedef typename boost::graph_traits<Triangle_mesh>::halfedge_descriptor  halfedge_descriptor;
@@ -109,8 +109,8 @@ public:
 
 
   template <typename Profile>
-  boost::optional<typename Profile::Point>
-  operator()(const Profile& profile, boost::optional<typename Profile::Point> op) const
+  std::optional<typename Profile::Point>
+  operator()(const Profile& profile, std::optional<typename Profile::Point> op) const
   {
     typedef typename Profile::Point Point;
     typedef typename Profile::vertex_descriptor_vector Link;
@@ -127,7 +127,7 @@ public:
 
       if(! (*m_envelope)(p)){
         // the new placement is outside envelope
-        return boost::none;
+        return std::nullopt;
       }
 
       const Link link = profile.link();
@@ -140,8 +140,8 @@ public:
         Point pw = get(profile.vertex_point_map(),w);
 
         if(! (*m_envelope)(p, pv, pw)){
-          // the triange intersects the envelope
-          return boost::none;
+          // the triangle intersects the envelope
+          return std::nullopt;
         }
         pv = pw;
 

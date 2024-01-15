@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_3/include/CGAL/Nef_3/SNC_point_locator.h $
-// $Id: SNC_point_locator.h 36f2260 2022-04-14T08:36:36+01:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Nef_3/include/CGAL/Nef_3/SNC_point_locator.h $
+// $Id: include/CGAL/Nef_3/SNC_point_locator.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -225,6 +225,22 @@ public:
       delete candidate_provider;
   }
 
+  // We next check if v is a vertex on the face to avoid a geometric test
+  static inline bool v_vertex_of_f(Vertex_handle v, Halffacet_handle f) {
+    Halffacet_cycle_iterator fci;
+    for(fci=f->facet_cycles_begin(); fci!=f->facet_cycles_end(); ++fci) {
+      if(fci.is_shalfedge()) {
+        SHalfedge_around_facet_circulator sfc(fci), send(sfc);
+        CGAL_For_all(sfc,send) {
+          if(sfc->source()->center_vertex() ==  v){
+            return true;
+          }
+        }
+      }
+    }
+    return false;
+  }
+
   virtual Object_handle shoot(const Ray_3& ray, int mask=255) const {
     Vertex_handle null_handle;
     return this->shoot(ray, null_handle, mask);
@@ -301,21 +317,23 @@ public:
           Point_3 q;
           _CGAL_NEF_TRACEN("trying facet with on plane "<<f->plane()<<
                            " with point on "<<f->plane().point());
-          if( SNC_intersection::does_intersect_internally( ray, f, q) ) {
-            _CGAL_NEF_TRACEN("ray intersects facet on "<<q);
-            _CGAL_NEF_TRACEN("prev. intersection? "<<hit);
-            if( hit) { _CGAL_NEF_TRACEN("prev. intersection on "<<eor); }
-            if( hit && !has_smaller_distance_to_point( ray.source(), q, eor))
-              continue;
-            _CGAL_NEF_TRACEN("is the intersection point on the current cell? "<<
-                             candidate_provider->is_point_in_node( q, n));
-            if( !candidate_provider->is_point_in_node( q, n))
-              continue;
-            eor = q;
-            f_res = f;
-            solution = is_facet_;
-            hit = true;
-            _CGAL_NEF_TRACEN("the facet becomes the new hit object");
+          if( (ray_source_vertex == Vertex_handle()) || !v_vertex_of_f(ray_source_vertex,f) ) {
+            if( SNC_intersection::does_intersect_internally( ray, f, q) ) {
+              _CGAL_NEF_TRACEN("ray intersects facet on "<<q);
+              _CGAL_NEF_TRACEN("prev. intersection? "<<hit);
+              if( hit) { _CGAL_NEF_TRACEN("prev. intersection on "<<eor); }
+              if( hit && !has_smaller_distance_to_point( ray.source(), q, eor))
+                continue;
+              _CGAL_NEF_TRACEN("is the intersection point on the current cell? "<<
+                               candidate_provider->is_point_in_node( q, n));
+              if( !candidate_provider->is_point_in_node( q, n))
+                continue;
+              eor = q;
+              f_res = f;
+              solution = is_facet_;
+              hit = true;
+              _CGAL_NEF_TRACEN("the facet becomes the new hit object");
+            }
           }
         }
       }
@@ -434,22 +452,7 @@ public:
           return make_object(f);
         }
 
-        // We next check if v is a vertex on the face to avoid a geometric test
-        bool v_vertex_of_f = false;
-        Halffacet_cycle_iterator fci;
-        for(fci=f->facet_cycles_begin(); (! v_vertex_of_f) && (fci!=f->facet_cycles_end()); ++fci) {
-          if(fci.is_shalfedge()) {
-            SHalfedge_around_facet_circulator sfc(fci), send(sfc);
-            CGAL_For_all(sfc,send) {
-              if(sfc->source()->center_vertex() ==  v){
-                v_vertex_of_f = true;
-                break;
-              }
-            }
-          }
-        }
-
-        if( (! v_vertex_of_f) && SNC_intersection::does_intersect_internally(s,f,ip) ) {
+        if( !v_vertex_of_f(v,f) && SNC_intersection::does_intersect_internally(s,f,ip) ) {
           s = Segment_3(p, normalized(ip));
           f_res = f;
           solution = is_facet_;

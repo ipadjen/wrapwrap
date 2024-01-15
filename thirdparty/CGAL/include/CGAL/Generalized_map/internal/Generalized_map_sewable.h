@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Generalized_map/include/CGAL/Generalized_map/internal/Generalized_map_sewable.h $
-// $Id: Generalized_map_sewable.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Generalized_map/include/CGAL/Generalized_map/internal/Generalized_map_sewable.h $
+// $Id: include/CGAL/Generalized_map/internal/Generalized_map_sewable.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Guillaume Damiand <guillaume.damiand@liris.cnrs.fr>
@@ -28,8 +28,8 @@ template<typename GMap, unsigned int i, unsigned int dim=GMap::dimension>
 struct GMap_is_sewable_functor
 {
   static bool run( const GMap& amap,
-                   typename GMap::Dart_const_handle adart1,
-                   typename GMap::Dart_const_handle adart2 )
+                   typename GMap::Dart_const_descriptor adart1,
+                   typename GMap::Dart_const_descriptor adart2 )
   {
     CGAL_assertion( i<=GMap::dimension );
     if ( !amap.template is_free<i>(adart1) ||
@@ -43,8 +43,8 @@ struct GMap_is_sewable_functor
     }
 
     // hash map to build the isomorphism between the two i-cells.
-    CGAL::Unique_hash_map<typename GMap::Dart_const_handle,
-        typename GMap::Dart_const_handle,
+    CGAL::Unique_hash_map<typename GMap::Dart_const_descriptor,
+        typename GMap::Dart_const_descriptor,
         typename GMap::Hash_function> bijection;
 
     typename GMap::size_type m1 = amap.get_new_mark();

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Combinatorial_map/include/CGAL/Cell_const_iterators.h $
-// $Id: Cell_const_iterators.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Combinatorial_map/include/CGAL/Cell_const_iterators.h $
+// $Id: include/CGAL/Cell_const_iterators.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Guillaume Damiand <guillaume.damiand@liris.cnrs.fr>
@@ -32,11 +32,11 @@ namespace CGAL {
   {
   public:
     typedef CMap_cell_iterator<Map_,Ite,i,dim,true> Base;
-    typedef typename Map_::Dart_const_handle Dart_const_handle;
+    typedef typename Map_::Dart_const_descriptor Dart_const_descriptor;
 
     /// Main constructor.
     CMap_cell_const_iterator(const Map_& amap,
-                             Dart_const_handle adart):
+                             Dart_const_descriptor adart):
       Base(amap,adart)
     {}
     /// Constructor from non const version.
@@ -54,11 +54,11 @@ namespace CGAL {
   {
   public:
     typedef CMap_one_dart_per_incident_cell_iterator<Map_,i,j,dim,true> Base;
-    typedef typename Map_::Dart_const_handle Dart_const_handle;
+    typedef typename Map_::Dart_const_descriptor Dart_const_descriptor;
 
     /// Main constructor.
     CMap_one_dart_per_incident_cell_const_iterator(const Map_& amap,
-                                                   Dart_const_handle adart):
+                                                   Dart_const_descriptor adart):
       Base(amap, adart)
     {}
     /// Constructor from non const version.
@@ -75,14 +75,14 @@ namespace CGAL {
   {
   public:
     typedef CMap_one_dart_per_cell_iterator<Map_,i,dim,true> Base;
-    typedef typename Map_::Dart_const_handle Dart_const_handle;
+    typedef typename Map_::Dart_const_descriptor Dart_const_descriptor;
 
     /// Main constructor.
     CMap_one_dart_per_cell_const_iterator(const Map_& amap): Base(amap)
     {}
     /// Constructor with a dart in parameter (for end iterator).
     CMap_one_dart_per_cell_const_iterator(const Map_& amap,
-                                          Dart_const_handle adart):
+                                          Dart_const_descriptor adart):
       Base(amap, adart)
     {}
     /// Constructor from non const version.

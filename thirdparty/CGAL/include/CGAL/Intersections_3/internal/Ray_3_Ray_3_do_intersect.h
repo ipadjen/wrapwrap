@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_3/include/CGAL/Intersections_3/internal/Ray_3_Ray_3_do_intersect.h $
-// $Id: Ray_3_Ray_3_do_intersect.h 3afa3b5 2021-06-29T09:25:40+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_3/include/CGAL/Intersections_3/internal/Ray_3_Ray_3_do_intersect.h $
+// $Id: include/CGAL/Intersections_3/internal/Ray_3_Ray_3_do_intersect.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -24,7 +24,7 @@ namespace internal {
 
 template <class K>
 inline
-bool
+typename K::Boolean
 do_intersect(const typename K::Ray_3& r1,
              const typename K::Ray_3& r2,
              const K& k)

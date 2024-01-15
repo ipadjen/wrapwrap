@@ -4,8 +4,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesher/include/CGAL/AABB_polyhedral_oracle.h $
-// $Id: AABB_polyhedral_oracle.h 1faa0e2 2021-04-28T10:55:26+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesher/include/CGAL/AABB_polyhedral_oracle.h $
+// $Id: include/CGAL/AABB_polyhedral_oracle.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -84,7 +84,7 @@ namespace CGAL {
 
       Object operator()(const Surface_3& surface, const Segment_3& segment) const
       {
-        boost::optional< typename AABB_traits::template Intersection_and_primitive_id<Segment_3>::Type >
+        std::optional< typename AABB_traits::template Intersection_and_primitive_id<Segment_3>::Type >
           intersection = surface.tree()->any_intersection(segment);
 
         if ( intersection )
@@ -95,7 +95,7 @@ namespace CGAL {
 
       Object operator()(const Surface_3& surface, const Line_3& line) const
       {
-        boost::optional< typename AABB_traits::template Intersection_and_primitive_id<Line_3>::Type >
+        std::optional< typename AABB_traits::template Intersection_and_primitive_id<Line_3>::Type >
           intersection = surface.tree()->any_intersection(line);
 
         if ( intersection )
@@ -105,7 +105,7 @@ namespace CGAL {
       }
       Object operator()(const Surface_3& surface, const Ray_3& ray) const
       {
-        boost::optional< typename AABB_traits::template Intersection_and_primitive_id<Ray_3>::Type >
+        std::optional< typename AABB_traits::template Intersection_and_primitive_id<Ray_3>::Type >
           intersection = surface.tree()->any_intersection(ray);
 
         if ( intersection )

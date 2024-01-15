@@ -2,15 +2,18 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polyhedron/include/CGAL/Polyhedron_items_with_id_3.h $
-// $Id: Polyhedron_items_with_id_3.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
-// SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polyhedron/include/CGAL/Polyhedron_items_with_id_3.h $
+// $Id: include/CGAL/Polyhedron_items_with_id_3.h a484bfa $
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Andreas Fabri, Fernando Cacciola
 
 #ifndef CGAL_POLYHEDRON_ITEMS_WITH_ID_3_H
-#define CGAL_POLYHEDRON_ITEMS_WITH_ID_3_H 1
+#define CGAL_POLYHEDRON_ITEMS_WITH_ID_3_H
+
+#include <CGAL/license/Polyhedron.h>
+
 
 #include <CGAL/HalfedgeDS_vertex_max_base_with_id.h>
 #include <CGAL/HalfedgeDS_halfedge_max_base_with_id.h>

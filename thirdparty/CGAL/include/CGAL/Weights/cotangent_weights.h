@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Weights/include/CGAL/Weights/cotangent_weights.h $
-// $Id: cotangent_weights.h 3abb736 2022-11-22T17:46:01+01:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Weights/include/CGAL/Weights/cotangent_weights.h $
+// $Id: include/CGAL/Weights/cotangent_weights.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

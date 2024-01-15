@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_2/include/CGAL/IO/File_poly.h $
-// $Id: File_poly.h 625a335 2021-05-06T09:38:31+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_2/include/CGAL/IO/File_poly.h $
+// $Id: include/CGAL/IO/File_poly.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -43,7 +43,7 @@ read_triangle_poly_file(CDT& t, std::istream &f,
     {
       unsigned int j;
       double x, y;
-      f >> j >> iformat(x) >> iformat(y);
+      f >> j >> IO::iformat(x) >> IO::iformat(y);
       Point p(x, y);
       skip_until_EOL(f); skip_comment_OFF(f);
       vertices[--j] = t.insert(p);

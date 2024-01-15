@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Triangulation/include/CGAL/Triangulation_vertex.h $
-// $Id: Triangulation_vertex.h 2d18b6e 2020-08-26T11:30:59+02:00 Marc Glisse
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Triangulation/include/CGAL/Triangulation_vertex.h $
+// $Id: include/CGAL/Triangulation_vertex.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)    : Samuel Hornus

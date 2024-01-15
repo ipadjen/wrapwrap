@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Classification/include/CGAL/Classification/Feature/Gradient_of_feature.h $
-// $Id: Gradient_of_feature.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Classification/include/CGAL/Classification/Feature/Gradient_of_feature.h $
+// $Id: include/CGAL/Classification/Feature/Gradient_of_feature.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Simon Giraudot
@@ -37,7 +37,7 @@ class Gradient_of_feature : public Feature_base
   const InputRange& m_input;
   ItemMap m_map;
   Feature_handle m_feature;
-  boost::shared_ptr<NeighborQuery> m_query;
+  std::shared_ptr<NeighborQuery> m_query;
 
 public:
   /*!

@@ -3,29 +3,31 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/GraphicsView/include/CGAL/Qt/CreateOpenGLContext.h $
-// $Id: CreateOpenGLContext.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
-// SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/GraphicsView/include/CGAL/Qt/CreateOpenGLContext.h $
+// $Id: include/CGAL/Qt/CreateOpenGLContext.h a484bfa $
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Laurent Rineau and Maxime Gimeno
 #ifndef CGAL_QT_CREATE_OPENGL_CONTEXT_H
 #define CGAL_QT_CREATE_OPENGL_CONTEXT_H
 
+#include <CGAL/license/GraphicsView.h>
+
+
 #include <QOpenGLContext>
-#include <QGLContext>
+
 namespace CGAL{
 namespace Qt{
-inline QGLContext* createOpenGLContext()
+inline QOpenGLContext* createOpenGLContext()
 {
     QOpenGLContext *context = new QOpenGLContext();
     QSurfaceFormat format;
     format.setVersion(2,1);
     format.setProfile(QSurfaceFormat::CompatibilityProfile);
     context->setFormat(format);
-    QGLContext *result = QGLContext::fromOpenGLContext(context);
-    result->create();
-    return result;
+    context->create();
+    return context;
 }
 } // namespace Qt
 } // namespace CGAL

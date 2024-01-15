@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_processing_3/include/CGAL/Point_set_processing_3/internal/Callback_wrapper.h $
-// $Id: Callback_wrapper.h 17ac255 2021-05-18T15:43:59+02:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Point_set_processing_3/include/CGAL/Point_set_processing_3/internal/Callback_wrapper.h $
+// $Id: include/CGAL/Point_set_processing_3/internal/Callback_wrapper.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Simon Giraudot

@@ -8,8 +8,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Circulator/include/CGAL/Circulator/Safe_circulator_from_iterator.h $
-// $Id: Safe_circulator_from_iterator.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Circulator/include/CGAL/Circulator/Safe_circulator_from_iterator.h $
+// $Id: include/CGAL/Circulator/Safe_circulator_from_iterator.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -22,7 +22,7 @@
 
 #include <CGAL/circulator.h>
 
-#include <boost/optional.hpp>
+#include <optional>
 
 #include <CGAL/use.h>
 
@@ -53,9 +53,9 @@ public:
 
 private:
 
-    boost::optional<I> m_begin;
-    boost::optional<I> m_end;
-    boost::optional<I> m_current;
+    std::optional<I> m_begin;
+    std::optional<I> m_end;
+    std::optional<I> m_current;
     bool m_empty;
 
 public:

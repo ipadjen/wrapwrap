@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Solver_interface/include/CGAL/Eigen_matrix.h $
-// $Id: Eigen_matrix.h 267a641 2021-05-31T14:01:08+02:00 Dmitry Anisimov
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Solver_interface/include/CGAL/Eigen_matrix.h $
+// $Id: include/CGAL/Eigen_matrix.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Gael Guennebaud
@@ -23,9 +23,9 @@ namespace CGAL {
 \ingroup PkgSolverInterfaceLS
 
 The class `Eigen_matrix` is a wrapper around `Eigen` matrix type
-<a href="http://eigen.tuxfamily.org/dox/classEigen_1_1Matrix.html">`Eigen::Matrix`</a>.
+<a href="https://eigen.tuxfamily.org/dox/classEigen_1_1Matrix.html">`Eigen::Matrix`</a>.
 
-\cgalModels `SvdTraits::Matrix`
+\cgalModels{SvdTraits::Matrix}
 
 \tparam T Number type.
 \tparam D1 Number of rows, or Dynamic

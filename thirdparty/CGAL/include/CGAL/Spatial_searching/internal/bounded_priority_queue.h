@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Spatial_searching/include/CGAL/Spatial_searching/internal/bounded_priority_queue.h $
-// $Id: bounded_priority_queue.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Spatial_searching/include/CGAL/Spatial_searching/internal/bounded_priority_queue.h $
+// $Id: include/CGAL/Spatial_searching/internal/bounded_priority_queue.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -22,7 +22,6 @@
 #include <vector>
 #include <functional>
 #include <algorithm>
-#include <boost/next_prior.hpp>
 
 namespace CGAL {
 namespace internal{
@@ -124,7 +123,7 @@ public:
 
   void sort()
   {
-std::sort(m_data.begin(), boost::next(m_data.begin(),m_count), m_comp);
+std::sort(m_data.begin(), std::next(m_data.begin(),m_count), m_comp);
   }
 
 protected:

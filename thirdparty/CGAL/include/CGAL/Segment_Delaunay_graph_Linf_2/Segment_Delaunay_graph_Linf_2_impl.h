@@ -3,13 +3,18 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Segment_Delaunay_graph_Linf_2/include/CGAL/Segment_Delaunay_graph_Linf_2/Segment_Delaunay_graph_Linf_2_impl.h $
-// $Id: Segment_Delaunay_graph_Linf_2_impl.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Segment_Delaunay_graph_Linf_2/include/CGAL/Segment_Delaunay_graph_Linf_2/Segment_Delaunay_graph_Linf_2_impl.h $
+// $Id: include/CGAL/Segment_Delaunay_graph_Linf_2/Segment_Delaunay_graph_Linf_2_impl.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Panagiotis Cheilaris, Sandeep Kumar Dey, Evanthia Papadopoulou
 //philaris@gmail.com, sandeep.kr.dey@gmail.com, evanthia.papadopoulou@usi.ch
+
+#ifndef CGAL_SEGMENT_DELAUNAY_GRAPH_LINF_2_SDG_LINF_2_IMPL_H
+#define CGAL_SEGMENT_DELAUNAY_GRAPH_LINF_2_SDG_LINF_2_IMPL_H
+
+#include <CGAL/license/Segment_Delaunay_graph_Linf_2.h>
 
 namespace CGAL {
 
@@ -105,6 +110,7 @@ find_faces_to_split(const Vertex_handle& v, const Site_2& t,
     Face_circulator fc_start = fc;
     int n_inf = 0;
     int n_faces = 0;
+    CGAL_USE(n_faces);
     do {
       if ( is_infinite(fc) ) { n_inf++; }
       fc++;
@@ -758,3 +764,5 @@ insert_point_on_segment(const Storage_site_2& ss, const Site_2& ,
 } //namespace CGAL
 
 // EOF
+
+#endif // CGAL_SEGMENT_DELAUNAY_GRAPH_LINF_2_SDG_LINF_2_IMPL_H

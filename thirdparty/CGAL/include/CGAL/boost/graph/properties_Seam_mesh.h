@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/BGL/include/CGAL/boost/graph/properties_Seam_mesh.h $
-// $Id: properties_Seam_mesh.h c999ce1 2020-02-19T10:07:53+01:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/BGL/include/CGAL/boost/graph/properties_Seam_mesh.h $
+// $Id: include/CGAL/boost/graph/properties_Seam_mesh.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

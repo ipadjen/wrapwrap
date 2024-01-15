@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_shortest_path/include/CGAL/Surface_mesh_shortest_path/Surface_mesh_shortest_path_traits.h $
-// $Id: Surface_mesh_shortest_path_traits.h 26355e2 2020-06-25T12:31:21+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_shortest_path/include/CGAL/Surface_mesh_shortest_path/Surface_mesh_shortest_path_traits.h $
+// $Id: include/CGAL/Surface_mesh_shortest_path/Surface_mesh_shortest_path_traits.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Stephen Kiazyk
@@ -22,8 +22,6 @@
 #include <ostream>
 #include <cstddef>
 
-#include <boost/array.hpp>
-
 namespace CGAL {
 
 /*!
@@ -36,7 +34,7 @@ as required by the `Surface_mesh_shortest_path` class.
 
 \tparam TriangleMesh A model of `FaceListGraph`
 
-\cgalModels `SurfaceMeshShortestPathTraits`
+\cgalModels{SurfaceMeshShortestPathTraits}
 */
 template <
   class K,
@@ -178,7 +176,7 @@ model which uses an exact Kernel during the unfolding operations to achieve bett
 
 \tparam TriangleMesh triangle mesh type
 
-\cgalModels `SurfaceMeshShortestPathTraits`
+\cgalModels{SurfaceMeshShortestPathTraits}
 */
 template <
   class K,

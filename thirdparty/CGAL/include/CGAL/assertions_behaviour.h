@@ -7,17 +7,17 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/STL_Extension/include/CGAL/assertions_behaviour.h $
-// $Id: assertions_behaviour.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/STL_Extension/include/CGAL/assertions_behaviour.h $
+// $Id: include/CGAL/assertions_behaviour.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Geert-Jan Giezeman and Sven Schoenherr
 
-#include <CGAL/config.h>
-
 #ifndef CGAL_ASSERTIONS_BEHAVIOUR_H
 #define CGAL_ASSERTIONS_BEHAVIOUR_H
+
+#include <CGAL/config.h>
 
 // workaround against the definition of EXIT in <opencv2/core/internal.hpp>
 #ifdef EXIT

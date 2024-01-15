@@ -17,11 +17,11 @@
  *       Zilin Du <zilin@cs.nyu.edu>
  *       Sylvain Pion <pion@cs.nyu.edu>
  *
- * WWW URL: http://cs.nyu.edu/exact/
+ * WWW URL: https://cs.nyu.edu/exact/
  * Email: exact@cs.nyu.edu
  *
- * $URL: https://github.com/CGAL/cgal/blob/v5.5.2/CGAL_Core/include/CGAL/CORE/Real_impl.h $
- * $Id: Real_impl.h b6e2656 2021-09-15T11:36:00+01:00 Andreas Fabri
+ * $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/CGAL_Core/include/CGAL/CORE/Real_impl.h $
+ * $Id: include/CGAL/CORE/Real_impl.h a484bfa $
  * SPDX-License-Identifier: LGPL-3.0-or-later
  ***************************************************************************/
 
@@ -96,7 +96,7 @@ extern BigInt FiveTo(unsigned long exp);
 // Note:
 //         -- Zilin Du: 06/03/2003
 //         -- Original it is the code for Real's constructor for "const char*".
-//            I change it to a function so that two constrcutors can share the code.
+//            I change it to a function so that two constructors can share the code.
 //            now it is private and no default value.
 //
 //   --Default value of the argument "prec" is get_static_defInputDigits()
@@ -209,7 +209,7 @@ std::istream& operator >>(std::istream& i, Real& x) {
                              char read in is white-space. */
   // Chen Li,
   // original "if (c == EOF) ..." is unsafe since c is of char type and
-  // EOF is of int tyep with a negative value -1
+  // EOF is of int type with a negative value -1
 
   if (i.eof()) {
     i.clear(std::ios::eofbit | std::ios::failbit);
@@ -237,7 +237,7 @@ std::istream& operator >>(std::istream& i, Real& x) {
     if (c == '.')
       d = 1;
     // Chen Li: fix a bug -- the sign of exponent can not happen before
-    // the character "e" appears! It must follow the "e' actually.
+    // the character "e" appears! It must follow the "e" actually.
     //    if (e || c == '-' || c == '+') s = 1;
     if (e)
       s = 1;

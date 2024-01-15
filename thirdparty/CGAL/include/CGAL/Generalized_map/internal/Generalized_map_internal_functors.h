@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Generalized_map/include/CGAL/Generalized_map/internal/Generalized_map_internal_functors.h $
-// $Id: Generalized_map_internal_functors.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Generalized_map/include/CGAL/Generalized_map/internal/Generalized_map_internal_functors.h $
+// $Id: include/CGAL/Generalized_map/internal/Generalized_map_internal_functors.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Guillaume Damiand <guillaume.damiand@liris.cnrs.fr>
@@ -31,55 +31,55 @@ namespace internal
 {
 // ****************************************************************************
 // Alpha functor, used to combine several alpha.
-template<typename GMap, typename Dart_handle, typename ... Alphas>
+template<typename GMap, typename Dart_descriptor, typename ... Alphas>
 struct Alpha_functor;
 
-template<typename GMap, typename Dart_handle>
-struct Alpha_functor<GMap, Dart_handle, int>
+template<typename GMap, typename Dart_descriptor>
+struct Alpha_functor<GMap, Dart_descriptor, int>
 {
-  static Dart_handle run(GMap& AMap, Dart_handle ADart, int B)
+  static Dart_descriptor run(GMap& AMap, Dart_descriptor ADart, int B)
   { return AMap.get_alpha(ADart, B); }
 };
 
-template<typename GMap, typename Dart_handle>
-struct Alpha_functor<GMap, Dart_handle, unsigned int>
+template<typename GMap, typename Dart_descriptor>
+struct Alpha_functor<GMap, Dart_descriptor, unsigned int>
 {
-  static Dart_handle run(GMap& AMap, Dart_handle ADart, unsigned int B)
+  static Dart_descriptor run(GMap& AMap, Dart_descriptor ADart, unsigned int B)
   { return  AMap.get_alpha(ADart, B); }
 };
 
-template<typename GMap, typename Dart_handle, typename ... Alphas>
-struct Alpha_functor<GMap, Dart_handle, int, Alphas...>
+template<typename GMap, typename Dart_descriptor, typename ... Alphas>
+struct Alpha_functor<GMap, Dart_descriptor, int, Alphas...>
 {
-  static Dart_handle run(GMap& AMap, Dart_handle ADart, int B, Alphas... alphas)
-  { return Alpha_functor<GMap, Dart_handle, Alphas...>::
+  static Dart_descriptor run(GMap& AMap, Dart_descriptor ADart, int B, Alphas... alphas)
+  { return Alpha_functor<GMap, Dart_descriptor, Alphas...>::
       run(AMap, AMap.get_alpha(ADart, B), alphas...); }
 };
 
-template<typename GMap, typename Dart_handle, typename ... Alphas>
-struct Alpha_functor<GMap, Dart_handle, unsigned int, Alphas...>
+template<typename GMap, typename Dart_descriptor, typename ... Alphas>
+struct Alpha_functor<GMap, Dart_descriptor, unsigned int, Alphas...>
 {
-  static Dart_handle run(GMap& AMap, Dart_handle ADart, unsigned int B,
+  static Dart_descriptor run(GMap& AMap, Dart_descriptor ADart, unsigned int B,
                          Alphas... alphas)
-  { return Alpha_functor<GMap, Dart_handle, Alphas...>::
+  { return Alpha_functor<GMap, Dart_descriptor, Alphas...>::
       run(AMap, AMap.get_alpha(ADart, B), alphas...); }
 };
 // ****************************************************************************
-template<typename GMap, typename Dart_handle, int ... Alphas>
+template<typename GMap, typename Dart_descriptor, int ... Alphas>
 struct Alpha_functor_static;
 
-template<typename GMap, typename Dart_handle, int B>
-struct Alpha_functor_static<GMap, Dart_handle, B>
+template<typename GMap, typename Dart_descriptor, int B>
+struct Alpha_functor_static<GMap, Dart_descriptor, B>
 {
-  static Dart_handle run(GMap& AMap, Dart_handle ADart)
+  static Dart_descriptor run(GMap& AMap, Dart_descriptor ADart)
   { return AMap.template get_alpha<B>(ADart); }
 };
 
-template<typename GMap, typename Dart_handle, int B, int ... Alphas>
-struct Alpha_functor_static<GMap, Dart_handle, B, Alphas...>
+template<typename GMap, typename Dart_descriptor, int B, int ... Alphas>
+struct Alpha_functor_static<GMap, Dart_descriptor, B, Alphas...>
 {
-  static Dart_handle run(GMap& AMap, Dart_handle ADart)
-  { return Alpha_functor_static<GMap, Dart_handle, Alphas...>::
+  static Dart_descriptor run(GMap& AMap, Dart_descriptor ADart)
+  { return Alpha_functor_static<GMap, Dart_descriptor, Alphas...>::
         run(AMap, AMap.template get_alpha<B>(ADart)); }
 };
 // ****************************************************************************

@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/HalfedgeDS/include/CGAL/boost/graph/graph_traits_HalfedgeDS_default.h $
-// $Id: graph_traits_HalfedgeDS_default.h fd20bee 2022-05-03T15:09:05+01:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/HalfedgeDS/include/CGAL/boost/graph/graph_traits_HalfedgeDS_default.h $
+// $Id: include/CGAL/boost/graph/graph_traits_HalfedgeDS_default.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -63,25 +63,28 @@ num_edges(const HalfedgeDS_default<T,I,A>& p)
 template<class T, class I, class A>
 typename boost::graph_traits< HalfedgeDS_default<T,I,A> const>::degree_size_type
 degree(typename boost::graph_traits< HalfedgeDS_default<T,I,A> const>::vertex_descriptor v
-       , const HalfedgeDS_default<T,I,A>&)
+       , const HalfedgeDS_default<T,I,A>& hds)
 {
-  return v->vertex_degree();
+  if(halfedge(v,hds) == boost::graph_traits<HalfedgeDS_default<T,I,A> const>::null_halfedge()){
+    return 0;
+  }
+  return halfedges_around_target(v,hds).size();
 }
 
 template<class T, class I, class A>
 typename boost::graph_traits< HalfedgeDS_default<T,I,A> const>::degree_size_type
 out_degree(typename boost::graph_traits< HalfedgeDS_default<T,I,A> const>::vertex_descriptor v
-           , const HalfedgeDS_default<T,I,A>&)
+           , const HalfedgeDS_default<T,I,A>& hds)
 {
-  return v->vertex_degree();
+    return degree(v, hds);
 }
 
 template<class T, class I, class A>
 typename boost::graph_traits< HalfedgeDS_default<T,I,A> const>::degree_size_type
 in_degree(typename boost::graph_traits< HalfedgeDS_default<T,I,A> const>::vertex_descriptor v
-          , const HalfedgeDS_default<T,I,A>&)
+          , const HalfedgeDS_default<T,I,A>& hds)
 {
-  return v->vertex_degree();
+  return degree(v,hds);
 }
 
 template<class T, class I, class A>
@@ -448,29 +451,6 @@ num_faces(const HalfedgeDS_default<T,I,A>& p)
   return p.size_of_faces();
 }
 
-template <class T>
-struct HDS_property_map;
-
-template <>
-struct HDS_property_map<vertex_point_t>
-{
-  template<class T, class I, class A>
-  struct bind_
-  {
-    typedef internal::Point_accessor<
-      typename boost::graph_traits<
-        HalfedgeDS_default<T, I, A>
-        >::vertex_descriptor,
-      typename T::Point_3, typename T::Point_3&> type;
-
-    typedef internal::Point_accessor<
-      typename boost::graph_traits<
-        HalfedgeDS_default<T, I, A>
-        >::vertex_descriptor,
-      typename T::Point_3, const typename T::Point_3&> const_type;
-  };
-};
-
 template<class T, class I, class A>
 void reserve(HalfedgeDS_default<T,I,A>& p,
              typename boost::graph_traits< HalfedgeDS_default<T,I,A> const>::vertices_size_type nv,
@@ -481,37 +461,7 @@ void reserve(HalfedgeDS_default<T,I,A>& p,
 }
 
 }// namespace CGAL
-namespace boost {
 
-#define CGAL_PM_SPECIALIZATION(TAG) \
-template<class T, class I, class A> \
-struct property_map<CGAL::HalfedgeDS_default<T,I,A>, TAG> \
-{\
-  typedef typename CGAL::HDS_property_map<TAG>:: \
-      template bind_<T,I,A> map_gen; \
-  typedef typename map_gen::type       type; \
-  typedef typename map_gen::const_type const_type; \
-};
+#include <CGAL/boost/graph/properties_HalfedgeDS_default.h>
 
-CGAL_PM_SPECIALIZATION(vertex_point_t)
-
-#undef CGAL_PM_SPECIALIZATION
-
-} // namespace boost
-
-namespace CGAL {
-
-// generalized 2-ary get functions
-template<class Gt, class I, class A, class PropertyTag>
-typename boost::property_map< CGAL::HalfedgeDS_default<Gt,I,A>, PropertyTag >::const_type
-get(PropertyTag, CGAL::HalfedgeDS_default<Gt,I,A> const&)
-{ return typename boost::property_map< CGAL::HalfedgeDS_default<Gt,I,A>, PropertyTag >::const_type(); }
-
-template<class Gt, class I, class A, class PropertyTag>
-typename boost::property_map< CGAL::HalfedgeDS_default<Gt,I,A>, PropertyTag >::type
-get(PropertyTag, CGAL::HalfedgeDS_default<Gt,I,A>&)
-{ return typename boost::property_map< CGAL::HalfedgeDS_default<Gt,I,A>, PropertyTag >::type(); }
-
-
-} // namespace CGAL
 #endif

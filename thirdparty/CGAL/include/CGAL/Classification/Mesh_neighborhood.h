@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Classification/include/CGAL/Classification/Mesh_neighborhood.h $
-// $Id: Mesh_neighborhood.h 0e934b1 2020-08-04T13:16:13+02:00 Simon Giraudot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Classification/include/CGAL/Classification/Mesh_neighborhood.h $
+// $Id: include/CGAL/Classification/Mesh_neighborhood.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Simon Giraudot
@@ -77,7 +77,7 @@ public:
   /*!
     Functor that computes the 1-ring neighborhood of the face of an input mesh.
 
-    \cgalModels CGAL::Classification::NeighborQuery
+    \cgalModels{CGAL::Classification::NeighborQuery}
 
     \sa Mesh_neighborhood
   */
@@ -110,7 +110,7 @@ public:
   /*!
     Functor that computes the N-ring neighborhood of the face of an input mesh.
 
-    \cgalModels CGAL::Classification::NeighborQuery
+    \cgalModels{CGAL::Classification::NeighborQuery}
 
     \sa Mesh_neighborhood
   */

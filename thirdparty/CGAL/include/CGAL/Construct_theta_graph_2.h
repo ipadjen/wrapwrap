@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Cone_spanners_2/include/CGAL/Construct_theta_graph_2.h $
-// $Id: Construct_theta_graph_2.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Cone_spanners_2/include/CGAL/Construct_theta_graph_2.h $
+// $Id: include/CGAL/Construct_theta_graph_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -88,7 +88,7 @@ public:
 
      \param k     Number of cones to divide space into
      \param initial_direction  A direction denoting one of the rays dividing the
-                   cones. This allows arbitary rotations of the rays that divide
+                   cones. This allows arbitrary rotations of the rays that divide
                    the plane.  (default: positive x-axis)
      \param cones_selected  Indicates whether even, odd or all cones are
                    selected to construct graph.

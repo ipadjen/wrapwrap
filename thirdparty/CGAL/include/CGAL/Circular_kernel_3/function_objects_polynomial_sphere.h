@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Circular_kernel_3/include/CGAL/Circular_kernel_3/function_objects_polynomial_sphere.h $
-// $Id: function_objects_polynomial_sphere.h 81d9556 2021-02-10T10:06:45+01:00 Dmitry Anisimov
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Circular_kernel_3/include/CGAL/Circular_kernel_3/function_objects_polynomial_sphere.h $
+// $Id: include/CGAL/Circular_kernel_3/function_objects_polynomial_sphere.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Monique Teillaud, Sylvain Pion, Pedro Machado,
@@ -21,7 +21,7 @@
 
 
 #include <CGAL/kernel_basic.h>
-#include <CGAL/is_iterator.h>
+#include <CGAL/type_traits/is_iterator.h>
 
 #include <CGAL/Spherical_kernel_intersections.h>
 #include <CGAL/Circular_kernel_3/internal_functions_on_circular_arc_point_3.h>

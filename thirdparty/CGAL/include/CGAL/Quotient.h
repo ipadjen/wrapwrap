@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Number_types/include/CGAL/Quotient.h $
-// $Id: Quotient.h a037ca1 2021-10-04T17:01:41+02:00 Dmitry Anisimov
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Number_types/include/CGAL/Quotient.h $
+// $Id: include/CGAL/Quotient.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -627,13 +627,13 @@ public:
 
     };
 
-    typedef typename boost::mpl::if_c<
-        !boost::is_same< typename Algebraic_structure_traits<NT>::Sqrt,
-                         Null_functor >::value,
+    typedef std::conditional_t<
+        !std::is_same_v< typename Algebraic_structure_traits<NT>::Sqrt,
+                         Null_functor >,
          typename INTERN_QUOTIENT::Sqrt_selector< Type,
                                                   Is_exact >::Sqrt,
          Null_functor
-                            >::type Sqrt;
+                            > Sqrt;
 
     class Simplify
       : public CGAL::cpp98::unary_function< Type&, void > {

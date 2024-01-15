@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Hash_map/include/CGAL/Hash_map/internal/chained_map.h $
-// $Id: chained_map.h 4334028 2022-05-03T18:10:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Hash_map/include/CGAL/Hash_map/internal/chained_map.h $
+// $Id: include/CGAL/Hash_map/internal/chained_map.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

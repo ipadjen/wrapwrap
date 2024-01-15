@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Envelope_3/include/CGAL/Env_surface_data_traits_3.h $
-// $Id: Env_surface_data_traits_3.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Envelope_3/include/CGAL/Env_surface_data_traits_3.h $
+// $Id: include/CGAL/Env_surface_data_traits_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -48,10 +48,10 @@ public:
   typedef typename Base_traits_3::Xy_monotone_surface_3
                                                    Base_xy_monotone_surface_3;
 
-  // Representation of a surface with an addtional data field:
+  // Representation of a surface with an additional data field:
   typedef _Curve_data_ex<Base_surface_3, Surface_data>  Surface_3;
 
-  // Representation of an xy-monotone surface with an addtional data field:
+  // Representation of an xy-monotone surface with an additional data field:
   typedef _Curve_data_ex<Base_xy_monotone_surface_3,
                          Xy_monotone_surface_data>      Xy_monotone_surface_3;
 
@@ -70,7 +70,7 @@ public:
   {}
   //@}
 
-  /// \name Overriden functors.
+  /// \name Overridden functors.
   //@{
 
   class Make_xy_monotone_3

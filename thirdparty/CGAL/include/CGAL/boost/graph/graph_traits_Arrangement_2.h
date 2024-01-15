@@ -3,9 +3,9 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/boost/graph/graph_traits_Arrangement_2.h $
-// $Id: graph_traits_Arrangement_2.h 52164b1 2019-10-19T15:34:59+02:00 Sébastien Loriot
-// SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/boost/graph/graph_traits_Arrangement_2.h $
+// $Id: include/CGAL/boost/graph/graph_traits_Arrangement_2.h a484bfa $
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Ron Wein <wein@post.tau.ac.il>
@@ -13,6 +13,9 @@
 
 #ifndef CGAL_BOOST_GRAPH_GRAPH_TRAITS_ARRANGEMENT_2_H
 #define CGAL_BOOST_GRAPH_GRAPH_TRAITS_ARRANGEMENT_2_H
+
+#include <CGAL/license/Arrangement_on_surface_2.h>
+
 
 #include <CGAL/graph_traits_Arrangement_2.h>
 

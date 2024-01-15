@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Straight_skeleton_2/include/CGAL/Straight_skeleton_2/test.h $
-// $Id: test.h 655d427 2020-09-11T15:00:12+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Straight_skeleton_2/include/CGAL/Straight_skeleton_2/test.h $
+// $Id: include/CGAL/Straight_skeleton_2/test.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Fernando Cacciola <fernando_cacciola@ciudad.com.ar>
@@ -17,30 +17,6 @@
 
 #include <algorithm>
 #include <iostream>
-
-//
-// INTRINSIC UNIT TESTING macros.
-//
-// These are OFF by default and should only be turn on by the testsuite.
-//
-
-//
-// These are assertions that may not be true unless certain external conditions are met, such as the kernel
-// beigng exact or the input being specifically designed to be non-degenerate, avoid significant round-off, etc.
-//
-#ifdef CGAL_STRAIGHT_SKELETON_ENABLE_INTRINSIC_TESTING
-#  define CGAL_stskel_intrinsic_test_assertion(EX)          ((EX)?(static_cast<void>(0)): ::CGAL::assertion_fail( # EX , __FILE__, __LINE__, 0))
-#  define CGAL_stskel_intrinsic_test_assertion_msg(EX,MSG)  ((EX)?(static_cast<void>(0)): ::CGAL::assertion_fail( # EX , __FILE__, __LINE__, MSG))
-#  define CGAL_stskel_intrinsic_test_assertion_code(CODE)   CODE
-#  define CGAL_stskel_intrinsic_test_trace(m)               std::cerr << m << std::endl
-#  define CGAL_stskel_intrinsic_test_trace_if(EX,m)         if ( (EX) ) { std::cerr << m << std::endl ; }
-#else
-#  define CGAL_stskel_intrinsic_test_assertion(EX)         (static_cast<void>(0))
-#  define CGAL_stskel_intrinsic_test_assertion_msg(EX,MSG) (static_cast<void>(0))
-#  define CGAL_stskel_intrinsic_test_assertion_code(CODE)
-#  define CGAL_stskel_intrinsic_test_trace(m)
-#  define CGAL_stskel_intrinsic_test_trace_if(EX,m)
-#endif
 
 namespace CGAL {
 

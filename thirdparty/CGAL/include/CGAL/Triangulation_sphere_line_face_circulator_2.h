@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Triangulation_on_sphere_2/include/CGAL/Triangulation_sphere_line_face_circulator_2.h $
-// $Id: Triangulation_sphere_line_face_circulator_2.h 23658a0 2021-03-20T19:56:10+01:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Triangulation_on_sphere_2/include/CGAL/Triangulation_sphere_line_face_circulator_2.h $
+// $Id: include/CGAL/Triangulation_sphere_line_face_circulator_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Claudia Werner,  Mariette Yvinec
@@ -14,7 +14,7 @@
 
 #include <CGAL/license/Triangulation_on_sphere_2.h>
 
-#include <CGAL/triangulation_assertions.h>
+#include <CGAL/assertions.h>
 
 namespace CGAL {
 
@@ -347,7 +347,7 @@ inline bool
 Triangulation_sphere_line_face_circulator_2<Triangulation>::
 operator==(Nullptr_t CGAL_assertion_code(n)) const
 {
-  CGAL_triangulation_assertion(n == NULL);
+  CGAL_assertion(n == NULL);
   return pos == Face_handle();
 }
 
@@ -356,7 +356,7 @@ inline bool
 Triangulation_sphere_line_face_circulator_2<Triangulation>::
 operator!=(Nullptr_t n) const
 {
-  CGAL_triangulation_assertion(n == NULL);
+  CGAL_assertion(n == NULL);
   return !(*this == n);
 }
 

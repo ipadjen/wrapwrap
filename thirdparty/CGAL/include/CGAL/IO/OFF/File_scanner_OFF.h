@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org);
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Stream_support/include/CGAL/IO/OFF/File_scanner_OFF.h $
-// $Id: File_scanner_OFF.h ec00fa3 2023-02-16T10:21:09+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Stream_support/include/CGAL/IO/OFF/File_scanner_OFF.h $
+// $Id: include/CGAL/IO/OFF/File_scanner_OFF.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -656,7 +656,7 @@ public:
 
       if(has_colors())
       {
-        boost::int32_t k;
+        std::int32_t k;
         I_Binary_read_big_endian_integer32(m_in, k);
         if(k<0 || k>4)
         {
@@ -688,7 +688,7 @@ public:
     CGAL_assertion(current_facet < size_of_facets());
     if(binary())
     {
-      boost::int32_t i32;
+      std::int32_t i32;
       I_Binary_read_big_endian_integer32(m_in, i32);
       size = i32;
     }
@@ -735,7 +735,7 @@ public:
                                std::size_t current_facet)
   {
     if(binary()){
-      boost::int32_t i32;
+      std::int32_t i32;
       I_Binary_read_big_endian_integer32(m_in, i32);
       index = i32;
     }
@@ -790,10 +790,10 @@ public:
 
   void skip_to_next_facet(std::size_t current_facet)
   {
-    // Take care of trailing informations like color triples.
+    // Take care of trailing information like color triples.
     if(binary())
     {
-      boost::int32_t k;
+      std::int32_t k;
       I_Binary_read_big_endian_integer32(m_in, k);
       if(k<0 || k>4)
       {

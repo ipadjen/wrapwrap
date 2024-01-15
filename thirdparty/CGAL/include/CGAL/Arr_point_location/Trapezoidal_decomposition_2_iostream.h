@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_point_location/Trapezoidal_decomposition_2_iostream.h $
-// $Id: Trapezoidal_decomposition_2_iostream.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_point_location/Trapezoidal_decomposition_2_iostream.h $
+// $Id: include/CGAL/Arr_point_location/Trapezoidal_decomposition_2_iostream.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -64,9 +64,9 @@ std::ostream& write(std::ostream &out,const Td_X_trapezoid<Traits>& t,
   if (!t.is_on_bottom_boundary()) out << t.bottom(); else out << "-oo";
   out << ",";
   if (!t.is_on_top_boundary()) out << t.top(); else out << "+oo";
-  out << ",neighbours(" << std::flush;
+  out << ",neighbors(" << std::flush;
 
-  // debug neighbours equivalence relation
+  // debug neighbors equivalence relation
   int max_size=4+1;
   int null_size=2,size=null_size,i,j;
 
@@ -110,7 +110,7 @@ std::ostream& write(std::ostream &out,const Td_X_trapezoid<Traits>& t,
       if (pad) out << " ";
       else pad=true;
       out << name[j];
-      // identify neighbours
+      // identify neighbors
       if (traits.is_td_vertex(t) && value[j])
         out << "=" << value[j]->top();
     }
@@ -177,9 +177,9 @@ std::ostream& operator<<(std::ostream &out,const Td_X_trapezoid<Traits>& t)
   if (!t.is_on_bottom_boundary()) out << t.bottom(); else out << "-oo";
   out << ",";
   if (!t.is_on_top_boundary()) out << t.top(); else out << "+oo";
-  out << ",neighbours(" << std::flush;
+  out << ",neighbors(" << std::flush;
 
-  // debug neighbours equivalence relation
+  // debug neighbors equivalence relation
   int max_size=4+1;
   int null_size=2,size=null_size,i,j;
 
@@ -221,7 +221,7 @@ std::ostream& operator<<(std::ostream &out,const Td_X_trapezoid<Traits>& t)
   for(j=null_size;j<size;j++)
     {
       out << name[j];
-      // identify neighbours
+      // identify neighbors
       if (traits.is_td_vertex(t) && value[j])
         out << "=" << value[j]->top();
       out << " ";

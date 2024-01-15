@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/Mesh_3/Triangle_accessor_primitive.h $
-// $Id: Triangle_accessor_primitive.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_3/include/CGAL/Mesh_3/Triangle_accessor_primitive.h $
+// $Id: include/CGAL/Mesh_3/Triangle_accessor_primitive.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -24,13 +24,13 @@
 namespace CGAL {
 namespace Mesh_3 {
 
-template<typename TriangleAccessor, typename Gt>
+template<typename TriangleAccessor, typename GT>
 class Triangle_accessor_primitive
 {
 public:
   typedef typename TriangleAccessor::Triangle_handle  Id;
-  typedef typename Gt::Triangle_3                     Datum;
-  typedef typename Gt::Point_3                        Point;
+  typedef typename GT::Triangle_3                     Datum;
+  typedef typename GT::Point_3                        Point;
 
   Triangle_accessor_primitive(const Id& h)
     : handle_(h) {}
@@ -55,15 +55,15 @@ private:
   Id handle_;
 };
 
-//template <typename Gt>
-//class Triangle_accessor_primitive<Triangle_accessor<Polyhedron_3<Gt>,Gt>, Gt>
+//template <typename GT>
+//class Triangle_accessor_primitive<Triangle_accessor<Polyhedron_3<GT>,GT>, GT>
 //{
-//  typedef class Triangle_accessor<Polyhedron_3<Gt>,Gt> Triangle_accessor;
+//  typedef class Triangle_accessor<Polyhedron_3<GT>,GT> Triangle_accessor;
 //
 //public:
 //  typedef typename Triangle_accessor::Triangle_iterator Id;
-//  typedef typename Gt::Triangle_3                       Datum;
-//  typedef typename Gt::Point_3                          Point;
+//  typedef typename GT::Triangle_3                       Datum;
+//  typedef typename GT::Point_3                          Point;
 //
 //  Triangle_accessor_primitive(const Id& h)
 //    : handle_(h) {}

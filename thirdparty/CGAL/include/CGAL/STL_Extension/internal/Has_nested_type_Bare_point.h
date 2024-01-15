@@ -4,8 +4,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/STL_Extension/include/CGAL/STL_Extension/internal/Has_nested_type_Bare_point.h $
-// $Id: Has_nested_type_Bare_point.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/STL_Extension/include/CGAL/STL_Extension/internal/Has_nested_type_Bare_point.h $
+// $Id: include/CGAL/STL_Extension/internal/Has_nested_type_Bare_point.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Jane Tournois

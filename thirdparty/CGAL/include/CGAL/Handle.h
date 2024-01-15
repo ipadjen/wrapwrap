@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/STL_Extension/include/CGAL/Handle.h $
-// $Id: Handle.h 4d797b5 2022-11-17T19:03:30+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/STL_Extension/include/CGAL/Handle.h $
+// $Id: include/CGAL/Handle.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -18,6 +18,7 @@
 #define CGAL_HANDLE_H
 
 #include <cstddef>
+#include <cstdint>
 #include <atomic>
 #include <CGAL/Handle_for.h>
 #include <CGAL/assertions.h>
@@ -122,7 +123,7 @@ class Handle
     int
     refs()  const noexcept { return PTR->count.load(std::memory_order_relaxed); }
 
-    Id_type id() const noexcept { return std::distance(static_cast<Rep*>(0), PTR); }
+    Id_type id() const noexcept { return static_cast<Id_type>(reinterpret_cast<std::intptr_t>(static_cast<void*>(PTR)) / sizeof(Rep)); }
 
     bool identical(const Handle& h) const noexcept { return PTR == h.PTR; }
 

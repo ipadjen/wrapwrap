@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Three/include/CGAL/Three/Polyhedron_demo_io_plugin_interface.h $
-// $Id: Polyhedron_demo_io_plugin_interface.h 26355e2 2020-06-25T12:31:21+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Three/include/CGAL/Three/Polyhedron_demo_io_plugin_interface.h $
+// $Id: include/CGAL/Three/Polyhedron_demo_io_plugin_interface.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -55,21 +55,21 @@ public:
   virtual QString loadNameFilters() const {return nameFilters();}
 
   //! Specifies if the io_plugin is able to load an item or not.
-  //! This must be overriden.
+  //! This must be overridden.
   virtual bool canLoad(QFileInfo fileinfo) const = 0;
   //! Loads one or more item(s) from a file. `ok` is `true` if the loading
   //! was successful, `false` otherwise.
   //! New items will be added to the scene if `add_to_scene` is `true`.
   //! You don't want that when you reload an item, for example,
   //! as it will be added at some other point of the process.
-  //! This must be overriden.
+  //! This must be overridden.
   virtual QList<Scene_item*> load(QFileInfo fileinfo, bool& ok, bool add_to_scene=true) = 0;
   //!Specifies if the io_plugin can save the item or not.
-  //!This must be overriden.
+  //!This must be overridden.
   virtual bool canSave(const Scene_item*) = 0;
   //!Saves one or more items in the file corresponding to the path
   //!contained in fileinfo. Returns false if error.
-  //! This must be overriden.
+  //! This must be overridden.
   //! @attention When a file is successfully saved, it must be removed from the
   //! list.
   virtual bool save(QFileInfo fileinfo,QList<CGAL::Three::Scene_item*>& ) = 0;

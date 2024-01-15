@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/IO/facets_in_complex_3_to_triangle_mesh.h $
-// $Id: facets_in_complex_3_to_triangle_mesh.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/SMDS_3/include/CGAL/IO/facets_in_complex_3_to_triangle_mesh.h $
+// $Id: include/CGAL/IO/facets_in_complex_3_to_triangle_mesh.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -14,7 +14,7 @@
 #ifndef CGAL_IO_FACETS_IN_COMPLEX_3_TO_TRIANGLE_MESH_H
 #define CGAL_IO_FACETS_IN_COMPLEX_3_TO_TRIANGLE_MESH_H
 
-#include <CGAL/license/Triangulation_3.h>
+#include <CGAL/license/SMDS_3.h>
 
 #ifndef CGAL_NO_DEPRECATED_CODE
 #include <CGAL/facets_in_complex_3_to_triangle_mesh.h>

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_3/include/CGAL/Intersections_3/internal/Point_3_Ray_3_do_intersect.h $
-// $Id: Point_3_Ray_3_do_intersect.h c2d1adf 2021-06-23T17:34:48+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_3/include/CGAL/Intersections_3/internal/Point_3_Ray_3_do_intersect.h $
+// $Id: include/CGAL/Intersections_3/internal/Point_3_Ray_3_do_intersect.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -19,7 +19,7 @@ namespace internal {
 
 template <class K>
 inline
-bool
+typename K::Boolean
 do_intersect(const typename K::Point_3& pt,
              const typename K::Ray_3& ray,
              const K& k)
@@ -29,7 +29,7 @@ do_intersect(const typename K::Point_3& pt,
 
 template <class K>
 inline
-bool
+typename K::Boolean
 do_intersect(const typename K::Ray_3& ray,
              const typename K::Point_3& pt,
              const K& k)
@@ -39,7 +39,7 @@ do_intersect(const typename K::Ray_3& ray,
 
 
 template <class K>
-bool
+typename K::Boolean
 Ray_3_has_on_collinear_Point_3(const typename K::Ray_3& r,
                                const typename K::Point_3& p,
                                const K& k)

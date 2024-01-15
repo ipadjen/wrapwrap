@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Partition_2/include/CGAL/Partition_2/partition_optimal_convex_2.h $
-// $Id: partition_optimal_convex_2.h 5a36ff8 2020-12-04T08:02:26+00:00 Giles Bathgate
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Partition_2/include/CGAL/Partition_2/partition_optimal_convex_2.h $
+// $Id: include/CGAL/Partition_2/partition_optimal_convex_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -67,7 +67,7 @@
 #include<CGAL/Partition_2/Partitioned_polygon_2.h>
 #include<CGAL/partition_is_valid_2.h>
 #include<CGAL/Partition_traits_2.h>
-#include<CGAL/Partition_2/partition_assertions.h>
+#include<CGAL/assertions.h>
 #include<CGAL/Partition_2/Vertex_visibility_graph_2.h>
 #include<utility>
 #include<vector>
@@ -520,7 +520,7 @@ OutputIterator partition_optimal_convex_2(InputIterator first,
 #endif // no postconditions
 
    P_Polygon_2 polygon(first, beyond,traits);
-   CGAL_partition_precondition(
+   CGAL_precondition(
     orientation_2(polygon.begin(), polygon.end(), traits) == COUNTERCLOCKWISE);
 
 #ifdef CGAL_PARTITION_OPTIMAL_CONVEX_DEBUG
@@ -559,7 +559,7 @@ OutputIterator partition_optimal_convex_2(InputIterator first,
       // be pruned away.  These crop up when there are collinear vertices.
       // See explanation at top of file.
       polygon.partition(res, 1);
-      CGAL_partition_postcondition(
+      CGAL_postcondition(
              convex_partition_is_valid_2(polygon.begin(), polygon.end(),
                                       res.output_so_far_begin(),
                                       res.output_so_far_end(), traits)

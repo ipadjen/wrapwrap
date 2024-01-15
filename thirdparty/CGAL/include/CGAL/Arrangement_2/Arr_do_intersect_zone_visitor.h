@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arrangement_2/Arr_do_intersect_zone_visitor.h $
-// $Id: Arr_do_intersect_zone_visitor.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arrangement_2/Arr_do_intersect_zone_visitor.h $
+// $Id: include/CGAL/Arrangement_2/Arr_do_intersect_zone_visitor.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -24,8 +24,8 @@ namespace CGAL {
 
 /*! \class
  * A visitor class for Arrangement_zone_2, which check whether
- * a given x-monotone curve intersects the arrangment.
- * The class shouldbe templated by an Arrangement_2 class.
+ * a given x-monotone curve intersects the arrangement.
+ * The class should be templated by an Arrangement_2 class.
  */
 template <class Arrangement_>
 class Arr_do_intersect_zone_visitor

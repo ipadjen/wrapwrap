@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d/Bitstream_descartes_E08_tree.h $
-// $Id: Bitstream_descartes_E08_tree.h c0ba9b4 2022-11-22T17:42:02+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d/Bitstream_descartes_E08_tree.h $
+// $Id: include/CGAL/Algebraic_kernel_d/Bitstream_descartes_E08_tree.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -31,7 +31,7 @@
 #include <CGAL/Random.h>
 #include <CGAL/tss.h>
 
-#include <boost/optional.hpp>
+#include <optional>
 
 /*
  *  AUXILIARY CLASSES AND FUNCTIONS
@@ -446,7 +446,7 @@ private:
     Integer_vector coeff_; // wrt [lower_, upper_], approximate
     int min_var_, max_var_;
     bool coeff_update_delayed_;
-    // "state data" (copied en bloc by .copy_state_from())
+    // "state data" (copied en block by .copy_state_from())
     long subdepth_bound_, subdepth_current_;
     long log_eps_;   // $q - p$
     long log_C_eps_; // $q - p + 4n$

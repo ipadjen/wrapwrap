@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Triangulation_3/include/CGAL/Triangulation_vertex_base_3.h $
-// $Id: Triangulation_vertex_base_3.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Triangulation_3/include/CGAL/Triangulation_vertex_base_3.h $
+// $Id: include/CGAL/Triangulation_vertex_base_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Monique Teillaud <Monique.Teillaud@sophia.inria.fr>
@@ -17,6 +17,7 @@
 
 #include <CGAL/basic.h>
 #include <CGAL/Triangulation_ds_vertex_base_3.h>
+#include <CGAL/IO/io.h>
 
 namespace CGAL {
 
@@ -61,6 +62,7 @@ private:
   Point _p;
 };
 
+
 template < class GT, class DSVb >
 std::istream&
 operator>>(std::istream &is, Triangulation_vertex_base_3<GT, DSVb> &v)
@@ -74,7 +76,7 @@ std::ostream&
 operator<<(std::ostream &os, const Triangulation_vertex_base_3<GT, DSVb> &v)
   // non combinatorial information. Default = point
 {
-  return os << static_cast<const DSVb&>(v) << v.point();
+  return os << static_cast<const DSVb&>(v) << IO::serialize(v.point());
 }
 
 } //namespace CGAL

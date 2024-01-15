@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d/Descartes.h $
-// $Id: Descartes.h 26355e2 2020-06-25T12:31:21+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d/Descartes.h $
+// $Id: include/CGAL/Algebraic_kernel_d/Descartes.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -328,7 +328,7 @@ private:
             return false;
         return (P[0] != Coeff__(0) && P.evaluate(Coeff__(1)) != Coeff__(0));
     }
-    //! Descartes algoritm to determine isolating intervals for the roots
+    //! Descartes algorithm to determine isolating intervals for the roots
     //! lying in the interval (0,1).
     // The parameters $(i,D)$ describe the interval $(i/2^D, (i+1)/2^D)$.
     // Here $0\leq i < 2^D$.
@@ -389,7 +389,7 @@ private:
     }
 
 
-    //! Strong Descartes algoritm to determine isolating intervals for the
+    //! Strong Descartes algorithm to determine isolating intervals for the
     //! roots lying in the interval (0,1), where the first
     //! derivative have no sign change. \pre $P$ has only one root in the
     //! interval given by $(i,D)$.

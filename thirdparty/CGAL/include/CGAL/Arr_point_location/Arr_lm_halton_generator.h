@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_point_location/Arr_lm_halton_generator.h $
-// $Id: Arr_lm_halton_generator.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_point_location/Arr_lm_halton_generator.h $
+// $Id: include/CGAL/Arr_point_location/Arr_lm_halton_generator.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Idit Haran   <haranidi@post.tau.ac.il>
@@ -81,7 +81,7 @@ protected:
   {
     points.clear();
 
-    // Go over the arrangement vertices and construct their boundig box.
+    // Go over the arrangement vertices and construct their bounding box.
     const Arrangement_2*  arr = this->arrangement();
     Vertex_const_iterator vit;
     double                x_min = 0, x_max = 1, y_min = 0, y_max = 1;

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/QP_solver/include/CGAL/QP_solver/QP_solver_impl.h $
-// $Id: QP_solver_impl.h 3f10219 2021-01-06T09:34:57+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/QP_solver/include/CGAL/QP_solver/QP_solver_impl.h $
+// $Id: include/CGAL/QP_solver/QP_solver_impl.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -12,6 +12,11 @@
 //                 Bernd Gaertner <gaertner@inf.ethz.ch>
 //                 Franz Wessendorp
 //                 Kaspar Fischer
+
+#ifndef CGAL_QP_SOLVER_IMPL_H
+#define CGAL_QP_SOLVER_IMPL_H
+
+#include <CGAL/license/QP_solver.h>
 
 #include <CGAL/QP_solver/Initialization.h>
 #include <CGAL/NT_converter.h>
@@ -1024,7 +1029,7 @@ ratio_test_2( Tag_false)
     // where x(mu_j(t_1)) is the current solution of the solver at this point
     // (i.e., at the beginning of ratio step 2).
     //
-    // By subtracting (2) from (1) we can thus eliminate the "unkown" x(0)
+    // By subtracting (2) from (1) we can thus eliminate the "unknown" x(0)
     // (which is cheaper than computing it):
     //
     //    x(mu_j) = x(mu_j(t_1)) + (mu_j-mu_j(t_1)) q_it
@@ -2831,7 +2836,7 @@ check_basis_inverse( Tag_true)
     Value_iterator  q_it;
 
 
-    // BG: is this a real check?? How does the special artifical
+    // BG: is this a real check?? How does the special artificial
     // variable come in, e.g.? OK: it comes in through
     // ratio_test_init__A_Cj
     for ( col = 0; col < cols; ++col, ++i_it) {
@@ -3393,3 +3398,5 @@ get_l() const
 } //namespace CGAL
 
 // ===== EOF ==================================================================
+
+#endif //CGAL_QP_SOLVER_IMPL_H

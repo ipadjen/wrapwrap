@@ -49,11 +49,11 @@
  *  Author:  Vikram Sharma and Chee Yap
  *  Date:    April 12, 2004
  *
- * WWW URL: http://cs.nyu.edu/exact/
+ * WWW URL: https://cs.nyu.edu/exact/
  * Email: exact@cs.nyu.edu
  *
- * $URL: https://github.com/CGAL/cgal/blob/v5.5.2/CGAL_Core/include/CGAL/CORE/poly/Curves.h $
- * $Id: Curves.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+ * $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/CGAL_Core/include/CGAL/CORE/poly/Curves.h $
+ * $Id: include/CGAL/CORE/poly/Curves.h a484bfa $
  * SPDX-License-Identifier: LGPL-3.0-or-later
  ***************************************************************************/
 
@@ -147,7 +147,7 @@ class BiPoly{
 
   //BiPoly(deg, d[], C[]):
   //        Takes in a list of list of coefficients.
-  //        Each cofficient list represents a polynomial in X
+  //        Each coefficient list represents a polynomial in X
   //
   //  deg - ydeg of the bipoly
   //  d[] - array containing the degrees of each coefficient (i.e., X poly)
@@ -414,7 +414,7 @@ public:
 
   //Curve(deg, d[], C[]):
   //        Takes in a list of list of coefficients.
-  //        Each cofficient list represents a polynomial in X
+  //        Each coefficient list represents a polynomial in X
   //
   //  deg - ydeg of the bipoly
   //  d[] - array containing the degrees of each coefficient (i.e., X poly)

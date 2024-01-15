@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Poisson_surface_reconstruction_3/include/CGAL/Reconstruction_triangulation_3.h $
-// $Id: Reconstruction_triangulation_3.h 4968d21 2022-05-17T10:31:07+01:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Poisson_surface_reconstruction_3/include/CGAL/Reconstruction_triangulation_3.h $
+// $Id: include/CGAL/Reconstruction_triangulation_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -21,11 +21,12 @@
 #include <CGAL/Point_with_normal_3.h>
 #include <CGAL/Lightweight_vector_3.h>
 #include <CGAL/property_map.h>
-#include <CGAL/surface_reconstruction_points_assertions.h>
+#include <CGAL/assertions.h>
 
 #include <CGAL/Delaunay_triangulation_3.h>
 #include <CGAL/Delaunay_triangulation_cell_base_3.h>
 #include <CGAL/Triangulation_cell_base_with_info_3.h>
+#include <CGAL/Triangulation_structural_filtering_traits.h>
 
 #include <CGAL/algorithm.h>
 #include <CGAL/bounding_box.h>
@@ -145,6 +146,12 @@ template <class BaseGt>
 struct Reconstruction_triangulation_default_geom_traits_3 : public BaseGt
 {
   typedef Point_with_normal_3<BaseGt> Point_3;
+};
+
+
+template < class BaseGt >
+struct Triangulation_structural_filtering_traits<Reconstruction_triangulation_default_geom_traits_3<BaseGt> > {
+  typedef typename Triangulation_structural_filtering_traits<BaseGt>::Use_structural_filtering_tag  Use_structural_filtering_tag;
 };
 
 

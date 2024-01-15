@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_processing_3/include/CGAL/Point_set_processing_3/internal/Rich_grid.h $
-// $Id: Rich_grid.h 67b53fa 2020-04-29T14:06:37+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Point_set_processing_3/include/CGAL/Point_set_processing_3/internal/Rich_grid.h $
+// $Id: include/CGAL/Point_set_processing_3/internal/Rich_grid.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Shihao Wu, Clement Jamin, Pierre Alliez
@@ -16,7 +16,7 @@
 
 
 #include <CGAL/property_map.h>
-#include <CGAL/point_set_processing_assertions.h>
+#include <CGAL/assertions.h>
 #include <CGAL/Point_3.h>
 #include <CGAL/Vector_3.h>
 #include <CGAL/Origin.h>
@@ -266,7 +266,7 @@ void Rich_grid<Kernel>::travel_itself(
       for(int x = 0; x < x_side; x++) {
         int origin = cell(x, y, z);
         self(get_start_iter(origin), get_end_iter(origin), radius);
-        // compute between other girds
+        // compute between other grids
         for(int d = 2; d < 28; d += 2) { // skipping self
           const int *cs = corner + 3*diagonals[d];
           const int *ce = corner + 3*diagonals[d+1];
@@ -284,7 +284,7 @@ void Rich_grid<Kernel>::travel_itself(
   }
 }
 
-/// define how to travel in other gird
+/// define how to travel in other grid
 template <typename Kernel>
 void Rich_grid<Kernel>::travel_others(
   Rich_grid &points,
@@ -454,7 +454,7 @@ void compute_ball_neighbors_one_self(
   CGAL::Bbox_3 bbox, ///< bounding box
   const typename Kernel::FT radius)
 {
-  CGAL_point_set_processing_precondition(radius > 0);
+  CGAL_precondition(radius > 0);
 
   for (unsigned int i = 0; i < points.size(); ++i)
   {

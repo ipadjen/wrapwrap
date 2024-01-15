@@ -9,8 +9,8 @@
 // and a STREP (FET Open) Project under Contract No  IST-006413
 // (ACS -- Algorithms for Complex Shapes)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Algebraic_kernel_for_spheres/include/CGAL/Algebraic_kernel_for_spheres/internal_functions_on_roots_and_polynomials_2_3.h $
-// $Id: internal_functions_on_roots_and_polynomials_2_3.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Algebraic_kernel_for_spheres/include/CGAL/Algebraic_kernel_for_spheres/internal_functions_on_roots_and_polynomials_2_3.h $
+// $Id: include/CGAL/Algebraic_kernel_for_spheres/internal_functions_on_roots_and_polynomials_2_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Monique Teillaud <Monique.Teillaud@sophia.inria.fr>
@@ -46,7 +46,7 @@ namespace CGAL {
     typedef typename AK::Polynomial_1_3 Polynomial_1_3;
     // The degenerated cases are 2 tangent spheres
     // os 2 non-intersecting spheres
-    // beacause we cannot have infinitely many solutions
+    // because we cannot have infinitely many solutions
     if(e1 == e2) {
       if(tangent<AK>(e1,e3)) {
         Polynomial_1_3 p = plane_from_2_spheres<AK>(e1,e3);

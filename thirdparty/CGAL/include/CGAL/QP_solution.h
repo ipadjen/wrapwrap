@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/QP_solver/include/CGAL/QP_solution.h $
-// $Id: QP_solution.h 3f10219 2021-01-06T09:34:57+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/QP_solver/include/CGAL/QP_solution.h $
+// $Id: include/CGAL/QP_solution.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -297,7 +297,7 @@ public:
   Quadratic_program_solution ()
     : Handle_for<const QP_solver_base<ET>*>(), et0(0)
   {
-    *(this->ptr()) = 0; // unitialized solution
+    *(this->ptr()) = 0; // uninitialized solution
   }
 
   Quadratic_program_solution (const QP_solver_base<ET>* s)

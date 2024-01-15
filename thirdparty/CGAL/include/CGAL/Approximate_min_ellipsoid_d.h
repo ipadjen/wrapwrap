@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Bounding_volumes/include/CGAL/Approximate_min_ellipsoid_d.h $
-// $Id: Approximate_min_ellipsoid_d.h 2b31362 2022-06-22T07:53:20+01:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Bounding_volumes/include/CGAL/Approximate_min_ellipsoid_d.h $
+// $Id: include/CGAL/Approximate_min_ellipsoid_d.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -65,7 +65,7 @@ namespace CGAL {
     // When the input points do not affinely span the whole space
     // (i.e., if dim(aff(P)) < d), then the smallest enclosing
     // ellipsoid of P has no volume in R^d and so the points are
-    // called "degnerate" (see is_degenerate()) below.
+    // called "degenerate" (see is_degenerate()) below.
 
     // As discussed below (before (*)), the centrally symmetric ellipsoid
     // E':= sqrt{(1+a_eps)(d+1)} E contains (under exact arithmetic) the
@@ -140,7 +140,7 @@ namespace CGAL {
       CGAL_APPEL_ASSERT(is_deg == E->is_degenerate());
       CGAL_APPEL_LOG("appel",
                      "  Input points are " << (is_deg? "" : "not ") <<
-                     "degnerate." << std::endl);
+                     "degenerate." << std::endl);
 
       if (is_deg)
         find_lower_dimensional_approximation();

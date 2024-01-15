@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Segment_Delaunay_graph_Linf_2/include/CGAL/Segment_Delaunay_graph_Linf_2/Bisector_Linf.h $
-// $Id: Bisector_Linf.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Segment_Delaunay_graph_Linf_2/include/CGAL/Segment_Delaunay_graph_Linf_2/Bisector_Linf.h $
+// $Id: include/CGAL/Segment_Delaunay_graph_Linf_2/Bisector_Linf.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -200,7 +200,7 @@ private:
     else {
       Oriented_side side = lseg.oriented_side(pnt);
 
-      // point pp sould not lie on the supporting line of q
+      // point pp should not lie on the supporting line of q
       CGAL_assertion(! (side == ON_ORIENTED_BOUNDARY));
 
       Point_2 points[3];
@@ -298,7 +298,7 @@ private:
                   && lseg.has_on_negative_side(pnt)) ) {
                 // pcfirst is center of square,
                 // pfirst = phor, upward direction
-                // pclast is center of sqaure, plast = pver, left direction
+                // pclast is center of square, plast = pver, left direction
                 pcfirst = Point_2(pmid_pfirst_pnt.x(),
                                   pmid_pfirst_pnt.y()+seglenhalffirst);
                 pclast = Point_2(pmid_plast_pnt.x()-seglenhalflast,
@@ -321,7 +321,7 @@ private:
                   && lseg.has_on_negative_side(pnt)) ) {
                 // pcfirst is center of square,
                 // pfirst = pver, right direction
-                // pclast is center of sqaure, plast = phor, upward dir
+                // pclast is center of square, plast = phor, upward dir
                 pcfirst = Point_2(pmid_pfirst_pnt.x()+seglenhalffirst,
                                   pmid_pfirst_pnt.y());
                 pclast = Point_2(pmid_plast_pnt.x(),

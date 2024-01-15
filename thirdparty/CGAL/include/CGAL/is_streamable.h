@@ -1,8 +1,8 @@
 // Copyright (c) 2012  GeometryFactory Sarl (France)
 // All rights reserved.
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/STL_Extension/include/CGAL/is_streamable.h $
-// $Id: is_streamable.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/STL_Extension/include/CGAL/is_streamable.h $
+// $Id: include/CGAL/is_streamable.h a484bfa $
 // SPDX-License-Identifier: BSL-1.0
 //
 // Author(s)     : Laurent Rineau, Philipp Moeller
@@ -10,9 +10,6 @@
 #ifndef CGAL_IS_STREAMABLE_H
 #define CGAL_IS_STREAMABLE_H
 
-#include <boost/type_traits/remove_reference.hpp>
-#include <boost/type_traits/remove_cv.hpp>
-#include <boost/static_assert.hpp>
 #include <iostream>
 
 namespace CGAL {
@@ -51,8 +48,8 @@ namespace is_streamable
   template <class T>
   struct is_streamable_impl
   {
-    static typename boost::remove_cv<typename boost::remove_reference<T>::type>::type const & x;
-    static typename boost::remove_cv<typename boost::remove_reference<T>::type>::type  & y;
+    static std::remove_cv_t<std::remove_reference_t<T>> const & x;
+    static std::remove_cv_t<std::remove_reference_t<T>>  & y;
 
     static const bool value =
       sizeof(is_streamable::check(std::cout << x)) == sizeof(is_streamable::yes) &&

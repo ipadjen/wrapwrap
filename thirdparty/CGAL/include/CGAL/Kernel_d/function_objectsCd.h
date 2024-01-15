@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Kernel_d/include/CGAL/Kernel_d/function_objectsCd.h $
-// $Id: function_objectsCd.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Kernel_d/include/CGAL/Kernel_d/function_objectsCd.h $
+// $Id: include/CGAL/Kernel_d/function_objectsCd.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -279,7 +279,7 @@ public:
  * subspace on which the (full k-dim) predicates answers POSITIVE or NEGATIVE.
  * If no such subspace is found, return COPLANAR.
  * IMPORTANT TODO: Current implementation is VERY bad with filters: if one
- * determinant fails in the filtering step, then all the subsequent ones wil be
+ * determinant fails in the filtering step, then all the subsequent ones will be
  * in exact arithmetic :-(
  * TODO: store the axis-aligned subspace that was found in order to avoid
  * re-searching for it for subsequent calls to operator()

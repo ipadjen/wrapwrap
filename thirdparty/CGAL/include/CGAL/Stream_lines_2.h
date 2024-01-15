@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Stream_lines_2/include/CGAL/Stream_lines_2.h $
-// $Id: Stream_lines_2.h 1faa0e2 2021-04-28T10:55:26+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Stream_lines_2/include/CGAL/Stream_lines_2.h $
+// $Id: include/CGAL/Stream_lines_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -26,7 +26,7 @@
 
 #include <CGAL/squared_distance_2.h>
 
-#include <CGAL/streamlines_assertions.h>
+#include <CGAL/assertions.h>
 
 #include <boost/tuple/tuple.hpp>
 #include <boost/random/uniform_real.hpp> // undocumented class
@@ -392,7 +392,7 @@ Stream_lines_2<VectorField_2, Integrator_2>::integrate_forward(const Vector_fiel
     {
       Point_2 ex_old_point = old_point;
       old_point = new_point;
-      CGAL_streamlines_precondition(vector_field_2.is_in_domain(old_point));
+      CGAL_precondition(vector_field_2.is_in_domain(old_point));
       new_point = integrator(old_point,vector_field_2,true);
       bEnd = !vector_field_2.is_in_domain(new_point);
       bEnd = bEnd || (new_point == old_point);/* to review */
@@ -521,7 +521,7 @@ void Stream_lines_2<VectorField_2, Integrator_2>::integrate_backward(const Vecto
       Point_2 ex_old_point = old_point;
       old_point = new_point;
       std::pair<Vector_2, FT> field_vector;
-      CGAL_streamlines_precondition(vector_field_2.is_in_domain(old_point));
+      CGAL_precondition(vector_field_2.is_in_domain(old_point));
       new_point = integrator(old_point,vector_field_2,false);
       bEnd = !vector_field_2.is_in_domain(new_point);
       FT dist_ = distance(ex_old_point,new_point);

@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Number_types/include/CGAL/GMP/Gmpz_type.h $
-// $Id: Gmpz_type.h eb81d59 2020-11-18T07:43:12+00:00 Giles Bathgate
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Number_types/include/CGAL/GMP/Gmpz_type.h $
+// $Id: include/CGAL/GMP/Gmpz_type.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -324,9 +324,9 @@ gmpz_new_read(std::istream &is, Gmpz &z)
     // peek() sets also the failbit, one has to check for EOL twice.
     //
     // See the LWG C++ Issue 2036, classified as Not-A-Defect:
-    //   http://lwg.github.com/issues/lwg-closed.html#2036
+    //   https://lwg.github.io/issues/lwg-closed.html#2036
     // and a StackOverflow related question:
-    //   http://stackoverflow.com/a/9020292/1728537
+    //   https://stackoverflow.com/a/9020292/1728537
     // --
     // Laurent Rineau, 2013/10/10
     while (!is.eof()) {

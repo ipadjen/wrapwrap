@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Periodic_2_triangulation_2/include/CGAL/Periodic_2_triangulation_2/internal/Functor_with_offset_points_adaptor_2.h $
-// $Id: Functor_with_offset_points_adaptor_2.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Periodic_2_triangulation_2/include/CGAL/Periodic_2_triangulation_2/internal/Functor_with_offset_points_adaptor_2.h $
+// $Id: include/CGAL/Periodic_2_triangulation_2/internal/Functor_with_offset_points_adaptor_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mael Rouxel-Labbé

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Periodic_2_triangulation_2/include/CGAL/draw_periodic_2_triangulation_2.h $
-// $Id: draw_periodic_2_triangulation_2.h 2bbcabe 2021-11-11T17:23:37+01:00 Guillaume Damiand
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Periodic_2_triangulation_2/include/CGAL/draw_periodic_2_triangulation_2.h $
+// $Id: include/CGAL/draw_periodic_2_triangulation_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Jasmeet Singh <jasmeet.singh.mec11@iitbhu.ac.in>
@@ -60,7 +60,7 @@ public:
   /// @param ap2t2 the p2t2 to view
   /// @param title the title of the window
   /// @param anofaces if true, do not draw faces (faces are not computed; this can be
-  ///        usefull for very big object where this time could be long)
+  ///        useful for very big object where this time could be long)
   SimplePeriodic2Triangulation2ViewerQt(QWidget* parent, const P2T2& ap2t2,
                                const char* title="Basic P2T2 Viewer",
                                bool anofaces=false,

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/NewKernel_d/include/CGAL/NewKernel_d/LA_eigen/LA.h $
-// $Id: LA.h 8a52dd3 2020-05-12T11:21:06+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/NewKernel_d/include/CGAL/NewKernel_d/LA_eigen/LA.h $
+// $Id: include/CGAL/NewKernel_d/LA_eigen/LA.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Marc Glisse
@@ -16,7 +16,6 @@
 #error Requires Eigen
 #endif
 #include <boost/type_traits/is_arithmetic.hpp>
-#include <boost/utility/enable_if.hpp>
 #include <CGAL/Dimension.h>
 #include <Eigen/Dense>
 #include <CGAL/NewKernel_d/LA_eigen/constructors.h>
@@ -39,10 +38,10 @@ template<class NT_,class Dim_,class Max_dim_=Dim_> struct LA_eigen {
         struct Rebind_dimension {
           typedef LA_eigen< NT, D2, D3 > Other;
         };
-        template<class,class=void> struct Property : boost::false_type {};
-        template<class D> struct Property<Has_vector_plus_minus_tag,D> : boost::true_type {};
-        template<class D> struct Property<Has_vector_scalar_ops_tag,D> : boost::true_type {};
-        template<class D> struct Property<Has_dot_product_tag,D> : boost::true_type {};
+        template<class,class=void> struct Property : std::false_type {};
+        template<class D> struct Property<Has_vector_plus_minus_tag,D> : std::true_type {};
+        template<class D> struct Property<Has_vector_scalar_ops_tag,D> : std::true_type {};
+        template<class D> struct Property<Has_dot_product_tag,D> : std::true_type {};
 
         typedef Eigen::Matrix<NT,Eigen_dimension<Dim_>::value,1,Eigen::ColMajor|Eigen::AutoAlign,Eigen_dimension<Max_dim_>::value,1> Vector;
         typedef Eigen::Matrix<NT,Eigen::Dynamic,1> Dynamic_vector;

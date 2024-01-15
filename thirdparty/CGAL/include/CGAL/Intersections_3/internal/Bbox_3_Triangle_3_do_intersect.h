@@ -4,8 +4,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_3/include/CGAL/Intersections_3/internal/Bbox_3_Triangle_3_do_intersect.h $
-// $Id: Bbox_3_Triangle_3_do_intersect.h c61e3a9 2022-08-24T16:18:26+02:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_3/include/CGAL/Intersections_3/internal/Bbox_3_Triangle_3_do_intersect.h $
+// $Id: include/CGAL/Intersections_3/internal/Bbox_3_Triangle_3_do_intersect.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -397,9 +397,10 @@ do_intersect_bbox_or_iso_cuboid_impl(const std::array< std::array<FT, 3>, 3>& tr
 }
 
 template <class K, class Box3>
-bool do_intersect_bbox_or_iso_cuboid(const typename K::Triangle_3& a_triangle,
-                                     const Box3& a_bbox,
-                                     const K& k)
+typename K::Boolean
+do_intersect_bbox_or_iso_cuboid(const typename K::Triangle_3& a_triangle,
+                                const Box3& a_bbox,
+                                const K& k)
 {
   if(certainly_not(do_bbox_intersect<K>(a_triangle, a_bbox)))
     return false;
@@ -423,22 +424,23 @@ bool do_intersect_bbox_or_iso_cuboid(const typename K::Triangle_3& a_triangle,
     { a_triangle[2][0], a_triangle[2][1], a_triangle[2][2] }
   }};
 
-  // exception will be thrown in case the output is indeterminate
   return do_intersect_bbox_or_iso_cuboid_impl<FT>(triangle, a_bbox, do_axis_intersect_aux_impl);
 }
 
 template <class K>
-bool do_intersect(const typename K::Triangle_3& triangle,
-                  const CGAL::Bbox_3& bbox,
-                  const K& k)
+typename K::Boolean
+do_intersect(const typename K::Triangle_3& triangle,
+             const CGAL::Bbox_3& bbox,
+             const K& k)
 {
   return do_intersect_bbox_or_iso_cuboid(triangle, bbox, k);
 }
 
 template <class K>
-bool do_intersect(const CGAL::Bbox_3& bbox,
-                  const typename K::Triangle_3& triangle,
-                  const K& k)
+typename K::Boolean
+do_intersect(const CGAL::Bbox_3& bbox,
+             const typename K::Triangle_3& triangle,
+             const K& k)
 {
   return do_intersect_bbox_or_iso_cuboid(triangle, bbox, k);
 }

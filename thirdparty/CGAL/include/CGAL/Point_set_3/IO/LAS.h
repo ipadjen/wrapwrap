@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_3/include/CGAL/Point_set_3/IO/LAS.h $
-// $Id: LAS.h c8cc074 2021-09-27T15:33:42+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Point_set_3/include/CGAL/Point_set_3/IO/LAS.h $
+// $Id: include/CGAL/Point_set_3/IO/LAS.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Simon Giraudot
@@ -52,7 +52,7 @@ void check_if_property_is_used(PointSet& point_set,
 /*!
   \ingroup PkgPointSet3IOLAS
 
-  \brief reads the content of an intput stream in the \ref IOStreamLAS into a point set.
+  \brief reads the content of an input stream in the \ref IOStreamLAS into a point set.
 
   \attention To read a binary file, the flag `std::ios::binary` must be set during the creation of the `ifstream`.
 
@@ -147,7 +147,7 @@ bool read_LAS(std::istream& is,
 /*!
   \ingroup PkgPointSet3IOLAS
 
-  \brief reads the content of an intput file in the \ref IOStreamLAS into a point set.
+  \brief reads the content of an input file in the \ref IOStreamLAS into a point set.
 
   \param fname the path to the input file
   \param point_set the point set

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Shape_regularization/include/CGAL/Shape_regularization/internal/utils.h $
-// $Id: utils.h 6d3176e 2022-01-07T14:42:25+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Shape_regularization/include/CGAL/Shape_regularization/internal/utils.h $
+// $Id: include/CGAL/Shape_regularization/internal/utils.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -508,7 +508,7 @@ namespace internal {
 
     std::vector< std::vector<Point> > listp(nb_planes);
     for (std::size_t i = 0; i < points.size(); ++i) {
-      const int idx = get(index_map, i);
+      const int idx = static_cast<int>(get(index_map, i));
       if (idx != -1) {
         listp[std::size_t(idx)].push_back(
           get(point_map, *(points.begin() + i)));

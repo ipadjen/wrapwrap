@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Convex_decomposition_3/include/CGAL/Convex_decomposition_3/SM_walls.h $
-// $Id: SM_walls.h 30e536b 2021-03-01T08:06:48+00:00 Giles Bathgate
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Convex_decomposition_3/include/CGAL/Convex_decomposition_3/SM_walls.h $
+// $Id: include/CGAL/Convex_decomposition_3/SM_walls.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -14,6 +14,8 @@
 
 #include <CGAL/license/Convex_decomposition_3.h>
 
+#include <CGAL/Nef_S2/SM_decorator.h>
+#include <CGAL/Nef_S2/SM_point_locator.h>
 
 #undef CGAL_NEF_DEBUG
 #define CGAL_NEF_DEBUG 227

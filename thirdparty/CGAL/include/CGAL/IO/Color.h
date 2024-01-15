@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Stream_support/include/CGAL/IO/Color.h $
-// $Id: Color.h 98ee8d7 2022-02-25T14:54:48+01:00 Charrière Maxime
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Stream_support/include/CGAL/IO/Color.h $
+// $Id: include/CGAL/IO/Color.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -19,11 +19,12 @@
 
 #include <CGAL/config.h>
 #include <CGAL/array.h>
+
+#include <boost/functional/hash.hpp>
+
 #include <algorithm>
 #include <cstdlib>
 #include <cmath>
-
-
 
 namespace CGAL {
 
@@ -287,7 +288,6 @@ public:
   }
 
   /// @}
-
 };
 
 
@@ -375,6 +375,22 @@ using IO::white;
 using IO::yellow;
 #endif
 
-} //namespace CGAL
+} // namespace CGAL
+
+namespace std {
+
+template <>
+struct hash<CGAL::IO::Color>
+{
+  std::size_t operator()(const CGAL::IO::Color& c) const
+  {
+    std::size_t result = boost::hash_value(c[0]);
+    for(std::size_t i=1; i<4; ++i)
+      boost::hash_combine(result, c[i]);
+    return result;
+  }
+};
+
+} // namespace std
 
 #endif  // CGAL_COLOR_H

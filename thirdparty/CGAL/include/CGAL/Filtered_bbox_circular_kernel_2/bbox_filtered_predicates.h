@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Circular_kernel_2/include/CGAL/Filtered_bbox_circular_kernel_2/bbox_filtered_predicates.h $
-// $Id: bbox_filtered_predicates.h 5c8df66 2020-09-25T14:25:14+02:00 Jane Tournois
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Circular_kernel_2/include/CGAL/Filtered_bbox_circular_kernel_2/bbox_filtered_predicates.h $
+// $Id: include/CGAL/Filtered_bbox_circular_kernel_2/bbox_filtered_predicates.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Monique Teillaud, Sylvain Pion, Constantinos Tsirogiannis , Pedro Machado

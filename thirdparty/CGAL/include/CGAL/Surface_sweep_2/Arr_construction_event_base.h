@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Surface_sweep_2/Arr_construction_event_base.h $
-// $Id: Arr_construction_event_base.h 5985db1 2021-07-28T16:17:10+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Surface_sweep_2/Arr_construction_event_base.h $
+// $Id: include/CGAL/Surface_sweep_2/Arr_construction_event_base.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Tali Zvi <talizvi@post.tau.ac.il>
@@ -40,10 +40,10 @@ namespace Ss2 = Surface_sweep_2;
  * information is stored, in order to expedite the insertion of curves into the
  * arrangement.
  *
- * The additional infomation contains the following:
+ * The additional information contains the following:
  * - among the left curves of the event, we keep the highest halfedge that
  *   was inserted into the arrangement at any given time and when there are no
- *   left curves, we keep the highest halfedge that was inseted to the right.
+ *   left curves, we keep the highest halfedge that was inserted to the right.
  *
  * \tparam GeometryTraits_2 the geometry traits.
  * \tparam Allocator_ a type of an element that is used to acquire/release
@@ -174,7 +174,7 @@ public:
   }
 
   /*! Return true iff 'curve' is the toppest curve among the halfedges
-   *  to the right fo the event that were already were inserted to the
+   *  to the right of the event that were already were inserted to the
    * arrangement.
    */
   bool is_curve_largest(Subcurve *curve)

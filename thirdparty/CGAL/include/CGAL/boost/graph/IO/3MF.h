@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/BGL/include/CGAL/boost/graph/IO/3MF.h $
-// $Id: 3MF.h fb6f703 2021-05-04T14:07:49+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/BGL/include/CGAL/boost/graph/IO/3MF.h $
+// $Id: include/CGAL/boost/graph/IO/3MF.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Andreas Fabri
@@ -18,11 +18,11 @@
 #include <CGAL/boost/graph/iterator.h>
 
 #include <boost/property_map/property_map.hpp>
-#include <boost/utility/enable_if.hpp>
 
 #include <string>
 #include <unordered_map>
 #include <vector>
+#include <type_traits>
 
 #if defined(CGAL_LINKED_WITH_3MF) || defined(DOXYGEN_RUNNING)
 
@@ -59,9 +59,9 @@ bool write_3MF(const std::string& filename,
                const GraphRange& gs,
                const std::vector<std::string>& names
 #ifndef DOXYGEN_RUNNING
-               , typename boost::disable_if<
+               , std::enable_if_t<!
                    internal::is_Point_set_or_Range_or_Iterator<
-                     typename boost::range_value<GraphRange>::type> >::type* = nullptr
+                     typename boost::range_value<GraphRange>::type>::value>* = nullptr
 #endif
                )
 {

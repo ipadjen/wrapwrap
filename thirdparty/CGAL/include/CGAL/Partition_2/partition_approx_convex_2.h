@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Partition_2/include/CGAL/Partition_2/partition_approx_convex_2.h $
-// $Id: partition_approx_convex_2.h e6c767d 2021-05-12T15:45:07+02:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Partition_2/include/CGAL/Partition_2/partition_approx_convex_2.h $
+// $Id: include/CGAL/Partition_2/partition_approx_convex_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -29,7 +29,7 @@ _Pragma("GCC diagnostic ignored \"-Wmaybe-uninitialized\"")
 #include <CGAL/IO/Tee_for_output_iterator.h>
 #include <CGAL/Partition_traits_2.h>
 #include <CGAL/partition_is_valid_2.h>
-#include <CGAL/Partition_2/partition_assertions.h>
+#include <CGAL/assertions.h>
 #include <CGAL/Circulator/Safe_circulator_from_iterator.h>
 #include <utility>
 #include <iterator>
@@ -138,7 +138,7 @@ OutputIterator partition_approx_convex_2(InputIterator first,
 
    P_Polygon_2 polygon(first, beyond,traits);
 
-   CGAL_partition_precondition(
+   CGAL_precondition(
     orientation_2(polygon.begin(), polygon.end(), traits) == COUNTERCLOCKWISE);
 
    Circulator first_c(polygon.begin(), polygon.end(), polygon.begin());
@@ -238,7 +238,7 @@ OutputIterator partition_approx_convex_2(InputIterator first,
 #endif // no postconditions
 
    polygon.partition(res, 0);
-   CGAL_partition_postcondition(
+   CGAL_postcondition(
        convex_partition_is_valid_2(polygon.begin(), polygon.end(),
                                    res.output_so_far_begin(),
                                    res.output_so_far_end(), traits));

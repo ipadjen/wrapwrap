@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_S2/include/CGAL/Nef_S2/SM_io_parser.h $
-// $Id: SM_io_parser.h 4e519a3 2021-05-05T13:15:37+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Nef_S2/include/CGAL/Nef_S2/SM_io_parser.h $
+// $Id: include/CGAL/Nef_S2/SM_io_parser.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -34,7 +34,7 @@ namespace CGAL {
 /*{\Manpage {SM_io_parser}{Decorator_}{IO of embedded maps}{IO}}*/
 
 /*{\Mdefinition An instance |\Mvar| of the data type |\Mname| is a
-decorator to provide input and output of a embedded map.  |\Mtype| is
+decorator to provide input and output of an embedded map.  |\Mtype| is
 generic with respect to the |Decorator_| parameter.  |Decorator_| has
 to be a decorator model of our |SM_decorator| concept.}*/
 

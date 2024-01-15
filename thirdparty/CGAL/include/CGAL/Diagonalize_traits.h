@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Solver_interface/include/CGAL/Diagonalize_traits.h $
-// $Id: Diagonalize_traits.h 267a641 2021-05-31T14:01:08+02:00 Dmitry Anisimov
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Solver_interface/include/CGAL/Diagonalize_traits.h $
+// $Id: include/CGAL/Diagonalize_traits.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Simon Giraudot
@@ -42,7 +42,7 @@ namespace CGAL {
 /// \tparam FT Number type
 /// \tparam dim Dimension of the matrices and vectors
 ///
-/// \cgalModels `DiagonalizeTraits`
+/// \cgalModels{DiagonalizeTraits}
 template <typename FT, unsigned int dim = 3>
 class Diagonalize_traits
 {

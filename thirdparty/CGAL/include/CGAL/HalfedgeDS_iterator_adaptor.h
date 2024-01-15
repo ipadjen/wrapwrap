@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/HalfedgeDS/include/CGAL/HalfedgeDS_iterator_adaptor.h $
-// $Id: HalfedgeDS_iterator_adaptor.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/HalfedgeDS/include/CGAL/HalfedgeDS_iterator_adaptor.h $
+// $Id: include/CGAL/HalfedgeDS_iterator_adaptor.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -33,7 +33,7 @@ namespace CGAL {
 
 //  Instead, we rely now on a static local variable. Static variables are
 //  first of all zero-initialized (Section 3.6.2), which guarantees that
-//  pointers and such are set to zero even if the construtor does not
+//  pointers and such are set to zero even if the constructor does not
 //  initialize them (Section 8.5). With static variables, the order of
 //  initialization could be critical, if the initialization of one
 //  requires another one to be initialized already (I have not seen such a
@@ -48,7 +48,7 @@ namespace CGAL {
 //  for weird static initialization situations. Usually the std::vector
 //  class uses a plain C-pointer as iterator, which would be a POD and
 //  thus efficient. However, the std::list iterators might not be POD's if
-//  they define their own copy contructor. This is the case for
+//  they define their own copy constructor. This is the case for
 //  std::list::iterator of the current SGI STL, but not for the
 //  std::list::const_iterator, which is a funny side-effect of having
 //  only a single class for both and a constructor that allows iterator to

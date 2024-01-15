@@ -6,8 +6,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Stream_support/include/CGAL/Stream_support/internal/Geometry_container.h $
-// $Id: Geometry_container.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Stream_support/include/CGAL/Stream_support/internal/Geometry_container.h $
+// $Id: include/CGAL/Stream_support/internal/Geometry_container.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Maxime Gimeno
@@ -16,7 +16,7 @@
 #define GEOMETRY_CONTAINER_H
 #include <boost/geometry/io/wkt/write.hpp>
 #include <boost/geometry/io/wkt/read.hpp>
-#include <boost/shared_ptr.hpp>
+#include <memory>
 
 struct Dummy_deleter{
   template<class T>
@@ -45,7 +45,7 @@ struct Geometry_container{
   typedef typename Range::const_reverse_iterator const_reverse_iterator;
   typedef typename Range::size_type size_type;
   typedef typename Range::value_type value_type;
-  boost::shared_ptr<Range>  range;
+  std::shared_ptr<Range>  range;
   bool must_delete;
   //
   // Default constructor.

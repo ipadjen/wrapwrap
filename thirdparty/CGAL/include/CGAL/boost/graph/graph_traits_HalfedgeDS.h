@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/HalfedgeDS/include/CGAL/boost/graph/graph_traits_HalfedgeDS.h $
-// $Id: graph_traits_HalfedgeDS.h fd20bee 2022-05-03T15:09:05+01:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/HalfedgeDS/include/CGAL/boost/graph/graph_traits_HalfedgeDS.h $
+// $Id: include/CGAL/boost/graph/graph_traits_HalfedgeDS.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -20,7 +20,6 @@
 #include <boost/config.hpp>
 #include <boost/iterator/iterator_adaptor.hpp>
 #include <CGAL/boost/iterator/transform_iterator.hpp>
-#include <boost/type_traits/remove_const.hpp>
 
 #include <boost/graph/graph_traits.hpp>
 #include <boost/graph/properties.hpp>

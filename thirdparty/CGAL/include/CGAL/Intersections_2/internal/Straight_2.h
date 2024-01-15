@@ -7,13 +7,12 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_2/include/CGAL/Intersections_2/internal/Straight_2.h $
-// $Id: Straight_2.h 7e62c02 2021-04-12T14:02:37+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_2/include/CGAL/Intersections_2/internal/Straight_2.h $
+// $Id: include/CGAL/Intersections_2/internal/Straight_2.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Geert-Jan Giezeman
-
 
 #ifndef CGAL_INTERSECTIONS_2_INTERNAL_STRAIGHT_2_H
 #define CGAL_INTERSECTIONS_2_INTERNAL_STRAIGHT_2_H
@@ -346,6 +345,6 @@ collinear_order(typename K::Point_2 const &pt1, typename K::Point_2 const & pt2)
 
 } // namespace internal
 } // namespace Intersections
-} //namespace CGAL
+} // namespace CGAL
 
-#endif
+#endif // CGAL_INTERSECTIONS_2_INTERNAL_STRAIGHT_2_H

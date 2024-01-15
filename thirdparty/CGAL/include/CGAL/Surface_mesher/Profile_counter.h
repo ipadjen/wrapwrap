@@ -3,9 +3,9 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesher/include/CGAL/Surface_mesher/Profile_counter.h $
-// $Id: Profile_counter.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
-// SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesher/include/CGAL/Surface_mesher/Profile_counter.h $
+// $Id: include/CGAL/Surface_mesher/Profile_counter.h a484bfa $
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Laurent Rineau
@@ -15,6 +15,9 @@
 
 #ifndef CGAL_SURFACE_MESHER_PROFILE_COUNTER_H
 #define CGAL_SURFACE_MESHER_PROFILE_COUNTER_H
+
+#include <CGAL/license/Surface_mesher.h>
+
 
 #include <CGAL/Profile_counter.h>
 

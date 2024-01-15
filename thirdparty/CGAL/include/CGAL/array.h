@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/STL_Extension/include/CGAL/array.h $
-// $Id: array.h 160118e 2021-02-11T14:36:26+01:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/STL_Extension/include/CGAL/array.h $
+// $Id: include/CGAL/array.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Sylvain Pion
@@ -30,14 +30,14 @@ namespace CGAL {
 // https://lists.boost.org/Archives/boost/2006/08/109003.php
 //
 // C++0x has it under discussion here :
-// http://www.open-std.org/jtc1/sc22/wg21/docs/lwg-active.html#851
+// https://www.open-std.org/jtc1/sc22/wg21/docs/lwg-active.html#851
 
 // Hopefully C++0x will fix this properly with initializer_lists.
 // So, it's temporary, therefore I do not document it and keep it internal.
 
 // NOTE : The above is actually untrue !  It is possible to do :
 //     struct S2 {
-//       typedef boost::array<M,2> Ar;
+//       typedef std::array<M,2> Ar;
 //       Ar m;
 //       S2 (const M&a) : m ((Ar) { { a, a } }) {}
 //     };

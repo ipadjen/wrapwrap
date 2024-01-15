@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/AABB_tree/include/CGAL/AABB_tree/internal/AABB_traversal_traits.h $
-// $Id: AABB_traversal_traits.h 678b9d8 2022-06-24T11:09:06+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/AABB_tree/include/CGAL/AABB_tree/internal/AABB_traversal_traits.h $
+// $Id: include/CGAL/AABB_tree/internal/AABB_traversal_traits.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -17,7 +17,7 @@
 
 
 #include <CGAL/AABB_tree/internal/AABB_node.h>
-#include <boost/optional.hpp>
+#include <optional>
 
 namespace CGAL {
 
@@ -69,7 +69,7 @@ class First_intersection_traits
 
 public:
   typedef
-  boost::optional< typename AABBTraits::template Intersection_and_primitive_id<Query>::Type >
+  std::optional< typename AABBTraits::template Intersection_and_primitive_id<Query>::Type >
   Result;
 public:
   First_intersection_traits(const AABBTraits& traits)
@@ -124,7 +124,7 @@ public:
 
   void intersection(const Query& query, const Primitive& primitive)
   {
-    boost::optional< typename AABBTraits::template Intersection_and_primitive_id<Query>::Type >
+    std::optional< typename AABBTraits::template Intersection_and_primitive_id<Query>::Type >
     intersection = m_traits.intersection_object()(query, primitive);
 
     if(intersection)
@@ -211,7 +211,7 @@ public:
   {
     if( m_traits.do_intersect_object()(query, primitive) )
     {
-      m_result = boost::optional<typename Primitive::Id>(primitive.id());
+      m_result = std::optional<typename Primitive::Id>(primitive.id());
       m_is_found = true;
     }
   }
@@ -221,12 +221,12 @@ public:
     return m_traits.do_intersect_object()(query, node.bbox());
   }
 
-  boost::optional<typename Primitive::Id> result() const { return m_result; }
+  std::optional<typename Primitive::Id> result() const { return m_result; }
   bool is_intersection_found() const { return m_is_found; }
 
 private:
   bool m_is_found;
-  boost::optional<typename Primitive::Id> m_result;
+  std::optional<typename Primitive::Id> m_result;
   const AABBTraits& m_traits;
 };
 

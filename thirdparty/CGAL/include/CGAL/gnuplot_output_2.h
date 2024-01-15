@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Cone_spanners_2/include/CGAL/gnuplot_output_2.h $
-// $Id: gnuplot_output_2.h 26355e2 2020-06-25T12:31:21+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Cone_spanners_2/include/CGAL/gnuplot_output_2.h $
+// $Id: include/CGAL/gnuplot_output_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

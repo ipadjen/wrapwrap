@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Shape_regularization/include/CGAL/Shape_regularization/Segments/Offset_regularization_2.h $
-// $Id: Offset_regularization_2.h 75b03e6 2022-01-10T15:33:04+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Shape_regularization/include/CGAL/Shape_regularization/Segments/Offset_regularization_2.h $
+// $Id: include/CGAL/Shape_regularization/Segments/Offset_regularization_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -51,7 +51,7 @@ namespace Segments {
     and value type is `GeomTraits::Segment_2`. The default is
     `CGAL::Identity_property_map<typename GeomTraits::Segment_2>`.
 
-    \cgalModels `RegularizationType`
+    \cgalModels{RegularizationType}
   */
   template<
   typename GeomTraits,

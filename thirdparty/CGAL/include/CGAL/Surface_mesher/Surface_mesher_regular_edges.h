@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesher/include/CGAL/Surface_mesher/Surface_mesher_regular_edges.h $
-// $Id: Surface_mesher_regular_edges.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesher/include/CGAL/Surface_mesher/Surface_mesher_regular_edges.h $
+// $Id: include/CGAL/Surface_mesher/Surface_mesher_regular_edges.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -213,8 +213,8 @@ namespace CGAL {
       if(withBoundary)
         std::cerr << "(boundaries allowed)";
       std::cerr << "...\n";
-#endif
       int n = 0;
+#endif
       for (Finite_edges_iterator eit = SMB::tr.finite_edges_begin(); eit !=
              SMB::tr.finite_edges_end(); ++eit) {
         if ( (SMB::c2t3.face_status(*eit)
@@ -223,7 +223,9 @@ namespace CGAL {
                (SMB::c2t3.face_status(*eit)
                 == C2t3::BOUNDARY) ) ) {
           bad_edges.insert( edge_to_edgevv(*eit) );
+#ifdef CGAL_SURFACE_MESHER_VERBOSE
           ++n;
+#endif
         }
       }
       bad_edges_initialized = true;

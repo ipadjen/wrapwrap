@@ -6,8 +6,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Stream_support/include/CGAL/IO/STL.h $
-// $Id: STL.h fd950da 2022-03-15T12:27:10+01:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Stream_support/include/CGAL/IO/STL.h $
+// $Id: include/CGAL/IO/STL.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Maxime Gimeno
@@ -23,8 +23,8 @@
 #include <CGAL/Kernel/global_functions_3.h>
 
 #include <boost/range/value_type.hpp>
-#include <boost/utility/enable_if.hpp>
 
+#include <type_traits>
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -74,7 +74,7 @@ bool read_STL(std::istream& is,
               TriangleRange& facets,
               const CGAL_NP_CLASS& np = parameters::default_values()
 #ifndef DOXYGEN_RUNNING
-              , typename boost::enable_if<internal::is_Range<TriangleRange> >::type* = nullptr
+              , std::enable_if_t<internal::is_Range<TriangleRange>::value>* = nullptr
 #endif
               )
 {
@@ -193,7 +193,7 @@ bool read_STL(const std::string& fname,
               TriangleRange& facets,
               const CGAL_NP_CLASS& np = parameters::default_values()
 #ifndef DOXYGEN_RUNNING
-              , typename boost::enable_if<internal::is_Range<TriangleRange> >::type* = nullptr
+              , std::enable_if_t<internal::is_Range<TriangleRange>::value>* = nullptr
 #endif
               )
 {
@@ -282,7 +282,7 @@ bool write_STL(std::ostream& os,
                const TriangleRange& facets,
                const CGAL_NP_CLASS& np = parameters::default_values()
 #ifndef DOXYGEN_RUNNING
-               , typename boost::enable_if<internal::is_Range<TriangleRange> >::type* = nullptr
+               , std::enable_if_t<internal::is_Range<TriangleRange>::value>* = nullptr
 #endif
                )
 {
@@ -308,7 +308,7 @@ bool write_STL(std::ostream& os,
   if(get_mode(os) == BINARY)
   {
     os << "FileType: Binary                                                                ";
-    const boost::uint32_t N32 = static_cast<boost::uint32_t>(facets.size());
+    const std::uint32_t N32 = static_cast<std::uint32_t>(facets.size());
     os.write(reinterpret_cast<const char *>(&N32), sizeof(N32));
 
     for(const Triangle& face : facets)
@@ -392,7 +392,7 @@ bool write_STL(const std::string& fname,
                const TriangleRange& facets,
                const CGAL_NP_CLASS& np = parameters::default_values()
 #ifndef DOXYGEN_RUNNING
-               , typename boost::enable_if<internal::is_Range<TriangleRange> >::type* = nullptr
+               , std::enable_if_t<internal::is_Range<TriangleRange>::value>* = nullptr
 #endif
                )
 {

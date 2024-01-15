@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Convex_hull_d/include/CGAL/Delaunay_d.h $
-// $Id: Delaunay_d.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Convex_hull_d/include/CGAL/Delaunay_d.h $
+// $Id: include/CGAL/Delaunay_d.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -830,7 +830,7 @@ locate(const Point_d& x) const
   // lift(p) is not a dimension jump
   std::list<Simplex_handle> candidates;
   std::size_t dummy1 = 0;
-  int loc = -1; // intialization is important
+  int loc = -1; // initialization is important
   Simplex_handle f;
   this -> visibility_search(origin_simplex_,lp,candidates,dummy1,loc,f);
   this -> clear_visited_marks(origin_simplex_);

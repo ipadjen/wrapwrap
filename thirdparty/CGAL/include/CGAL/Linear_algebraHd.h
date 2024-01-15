@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Kernel_d/include/CGAL/Linear_algebraHd.h $
-// $Id: Linear_algebraHd.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Kernel_d/include/CGAL/Linear_algebraHd.h $
+// $Id: include/CGAL/Linear_algebraHd.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -184,7 +184,7 @@ $O(n^3)$, and all other operations take time $O(nm)$. These time
 bounds ignore the cost for multiprecision arithmetic operations.
 
 All functions on integer matrices compute the exact result, i.e.,
-there is no rounding error. The implemenation follows a proposal of
+there is no rounding error. The implementation follows a proposal of
 J. Edmonds (J. Edmonds, Systems of distinct representatives and linear
 algebra, Journal of Research of the Bureau of National Standards, (B),
 71, 241 - 245). Most functions of linear algebra are { \em checkable

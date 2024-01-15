@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/simplify_polyline.h $
-// $Id: simplify_polyline.h 5a992f6 2022-11-22T10:31:34+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/simplify_polyline.h $
+// $Id: include/CGAL/Polygon_mesh_processing/internal/simplify_polyline.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -103,7 +103,7 @@ void simplify_polyline(const PointRangeIn& input,
             ++ei; // we skip ei-1
           else
           {
-            bi=ei-1; // ei-1 shall not be skipt
+            bi=ei-1; // ei-1 shall not be skipped
             break;
           }
         }
@@ -178,7 +178,7 @@ void simplify_polyline(const PointRangeIn& input,
           output.push_back(input[i]);
           put(out_pm, output.back(), get(in_pm, input[i]));
         }
-      //TODO if is_closed-==true, shall we add en extra step to see if we can remove output.front() and output[output.size()-2] (inital endpoints)
+      //TODO if is_closed-==true, shall we add en extra step to see if we can remove output.front() and output[output.size()-2] (initial endpoints)
     }
   }
 }

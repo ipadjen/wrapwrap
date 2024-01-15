@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Bounding_volumes/include/CGAL/Min_sphere_of_spheres_d.h $
-// $Id: Min_sphere_of_spheres_d.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Bounding_volumes/include/CGAL/Min_sphere_of_spheres_d.h $
+// $Id: include/CGAL/Min_sphere_of_spheres_d.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -53,7 +53,7 @@ namespace CGAL_MINIBALL_NAMESPACE {
     Traits t; // To allow the traits to not only vary at compile- but
               // also at runtime, we instantiate it here.
 
-  private: // for internal consisteny checks:
+  private: // for internal consistency checks:
     // The following variable is true if and only if the miniball
     // has been computed of all inserted balls, i.e. iff every checked-in
     // ball has been respected in the miniball computation.

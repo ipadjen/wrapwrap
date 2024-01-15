@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon/include/CGAL/Polygon_with_holes_2.h $
-// $Id: Polygon_with_holes_2.h 78ff918 2021-06-23T23:34:14+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon/include/CGAL/Polygon_with_holes_2.h $
+// $Id: include/CGAL/Polygon_with_holes_2.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -33,7 +33,7 @@ types (`Kernel` and `Container`) that are used to instantiate
 the type `Polygon_2<Kernel,Container>`. The latter is used to
 represents the outer boundary and the boundary of the holes (if any exist).
 
-\cgalModels `GeneralPolygonWithHoles_2`
+\cgalModels{GeneralPolygonWithHoles_2}
 
 */
 template <class Kernel,
@@ -63,12 +63,28 @@ public:
     Base (pgn_boundary)
   {}
 
+  /*! Move constructor */
+  explicit Polygon_with_holes_2 (Polygon_2&& pgn_boundary) :
+    Base (std::move(pgn_boundary))
+  {}
+
   /*! Constructor from a polygon (outer boundary) and hole polygons. */
   template <class HolesInputIterator>
   Polygon_with_holes_2 (const Polygon_2& pgn_boundary,
                         HolesInputIterator h_begin,
                         HolesInputIterator h_end) :
     Base (pgn_boundary, h_begin, h_end)
+  {}
+
+  /*! Move constructor.
+   * \note In order to move the hole polygons a
+   * `std::move_iterator` may be used.
+   */
+  template <class HolesInputIterator>
+  Polygon_with_holes_2 (Polygon_2&& pgn_boundary,
+                        HolesInputIterator h_begin,
+                        HolesInputIterator h_end) :
+    Base (std::move(pgn_boundary), h_begin, h_end)
   {}
 
   /*! Obtain the bounding box of the polygon with holes */
@@ -80,10 +96,10 @@ public:
 //-----------------------------------------------------------------------//
 
 /*!
-This operator exports a polygon with holes to the output stream `out`.
+This operator exports a polygon with holes to the output stream `os`.
 
 An \ascii and a binary format exist. The format can be selected with
-the \cgal modifiers for streams, `set_ascii_mode()` and `set_binary_mode()`
+the \cgal modifiers for streams, `set_ascii_mode()` and `set_binary_mode()`,
 respectively. The modifier `set_pretty_mode()` can be used to allow for (a
 few) structuring comments in the output. Otherwise, the output would
 be free of comments. The default for writing is \ascii without comments.
@@ -120,7 +136,7 @@ std::ostream& operator<<(std::ostream &os,
     default:
       os << "Polygon_with_holes_2(" << std::endl;
       if(p.is_unbounded())
-        os << "No outer bounary" << std::endl;
+        os << "No outer boundary" << std::endl;
       else
       {
         os << "Boundary(" << std::endl;
@@ -143,14 +159,14 @@ std::ostream& operator<<(std::ostream &os,
 //-----------------------------------------------------------------------//
 
 /*!
-This operator imports a polygon with holes from the input stream `in`.
+This operator imports a polygon with holes from the input stream `is`.
 
-Both ASCII and binary formats are supported, and the format is automatically detected.
+Both \ascii and binary formats are supported, and the format is automatically detected.
 
 The format consists of the number of points of the outer boundary followed
 by the points themselves in counterclockwise order, followed by the number of holes,
 and for each hole, the number of points of the outer boundary is followed
-by the points themselves in clockwise order.
+by the points themselves, in clockwise order.
 
 \relates Polygon_with_holes_2
 */
@@ -170,7 +186,7 @@ std::istream &operator>>(std::istream &is,
      {
        Polygon_2 hole;
        is >> hole;
-       p.add_hole(hole);
+       p.add_hole(std::move(hole));
      }
   }
 

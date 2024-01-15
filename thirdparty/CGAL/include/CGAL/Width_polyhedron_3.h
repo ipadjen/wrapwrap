@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polytope_distance_d/include/CGAL/Width_polyhedron_3.h $
-// $Id: Width_polyhedron_3.h 5a36ff8 2020-12-04T08:02:26+00:00 Giles Bathgate
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polytope_distance_d/include/CGAL/Width_polyhedron_3.h $
+// $Id: include/CGAL/Width_polyhedron_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

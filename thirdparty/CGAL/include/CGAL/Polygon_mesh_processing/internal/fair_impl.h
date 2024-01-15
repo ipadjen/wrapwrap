@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/fair_impl.h $
-// $Id: fair_impl.h 625848e 2021-10-04T13:21:47+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/fair_impl.h $
+// $Id: include/CGAL/Polygon_mesh_processing/internal/fair_impl.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -76,7 +76,7 @@ private:
     vertex_descriptor v,
     int row_id,                            // which row to insert in [ frees stay left-hand side ]
     Solver_matrix& matrix,
-    double& x, double& y, double& z,               // constants transfered to right-hand side
+    double& x, double& y, double& z,               // constants transferred to right-hand side
     double multiplier,
     const std::map<vertex_descriptor, std::size_t>& vertex_id_map,
     unsigned int depth)
@@ -122,8 +122,8 @@ public:
       return false;
     }
 
-    std::set<vertex_descriptor> interior_vertices(boost::begin(vertices),
-                                                  boost::end(vertices));
+    std::set<vertex_descriptor> interior_vertices(std::begin(vertices),
+                                                  std::end(vertices));
     if(interior_vertices.empty()) { return true; }
 
     #ifdef CGAL_PMP_FAIR_DEBUG

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_parameterization/include/CGAL/Surface_mesh_parameterization/internal/orbifold_cone_helper.h $
-// $Id: orbifold_cone_helper.h 4ffc949 2022-02-03T17:11:20+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_parameterization/include/CGAL/Surface_mesh_parameterization/internal/orbifold_cone_helper.h $
+// $Id: include/CGAL/Surface_mesh_parameterization/internal/orbifold_cone_helper.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mael Rouxel-Labbé
@@ -193,7 +193,7 @@ bool check_cone_validity(const SeamMesh& mesh,
     }
     else {
       if(it->second != Duplicated_cone) {
-        std::cerr << "Error: Unknow cone type: " << it->second << std::endl;
+        std::cerr << "Error: Unknown cone type: " << it->second << std::endl;
         return false;
       }
       ++duplicated_cone_counter;

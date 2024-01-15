@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/GraphicsView/include/CGAL/Qt/debug_impl.h $
-// $Id: debug_impl.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/GraphicsView/include/CGAL/Qt/debug_impl.h $
+// $Id: include/CGAL/Qt/debug_impl.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -23,7 +23,6 @@
 #include <CGAL/Qt/debug.h>
 #include <QDir>
 #include <iostream>
-#include <QtOpenGL/qgl.h>
 #include <qopenglfunctions.h>
 namespace CGAL {
 namespace Qt {
@@ -51,5 +50,5 @@ void traverse_resources(const QString& name, const QString& dirname, int indent)
   }
 }
 
-} // namesapce Qt
+} // namespace Qt
 } // namespace CGAL

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d/Status_line_CPA_1.h $
-// $Id: Status_line_CPA_1.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d/Status_line_CPA_1.h $
+// $Id: include/CGAL/Algebraic_kernel_d/Status_line_CPA_1.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -75,7 +75,7 @@ public:
 
     // represents x-coordinate of event of rational value over interval
     // computed only by demand
-    mutable boost::optional<Algebraic_real_1> _m_x;
+    mutable std::optional<Algebraic_real_1> _m_x;
 
     // for each event point stores a pair of arcnos of the 1st and 2nd curve
     // or -1 if respective curve is not involved
@@ -208,7 +208,7 @@ public:
 
 protected:
     /*!\brief
-     * constructs from a given represenation
+     * constructs from a given representation
      */
     Status_line_CPA_1(Rep rep) :
         Base(rep) {

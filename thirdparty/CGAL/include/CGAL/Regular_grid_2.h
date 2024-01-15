@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Stream_lines_2/include/CGAL/Regular_grid_2.h $
-// $Id: Regular_grid_2.h 1faa0e2 2021-04-28T10:55:26+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Stream_lines_2/include/CGAL/Regular_grid_2.h $
+// $Id: include/CGAL/Regular_grid_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -17,7 +17,7 @@
 
 
 #include <CGAL/basic.h>
-#include <CGAL/streamlines_assertions.h>
+#include <CGAL/assertions.h>
 
 #include <memory>
 
@@ -59,7 +59,7 @@ public:
   std::pair<Vector_2,FT>
   get_field(const Point_2 & p) const
     {
-      CGAL_streamlines_precondition(is_in_domain(p));
+      CGAL_precondition(is_in_domain(p));
       Vector_2 v = get_vector_field(p);
       FT density = get_density_field(p);
       return std::pair<Vector_2, FT>(v,density);
@@ -126,7 +126,7 @@ template <class StreamLinesTraits_2>
 inline typename Regular_grid_2<StreamLinesTraits_2>::Vector_2
 Regular_grid_2<StreamLinesTraits_2>::get_field(int i, int j) const
 {
-  CGAL_streamlines_precondition(is_in_samples(i,j));
+  CGAL_precondition(is_in_samples(i,j));
   int index = get_index(i,j);
   return Vector_2((*vector_field)[index], (*vector_field)[index+1]);
 }
@@ -137,7 +137,7 @@ Regular_grid_2<StreamLinesTraits_2>::set_field(int i,
                                                int j, const Vector_2
                                                & v)
 {
-  CGAL_streamlines_precondition(is_in_samples(i,j));
+  CGAL_precondition(is_in_samples(i,j));
   int index = get_index(i,j);
   (*vector_field)[index++] = v.x();
   (*vector_field)[index] = v.y();

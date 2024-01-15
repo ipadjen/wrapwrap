@@ -6,8 +6,8 @@
  This file is part of a fork of the QGLViewer library version 2.7.0.
 
 *****************************************************************************/
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/GraphicsView/include/CGAL/Qt/constraint.h $
-// $Id: constraint.h 1ef976e 2019-10-19T16:09:56+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/GraphicsView/include/CGAL/Qt/constraint.h $
+// $Id: include/CGAL/Qt/constraint.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-only
 #ifndef QGLVIEWER_CONSTRAINT_H
 #define QGLVIEWER_CONSTRAINT_H

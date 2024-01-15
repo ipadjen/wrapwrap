@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Voronoi_diagram_2/include/CGAL/Voronoi_diagram_2/Identity_rejectors.h $
-// $Id: Identity_rejectors.h 3816336 2021-04-29T23:24:40+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Voronoi_diagram_2/include/CGAL/Voronoi_diagram_2/Identity_rejectors.h $
+// $Id: include/CGAL/Voronoi_diagram_2/Identity_rejectors.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

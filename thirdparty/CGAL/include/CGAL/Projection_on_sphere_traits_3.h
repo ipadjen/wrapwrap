@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Triangulation_on_sphere_2/include/CGAL/Projection_on_sphere_traits_3.h $
-// $Id: Projection_on_sphere_traits_3.h a7f8957 2021-04-01T13:28:13+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Triangulation_on_sphere_2/include/CGAL/Projection_on_sphere_traits_3.h $
+// $Id: include/CGAL/Projection_on_sphere_traits_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mariette Yvinec,
@@ -17,8 +17,7 @@
 #include <CGAL/license/Triangulation_on_sphere_2.h>
 
 #include <CGAL/Delaunay_triangulation_on_sphere_traits_2.h>
-
-#include <CGAL/triangulation_assertions.h>
+#include <CGAL/assertions.h>
 #include <CGAL/number_utils_classes.h>
 
 namespace CGAL {

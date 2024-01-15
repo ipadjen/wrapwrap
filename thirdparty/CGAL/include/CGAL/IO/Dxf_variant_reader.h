@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Circular_kernel_2/include/CGAL/IO/Dxf_variant_reader.h $
-// $Id: Dxf_variant_reader.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Circular_kernel_2/include/CGAL/IO/Dxf_variant_reader.h $
+// $Id: include/CGAL/IO/Dxf_variant_reader.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Monique Teillaud, Sylvain Pion
@@ -17,7 +17,7 @@
 // (ACS -- Algorithms for Complex Shapes)
 
 // Description of the file format can be found at the following address:
-// http://www.autodesk.com/techpubs/autocad/acad2000/dxf/
+// https://images.autodesk.com/adsk/files/autocad_2012_pdf_dxf-reference_enu.pdf
 
 #ifndef CGAL_IO_DXF_VARIANT_READER_H
 #define CGAL_IO_DXF_VARIANT_READER_H
@@ -29,7 +29,7 @@
 #include <iostream>
 #include <string>
 #include <list>
-#include <boost/variant.hpp>
+#include <variant>
 #include <CGAL/array.h>
 
 
@@ -47,7 +47,7 @@ template<class CK,class Circular_arc_2, class Line_arc_2, class OutputIterator>
   typedef typename CK::Line_2  Line_2;
   typedef typename CK::Point_2 Point_2;
   typedef typename CK::Circle_2 Circle_2;
-  typedef typename boost::variant< Circular_arc_2, Line_arc_2 >        Arc;
+  typedef typename std::variant< Circular_arc_2, Line_arc_2 >        Arc;
   typedef std::list<Triplet> Polygon;
   typedef std::list<Polygon> Polygons;
   typedef std::list<Triplet> Circles;

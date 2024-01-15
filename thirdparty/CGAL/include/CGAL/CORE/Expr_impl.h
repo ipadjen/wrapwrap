@@ -16,11 +16,11 @@
  *       Zilin Du <zilin@cs.nyu.edu>
  *       Sylvain Pion <pion@cs.nyu.edu>
  *
- * WWW URL: http://cs.nyu.edu/exact/
+ * WWW URL: https://cs.nyu.edu/exact/
  * Email: exact@cs.nyu.edu
  *
- * $URL: https://github.com/CGAL/cgal/blob/v5.5.2/CGAL_Core/include/CGAL/CORE/Expr_impl.h $
- * $Id: Expr_impl.h a8dbdc3 2021-11-16T16:44:43+01:00 Laurent Rineau
+ * $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/CGAL_Core/include/CGAL/CORE/Expr_impl.h $
+ * $Id: include/CGAL/CORE/Expr_impl.h a484bfa $
  * SPDX-License-Identifier: LGPL-3.0-or-later
  ***************************************************************************/
 
@@ -76,8 +76,8 @@ const Expr& Expr::getOne() {
 // Note:
 //
 // This function returns are two consecutive representable binary
-// IEEE double values whichs contain the real value, but when you print out
-// them, you might be confused by the decimal represention due to round.
+// IEEE double values which contain the real value, but when you print out
+// them, you might be confused by the decimal representation due to rounding.
 //
 CGAL_INLINE_FUNCTION
 void Expr::doubleInterval(double & lb, double & ub) const {
@@ -354,7 +354,7 @@ void ExprRep::reduceTo(const ExprRep *e) {
   // we can ``reduce'' an Expression to a single node containing
   // a BigRat value.  This reduction is done if the global variable
   // get_static_rationalReduceFlag()=true.  The default value is false.
-  // This is the intepretation of ratFlag:
+  // This is the interpretation of ratFlag:
   //        ratFlag < 0 means irrational
   //        ratFlag = 0 means not initialized
   //        ratFlag > 0 means rational

@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/BGL/include/CGAL/boost/graph/graph_traits_inheritance_macros.h $
-// $Id: graph_traits_inheritance_macros.h e2733dd 2020-08-28T08:10:04+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/BGL/include/CGAL/boost/graph/graph_traits_inheritance_macros.h $
+// $Id: include/CGAL/boost/graph/graph_traits_inheritance_macros.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

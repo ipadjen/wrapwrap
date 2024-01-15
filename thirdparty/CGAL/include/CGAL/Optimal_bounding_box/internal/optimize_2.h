@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Optimal_bounding_box/include/CGAL/Optimal_bounding_box/internal/optimize_2.h $
-// $Id: optimize_2.h 93ee230 2021-08-23T22:25:14+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Optimal_bounding_box/include/CGAL/Optimal_bounding_box/internal/optimize_2.h $
+// $Id: include/CGAL/Optimal_bounding_box/internal/optimize_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mael Rouxel-Labbé
@@ -104,7 +104,9 @@ compute_2D_deviation(const PointRange& points,
   if(theta > 0.25 * CGAL_PI) // @todo is there a point to this
     theta = 0.5 * CGAL_PI - theta;
 
-  return std::make_pair(pol.area(), FT{theta});
+  //cast from double to float looses data, so cast with {} is not allowed
+  //cast from double to exact types also works
+  return std::make_pair(pol.area(), FT(theta));
 }
 
 template <typename PointRange, typename Traits>
@@ -117,14 +119,16 @@ void optimize_along_OBB_axes(typename Traits::Matrix& rot,
   typedef typename Traits::Matrix                                    Matrix;
   typedef typename Traits::Vector                                    Vector;
 
-  CGAL_static_assertion((std::is_same<typename boost::range_value<PointRange>::type, Point>::value));
+  static_assert(std::is_same<typename boost::range_value<PointRange>::type, Point>::value);
 
   std::vector<Point> rotated_points;
   rotated_points.reserve(points.size());
 
   FT xmin, ymin, zmin, xmax, ymax, zmax;
-  xmin = ymin = zmin = FT{(std::numeric_limits<double>::max)()};
-  xmax = ymax = zmax = FT{std::numeric_limits<double>::lowest()};
+  //cast from double to float looses data, so cast with {} is not allowed
+  //cast from double to exact types also works
+  xmin = ymin = zmin = FT((std::numeric_limits<double>::max)());
+  xmax = ymax = zmax = FT(std::numeric_limits<double>::lowest());
 
   for(const Point& pt : points)
   {

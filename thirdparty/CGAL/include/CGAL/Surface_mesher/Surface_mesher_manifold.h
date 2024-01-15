@@ -4,8 +4,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesher/include/CGAL/Surface_mesher/Surface_mesher_manifold.h $
-// $Id: Surface_mesher_manifold.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesher/include/CGAL/Surface_mesher/Surface_mesher_manifold.h $
+// $Id: include/CGAL/Surface_mesher/Surface_mesher_manifold.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -107,15 +107,17 @@ namespace CGAL {
       {
 #ifdef CGAL_SURFACE_MESHER_VERBOSE
         std::cerr << "scanning vertices" << std::endl;
-#endif
         int n = 0;
+#endif
         for (Finite_vertices_iterator vit = SMMBB::tr.finite_vertices_begin();
              vit != SMMBB::tr.finite_vertices_end();
              ++vit) {
           if ( (SMMBB::c2t3.face_status(vit)  // @TODO: appeler is_regular
                 == C2t3::SINGULAR) ) {
             bad_vertices.insert( vit );
+#ifdef CGAL_SURFACE_MESHER_VERBOSE
             ++n;
+#endif
           }
         }
         bad_vertices_initialized = true;

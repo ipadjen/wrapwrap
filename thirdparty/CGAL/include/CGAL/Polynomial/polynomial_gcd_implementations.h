@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polynomial/include/CGAL/Polynomial/polynomial_gcd_implementations.h $
-// $Id: polynomial_gcd_implementations.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polynomial/include/CGAL/Polynomial/polynomial_gcd_implementations.h $
+// $Id: include/CGAL/Polynomial/polynomial_gcd_implementations.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -168,7 +168,7 @@ Polynomial<NT> gcd_utcf_Integral_domain( Polynomial<NT> p1, Polynomial<NT> p2){
 
     Polynomial<NT> q, r;
 
-    // TODO measure preformance of both methodes with respect to
+    // TODO measure performance of both methodes with respect to
     // univariat polynomials on Integeres
     // univariat polynomials on Sqrt_extension<Integer,Integer>
     // multivariat polynomials
@@ -190,7 +190,7 @@ Polynomial<NT> gcd_utcf_Integral_domain( Polynomial<NT> p1, Polynomial<NT> p2){
         CGAL::internal::hgdelta_update(h, g, delta);
     }
 #else
-    // implentaion using just the 'naive' methode
+    // implementation using just the 'naive' method
     // but performed much better as the one by Cohen
     // (for univariat polynomials with Sqrt_extension coeffs )
     NT dummy;

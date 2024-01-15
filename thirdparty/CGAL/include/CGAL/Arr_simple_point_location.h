@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_simple_point_location.h $
-// $Id: Arr_simple_point_location.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_simple_point_location.h $
+// $Id: include/CGAL/Arr_simple_point_location.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -26,7 +26,7 @@
 #include <CGAL/Arr_point_location_result.h>
 #include <CGAL/Arrangement_2/Arr_traits_adaptor_2.h>
 
-#include <boost/optional.hpp>
+#include <optional>
 
 namespace CGAL {
 
@@ -57,11 +57,7 @@ public:
   typedef Result_type                                    result_type;
 
 protected:
-#if CGAL_ARR_POINT_LOCATION_VERSION < 2
-  typedef Result_type                                    Optional_result_type;
-#else
-  typedef typename boost::optional<Result_type>          Optional_result_type;
-#endif
+  typedef typename std::optional<Result_type>          Optional_result_type;
 
   typedef typename Topology_traits::Dcel                 Dcel;
   typedef Arr_traits_basic_adaptor_2<Geometry_traits_2>  Traits_adaptor_2;
@@ -71,13 +67,8 @@ protected:
   const Traits_adaptor_2* m_geom_traits;    // Its associated geometry traits.
   const Topology_traits*  m_topol_traits;   // Its associated topology traits.
 
-#if CGAL_ARR_POINT_LOCATION_VERSION < 2
-  inline bool optional_empty(const CGAL::Object& obj) const { return obj.empty(); }
-  inline const Result_type& optional_assign(const CGAL::Object& t) const { return t; }
-#else
-  inline bool optional_empty(const boost::optional<Result_type>& t) const { return (!t); }
-  inline const Result_type& optional_assign(const boost::optional<Result_type>& t) const { return *t; }
-#endif
+  inline bool optional_empty(const std::optional<Result_type>& t) const { return (!t); }
+  inline const Result_type& optional_assign(const std::optional<Result_type>& t) const { return *t; }
 
   template<typename T>
   Result_type make_result(T t) const { return Result::make_result(t); }
@@ -152,7 +143,7 @@ public:
 protected:
   /*!
    * Locate the arrangement feature which a vertical ray emanating from the
-   * given point hits (not inculding isolated vertices).
+   * given point hits (not including isolated vertices).
    * \param p The query point.
    * \param shoot_up Indicates whether the ray is directed upward or downward.
    * \return An object representing the arrangement feature the ray hits.

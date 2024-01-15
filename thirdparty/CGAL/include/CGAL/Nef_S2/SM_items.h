@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_S2/include/CGAL/Nef_S2/SM_items.h $
-// $Id: SM_items.h 4e519a3 2021-05-05T13:15:37+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Nef_S2/include/CGAL/Nef_S2/SM_items.h $
+// $Id: include/CGAL/Nef_S2/SM_items.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -27,7 +27,7 @@
 #include <string>
 #include <sstream>
 #ifndef CGAL_I_DO_WANT_TO_USE_GENINFO
-#include <boost/any.hpp>
+#include <any>
 #endif
 
 namespace CGAL {
@@ -45,7 +45,7 @@ public:
     #ifdef CGAL_I_DO_WANT_TO_USE_GENINFO
     typedef void*  GenPtr;
     #else
-    typedef boost::any GenPtr;
+    typedef std::any GenPtr;
     #endif
     typedef typename Refs::Mark                    Mark;
     typedef typename Refs::Sphere_point            Sphere_point;
@@ -127,7 +127,7 @@ public:
     #ifdef CGAL_I_DO_WANT_TO_USE_GENINFO
     typedef void*  GenPtr;
     #else
-    typedef boost::any GenPtr;
+    typedef std::any GenPtr;
     #endif
     typedef typename Refs::Mark             Mark;
     typedef typename Refs::Sphere_circle    Sphere_circle;
@@ -228,7 +228,7 @@ public:
     #ifdef CGAL_I_DO_WANT_TO_USE_GENINFO
     typedef void*  GenPtr;
     #else
-    typedef boost::any GenPtr;
+    typedef std::any GenPtr;
     #endif
     typedef typename Refs::Mark             Mark;
     typedef typename Refs::Sphere_circle    Sphere_circle;
@@ -306,7 +306,7 @@ public:
     #ifdef CGAL_I_DO_WANT_TO_USE_GENINFO
     typedef void*  GenPtr;
     #else
-    typedef boost::any GenPtr;
+    typedef std::any GenPtr;
     #endif
     typedef typename Refs::Mark                  Mark;
     typedef typename Refs::Object_handle         Object_handle;

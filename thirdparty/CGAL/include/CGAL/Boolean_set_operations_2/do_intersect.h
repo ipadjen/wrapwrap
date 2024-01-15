@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Boolean_set_operations_2/include/CGAL/Boolean_set_operations_2/do_intersect.h $
-// $Id: do_intersect.h 7ba4fbc 2022-06-07T20:57:57+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Boolean_set_operations_2/include/CGAL/Boolean_set_operations_2/do_intersect.h $
+// $Id: include/CGAL/Boolean_set_operations_2/do_intersect.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -17,8 +17,6 @@
 #define CGAL_BOOLEAN_SET_OPERATIONS_2_DO_INTERSECT_H
 
 #include <CGAL/license/Boolean_set_operations_2.h>
-
-#include <boost/utility/enable_if.hpp>
 
 #include <CGAL/disable_warnings.h>
 
@@ -33,7 +31,7 @@
 #include <CGAL/iterator.h>
 #include <CGAL/Boolean_set_operations_2/Bso_internal_functions.h>
 #include <CGAL/Boolean_set_operations_2/Polygon_conversions.h>
-#include <CGAL/is_iterator.h>
+#include <CGAL/type_traits/is_iterator.h>
 
 namespace CGAL
 {

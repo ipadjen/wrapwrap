@@ -2,9 +2,9 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh/include/CGAL/boost/graph/graph_traits_Surface_mesh.h $
-// $Id: graph_traits_Surface_mesh.h fd20bee 2022-05-03T15:09:05+01:00 Andreas Fabri
-// SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh/include/CGAL/boost/graph/graph_traits_Surface_mesh.h $
+// $Id: include/CGAL/boost/graph/graph_traits_Surface_mesh.h a484bfa $
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Andreas Fabri, Philipp Moeller
@@ -527,6 +527,51 @@ add_face(InputIterator begin, InputIterator end, CGAL::Surface_mesh<P>& sm)
 template<typename P>
 void normalize_border(const CGAL::Surface_mesh<P>&)
 {}
+
+
+template <typename P>
+bool is_valid_vertex_descriptor(typename boost::graph_traits<CGAL::Surface_mesh<P> >::vertex_descriptor v,
+                                const CGAL::Surface_mesh<P>& g,
+                                const bool verbose = false)
+{
+  if(!g.is_valid(v, verbose))
+    return false;
+
+  return BGL::is_valid_vertex_descriptor(v, g, verbose);
+}
+
+template <typename P>
+bool is_valid_halfedge_descriptor(typename boost::graph_traits<CGAL::Surface_mesh<P> >::halfedge_descriptor h,
+                                  const CGAL::Surface_mesh<P>& g,
+                                  const bool verbose = false)
+{
+  if(!g.is_valid(h, verbose))
+    return false;
+
+  return BGL::is_valid_halfedge_descriptor(h, g, verbose);
+}
+
+template <typename P>
+bool is_valid_edge_descriptor(typename boost::graph_traits<CGAL::Surface_mesh<P> >::edge_descriptor e,
+                              const CGAL::Surface_mesh<P>& g,
+                              const bool verbose = false)
+{
+  if(!g.is_valid(e, verbose))
+    return false;
+
+  return BGL::is_valid_edge_descriptor(e, g, verbose);
+}
+
+template <typename P>
+bool is_valid_face_descriptor(typename boost::graph_traits<CGAL::Surface_mesh<P> >::face_descriptor f,
+                              const CGAL::Surface_mesh<P>& g,
+                              const bool verbose = false)
+{
+  if(!g.is_valid(f, verbose))
+    return false;
+
+  return BGL::is_valid_face_descriptor(f, g, verbose);
+}
 
 } // namespace CGAL
 

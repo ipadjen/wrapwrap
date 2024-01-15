@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Kernel_23/include/CGAL/Has_conversion.h $
-// $Id: Has_conversion.h 52164b1 2019-10-19T15:34:59+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Kernel_23/include/CGAL/Has_conversion.h $
+// $Id: include/CGAL/Has_conversion.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mael Rouxel-Labbé
@@ -23,9 +23,9 @@ namespace internal {
 template<typename K1, typename K2, typename Rep = typename K1::Rep_tag /* Cartesian_tag */>
 struct Converter_selector
 {
-  CGAL_static_assertion_msg((boost::is_same<typename K1::Rep_tag,
-                                            typename K2::Rep_tag>::value),
-                            "Kernels must have the same representation");
+  static_assert(std::is_same<typename K1::Rep_tag,
+                             typename K2::Rep_tag>::value,
+                             "Kernels must have the same representation");
 
   typedef CGAL::Cartesian_converter<K1, K2> type;
 };
@@ -33,9 +33,9 @@ struct Converter_selector
 template<typename K1, typename K2>
 struct Converter_selector<K1, K2, Homogeneous_tag>
 {
-  CGAL_static_assertion_msg((boost::is_same<typename K1::Rep_tag,
-                                            typename K2::Rep_tag>::value),
-                            "Kernels must have the same representation");
+  static_assert(std::is_same<typename K1::Rep_tag,
+                             typename K2::Rep_tag>::value,
+                             "Kernels must have the same representation");
 
   typedef CGAL::Homogeneous_converter<K1, K2> type;
 };

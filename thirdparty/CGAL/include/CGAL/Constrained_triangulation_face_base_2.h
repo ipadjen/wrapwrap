@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Triangulation_2/include/CGAL/Constrained_triangulation_face_base_2.h $
-// $Id: Constrained_triangulation_face_base_2.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Triangulation_2/include/CGAL/Constrained_triangulation_face_base_2.h $
+// $Id: include/CGAL/Constrained_triangulation_face_base_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -16,7 +16,7 @@
 #include <CGAL/license/Triangulation_2.h>
 
 
-#include <CGAL/triangulation_assertions.h>
+#include <CGAL/assertions.h>
 #include <CGAL/Triangulation_face_base_2.h>
 
 namespace CGAL {
@@ -109,7 +109,7 @@ inline void
 Constrained_triangulation_face_base_2<Gt,Fb>::
 set_constraint(int i, bool b)
 {
-  CGAL_triangulation_precondition( i == 0 || i == 1 || i == 2);
+  CGAL_precondition( i == 0 || i == 1 || i == 2);
   C[i] = b;
 }
 

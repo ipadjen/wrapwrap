@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Solver_interface/include/CGAL/Eigen_solver_traits.h $
-// $Id: Eigen_solver_traits.h b905482 2021-06-11T15:24:49+02:00 Dmitry Anisimov
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Solver_interface/include/CGAL/Eigen_solver_traits.h $
+// $Id: include/CGAL/Eigen_solver_traits.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Gael Guennebaud
@@ -68,14 +68,14 @@ struct Get_eigen_matrix< ::Eigen::SparseLU<EigenMatrix, EigenOrdering >, FT>
 The class `Eigen_solver_traits` provides an interface to the sparse solvers of \ref thirdpartyEigen "Eigen".
 \ref thirdpartyEigen "Eigen" version 3.1 (or later) must be available on the system.
 
-\cgalModels `SparseLinearAlgebraWithFactorTraits_d` and `NormalEquationSparseLinearAlgebraTraits_d`
+\cgalModels{SparseLinearAlgebraWithFactorTraits_d,NormalEquationSparseLinearAlgebraTraits_d}
 
 \tparam EigenSolverT A sparse solver of \ref thirdpartyEigen "Eigen". The default solver is the iterative bi-conjugate gradient stabilized solver  `Eigen::BiCGSTAB` for `double`.
 
 \sa `CGAL::Eigen_sparse_matrix<T>`
 \sa `CGAL::Eigen_sparse_symmetric_matrix<T>`
 \sa `CGAL::Eigen_vector<T>`
-\sa http://eigen.tuxfamily.org/index.php?title=Main_Page
+\sa https://eigen.tuxfamily.org/index.php?title=Main_Page
 
 \cgalHeading{Instantiation Example}
 
@@ -242,7 +242,12 @@ class Eigen_solver_traits<Eigen::BiCGSTAB<Eigen_sparse_matrix<double>::EigenType
 public:
   typedef EigenSolverT                                                  Solver;
   typedef Scalar                                                        NT;
+#ifdef DOXYGEN_RUNNING
+  typedef unspecified_type                                              Matrix;
+#else
   typedef internal::Get_eigen_matrix<EigenSolverT,NT>::type             Matrix;
+#endif
+
   typedef Eigen_vector<Scalar>                                          Vector;
 
   // Public operations

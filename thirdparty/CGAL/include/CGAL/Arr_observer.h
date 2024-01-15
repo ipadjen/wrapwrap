@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_observer.h $
-// $Id: Arr_observer.h 2a3fbc0 2019-11-19T09:47:44+02:00 Efi Fogel
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_observer.h $
+// $Id: include/CGAL/Arr_observer.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -100,14 +100,14 @@ public:
 
     if (p_arr != nullptr) return;
 
-    // Notify the concrete oberver (the sub-class) about the attachment.
+    // Notify the concrete observer (the sub-class) about the attachment.
     before_attach(arr);
 
     // Register the observer object in the new arrangement.
     p_arr = &arr;
     p_arr->_register_observer(this);
 
-    // Notify the concrete oberver that the attachment took place.
+    // Notify the concrete observer that the attachment took place.
     after_attach();
   }
 
@@ -116,15 +116,15 @@ public:
   {
     if (p_arr == nullptr) return;
 
-    // Notify the concrete oberver (the sub-class) about the detachment.
+    // Notify the concrete observer (the sub-class) about the detachment.
     before_detach ();
 
     // Unregister the observer object from the current arrangement, and mark
-    // that the oberver is not attached to an arrangement.
+    // that the observer is not attached to an arrangement.
     p_arr->_unregister_observer(this);
     p_arr = nullptr;
 
-    // Notify the concrete oberver that the detachment took place.
+    // Notify the concrete observer that the detachment took place.
     after_detach();
   }
   //@}

@@ -9,8 +9,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_3/include/CGAL/Intersections_3/Line_3_Plane_3.h $
-// $Id: Line_3_Plane_3.h c2d1adf 2021-06-23T17:34:48+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_3/include/CGAL/Intersections_3/Line_3_Plane_3.h $
+// $Id: include/CGAL/Intersections_3/Line_3_Plane_3.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -27,7 +27,7 @@
 #include <CGAL/Line_3.h>
 #include <CGAL/Plane_3.h>
 
-#include <boost/optional.hpp>
+#include <optional>
 
 namespace CGAL {
 
@@ -36,7 +36,7 @@ CGAL_INTERSECTION_FUNCTION(Line_3, Plane_3, 3)
 
 template <class K>
 inline
-boost::optional<typename K::Point_3>
+std::optional<typename K::Point_3>
 intersection_point_for_polyhedral_envelope(const Plane_3<K>& plane,
                                            const Line_3<K>& line)
 {
@@ -45,7 +45,7 @@ intersection_point_for_polyhedral_envelope(const Plane_3<K>& plane,
 
 template <class K>
 inline
-boost::optional<typename K::Point_3>
+std::optional<typename K::Point_3>
 intersection_point_for_polyhedral_envelope(const Line_3<K>& line,
                                            const Plane_3<K>& plane)
 {

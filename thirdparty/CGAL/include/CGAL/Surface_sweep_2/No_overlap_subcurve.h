@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_sweep_2/include/CGAL/Surface_sweep_2/No_overlap_subcurve.h $
-// $Id: No_overlap_subcurve.h a3d04af 2021-07-28T16:19:20+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_sweep_2/include/CGAL/Surface_sweep_2/No_overlap_subcurve.h $
+// $Id: include/CGAL/Surface_sweep_2/No_overlap_subcurve.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Tali Zvi <talizvi@post.tau.ac.il>,
@@ -19,7 +19,7 @@
 
 /*! \file
  *
- * Defintion of the No_overlap_subcurve class, which is an
+ * Definition of the No_overlap_subcurve class, which is an
  * extended curve type, referred to as Subcurve, used by the surface-sweep
  * framework.
  *
@@ -122,7 +122,7 @@ public:
  * No_overlap_subcurve_base class template.
  *
  * The information contained in this class (in addition to the information
- * contaisn in its base) is:
+ * contained in its base) is:
  * - the remaining x-monotone curve that is to the right of the current sweep
  *   line.
  * \tparam GeometryTraits_2 the geometry traits.
@@ -132,7 +132,7 @@ public:
  *                    structure, and to construct/destroy the elements in that
  *                    memory. The type must meet the requirements of Allocator.
  * \tparam Subcurve_ the type of the subcurve or Default. If the default is not
- *                   overriden it implies that the type is No_overlap_subcurve.
+ *                   overridden it implies that the type is No_overlap_subcurve.
  */
 template <typename GeometryTraits_2, typename Event_,
           typename Allocator_ = CGAL_ALLOCATOR(int),

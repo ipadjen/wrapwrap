@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/NewKernel_d/include/CGAL/NewKernel_d/Vector/v2int.h $
-// $Id: v2int.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/NewKernel_d/include/CGAL/NewKernel_d/Vector/v2int.h $
+// $Id: include/CGAL/NewKernel_d/Vector/v2int.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Marc Glisse
@@ -70,13 +70,13 @@ namespace CGAL {
     typedef Dimension_tag<2> Dimension;
     typedef Dimension_tag<2> Max_dimension;
     // No Rebind_dimension, this is a building block
-    template<class,bool=true> struct Property : boost::false_type {};
+    template<class,bool=true> struct Property : std::false_type {};
     //template<bool b> struct Property<Has_vector_plus_minus_tag,b>
-    //  : boost::true_type {};
+    //  : std::true_type {};
     template<bool b> struct Property<Has_determinant_of_vectors_tag,b>
-      : boost::true_type {};
+      : std::true_type {};
     //template<bool b> struct Property<Has_determinant_of_points_tag,b>
-    //  : boost::true_type {};
+    //  : std::true_type {};
     // Advertise somehow that the sign_of_determinant* are exact?
 
     typedef std::array<NT1,2> Vector;

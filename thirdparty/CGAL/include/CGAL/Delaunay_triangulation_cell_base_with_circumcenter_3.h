@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Triangulation_3/include/CGAL/Delaunay_triangulation_cell_base_with_circumcenter_3.h $
-// $Id: Delaunay_triangulation_cell_base_with_circumcenter_3.h 4df8440 2022-03-18T20:03:22+01:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Triangulation_3/include/CGAL/Delaunay_triangulation_cell_base_with_circumcenter_3.h $
+// $Id: include/CGAL/Delaunay_triangulation_cell_base_with_circumcenter_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Monique Teillaud <Monique.Teillaud@sophia.inria.fr>
@@ -21,7 +21,7 @@
 
 
 #include <CGAL/basic.h>
-#include <CGAL/triangulation_assertions.h>
+#include <CGAL/assertions.h>
 #include <CGAL/Delaunay_triangulation_cell_base_3.h>
 
 namespace CGAL {
