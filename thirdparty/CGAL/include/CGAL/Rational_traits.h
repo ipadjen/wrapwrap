@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Algebraic_foundations/include/CGAL/Rational_traits.h $
-// $Id: Rational_traits.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Algebraic_foundations/include/CGAL/Rational_traits.h $
+// $Id: include/CGAL/Rational_traits.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -21,7 +21,8 @@
 #include <CGAL/number_type_basic.h>
 #include <CGAL/Fraction_traits.h>
 #include <CGAL/is_convertible.h>
-#include <boost/utility/enable_if.hpp>
+
+#include <type_traits>
 
 namespace CGAL {
 
@@ -79,11 +80,11 @@ public:
     { return make_rational(x.first, x.second); }
 
     template<class N,class D>
-    Rational make_rational(const N& n, const D& d,typename boost::enable_if_c<is_implicit_convertible<N,RT>::value&&is_implicit_convertible<D,RT>::value,int>::type=0) const
+    Rational make_rational(const N& n, const D& d,std::enable_if_t<is_implicit_convertible<N,RT>::value&&is_implicit_convertible<D,RT>::value,int> = 0) const
     { return Compose()(n,d); }
 
     template<class N,class D>
-    Rational make_rational(const N& n, const D& d,typename boost::enable_if_c<!is_implicit_convertible<N,RT>::value||!is_implicit_convertible<D,RT>::value,int>::type=0) const
+    Rational make_rational(const N& n, const D& d,std::enable_if_t<!is_implicit_convertible<N,RT>::value||!is_implicit_convertible<D,RT>::value,int> = 0) const
     { return n/d; } // Assume that n or d is already a fraction
 };
 }// namespace internal
@@ -92,9 +93,9 @@ public:
 template <class T>
 class Rational_traits
     : public internal::Rational_traits_base<T,
-::boost::is_same<typename Fraction_traits<T>::Is_fraction,Tag_true>::value
+::std::is_same<typename Fraction_traits<T>::Is_fraction,Tag_true>::value
 &&
-::boost::is_same<
+::std::is_same<
 typename Fraction_traits<T>::Numerator_type,
 typename Fraction_traits<T>::Denominator_type
 >::value >

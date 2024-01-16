@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_2/include/CGAL/Nef_2/PM_io_parser.h $
-// $Id: PM_io_parser.h 4e519a3 2021-05-05T13:15:37+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Nef_2/include/CGAL/Nef_2/PM_io_parser.h $
+// $Id: include/CGAL/Nef_2/PM_io_parser.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

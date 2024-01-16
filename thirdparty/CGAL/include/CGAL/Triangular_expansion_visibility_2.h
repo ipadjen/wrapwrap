@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Visibility_2/include/CGAL/Triangular_expansion_visibility_2.h $
-// $Id: Triangular_expansion_visibility_2.h 1faa0e2 2021-04-28T10:55:26+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Visibility_2/include/CGAL/Triangular_expansion_visibility_2.h $
+// $Id: include/CGAL/Triangular_expansion_visibility_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -481,7 +481,7 @@ private:
         //std::cout << vh->point() <<" -3- "<< nvh->point() <<std::endl;
         needles.push_back(Segment_2(vh->point(),nvh->point()));
       }
-      // but we may also contiue looking along the vertex
+      // but we may also continue looking along the vertex
       if(!p_cdt->is_constrained(re)) {
         collect_needle(q,nvh,nfh,rindex);
       }
@@ -564,7 +564,7 @@ private:
           //std::cout<< "h1 done"<< std::endl;
           return oit;
         }else{
-          // spliting at new vertex
+          // splitting at new vertex
           //std::cout<< "h2"<< std::endl;
           *oit++ = expand_edge(q,nvh->point(),right,nfh,rindex,oit);
           //std::cout<< "h2 done"<< std::endl;
@@ -581,7 +581,7 @@ private:
     //std::cout << "rvh->point()  "<< rvh->point() << std::endl<< std::endl;
 
 
-    // determin whether new vertex needs to be reported
+    // determine whether new vertex needs to be reported
     if(ro != CGAL::CLOCKWISE && lo != CGAL::COUNTERCLOCKWISE){
       *oit++ = nvh->point();
     }
@@ -601,7 +601,7 @@ private:
     if(lo == CGAL::CLOCKWISE){
       if(p_cdt->is_constrained(le)){
         // the edge is constrained
-        // report interesection with right boarder if exists
+        // report intersection with right boarder if exists
         if(ro == CGAL::CLOCKWISE){
           *oit++ = ray_seg_intersection(q,right,nvh->point(),lvh->point());
         }
@@ -620,7 +620,7 @@ private:
           //std::cout<< "h3 done"<< std::endl;
           return oit;
         }else{
-          // spliting at new vertex
+          // splitting at new vertex
           //std::cout<< "h4"<< std::endl;
           oit = expand_edge(q,left,nvh->point(),nfh,lindex,oit);
           //std::cout<< "h4 done"<< std::endl;

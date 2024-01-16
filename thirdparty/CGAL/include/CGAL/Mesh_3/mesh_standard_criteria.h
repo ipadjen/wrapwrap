@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/Mesh_3/mesh_standard_criteria.h $
-// $Id: mesh_standard_criteria.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_3/include/CGAL/Mesh_3/mesh_standard_criteria.h $
+// $Id: include/CGAL/Mesh_3/mesh_standard_criteria.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -22,7 +22,7 @@
 
 
 
-#include <boost/optional.hpp>
+#include <optional>
 #include <boost/ptr_container/ptr_vector.hpp>
 
 namespace CGAL {
@@ -41,7 +41,7 @@ class Abstract_criterion
 
 public:
   typedef FT Quality;
-  typedef boost::optional<Quality>  Is_bad;
+  typedef std::optional<Quality>  Is_bad;
   typedef typename Visitor_::Handle Handle;
 
   /// Destructor
@@ -81,7 +81,7 @@ protected:
 
 public:
   typedef std::pair<int, typename Criterion::Quality> Quality;
-  typedef boost::optional<Quality>                    Is_bad;
+  typedef std::optional<Quality>                    Is_bad;
 
 
   // Constructor

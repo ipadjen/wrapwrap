@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Bounding_volumes/include/CGAL/Min_circle_2.h $
-// $Id: Min_circle_2.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Bounding_volumes/include/CGAL/Min_circle_2.h $
+// $Id: include/CGAL/Min_circle_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -191,7 +191,7 @@ class Min_circle_2 {
     const Point&
     support_point( std::size_t i) const
     {
-        CGAL_optimisation_precondition(i <  number_of_support_points());
+        CGAL_precondition(i <  number_of_support_points());
         return( support_points[ i]);
     }
     // circle
@@ -256,7 +256,7 @@ class Min_circle_2 {
             tco.circle.set( );
             break;
           default:
-            CGAL_optimisation_assertion( n_support_points <= 3 ); }
+            CGAL_assertion( n_support_points <= 3 ); }
     }
 
     void
@@ -334,7 +334,7 @@ class Min_circle_2 {
         // initialize circle
         tco.circle.set();
 
-        CGAL_optimisation_postcondition( is_empty());
+        CGAL_postcondition( is_empty());
     }
 
     // constructor for one point
@@ -349,7 +349,7 @@ class Min_circle_2 {
         support_points[ 0] = p;
         tco.circle.set( p);
 
-        CGAL_optimisation_postcondition( is_degenerate());
+        CGAL_postcondition( is_degenerate());
     }
 
     // constructor for two points

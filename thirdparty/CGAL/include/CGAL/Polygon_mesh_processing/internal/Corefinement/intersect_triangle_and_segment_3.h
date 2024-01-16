@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/Corefinement/intersect_triangle_and_segment_3.h $
-// $Id: intersect_triangle_and_segment_3.h 808c93c 2020-05-26T10:14:06+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/Corefinement/intersect_triangle_and_segment_3.h $
+// $Id: include/CGAL/Polygon_mesh_processing/internal/Corefinement/intersect_triangle_and_segment_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -98,7 +98,7 @@ intersection_type(
   typedef typename boost::property_traits<VertexPointMap1>::value_type Point_3;
   typedef typename Kernel_traits<Point_3>::Kernel Kernel;
 
-  CGAL_static_assertion((std::is_same<Point_3, typename boost::property_traits<VertexPointMap2>::value_type>::value));
+  static_assert(std::is_same<Point_3, typename boost::property_traits<VertexPointMap2>::value_type>::value);
 
   halfedge_descriptor h_2=halfedge(f_2,tm2);
 

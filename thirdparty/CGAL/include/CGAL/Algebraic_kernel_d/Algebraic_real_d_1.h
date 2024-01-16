@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d/Algebraic_real_d_1.h $
-// $Id: Algebraic_real_d_1.h 4e519a3 2021-05-05T13:15:37+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d/Algebraic_real_d_1.h $
+// $Id: include/CGAL/Algebraic_kernel_d/Algebraic_real_d_1.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -71,8 +71,8 @@ class Algebraic_real_d_1 :
     public ::CGAL::Handle_with_policy< AlgebraicRealRep_d_1, HandlePolicy > {
 
   // currently Rational is the only supported Bound type.
-  CGAL_static_assertion(
-      (   ::boost::is_same <Rational_,
+  static_assert(
+      (   ::std::is_same <Rational_,
           typename Get_arithmetic_kernel<Coefficient_>::Arithmetic_kernel::Rational>::value));
 
 
@@ -174,7 +174,7 @@ public:
       long old_precision = get_precision( BFI() );
       set_precision( BFI(), 53 );
       std::pair<double, double> interval = CGAL::to_interval( convert_to_bfi( (*this)));
-      this->ptr()->interval_option = boost::optional< std::pair<double, double> >(interval);
+      this->ptr()->interval_option = std::optional< std::pair<double, double> >(interval);
       set_precision( BFI(), old_precision );
       return *(this->ptr()->interval_option);
     }
@@ -579,7 +579,7 @@ struct Coercion_traits<
     typedef Type result_type;
     Type operator()(const Type& a) const { return a; }
     Type operator()(const Coefficient& a) const {
-      static const bool b = boost::is_same<Rational,typename CTCR::Type>::value;
+      static const bool b = std::is_same<Rational,typename CTCR::Type>::value;
       return (*this)(a,Boolean_tag<b>());
     }
   };

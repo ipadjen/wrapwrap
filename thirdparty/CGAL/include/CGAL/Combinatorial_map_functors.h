@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Combinatorial_map/include/CGAL/Combinatorial_map_functors.h $
-// $Id: Combinatorial_map_functors.h d909084 2022-01-18T14:30:21+01:00 Guillaume Damiand
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Combinatorial_map/include/CGAL/Combinatorial_map_functors.h $
+// $Id: include/CGAL/Combinatorial_map_functors.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Guillaume Damiand <guillaume.damiand@liris.cnrs.fr>
@@ -70,10 +70,10 @@ struct Display_attribute_functor
 {
   template <unsigned int i>
   static void run(const CMap& amap,
-                  typename CMap::Dart_const_handle adart)
+                  typename CMap::Dart_const_descriptor adart)
   {
-    if ( amap.template attribute<i>(adart)==nullptr )
-      std::cout<<"nullptr";
+    if (amap.template attribute<i>(adart)==amap.null_descriptor)
+      std::cout<<"null_descriptor";
     else
       amap.template display_attribute<i>(amap.template attribute<i>(adart));
   }
@@ -85,7 +85,7 @@ struct Test_is_valid_attribute_functor
 {
   template <unsigned int i>
   static bool run(const CMap& amap,
-                  typename CMap::Dart_const_handle adart)
+                  typename CMap::Dart_const_descriptor adart)
   {
     typedef typename CMap::size_type size_type;
 
@@ -113,8 +113,8 @@ template<typename CMap, unsigned int i,
          typename T=typename CMap::template Attribute_type<i>::type>
 struct Set_i_attribute_functor
 {
-  static void run( CMap& amap, typename CMap::Dart_handle dh,
-                   typename CMap::template Attribute_handle<i>::type ah )
+  static void run( CMap& amap, typename CMap::Dart_descriptor dh,
+                   typename CMap::template Attribute_descriptor<i>::type ah )
   {
     amap.template set_attribute<i>(dh, ah);
   }
@@ -123,8 +123,8 @@ struct Set_i_attribute_functor
 template<typename CMap, unsigned int i>
 struct Set_i_attribute_functor<CMap,i,CGAL::Void>
 {
-  static void run( CMap&, typename CMap::Dart_handle,
-                   typename CMap::template Attribute_handle<i>::type)
+  static void run( CMap&, typename CMap::Dart_descriptor,
+                   typename CMap::template Attribute_descriptor<i>::type)
   {}
 };
 // ****************************************************************************

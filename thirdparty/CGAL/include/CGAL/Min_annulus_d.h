@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Bounding_volumes/include/CGAL/Min_annulus_d.h $
-// $Id: Min_annulus_d.h 78ff918 2021-06-23T23:34:14+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Bounding_volumes/include/CGAL/Min_annulus_d.h $
+// $Id: include/CGAL/Min_annulus_d.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -325,7 +325,7 @@ public:
 
   Support_point_iterator
   support_points_begin() const {
-    CGAL_optimisation_assertion_msg(number_of_points() >= 2,
+    CGAL_assertion_msg(number_of_points() >= 2,
                                     "support_points_begin: not enough points");
     return Support_point_iterator(
                                   solver->basic_original_variable_indices_begin(),
@@ -334,7 +334,7 @@ public:
 
   Support_point_iterator
   support_points_end() const {
-    CGAL_optimisation_assertion_msg(number_of_points() >= 2,
+    CGAL_assertion_msg(number_of_points() >= 2,
                                     "support_points_begin: not enough points");
     return Support_point_iterator(
                                   solver->basic_original_variable_indices_end(),
@@ -401,27 +401,27 @@ public:
   // NOTE: an implicit conversion from ET to RT must be available!
   Point
   center( ) const
-  { CGAL_optimisation_precondition( ! is_empty());
+  { CGAL_precondition( ! is_empty());
   return tco.construct_point_d_object()( ambient_dimension(),
                                          center_coordinates_begin(),
                                          center_coordinates_end()); }
 
   FT
   squared_inner_radius( ) const
-  { CGAL_optimisation_precondition( ! is_empty());
+  { CGAL_precondition( ! is_empty());
   return FT( squared_inner_radius_numerator()) /
     FT( squared_radii_denominator()); }
 
   FT
   squared_outer_radius( ) const
-  { CGAL_optimisation_precondition( ! is_empty());
+  { CGAL_precondition( ! is_empty());
   return FT( squared_outer_radius_numerator()) /
     FT( squared_radii_denominator()); }
 
   // predicates
   CGAL::Bounded_side
   bounded_side( const Point& p) const
-  { CGAL_optimisation_precondition(
+  { CGAL_precondition(
                                    is_empty() || tco.access_dimension_d_object()( p) == d);
   ET sqr_d = sqr_dist( p);
   ET h_p_sqr = da_coord(p)[d] * da_coord(p)[d];
@@ -431,7 +431,7 @@ public:
 
   bool
   has_on_bounded_side( const Point& p) const
-  { CGAL_optimisation_precondition(
+  { CGAL_precondition(
                                    is_empty() || tco.access_dimension_d_object()( p) == d);
   ET sqr_d = sqr_dist( p);
   ET h_p_sqr = da_coord(p)[d] * da_coord(p)[d];
@@ -440,7 +440,7 @@ public:
 
   bool
   has_on_boundary( const Point& p) const
-  { CGAL_optimisation_precondition(
+  { CGAL_precondition(
                                    is_empty() || tco.access_dimension_d_object()( p) == d);
   ET sqr_d = sqr_dist( p);
   ET h_p_sqr = da_coord(p)[d] * da_coord(p)[d];
@@ -449,7 +449,7 @@ public:
 
   bool
   has_on_unbounded_side( const Point& p) const
-  { CGAL_optimisation_precondition(
+  { CGAL_precondition(
                                    is_empty() || tco.access_dimension_d_object()( p) == d);
   ET sqr_d = sqr_dist( p);
   ET h_p_sqr(da_coord(p)[d]);
@@ -468,14 +468,14 @@ public:
   { if ( points.size() > 0) points.erase( points.begin(), points.end());
   std::copy( first, last, std::back_inserter( points));
   set_dimension();
-  CGAL_optimisation_precondition_msg( check_dimension(),
+  CGAL_precondition_msg( check_dimension(),
                                       "Not all points have the same dimension.");
   compute_min_annulus(); }
 
   void
   insert( const Point& p)
   { if ( is_empty()) d = tco.access_dimension_d_object()( p);
-  CGAL_optimisation_precondition(
+  CGAL_precondition(
                                  tco.access_dimension_d_object()( p) == d);
   points.push_back( p);
   compute_min_annulus(); }
@@ -483,10 +483,10 @@ public:
   template < class InputIterator >
   void
   insert( InputIterator first, InputIterator last)
-  { CGAL_optimisation_precondition_code( std::size_t old_n = points.size());
+  { CGAL_precondition_code( std::size_t old_n = points.size());
   points.insert( points.end(), first, last);
   set_dimension();
-  CGAL_optimisation_precondition_msg( check_dimension( old_n),
+  CGAL_precondition_msg( check_dimension( old_n),
                                       "Not all points have the same dimension.");
   compute_min_annulus(); }
 
@@ -645,7 +645,7 @@ private:
     options.set_pricing_strategy(pricing_strategy(NT()));
     delete solver;
     solver = new Solver(lp, options);
-    CGAL_optimisation_assertion(solver->status() == QP_OPTIMAL);
+    CGAL_assertion(solver->status() == QP_OPTIMAL);
 
     // compute center and squared radius
     ET sqr_sum = 0;
@@ -829,7 +829,7 @@ operator << ( std::ostream& os,
     break;
 
   default:
-    CGAL_optimisation_assertion_msg( false,
+    CGAL_assertion_msg( false,
                                      "CGAL::IO::get_mode( os) invalid!");
     break; }
 
@@ -858,7 +858,7 @@ operator >> ( std::istream& is, CGAL::Min_annulus_d<Traits_>& min_annulus)
     break;
 
   default:
-    CGAL_optimisation_assertion_msg( false, "CGAL::IO::mode invalid!");
+    CGAL_assertion_msg( false, "CGAL::IO::mode invalid!");
     break; }
 
   return( is);

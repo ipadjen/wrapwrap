@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_2/include/CGAL/Intersections_2/Iso_rectangle_2_Triangle_2.h $
-// $Id: Iso_rectangle_2_Triangle_2.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_2/include/CGAL/Intersections_2/Iso_rectangle_2_Triangle_2.h $
+// $Id: include/CGAL/Intersections_2/Iso_rectangle_2_Triangle_2.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -292,10 +292,10 @@ namespace internal {
   }
 
   template <class K>
-  bool do_intersect(
-    const typename K::Triangle_2 &tr,
-    const typename K::Iso_rectangle_2 &ir,
-    const K& k)
+  typename K::Boolean
+  do_intersect(const typename K::Triangle_2& tr,
+               const typename K::Iso_rectangle_2& ir,
+               const K& k)
   {
     //1) check if at least one vertex of tr is not outside ir
     //2) if not, check if at least on vertex of tr is not outside tr
@@ -318,20 +318,21 @@ namespace internal {
   }
 
   template <class K>
-  inline bool do_intersect(
-    const typename K::Iso_rectangle_2 &ir,
-    const typename K::Triangle_2 &tr,
-    const K& k)
+  inline
+  typename K::Boolean
+  do_intersect(const typename K::Iso_rectangle_2& ir,
+               const typename K::Triangle_2& tr,
+               const K& k)
   {
-    return do_intersect(tr,ir,k);
+    return do_intersect(tr, ir, k);
   }
 
-} //namespace internal
+} // namespace internal
 } // namespace Intersections
 
 CGAL_INTERSECTION_FUNCTION(Triangle_2, Iso_rectangle_2, 2)
 CGAL_DO_INTERSECT_FUNCTION(Triangle_2, Iso_rectangle_2, 2)
 
-}//end namespace
+} // namespace CGAL
 
-#endif
+#endif // CGAL_INTERSECTIONS_2_ISO_RECTANGLE_2_TRIANGLE_2_H

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_segmentation/include/CGAL/Surface_mesh_segmentation/internal/Disk_samplers.h $
-// $Id: Disk_samplers.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_segmentation/include/CGAL/Surface_mesh_segmentation/internal/Disk_samplers.h $
+// $Id: include/CGAL/Surface_mesh_segmentation/internal/Disk_samplers.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Ilker O. Yaz
@@ -98,7 +98,7 @@ public:
       for(std::size_t i = 0; i < number_of_points; ++i) {
         double Q = i * golden_ratio * CGAL_PI;
         double R = std::pow(static_cast<double>(i) / number_of_points, custom_power);
-        // use uniform weigths, since we already give importance to locations that are close to center.
+        // use uniform weights, since we already give importance to locations that are close to center.
         *out_it++ = Tuple(R * cos(Q), R * sin(Q), 1.0);
       }
     }

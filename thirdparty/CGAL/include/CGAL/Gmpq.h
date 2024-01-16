@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Number_types/include/CGAL/Gmpq.h $
-// $Id: Gmpq.h 152a084 2021-09-21T13:34:58+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Number_types/include/CGAL/Gmpq.h $
+// $Id: include/CGAL/Gmpq.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Cone_spanners_2/include/CGAL/Compute_cone_boundaries_2.h $
-// $Id: Compute_cone_boundaries_2.h 6486844 2022-05-10T11:30:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Cone_spanners_2/include/CGAL/Compute_cone_boundaries_2.h $
+// $Id: include/CGAL/Compute_cone_boundaries_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

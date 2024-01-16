@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Circular_kernel_2/include/CGAL/Exact_circular_kernel_2.h $
-// $Id: Exact_circular_kernel_2.h e813d9f 2021-05-28T11:25:01+02:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Circular_kernel_2/include/CGAL/Exact_circular_kernel_2.h $
+// $Id: include/CGAL/Exact_circular_kernel_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Monique Teillaud, Sylvain Pion, Pedro Machado

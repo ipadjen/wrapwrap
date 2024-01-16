@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_geometry_traits/Arr_plane_3.h $
-// $Id: Arr_plane_3.h 40152a2 2020-06-13T16:43:09+03:00 Efi Fogel
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_geometry_traits/Arr_plane_3.h $
+// $Id: include/CGAL/Arr_geometry_traits/Arr_plane_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -201,7 +201,7 @@ public:
  * intersection or a plane in case plane1 and plane2 coincide.
  */
 template <typname Kernel>
-boost::variant<typename Kernel::Line_3, Arr_plane_3<Kernel> >
+std::variant<typename Kernel::Line_3, Arr_plane_3<Kernel> >
 intersect(const Arr_plane_3<Kernel> & plane1,
                        const Arr_plane_3<Kernel> & plane2)
 {
@@ -209,9 +209,9 @@ intersect(const Arr_plane_3<Kernel> & plane1,
   typedef typename Kernel::Direction_3  Direction_3;
   typedef typename Kernel::Line_3       Line_3;
   typedef typename Kernel::FT           FT;
-  typedef boost::variant<Line_3, Arr_plane_3<Kernel> >  Intersection_result;
+  typedef std::variant<Line_3, Arr_plane_3<Kernel> >  Intersection_result;
 
-  // We know that the plane goes throgh the origin
+  // We know that the plane goes through the origin
   const FT& a1 = plane1.a();
   const FT& b1 = plane1.b();
   const FT& c1 = plane1.c();

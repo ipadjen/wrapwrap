@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Minkowski_sum_3/include/CGAL/minkowski_sum_3.h $
-// $Id: minkowski_sum_3.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Minkowski_sum_3/include/CGAL/minkowski_sum_3.h $
+// $Id: include/CGAL/minkowski_sum_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -28,7 +28,7 @@ namespace CGAL {
 
 The function `minkowski_sum_3()` computes the Minkowski sum of two
 given 3D Nef polyhedra \f$ N0\f$ and \f$ N1\f$. Note that the function runs in
-\f$ O(n^3m^3)\f$ time in the worst case, where \f$ n\f$ and
+\cgalBigO{n^3m^3} time in the worst case, where \f$ n\f$ and
 \f$ m\f$ are the complexities of the two input polyhedra (the complexity of
 a `Nef_polyhedron_3` is the sum of its `Vertices`,
 `Halfedges` and `SHalfedges`).

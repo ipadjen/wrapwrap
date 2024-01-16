@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/NewKernel_d/include/CGAL/NewKernel_d/Vector/determinant_of_iterator_to_points_from_iterator_to_vectors.h $
-// $Id: determinant_of_iterator_to_points_from_iterator_to_vectors.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/NewKernel_d/include/CGAL/NewKernel_d/Vector/determinant_of_iterator_to_points_from_iterator_to_vectors.h $
+// $Id: include/CGAL/NewKernel_d/Vector/determinant_of_iterator_to_points_from_iterator_to_vectors.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Marc Glisse
@@ -42,7 +42,7 @@ struct Add_determinant_of_iterator_to_points_from_iterator_to_vectors
     };
   template<class P,class=void> struct Property : LA::template Property<P> {};
   template<class D> struct Property<Has_determinant_of_iterator_to_points_tag, D> :
-    boost::true_type {};
+    std::true_type {};
 
   // TODO: use std::minus, boost::bind, etc
   template<class T> struct Minus_fixed {

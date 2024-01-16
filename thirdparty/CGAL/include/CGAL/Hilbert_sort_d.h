@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Spatial_sorting/include/CGAL/Hilbert_sort_d.h $
-// $Id: Hilbert_sort_d.h 8bb22d5 2020-03-26T14:23:37+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Spatial_sorting/include/CGAL/Hilbert_sort_d.h $
+// $Id: include/CGAL/Hilbert_sort_d.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Olivier Devillers

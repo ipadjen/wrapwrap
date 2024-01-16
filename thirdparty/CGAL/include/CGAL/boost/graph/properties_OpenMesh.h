@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/BGL/include/CGAL/boost/graph/properties_OpenMesh.h $
-// $Id: properties_OpenMesh.h 841373d 2022-11-24T11:58:53+01:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/BGL/include/CGAL/boost/graph/properties_OpenMesh.h $
+// $Id: include/CGAL/boost/graph/properties_OpenMesh.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -13,7 +13,6 @@
 #include <CGAL/assertions.h>
 #include <CGAL/boost/graph/properties.h>
 #include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
-#include <boost/mpl/if.hpp>
 
 #ifndef OPEN_MESH_CLASS
   #error OPEN_MESH_CLASS is not defined
@@ -29,13 +28,13 @@ namespace CGAL {
 template <typename Mesh, typename Descriptor, typename Value>
 class OM_pmap {
 public:
-  typedef typename boost::mpl::if_<boost::is_same<Descriptor, typename boost::graph_traits<Mesh>::vertex_descriptor>,
-                                   OpenMesh::VPropHandleT<Value>,
-                                   typename boost::mpl::if_<boost::is_same<Descriptor, typename boost::graph_traits<Mesh>::face_descriptor>,
-                                                            OpenMesh::FPropHandleT<Value>,
-                                                            typename boost::mpl::if_<boost::is_same<Descriptor, typename boost::graph_traits<Mesh>::halfedge_descriptor>,
-                                                                                     OpenMesh::HPropHandleT<Value>,
-                                                                                     OpenMesh::EPropHandleT<Value> >::type>::type>::type H;
+  typedef std::conditional_t<std::is_same_v<Descriptor, typename boost::graph_traits<Mesh>::vertex_descriptor>,
+                             OpenMesh::VPropHandleT<Value>,
+                             std::conditional_t<std::is_same_v<Descriptor, typename boost::graph_traits<Mesh>::face_descriptor>,
+                                                OpenMesh::FPropHandleT<Value>,
+                                                std::conditional_t<std::is_same_v<Descriptor, typename boost::graph_traits<Mesh>::halfedge_descriptor>,
+                                                                   OpenMesh::HPropHandleT<Value>,
+                                                                   OpenMesh::EPropHandleT<Value> >>> H;
 
   typedef boost::lvalue_property_map_tag category;
 

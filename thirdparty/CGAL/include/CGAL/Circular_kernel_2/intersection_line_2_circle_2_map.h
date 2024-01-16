@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Circular_kernel_2/include/CGAL/Circular_kernel_2/intersection_line_2_circle_2_map.h $
-// $Id: intersection_line_2_circle_2_map.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Circular_kernel_2/include/CGAL/Circular_kernel_2/intersection_line_2_circle_2_map.h $
+// $Id: include/CGAL/Circular_kernel_2/intersection_line_2_circle_2_map.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Monique Teillaud, Sylvain Pion, Pedro Machado

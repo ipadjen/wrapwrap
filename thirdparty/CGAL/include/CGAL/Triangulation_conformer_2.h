@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_2/include/CGAL/Triangulation_conformer_2.h $
-// $Id: Triangulation_conformer_2.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_2/include/CGAL/Triangulation_conformer_2.h $
+// $Id: include/CGAL/Triangulation_conformer_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -38,13 +38,13 @@ protected:
   /** \name INITIALIZED */
 
   enum Initialization {
-    NONE,     /**< \c this is not initialized. */
-    CLUSTERS, /**< \c this clusters are initialized. */
-    DELAUNAY, /**< \c this has been \e Delaunay-initialized. */
-    GABRIEL   /**< \c this has been \e Gabriel-initialized. */
+    NONE,     /**< `this` is not initialized. */
+    CLUSTERS, /**< `this` clusters are initialized. */
+    DELAUNAY, /**< `this` has been \e Delaunay-initialized. */
+    GABRIEL   /**< `this` has been \e Gabriel-initialized. */
   };
 
-// --- PROTECTED DATAS ---
+// --- PROTECTED DATA ---
   Initialization initialized;
   Tr& tr;
   Null_mesher_level null_level;

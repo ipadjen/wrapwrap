@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_sweep_2/include/CGAL/Surface_sweep_2/Event_comparer.h $
-// $Id: Event_comparer.h 4c15a1c 2021-10-18T11:15:14+01:00 Michael Bell
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_sweep_2/include/CGAL/Surface_sweep_2/Event_comparer.h $
+// $Id: include/CGAL/Surface_sweep_2/Event_comparer.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Tali Zvi <talizvi@post.tau.ac.il>

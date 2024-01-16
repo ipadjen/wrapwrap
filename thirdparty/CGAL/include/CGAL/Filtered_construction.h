@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Filtered_kernel/include/CGAL/Filtered_construction.h $
-// $Id: Filtered_construction.h c8624ee 2021-09-09T11:01:03+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Filtered_kernel/include/CGAL/Filtered_construction.h $
+// $Id: include/CGAL/Filtered_construction.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

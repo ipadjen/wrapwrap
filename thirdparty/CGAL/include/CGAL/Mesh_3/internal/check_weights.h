@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/Mesh_3/internal/check_weights.h $
-// $Id: check_weights.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_3/include/CGAL/Mesh_3/internal/check_weights.h $
+// $Id: include/CGAL/Mesh_3/internal/check_weights.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Jane Tournois
@@ -22,7 +22,7 @@
 
 #include <CGAL/enum.h>
 #include <CGAL/tags.h>
-#include <CGAL/Mesh_3/Has_features.h>
+#include <CGAL/STL_Extension/internal/Has_features.h>
 #include <boost/type_traits/is_same.hpp>
 
 namespace CGAL {
@@ -33,7 +33,7 @@ template<typename Triangulation, typename MeshDomain>
 bool has_non_protecting_weights(const Triangulation& tr,
                                 const MeshDomain&)
 {
-  const bool with_features = Has_features<MeshDomain>::value;
+  const bool with_features = ::CGAL::internal::Has_features<MeshDomain>::value;
 
   typedef typename Triangulation::FT                FT;
   typedef typename Triangulation::Weighted_point    Weighted_point;

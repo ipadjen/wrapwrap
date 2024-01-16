@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Kernel_d/include/CGAL/Kernel_d/Sphere_d.h $
-// $Id: Sphere_d.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Kernel_d/include/CGAL/Kernel_d/Sphere_d.h $
+// $Id: include/CGAL/Kernel_d/Sphere_d.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -47,6 +47,7 @@ class  Sphere_d_rep  {
 public:
   Sphere_d_rep() : cp(0) {}
   Sphere_d_rep(int d)  : P(d), cp(0) {}
+  Sphere_d_rep(int d, Orientation orient)  : P(d), orient(orient), cp(0) {}
 
   template <class ForwardIterator>
   Sphere_d_rep(int d, ForwardIterator first, ForwardIterator last) :
@@ -109,14 +110,13 @@ typedef typename std::vector< Point_d >::const_iterator point_iterator;
 
 /*{\Mcreation 4}*/
 
-Sphere_d(int d = 0) : Base( Rep(d+1) )
+  Sphere_d(int d = 0) : Base( Rep(d+1, ZERO) )
 /*{\Mcreate introduces a variable |\Mvar| of type |\Mname|. |\Mvar|
 is initialized to the empty sphere centered at the origin of
 $d$-dimensional space. }*/
 {
   Point_d p(d);
   for (int i = 0; i <= d; i++) ptr()->P[i] = p;
-  ptr()->orient = ZERO;
   ptr()->cp = new Point_d(p);
 }
 
@@ -148,7 +148,7 @@ point_iterator points_end() const { return ptr()->P.end(); }
 /*{\Mop returns an iterator pointing beyond the last defining point.}*/
 
 bool is_degenerate() const { return (ptr()->orient == CGAL::ZERO); }
-/*{\Mop returns true iff the defining points are not full dimenional.}*/
+/*{\Mop returns true iff the defining points are not full dimensional.}*/
 
 bool is_legal() const
 /*{\Mop returns true iff the set of defining points is legal.

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Orthtree/include/CGAL/Orthtree_traits_d.h $
-// $Id: Orthtree_traits_d.h 4d761ed 2021-04-01T14:21:01+02:00 Simon Giraudot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Orthtree/include/CGAL/Orthtree_traits_d.h $
+// $Id: include/CGAL/Orthtree_traits_d.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Simon Giraudot
@@ -28,7 +28,7 @@ namespace CGAL
   \tparam GeomTraits model of `Kernel`.
   \tparam DimensionTag specialization of `CGAL::Dimension_tag`.
 
-  \cgalModels `OrthtreeTraits`
+  \cgalModels{OrthtreeTraits}
   \sa `CGAL::Orthtree`
   \sa `CGAL::Orthtree_traits_2`
   \sa `CGAL::Orthtree_traits_3`

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/Mesh_3/experimental/Facet_patch_id_map.h $
-// $Id: Facet_patch_id_map.h 5835698 2021-02-10T15:42:29+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_3/include/CGAL/Mesh_3/experimental/Facet_patch_id_map.h $
+// $Id: include/CGAL/Mesh_3/experimental/Facet_patch_id_map.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -18,7 +18,7 @@
 
 #include <CGAL/property_map.h>
 #include <CGAL/boost/graph/properties.h>
-#include <CGAL/is_iterator.h>
+#include <CGAL/type_traits/is_iterator.h>
 
 namespace CGAL { namespace Mesh_3 {
 

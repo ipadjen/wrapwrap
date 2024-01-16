@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Convex_decomposition_3/include/CGAL/Convex_decomposition_3/External_structure_builder.h $
-// $Id: External_structure_builder.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Convex_decomposition_3/include/CGAL/Convex_decomposition_3/External_structure_builder.h $
+// $Id: include/CGAL/Convex_decomposition_3/External_structure_builder.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -17,6 +17,7 @@
 
 
 #include <CGAL/Nef_3/SNC_decorator.h>
+#include <CGAL/Nef_3/SNC_external_structure.h>
 #include <CGAL/Nef_3/SNC_intersection.h>
 
 #undef CGAL_NEF_DEBUG

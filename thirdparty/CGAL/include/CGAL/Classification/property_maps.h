@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Classification/include/CGAL/Classification/property_maps.h $
-// $Id: property_maps.h 590ddf8 2021-10-08T15:38:47+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Classification/include/CGAL/Classification/property_maps.h $
+// $Id: include/CGAL/Classification/property_maps.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Simon Giraudot
@@ -32,7 +32,7 @@ namespace Classification
   \brief Property map that constructs the center of mass of the face
   of a mesh on-the-fly.
 
-  \cgalModels `ReadablePropertyMap`
+  \cgalModels{ReadablePropertyMap}
 
   \tparam FaceGraph model of `FaceGraph`.
 
@@ -85,7 +85,7 @@ public:
   \brief Property map that constructs a face descriptor with a
   `bbox()` method from a face descriptor.
 
-  \cgalModels `ReadablePropertyMap`
+  \cgalModels{ReadablePropertyMap}
 
   \tparam FaceGraph model of `FaceGraph`.
 

@@ -3,8 +3,8 @@
 //
 // This file is part of the ImageIO Library, and as been adapted for CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/CGAL_ImageIO/include/CGAL/ImageIO/gis_impl.h $
-// $Id: gis_impl.h 78ff918 2021-06-23T23:34:14+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/CGAL_ImageIO/include/CGAL/ImageIO/gis_impl.h $
+// $Id: include/CGAL/ImageIO/gis_impl.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later
 //
 //
@@ -130,10 +130,10 @@ int writeGis( char *name, _image* im) {
             do {
               memset( str, 0, _LGTH_STRING_ );
               for ( j=0; j<n && i<size; j++, i++ ) {
-                sprintf( str+strlen(str), "%d", theBuf[i] );
-                if ( j<n && i<size ) sprintf( str+strlen(str), " " );
+                snprintf( str+strlen(str), _LGTH_STRING_ - strlen(str), "%d", theBuf[i] );
+                if ( j<n && i<size ) snprintf( str+strlen(str), _LGTH_STRING_ - strlen(str), " " );
               }
-              sprintf( str+strlen(str), "\n" );
+              snprintf( str+strlen(str), _LGTH_STRING_ - strlen(str), "\n" );
               done = ImageIO_write( im, str, strlen( str )  );
               res = (done == strlen( str )) ? int(done) : -1;
               if ( res  <= 0 ) {
@@ -150,10 +150,10 @@ int writeGis( char *name, _image* im) {
             do {
               memset( str, 0, _LGTH_STRING_ );
               for ( j=0; j<n && i<size; j++, i++ ) {
-                sprintf( str+strlen(str), "%d", theBuf[i] );
-                if ( j<n && i<size ) sprintf( str+strlen(str), " " );
+                snprintf( str+strlen(str), _LGTH_STRING_ - strlen(str), "%d", theBuf[i] );
+                if ( j<n && i<size ) snprintf( str+strlen(str), _LGTH_STRING_ - strlen(str), " " );
               }
-              sprintf( str+strlen(str), "\n" );
+              snprintf( str+strlen(str), _LGTH_STRING_ - strlen(str), "\n" );
               done = ImageIO_write( im, str, strlen( str )  );
               res = (done == strlen( str )) ? int(done) : -1;
               if ( res  <= 0 ) {
@@ -178,10 +178,10 @@ int writeGis( char *name, _image* im) {
             do {
               memset( str, 0, _LGTH_STRING_ );
               for ( j=0; j<n && i<size; j++, i++ ) {
-                sprintf( str+strlen(str), "%d", theBuf[i] );
-                if ( j<n && i<size ) sprintf( str+strlen(str), " " );
+                snprintf( str+strlen(str), _LGTH_STRING_ - strlen(str), "%d", theBuf[i] );
+                if ( j<n && i<size ) snprintf( str+strlen(str), _LGTH_STRING_ - strlen(str), " " );
               }
-              sprintf( str+strlen(str), "\n" );
+              snprintf( str+strlen(str), _LGTH_STRING_ - strlen(str), "\n" );
               done = ImageIO_write( im, str, strlen( str )  );
               res = (done == strlen( str )) ? int(done) : -1;
               if ( res  <= 0 ) {
@@ -198,10 +198,10 @@ int writeGis( char *name, _image* im) {
             do {
               memset( str, 0, _LGTH_STRING_ );
               for ( j=0; j<n && i<size; j++, i++ ) {
-                sprintf( str+strlen(str), "%d", theBuf[i] );
-                if ( j<n && i<size ) sprintf( str+strlen(str), " " );
+                snprintf( str+strlen(str), _LGTH_STRING_ - strlen(str), "%d", theBuf[i] );
+                if ( j<n && i<size ) snprintf( str+strlen(str),_LGTH_STRING_ - strlen(str), " " );
               }
-              sprintf( str+strlen(str), "\n" );
+              snprintf( str+strlen(str), _LGTH_STRING_ - strlen(str), "\n" );
               done = ImageIO_write( im, str, strlen( str )  );
               res = (done == strlen( str )) ? int(done) : -1;
               if ( res  <= 0 ) {
@@ -445,7 +445,7 @@ int readGisHeader( const char* name,_image* im)
 
 
       else {
-        fprintf( stderr, "readGisHeader: unknown indentifier '%s'\n", s );
+        fprintf( stderr, "readGisHeader: unknown identifier '%s'\n", s );
         ADD_USER_STRING
         *s = '\0';
       }

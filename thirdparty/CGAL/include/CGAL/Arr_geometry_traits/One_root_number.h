@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_geometry_traits/One_root_number.h $
-// $Id: One_root_number.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_geometry_traits/One_root_number.h $
+// $Id: include/CGAL/Arr_geometry_traits/One_root_number.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -474,7 +474,7 @@ CGAL::Comparison_result compare (const _One_root_number<NT, FL>& x,
       sign_right = ZERO;
   }
 
-  // Check whether on of the terms is zero. In this case, the comparsion
+  // Check whether on of the terms is zero. In this case, the comparison
   // result is simpler:
   if (sign_left == ZERO)
   {
@@ -507,7 +507,7 @@ CGAL::Comparison_result compare (const _One_root_number<NT, FL>& x,
   // We now square both terms and look at the sign of the one-root number:
   //   ((a1 - a2)^2 - (b1^2*c1 + b2^2*c2)) + 2*b1*b2*sqrt(c1*c2)
   //
-  // If both signs are negative, we should swap the comparsion result
+  // If both signs are negative, we should swap the comparison result
   // we eventually compute.
   const NT          A = diff_alpha*diff_alpha - (x_sqr + y_sqr);
   const NT          B = 2 * x.beta() * y.beta();

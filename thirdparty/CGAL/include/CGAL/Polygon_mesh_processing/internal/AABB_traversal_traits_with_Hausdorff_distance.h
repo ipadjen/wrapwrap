@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/AABB_traversal_traits_with_Hausdorff_distance.h $
-// $Id: AABB_traversal_traits_with_Hausdorff_distance.h aa5fd2e 2022-04-07T11:40:30+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/AABB_traversal_traits_with_Hausdorff_distance.h $
+// $Id: include/CGAL/Polygon_mesh_processing/internal/AABB_traversal_traits_with_Hausdorff_distance.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_3/include/CGAL/Intersections_3/internal/Segment_3_Segment_3_do_intersect.h $
-// $Id: Segment_3_Segment_3_do_intersect.h 45c5ef7 2022-06-04T13:17:02+09:00 Brian Spilsbury
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_3/include/CGAL/Intersections_3/internal/Segment_3_Segment_3_do_intersect.h $
+// $Id: include/CGAL/Intersections_3/internal/Segment_3_Segment_3_do_intersect.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -23,7 +23,7 @@ namespace internal {
 
 template <class K>
 inline
-bool
+typename K::Boolean
 do_intersect(const typename K::Segment_3& s1,
              const typename K::Segment_3& s2,
              const K& k)

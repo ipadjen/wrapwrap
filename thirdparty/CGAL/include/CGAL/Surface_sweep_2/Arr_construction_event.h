@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Surface_sweep_2/Arr_construction_event.h $
-// $Id: Arr_construction_event.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Surface_sweep_2/Arr_construction_event.h $
+// $Id: include/CGAL/Surface_sweep_2/Arr_construction_event.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Tali Zvi <talizvi@post.tau.ac.il>
@@ -50,7 +50,7 @@ namespace Ss2 = Surface_sweep_2;
  * parameters of the surface-sweep visitor class templates. It enables the
  * definition of these two types, which refer one to another; (the curves to the
  * right of an event and the curves to its left are data members of the event,
- * and the two events associated with the endpoints of a curve are data memebrs
+ * and the two events associated with the endpoints of a curve are data members
  * of the curve.)
  *
  * If you need to represent an event with additional data members, introduce a

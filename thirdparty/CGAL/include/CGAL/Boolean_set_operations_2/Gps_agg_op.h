@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Boolean_set_operations_2/include/CGAL/Boolean_set_operations_2/Gps_agg_op.h $
-// $Id: Gps_agg_op.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Boolean_set_operations_2/include/CGAL/Boolean_set_operations_2/Gps_agg_op.h $
+// $Id: include/CGAL/Boolean_set_operations_2/Gps_agg_op.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Baruch Zukerman <baruchzu@post.tau.ac.il>
@@ -108,7 +108,7 @@ public:
   {
     std::list<Meta_X_monotone_curve_2> curves_list;
 
-    unsigned int n_inf_pgn = 0; // number of infinte polygons (arrangement
+    unsigned int n_inf_pgn = 0; // number of infinite polygons (arrangement
                                 // with a contained unbounded face
     unsigned int n_pgn = 0;     // number of polygons (arrangements)
     unsigned int i;

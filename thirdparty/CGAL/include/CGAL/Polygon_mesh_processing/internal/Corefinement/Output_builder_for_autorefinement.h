@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Output_builder_for_autorefinement.h $
-// $Id: Output_builder_for_autorefinement.h 258d704 2022-02-24T19:57:17+01:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/Corefinement/Output_builder_for_autorefinement.h $
+// $Id: include/CGAL/Polygon_mesh_processing/internal/Corefinement/Output_builder_for_autorefinement.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -349,7 +349,7 @@ public:
       is_intersection(intersection_edges);
     std::size_t nb_patches =
       connected_components(tm,
-                           bind_property_maps(fids,make_property_map(patch_ids)),
+                           make_compose_property_map(fids,make_property_map(patch_ids)),
                            parameters::edge_is_constrained_map(is_intersection)
                                       .face_index_map(fids));
 

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Interval_skip_list/include/CGAL/Interval_skip_list.h $
-// $Id: Interval_skip_list.h d1a323c 2020-03-26T19:24:14+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Interval_skip_list/include/CGAL/Interval_skip_list.h $
+// $Id: include/CGAL/Interval_skip_list.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

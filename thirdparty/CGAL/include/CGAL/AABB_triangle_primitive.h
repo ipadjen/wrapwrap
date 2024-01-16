@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/AABB_tree/include/CGAL/AABB_triangle_primitive.h $
-// $Id: AABB_triangle_primitive.h 3127190 2020-12-08T12:48:04+01:00 Dmitry Anisimov
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/AABB_tree/include/CGAL/AABB_triangle_primitive.h $
+// $Id: include/CGAL/AABB_triangle_primitive.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -55,7 +55,7 @@ namespace internal {
  * The iterator from which the primitive is built should not be invalided
  * while the AABB tree holding the primitive is in use.
  *
- * \cgalModels `AABBPrimitive`
+ * \cgalModels{AABBPrimitive}
  *
  * \tparam GeomTraits is a traits class providing the nested type `Point_3` and `Triangle_3`.
  *         It also provides the functor `Construct_vertex_3` that has an operator taking a `Triangle_3`

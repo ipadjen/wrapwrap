@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_processing_3/include/CGAL/vcm_estimate_edges.h $
-// $Id: vcm_estimate_edges.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Point_set_processing_3/include/CGAL/vcm_estimate_edges.h $
+// $Id: include/CGAL/vcm_estimate_edges.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Jocelyn Meyron and Quentin Mérigot
@@ -40,7 +40,7 @@ namespace CGAL {
 /// `CGAL_EIGEN3_ENABLED` is defined then an overload using
 /// `Eigen_diagonalize_traits` is provided. Otherwise, the internal
 /// implementation `Diagonalize_traits` is used.
-/// \sa CGAL::compute_vcm()`
+/// \sa `CGAL::compute_vcm()`
 ///
 template <class FT, class VCMTraits>
 bool

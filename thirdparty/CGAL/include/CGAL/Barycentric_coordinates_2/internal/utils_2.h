@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Barycentric_coordinates_2/include/CGAL/Barycentric_coordinates_2/internal/utils_2.h $
-// $Id: utils_2.h d03c669 2021-08-13T11:33:47+02:00 Dmitry Anisimov
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Barycentric_coordinates_2/include/CGAL/Barycentric_coordinates_2/internal/utils_2.h $
+// $Id: include/CGAL/Barycentric_coordinates_2/internal/utils_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -31,7 +31,7 @@
 
 // Boost headers.
 #include <boost/mpl/has_xxx.hpp>
-#include <boost/optional/optional.hpp>
+#include <optional>
 
 // Internal includes.
 #include <CGAL/Weights/internal/polygon_utils_2.h>
@@ -222,7 +222,7 @@ namespace internal {
   typename VertexRange,
   typename GeomTraits,
   typename PointMap>
-  boost::optional< std::pair<Query_point_location, std::size_t> >
+  std::optional< std::pair<Query_point_location, std::size_t> >
   get_edge_index_approximate(
     const VertexRange& polygon,
     const typename GeomTraits::Point_2& query,
@@ -264,7 +264,7 @@ namespace internal {
         return std::make_pair(Query_point_location::ON_EDGE, i);
       }
     }
-    return boost::none;
+    return std::nullopt;
   }
 
   // Why this one does not work for harmonic coordinates? - Due to the imprecisions in the Mesh_2 class.
@@ -273,7 +273,7 @@ namespace internal {
   typename VertexRange,
   typename GeomTraits,
   typename PointMap>
-  boost::optional< std::pair<Query_point_location, std::size_t> >
+  std::optional< std::pair<Query_point_location, std::size_t> >
   get_edge_index_exact(
     const VertexRange& polygon,
     const typename GeomTraits::Point_2& query,
@@ -303,10 +303,10 @@ namespace internal {
         return std::make_pair(Query_point_location::ON_EDGE, i);
       }
     }
-    return boost::none;
+    return std::nullopt;
   }
 
-  // Check wether a query point belongs to the last polygon edge.
+  // Check whether a query point belongs to the last polygon edge.
   template<
   typename VertexRange,
   typename OutputIterator,
@@ -409,7 +409,7 @@ namespace internal {
   typename VertexRange,
   typename GeomTraits,
   typename PointMap>
-  boost::optional< std::pair<Query_point_location, std::size_t> >
+  std::optional< std::pair<Query_point_location, std::size_t> >
   locate_wrt_polygon_2(
     const VertexRange& polygon,
     const typename GeomTraits::Point_2& query,
@@ -430,7 +430,7 @@ namespace internal {
       default:
         return std::make_pair(Query_point_location::UNSPECIFIED, std::size_t(-1));
     }
-    return boost::none;
+    return std::nullopt;
   }
 
 } // namespace internal

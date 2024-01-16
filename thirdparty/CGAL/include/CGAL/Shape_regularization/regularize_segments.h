@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Shape_regularization/include/CGAL/Shape_regularization/regularize_segments.h $
-// $Id: regularize_segments.h 75b03e6 2022-01-10T15:33:04+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Shape_regularization/include/CGAL/Shape_regularization/regularize_segments.h $
+// $Id: include/CGAL/Shape_regularization/regularize_segments.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -69,6 +69,9 @@ namespace Segments {
     of a segment and a `RegularizationType` model to define the type of regularities
     that should be addressed. The function is based on the class `QP_regularization`.
     Please refer to that class and these concepts for more information.
+
+    This class requires a `QPSolver` model which defaults to the \ref thirdpartyOSQP "OSQP"
+    library, which must be available on the system.
 
     \tparam InputRange
     a model of `ConstRange` whose iterator type is `RandomAccessIterator`

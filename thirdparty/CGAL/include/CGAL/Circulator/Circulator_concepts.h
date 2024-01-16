@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Circulator/include/CGAL/Circulator/Circulator_concepts.h $
-// $Id: Circulator_concepts.h c9af7a1 2020-10-14T10:59:46+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Circulator/include/CGAL/Circulator/Circulator_concepts.h $
+// $Id: include/CGAL/Circulator/Circulator_concepts.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

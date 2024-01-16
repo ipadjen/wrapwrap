@@ -4,8 +4,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_3/include/CGAL/Intersections_3/internal/Line_3_Plane_3_intersection.h $
-// $Id: Line_3_Plane_3_intersection.h c2d1adf 2021-06-23T17:34:48+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_3/include/CGAL/Intersections_3/internal/Line_3_Plane_3_intersection.h $
+// $Id: include/CGAL/Intersections_3/internal/Line_3_Plane_3_intersection.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -24,7 +24,7 @@ namespace Intersections {
 namespace internal {
 
 template <class K>
-boost::optional<typename K::Point_3>
+std::optional<typename K::Point_3>
 intersection_point(const typename K::Plane_3& plane,
                    const typename K::Line_3& line,
                    const K& /*k*/)
@@ -41,9 +41,9 @@ intersection_point(const typename K::Plane_3& plane,
   RT den = plane.a()*line_dir.dx() + plane.b()*line_dir.dy()
            + plane.c()*line_dir.dz();
   if(den == 0)
-    return boost::none;
+    return std::nullopt;
 
-  return boost::make_optional(Point_3(den*line_pt.hx()-num*line_dir.dx(),
+  return std::make_optional(Point_3(den*line_pt.hx()-num*line_dir.dx(),
                                       den*line_pt.hy()-num*line_dir.dy(),
                                       den*line_pt.hz()-num*line_dir.dz(),
                                       wmult_hw((K*)0, den, line_pt)));

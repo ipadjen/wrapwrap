@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Periodic_3_triangulation_3/include/CGAL/Periodic_3_triangulation_traits_3.h $
-// $Id: Periodic_3_triangulation_traits_3.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Periodic_3_triangulation_3/include/CGAL/Periodic_3_triangulation_traits_3.h $
+// $Id: include/CGAL/Periodic_3_triangulation_traits_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Nico Kruithof <Nico.Kruithof@sophia.inria.fr>
@@ -22,7 +22,6 @@
 
 #include <CGAL/basic.h>
 #include <CGAL/Kernel_23/internal/Has_boolean_tags.h>
-#include <CGAL/triangulation_assertions.h>
 
 namespace CGAL {
 
@@ -79,6 +78,12 @@ public:
       Construct_point_3;
 
   // Triangulation predicates
+  typedef Functor_with_offset_points_adaptor_3<Self, typename Kernel::Compare_x_3>
+      Compare_x_3;
+  typedef Functor_with_offset_points_adaptor_3<Self, typename Kernel::Compare_y_3>
+      Compare_y_3;
+  typedef Functor_with_offset_points_adaptor_3<Self, typename Kernel::Compare_z_3>
+      Compare_z_3;
   typedef Functor_with_offset_points_adaptor_3<Self, typename Kernel::Compare_xyz_3>
       Compare_xyz_3;
   typedef Functor_with_offset_points_adaptor_3<Self, typename Kernel::Orientation_3>
@@ -97,6 +102,15 @@ public:
     return Construct_point_3(&_domain, this->Kernel::construct_point_3_object());
   }
 
+  Compare_x_3 compare_x_3_object() const {
+    return Compare_x_3(this->Kernel::compare_x_3_object(), construct_point_3_object());
+  }
+  Compare_y_3 compare_y_3_object() const {
+    return Compare_y_3(this->Kernel::compare_y_3_object(), construct_point_3_object());
+  }
+  Compare_z_3 compare_z_3_object() const {
+    return Compare_z_3(this->Kernel::compare_z_3_object(), construct_point_3_object());
+  }
   Compare_xyz_3 compare_xyz_3_object() const {
     return Compare_xyz_3(this->Kernel::compare_xyz_3_object(), construct_point_3_object());
   }

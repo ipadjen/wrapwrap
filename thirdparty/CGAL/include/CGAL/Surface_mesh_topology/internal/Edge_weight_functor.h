@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_topology/include/CGAL/Surface_mesh_topology/internal/Edge_weight_functor.h $
-// $Id: Edge_weight_functor.h 19d7e19 2020-04-06T09:13:47+02:00 Guillaume Damiand
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_topology/include/CGAL/Surface_mesh_topology/internal/Edge_weight_functor.h $
+// $Id: include/CGAL/Surface_mesh_topology/internal/Edge_weight_functor.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Thien Hoang <thienvhoang99@gmail.com>
@@ -33,12 +33,12 @@ template<typename Mesh>
 struct Euclidean_length_weight_functor
 {
   using Weight_t=double;
-  using Dart_const_handle=typename Get_map<Mesh, Mesh>::type::Dart_const_handle;
+  using Dart_const_descriptor=typename Get_map<Mesh, Mesh>::type::Dart_const_descriptor;
 
   Euclidean_length_weight_functor(const Mesh& m) : m_mesh(m), m_map(m)
   {}
 
-  Weight_t operator() (Dart_const_handle dh) const
+  Weight_t operator() (Dart_const_descriptor dh) const
   {
     return CGAL::sqrt(CGAL::squared_distance
                       (Get_traits<Mesh>::get_point(m_mesh, dh),

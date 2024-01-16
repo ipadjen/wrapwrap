@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_topology_traits/Arr_spherical_vert_decomp_helper.h $
-// $Id: Arr_spherical_vert_decomp_helper.h 5985db1 2021-07-28T16:17:10+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_topology_traits/Arr_spherical_vert_decomp_helper.h $
+// $Id: include/CGAL/Arr_topology_traits/Arr_spherical_vert_decomp_helper.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s): Ron Wein <wein@post.tau.ac.il>
@@ -48,9 +48,9 @@ public:
   typedef typename Arrangement_2::Halfedge_const_handle Halfedge_const_handle;
   typedef typename Arrangement_2::Face_const_handle     Face_const_handle;
 
-  typedef boost::variant<Vertex_const_handle, Halfedge_const_handle,
+  typedef std::variant<Vertex_const_handle, Halfedge_const_handle,
                          Face_const_handle>             Cell_type;
-  typedef boost::optional<Cell_type>                    Vert_type;
+  typedef std::optional<Cell_type>                    Vert_type;
 
 protected:
   typedef typename Arrangement_2::Topology_traits       Topology_traits;
@@ -109,14 +109,14 @@ public:
   template <typename Tr, typename Arr, typename Evnt, typename Sbcv>
   void Arr_spherical_vert_decomp_helper<Tr, Arr, Evnt, Sbcv>::before_sweep()
 {
-  // Get the north pole and the face that intially contains it.
+  // Get the north pole and the face that initially contains it.
   m_valid_north_pole = (m_top_traits->north_pole() != nullptr);
   if (m_valid_north_pole)
     m_north_pole = Vertex_const_handle (m_top_traits->north_pole());
 
   m_north_face = Face_const_handle (m_top_traits->spherical_face());
 
-  // Get the south pole and the face that intially contains it.
+  // Get the south pole and the face that initially contains it.
   m_valid_south_pole = (m_top_traits->south_pole() != nullptr);
   if (m_valid_south_pole)
     m_south_pole = Vertex_const_handle (m_top_traits->south_pole());

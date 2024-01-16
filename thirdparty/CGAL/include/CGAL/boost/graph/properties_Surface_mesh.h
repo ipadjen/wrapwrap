@@ -2,9 +2,9 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh/include/CGAL/boost/graph/properties_Surface_mesh.h $
-// $Id: properties_Surface_mesh.h 590ddf8 2021-10-08T15:38:47+02:00 Mael Rouxel-Labbé
-// SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh/include/CGAL/boost/graph/properties_Surface_mesh.h $
+// $Id: include/CGAL/boost/graph/properties_Surface_mesh.h a484bfa $
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Philipp Möller
@@ -71,8 +71,8 @@ class SM_index_pmap
 {
 public:
   typedef boost::readable_property_map_tag category;
-  typedef boost::uint32_t                  value_type;
-  typedef boost::uint32_t                  reference;
+  typedef std::uint32_t                  value_type;
+  typedef std::uint32_t                  reference;
   typedef VEF                              key_type;
 
   value_type operator[](const key_type& vd) const
@@ -238,7 +238,7 @@ template<typename Point>
 typename
 boost::lazy_disable_if
 <
-  boost::is_const<Point>,
+  std::is_const<Point>,
   internal::Get_vertex_point_map_for_Surface_mesh_return_type<Point>
 >::type
 get(CGAL::vertex_point_t, const CGAL::Surface_mesh<Point>& g) {
@@ -260,13 +260,13 @@ namespace internal {
      const TYPE& x)                                                \
  { return get(get(p, sm), x); }                                        \
 
-CGAL_SM_INTRINSIC_PROPERTY(boost::uint32_t, boost::vertex_index_t,
+CGAL_SM_INTRINSIC_PROPERTY(std::uint32_t, boost::vertex_index_t,
 SM_Vertex_index)
-CGAL_SM_INTRINSIC_PROPERTY(boost::uint32_t, boost::edge_index_t,
+CGAL_SM_INTRINSIC_PROPERTY(std::uint32_t, boost::edge_index_t,
 SM_Edge_index)
-CGAL_SM_INTRINSIC_PROPERTY(boost::uint32_t, boost::halfedge_index_t,
+CGAL_SM_INTRINSIC_PROPERTY(std::uint32_t, boost::halfedge_index_t,
 SM_Halfedge_index)
-CGAL_SM_INTRINSIC_PROPERTY(boost::uint32_t, boost::face_index_t,
+CGAL_SM_INTRINSIC_PROPERTY(std::uint32_t, boost::face_index_t,
 SM_Face_index)
 CGAL_SM_INTRINSIC_PROPERTY(Point&, CGAL::vertex_point_t, SM_Vertex_index)
 

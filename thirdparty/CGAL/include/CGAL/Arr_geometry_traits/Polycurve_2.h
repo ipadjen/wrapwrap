@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_geometry_traits/Polycurve_2.h $
-// $Id: Polycurve_2.h 7cd3a26 2020-09-08T17:46:08+03:00 Efi Fogel
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_geometry_traits/Polycurve_2.h $
+// $Id: include/CGAL/Arr_geometry_traits/Polycurve_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Ron Wein  <wein@post.tau.ac.il>
@@ -96,7 +96,7 @@ public:
     m_subcurves()
   {
     typedef typename std::iterator_traits<InputIterator>::value_type VT;
-    typedef typename boost::is_same<VT, Point_type_2>::type Is_point;
+    typedef typename std::is_same<VT, Point_type_2>::type Is_point;
     construct_polycurve(begin, end, Is_point());
   }
 
@@ -108,7 +108,7 @@ public:
    */
   template <typename InputIterator>
   void construct_polycurve(InputIterator begin, InputIterator end,
-                          boost::false_type)
+                          std::false_type)
   { m_subcurves.assign(begin, end); }
 
   /*! Construct a polycurve from a range of points.
@@ -120,7 +120,7 @@ public:
   template <typename InputIterator>
   CGAL_DEPRECATED void construct_polycurve(InputIterator begin,
                                            InputIterator end,
-                                           boost::true_type)
+                                           std::true_type)
   {
     // Check if there are no points in the range:
     InputIterator ps = begin;
@@ -433,7 +433,7 @@ public:
     Base(begin, end)
   {
     typedef typename std::iterator_traits<InputIterator>::value_type VT;
-    typedef typename boost::is_same<VT, Point_type_2>::type Is_point;
+    typedef typename std::is_same<VT, Point_type_2>::type Is_point;
     construct_x_monotone_polycurve(begin, end, Is_point());
   }
 
@@ -444,7 +444,7 @@ public:
    */
   template <typename InputIterator>
   void construct_x_monotone_polycurve(InputIterator, InputIterator,
-                                      boost::false_type)
+                                      std::false_type)
   {}
 
   /*! Construct from a range of points, defining the endpoints of the
@@ -453,7 +453,7 @@ public:
   template <typename InputIterator>
   CGAL_DEPRECATED void construct_x_monotone_polycurve(InputIterator,
                                                      InputIterator,
-                                                     boost::true_type)
+                                                     std::true_type)
   {}
 };
 

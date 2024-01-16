@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_segmentation/include/CGAL/Surface_mesh_segmentation/internal/Filters.h $
-// $Id: Filters.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_segmentation/include/CGAL/Surface_mesh_segmentation/internal/Filters.h $
+// $Id: include/CGAL/Surface_mesh_segmentation/internal/Filters.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Ilker O. Yaz
@@ -28,7 +28,7 @@
 #include <queue>
 #include <cmath>
 
-#include <boost/optional.hpp>
+#include <optional>
 #include <CGAL/boost/graph/iterator.h>
 #include <CGAL/number_utils.h>
 #include <CGAL/double.h>
@@ -63,8 +63,8 @@ public:
   void operator()(const Polyhedron& mesh,
                   std::size_t window_size,
                   ValuePropertyMap values,
-                  boost::optional<double> spatial_parameter = boost::optional<double>(),
-                  boost::optional<double> range_parameter = boost::optional<double>()
+                  std::optional<double> spatial_parameter = std::optional<double>(),
+                  std::optional<double> range_parameter = std::optional<double>()
                  ) const {
     typedef typename boost::graph_traits<Polyhedron>::face_descriptor face_descriptor;
     typedef typename boost::graph_traits<Polyhedron>::face_iterator face_iterator;
@@ -319,7 +319,7 @@ public:
               // if insertion is OK, then check its level
               facet_queue.push(
                 new_pair);                                      // if its level is equal to max_level do not put it in
-            }                                                                    // queue since we do not want to traverse its childs
+            }                                                                    // queue since we do not want to traverse its children
           }
         } while(++vertex_circulator != done);
       } while((edge = next(edge,polyhedron)) != halfedge(facet_front,polyhedron));

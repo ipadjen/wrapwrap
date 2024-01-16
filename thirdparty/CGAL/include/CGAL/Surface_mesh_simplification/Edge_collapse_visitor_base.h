@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_simplification/include/CGAL/Surface_mesh_simplification/Edge_collapse_visitor_base.h $
-// $Id: Edge_collapse_visitor_base.h ff09c5d 2019-10-25T16:35:53+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_simplification/include/CGAL/Surface_mesh_simplification/Edge_collapse_visitor_base.h $
+// $Id: include/CGAL/Surface_mesh_simplification/Edge_collapse_visitor_base.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Fernando Cacciola <fernando.cacciola@geometryfactory.com>
@@ -46,9 +46,9 @@ struct Edge_collapse_visitor_base
   void OnStarted(Triangle_mesh&) {}
   void OnFinished(Triangle_mesh&) {}
   void OnStopConditionReached(const Profile&) {}
-  void OnCollected(const Profile&, const boost::optional<FT>&) {}
-  void OnSelected(const Profile&, const boost::optional<FT>&, size_type, size_type) {}
-  void OnCollapsing(const Profile&, const boost::optional<Point>&) {}
+  void OnCollected(const Profile&, const std::optional<FT>&) {}
+  void OnSelected(const Profile&, const std::optional<FT>&, size_type, size_type) {}
+  void OnCollapsing(const Profile&, const std::optional<Point>&) {}
   void OnCollapsed(const Profile&, const vertex_descriptor&) {}
   void OnNonCollapsable(const Profile&) {}
 };

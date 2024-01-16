@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_line_arc_traits_2.h $
-// $Id: Arr_line_arc_traits_2.h 5298ff1 2020-07-02T19:10:29+03:00 Efi Fogel
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_line_arc_traits_2.h $
+// $Id: include/CGAL/Arr_line_arc_traits_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Monique Teillaud, Sylvain Pion, Julien Hazebrouck
@@ -125,7 +125,7 @@ public:
     template <typename OutputIterator>
     OutputIterator operator()(const Curve_2& line, OutputIterator oi) const
     {
-      typedef boost::variant<Point_2, X_monotone_curve_2> Make_x_monotone_result;
+      typedef std::variant<Point_2, X_monotone_curve_2> Make_x_monotone_result;
       *oi++ = Make_x_monotone_result(line);
       return oi;
     }

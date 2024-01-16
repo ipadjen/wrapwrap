@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/angle_and_area_smoothing.h $
-// $Id: angle_and_area_smoothing.h ec53e0a 2022-04-21T06:51:12+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/angle_and_area_smoothing.h $
+// $Id: include/CGAL/Polygon_mesh_processing/angle_and_area_smoothing.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -31,9 +31,9 @@ namespace Polygon_mesh_processing {
 /*!
 * \ingroup PMP_meshing_grp
 *
-* \short smooths a triangulated region of a polygon mesh.
+* \brief smooths a triangulated region of a polygon mesh.
 *
-* This function attempts to make the triangle angle and area distributions as uniform as possible
+* This function aims to make the triangle angle and area distributions as uniform as possible
 * by moving (non-constrained) vertices.
 *
 * Angle-based smoothing does not change the combinatorial information of the mesh. Area-based smoothing
@@ -329,13 +329,33 @@ void angle_and_area_smoothing(const FaceRange& faces,
   }
 }
 
-///\cond SKIP_IN_MANUAL
+/*!
+* \ingroup PMP_meshing_grp
+*
+* \brief smooths a polygon mesh.
+*
+* This function aims to make the triangle angle and area distributions as uniform as possible
+* by moving (non-constrained) vertices.
+*
+* Angle-based smoothing does not change the combinatorial information of the mesh. Area-based smoothing
+* might change the combinatorial information, unless specified otherwise. It is also possible
+* to make the smoothing algorithm "safer" by rejecting moves that, when applied, would worsen the
+* quality of the mesh, e.g. that would decrease the value of the smallest angle around a vertex or
+* create self-intersections.
+*
+* Optionally, the points are reprojected after each iteration.
+*
+* See the overload which takes a face range as additonal parameter for a comprehensive description
+* of the parameters.
+*/
 template <typename TriangleMesh, typename CGAL_NP_TEMPLATE_PARAMETERS>
 void angle_and_area_smoothing(TriangleMesh& tmesh, const CGAL_NP_CLASS& np = parameters::default_values())
 {
   angle_and_area_smoothing(faces(tmesh), tmesh, np);
 }
 
+
+///\cond SKIP_IN_MANUAL
 template<typename TriangleMesh, typename GeomTraits, typename Stream>
 void angles_evaluation(TriangleMesh& tmesh, GeomTraits traits, Stream& output)
 {

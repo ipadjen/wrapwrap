@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Interpolation/include/CGAL/Voronoi_intersection_2_traits_3.h $
-// $Id: Voronoi_intersection_2_traits_3.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Interpolation/include/CGAL/Voronoi_intersection_2_traits_3.h $
+// $Id: include/CGAL/Voronoi_intersection_2_traits_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Julia Floetotto, Mael Rouxel-Labbé

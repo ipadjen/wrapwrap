@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Voronoi_diagram_2/include/CGAL/Voronoi_diagram_2/Regular_triangulation_nearest_site_2.h $
-// $Id: Regular_triangulation_nearest_site_2.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Voronoi_diagram_2/include/CGAL/Voronoi_diagram_2/Regular_triangulation_nearest_site_2.h $
+// $Id: include/CGAL/Voronoi_diagram_2/Regular_triangulation_nearest_site_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -19,7 +19,7 @@
 #include <CGAL/Voronoi_diagram_2/basic.h>
 #include <CGAL/Triangulation_utils_2.h>
 
-#include <boost/variant.hpp>
+#include <variant>
 
 namespace CGAL {
 
@@ -50,7 +50,7 @@ class Regular_triangulation_nearest_site_2
   typedef typename Geom_traits::Weighted_point_2      Weighted_point_2;
 
  public:
-  typedef boost::variant<Vertex_handle,Edge,Face_handle>  result_type;
+  typedef std::variant<Vertex_handle,Edge,Face_handle>  result_type;
 
   result_type operator()(const Delaunay_graph& dg, const Point_2& p) const {
     CGAL_precondition( dg.dimension() >= 0 );

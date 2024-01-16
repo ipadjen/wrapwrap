@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Scale_space_reconstruction_3/include/CGAL/Scale_space_reconstruction_3/Advancing_front_mesher.h $
-// $Id: Advancing_front_mesher.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Scale_space_reconstruction_3/include/CGAL/Scale_space_reconstruction_3/Advancing_front_mesher.h $
+// $Id: include/CGAL/Scale_space_reconstruction_3/Advancing_front_mesher.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s):      Simon Giraudot
@@ -33,7 +33,7 @@ namespace Scale_space_reconstruction_3
  *  with the possibility of using an upper bound on the length of the
  *  produced facets.
  *
- *  \cgalModels CGAL::Scale_space_reconstruction_3::Mesher
+ *  \cgalModels{CGAL::Scale_space_reconstruction_3::Mesher}
  *
  *  \tparam Geom_traits geometric traits class. It must be a
  *  model of `DelaunayTriangulationTraits_3`. It must have a

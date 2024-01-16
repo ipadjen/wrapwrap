@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_parameterization/include/CGAL/Surface_mesh_parameterization/Barycentric_mapping_parameterizer_3.h $
-// $Id: Barycentric_mapping_parameterizer_3.h a4b645a 2021-06-08T12:48:15+02:00 Dmitry Anisimov
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_parameterization/include/CGAL/Surface_mesh_parameterization/Barycentric_mapping_parameterizer_3.h $
+// $Id: include/CGAL/Surface_mesh_parameterization/Barycentric_mapping_parameterizer_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Laurent Saboret, Pierre Alliez, Bruno Levy
@@ -49,11 +49,11 @@ namespace Surface_mesh_parameterization {
 ///   the matrix `A` for `j` neighbor vertex of `i`, based on Tutte Barycentric
 ///   Mapping method.
 ///
-/// \cgalModels `Parameterizer_3`
+/// \cgalModels{Parameterizer_3}
 ///
 /// \tparam TriangleMesh_ must be a model of `FaceGraph`.
 ///
-/// \tparam BorderParameterizer_ is a Strategy to parameterize the surface border
+/// \tparam BorderParameterizer_ is a strategy to parameterize the surface border
 ///         and must be a model of `Parameterizer_3`.<br>
 ///         <b>%Default:</b>
 /// \code
@@ -157,8 +157,7 @@ public:
   // Default copy constructor and operator =() are fine
 
   /// returns whether the 3D -> 2D mapping is one-to-one.
-  template <typename VertexUVMap,
-            typename Faces_Container>
+  template <typename VertexUVMap>
   bool is_one_to_one_mapping(const Triangle_mesh& mesh,
                              halfedge_descriptor bhd,
                              const VertexUVMap uvmap) const

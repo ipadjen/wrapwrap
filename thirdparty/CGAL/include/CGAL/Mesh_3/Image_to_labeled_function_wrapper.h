@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/Mesh_3/Image_to_labeled_function_wrapper.h $
-// $Id: Image_to_labeled_function_wrapper.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_3/include/CGAL/Mesh_3/Image_to_labeled_function_wrapper.h $
+// $Id: include/CGAL/Mesh_3/Image_to_labeled_function_wrapper.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -26,7 +26,6 @@
 #include <CGAL/Image_3.h>
 #include <CGAL/function_objects.h>
 #include <functional>
-#include <boost/mpl/if.hpp>
 
 namespace CGAL {
 
@@ -72,9 +71,9 @@ public:
   ~Image_to_labeled_function_wrapper() {}
 
   /**
-   * Returns an int corresponding to the label at point \c p
+   * Returns an int corresponding to the label at point `p`.
    * @param p the input point
-   * @return the label at point \c p
+   * @return the label at point `p`
    */
   template <typename Point_3>
   return_type operator()(const Point_3& p) const

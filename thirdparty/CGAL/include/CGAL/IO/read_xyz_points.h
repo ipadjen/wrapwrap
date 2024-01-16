@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_processing_3/include/CGAL/IO/read_xyz_points.h $
-// $Id: read_xyz_points.h 6555faf 2022-11-07T14:14:16+01:00 Jane Tournois
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Point_set_processing_3/include/CGAL/IO/read_xyz_points.h $
+// $Id: include/CGAL/IO/read_xyz_points.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Pierre Alliez and Laurent Saboret
@@ -16,10 +16,9 @@
 
 #include <CGAL/property_map.h>
 #include <CGAL/value_type_traits.h>
-#include <CGAL/point_set_processing_assertions.h>
 #include <CGAL/Origin.h>
 #include <CGAL/Kernel_traits.h>
-#include <CGAL/is_iterator.h>
+#include <CGAL/type_traits/is_iterator.h>
 
 #include <CGAL/Named_function_parameters.h>
 #include <CGAL/boost/graph/named_params_helper.h>
@@ -135,15 +134,15 @@ bool read_XYZ(std::istream& is,
     {
       iss.clear();
       iss.str(line);
-      if (iss >> iformat(x) >> iformat(y) >> iformat(z))
+      if (iss >> IO::iformat(x) >> IO::iformat(y) >> IO::iformat(z))
       {
         Point point(x,y,z);
         Vector normal = CGAL::NULL_VECTOR;
         // ... + normal...
-        if (iss >> iformat(nx))
+        if (iss >> IO::iformat(nx))
         {
           // In case we could read one number, we expect that there are two more
-          if(iss >> iformat(ny) >> iformat(nz)){
+          if(iss >> IO::iformat(ny) >> IO::iformat(nz)){
             normal = Vector(nx,ny,nz);
           } else {
             std::cerr << "Error line " << lineNumber << " of file (incomplete normal coordinates)" << std::endl;
@@ -234,7 +233,7 @@ bool read_XYZ(const std::string& fname,
 // variants with default output iterator value type
 template <typename OutputIterator, typename CGAL_NP_TEMPLATE_PARAMETERS>
 bool read_XYZ(std::istream& is, OutputIterator output, const CGAL_NP_CLASS& np = parameters::default_values(),
-              typename std::enable_if<CGAL::is_iterator<OutputIterator>::value>::type* = nullptr)
+              std::enable_if_t<CGAL::is_iterator<OutputIterator>::value>* = nullptr)
 {
   return read_XYZ<typename value_type_traits<OutputIterator>::type>(is, output, np);
 }

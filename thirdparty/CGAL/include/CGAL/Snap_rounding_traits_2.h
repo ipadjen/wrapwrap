@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Snap_rounding_2/include/CGAL/Snap_rounding_traits_2.h $
-// $Id: Snap_rounding_traits_2.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Snap_rounding_2/include/CGAL/Snap_rounding_traits_2.h $
+// $Id: include/CGAL/Snap_rounding_traits_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

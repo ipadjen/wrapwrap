@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/Mesh_3/experimental/Lipschitz_sizing_experimental.h $
-// $Id: Lipschitz_sizing_experimental.h 2c14df7 2022-02-15T15:29:31+01:00 Jane Tournois
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_3/include/CGAL/Mesh_3/experimental/Lipschitz_sizing_experimental.h $
+// $Id: include/CGAL/Mesh_3/experimental/Lipschitz_sizing_experimental.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

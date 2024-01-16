@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Generalized_map/include/CGAL/Generalized_map_iterators_base.h $
-// $Id: Generalized_map_iterators_base.h 52164b1 2019-10-19T15:34:59+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Generalized_map/include/CGAL/Generalized_map_iterators_base.h $
+// $Id: include/CGAL/Generalized_map_iterators_base.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Guillaume Damiand <guillaume.damiand@liris.cnrs.fr>
@@ -18,8 +18,7 @@
 // Other includes
 #include <CGAL/Compact_container.h>
 #include <queue>
-#include <boost/mpl/if.hpp>
-#include <boost/type_traits/is_same.hpp>
+#include <type_traits>
 
 namespace CGAL {
 
@@ -53,23 +52,23 @@ namespace CGAL {
     typedef GMap_extend_iterator<Map_,Ite,Ai, Ite_has_stack> Self;
     typedef Ite Base;
 
-    typedef typename Base::Dart_handle Dart_handle;
+    typedef typename Base::Dart_descriptor Dart_descriptor;
     typedef typename Base::Map Map;
     typedef typename Base::size_type size_type;
 
     typedef Tag_true Use_mark;
 
-    CGAL_static_assertion( (Ai<=Map::dimension &&
-                            boost::is_same<Ite_has_stack,Tag_false>::value) );
+    static_assert(Ai<=Map::dimension &&
+                            std::is_same<Ite_has_stack,Tag_false>::value);
 
   public:
     /// Main constructor.
-    GMap_extend_iterator(Map& amap, Dart_handle adart, size_type amark):
+    GMap_extend_iterator(Map& amap, Dart_descriptor adart, size_type amark):
       Base(amap, adart),
       mmark_number(amark),
       minitial_dart(adart)
     {
-      if ( adart!=amap.null_handle )
+      if ( adart!=amap.null_descriptor )
       {
         this->mmap->mark(adart, mmark_number);
         if (!this->mmap->template is_free<Ai>(adart))
@@ -84,7 +83,7 @@ namespace CGAL {
     {
       CGAL_assertion(mmark_number != Map::INVALID_MARK);
       Base::operator= ( Base(*this->mmap,minitial_dart) );
-      mto_treat = std::queue<Dart_handle>();
+      mto_treat = std::queue<Dart_descriptor>();
       this->mmap->mark(minitial_dart, mmark_number);
       if (!this->mmap->template is_free<Ai>(minitial_dart))
       {
@@ -147,13 +146,13 @@ namespace CGAL {
 
   protected:
     /// Queue of darts to process.
-    std::queue<Dart_handle> mto_treat;
+    std::queue<Dart_descriptor> mto_treat;
 
     /// Index of the used mark.
     size_type mmark_number;
 
     /// Initial dart
-    Dart_handle minitial_dart;
+    Dart_descriptor minitial_dart;
   };
   //****************************************************************************
   /* Class GMap_extend_iterator<Map,Ite,Ai> which extend a given iterator by
@@ -167,7 +166,7 @@ namespace CGAL {
     typedef GMap_extend_iterator<Map_,Ite,Ai,Tag_true> Self;
     typedef Ite Base;
 
-    typedef typename Base::Dart_handle Dart_handle;
+    typedef typename Base::Dart_descriptor Dart_descriptor;
     typedef typename Base::Map Map;
 
     typedef Tag_true Use_mark;
@@ -175,10 +174,10 @@ namespace CGAL {
     typedef typename Map::size_type size_type;
 
     /// Main constructor.
-    GMap_extend_iterator(Map& amap, Dart_handle adart, size_type amark):
+    GMap_extend_iterator(Map& amap, Dart_descriptor adart, size_type amark):
       Base(amap, adart, amark)
     {
-      if (adart!=amap.null_handle)
+      if (adart!=amap.null_descriptor)
       {
         if (!this->mmap->is_free(adart, Ai) &&
             !this->mmap->is_marked(this->mmap->alpha(amap, Ai), this->mmark_number))

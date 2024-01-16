@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/IO/Fig_stream.h $
-// $Id: Fig_stream.h c3d4306 2021-09-15T14:23:46+01:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/IO/Fig_stream.h $
+// $Id: include/CGAL/IO/Fig_stream.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Ron Wein           <wein@post.tau.ac.il>
@@ -164,7 +164,7 @@ enum Fig_depth
 
 /*!
  * \class A class for writing geometric objects in a FIG format (version 3.2).
- * For more details, see: http://www.xfig.org/userman/fig-format.html
+ * For more details, see: https://mcj.sourceforge.net/
  */
 template <class Kernel_>
 class Fig_stream
@@ -310,7 +310,7 @@ public:
   }
   //@}
 
-  /// \name Openning and closing the file.
+  /// \name Opening and closing the file.
   //@{
 
   /*!
@@ -731,7 +731,7 @@ public:
 
   /*!
    * Add a user-defined color.
-   * Use this function after openning the FIG stream and before writing any
+   * Use this function after opening the FIG stream and before writing any
    * other object (i.e. before calling the write_<object> () functions).
    * \param color The color.
    * \param r The red component (0 - 255).
@@ -750,7 +750,7 @@ public:
     if (color_defined (color))
       return;
 
-    // Prepare a string desribing the color.
+    // Prepare a string describing the color.
 
     std::stringstream out;
     out << "0x"  << std::hex
@@ -1401,7 +1401,7 @@ protected:
   }
 
   /*!
-   * Write a polygon, reprsented as a range of points.
+   * Write a polygon, represented as a range of points.
    */
   template <class Input_iterator>
   void _write_polygon (const int n_points,

@@ -3,12 +3,14 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Periodic_3_triangulation_3/include/CGAL/Periodic_3_triangulation_3/internal/Periodic_3_regular_triangulation_dummy_288.h $
-// $Id: Periodic_3_regular_triangulation_dummy_288.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Periodic_3_triangulation_3/include/CGAL/Periodic_3_triangulation_3/internal/Periodic_3_regular_triangulation_dummy_288.h $
+// $Id: include/CGAL/Periodic_3_triangulation_3/internal/Periodic_3_regular_triangulation_dummy_288.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Manuel Caroli <Manuel.Caroli@sophia.inria.fr>
+
+#include <CGAL/license/Periodic_3_triangulation_3.h>
 
 #ifdef CGAL_INCLUDE_FROM_PERIODIC_3_REGULAR_TRIANGULATION_3_H
 
@@ -37,7 +39,7 @@ std::vector<Weighted_point> dummy_points()
 
         FT z = (FT(k) * domain_z / FT(8)) + domain().zmin();
 
-        dummy_points.push_back(Weighted_point(Bare_point(x, y, z), 0));
+        dummy_points.emplace_back(Bare_point(x, y, z), 0);
       }
     }
   }

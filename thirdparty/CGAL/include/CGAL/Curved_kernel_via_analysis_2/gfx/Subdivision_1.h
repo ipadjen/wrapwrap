@@ -3,9 +3,9 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Curved_kernel_via_analysis_2/gfx/Subdivision_1.h $
-// $Id: Subdivision_1.h 0d66e19 2020-07-24T17:05:10+02:00 Mael Rouxel-Labbé
-// SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Curved_kernel_via_analysis_2/gfx/Subdivision_1.h $
+// $Id: include/CGAL/Curved_kernel_via_analysis_2/gfx/Subdivision_1.h a484bfa $
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Pavel Emeliyanenko <asm@mpi-sb.mpg.de>
 //
@@ -17,7 +17,10 @@
  */
 
 #ifndef CGAL_CKVA_SUBDIVISION_1_H
-#define CGAL_CKVA_SUBDIVISION_1_H 1
+#define CGAL_CKVA_SUBDIVISION_1_H
+
+#include <CGAL/license/Arrangement_on_surface_2.h>
+
 
 #include <vector>
 #include <boost/multi_index_container.hpp>

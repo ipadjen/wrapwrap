@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Partition_2/include/CGAL/Partition_2/partition_greene_approx_convex_2.h $
-// $Id: partition_greene_approx_convex_2.h 521c72d 2021-10-04T13:22:00+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Partition_2/include/CGAL/Partition_2/partition_greene_approx_convex_2.h $
+// $Id: include/CGAL/Partition_2/partition_greene_approx_convex_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -23,7 +23,7 @@
 #include<CGAL/Partition_2/partition_y_monotone_2.h>
 #include<CGAL/Partition_2/Turn_reverser.h>
 #include<CGAL/IO/Tee_for_output_iterator.h>
-#include<CGAL/Partition_2/partition_assertions.h>
+#include<CGAL/assertions.h>
 #include<CGAL/partition_is_valid_2.h>
 #include<CGAL/Partition_traits_2.h>
 #include<CGAL/is_y_monotone_2.h>
@@ -90,7 +90,7 @@ void erase_vertices(BidirectionalCirculator first,
 #endif
    it = first.current_iterator();
 
-   CGAL_partition_assertion (it != polygon.end());
+   CGAL_assertion (it != polygon.end());
 
    while ( (it != polygon.end()) && (*it != *last) )
    {
@@ -692,9 +692,9 @@ void ga_convex_decomposition(ForwardIterator first, ForwardIterator beyond,
 
    Vertex_list  polygon(first, beyond);
 
-   CGAL_partition_precondition(
+   CGAL_precondition(
     orientation_2(polygon.begin(), polygon.end(), traits) == COUNTERCLOCKWISE);
-   CGAL_partition_precondition(
+   CGAL_precondition(
     is_y_monotone_2(polygon.begin(), polygon.end(), traits));
 
    Vertex_circulator point_ref(&polygon);
@@ -806,7 +806,7 @@ OutputIterator partition_greene_approx_convex_2(InputIterator first,
 #endif // no postconditions
 
    Polygon_2  polygon(first, beyond);
-   CGAL_partition_precondition(
+   CGAL_precondition(
       orientation_2(polygon.vertices_begin(), polygon.vertices_end(),
                                                traits) == COUNTERCLOCKWISE);
 
@@ -822,7 +822,7 @@ OutputIterator partition_greene_approx_convex_2(InputIterator first,
                               (*MP_it).vertices_end(), res, traits);
    }
 
-   CGAL_partition_postcondition(
+   CGAL_postcondition(
        convex_partition_is_valid_2(polygon.vertices_begin(),
                                    polygon.vertices_end(),
                                    res.output_so_far_begin(),

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_2/include/CGAL/Intersections_2/Bbox_2_Bbox_2.h $
-// $Id: Bbox_2_Bbox_2.h ce4cbe6 2020-03-19T11:41:57+01:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_2/include/CGAL/Intersections_2/Bbox_2_Bbox_2.h $
+// $Id: include/CGAL/Intersections_2/Bbox_2_Bbox_2.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -25,13 +25,13 @@ do_intersect(const CGAL::Bbox_2& c,
   return CGAL::do_overlap(c, bbox);
 }
 
-typename boost::optional< typename boost::variant<Bbox_2> >
+typename std::optional< typename std::variant<Bbox_2> >
 inline
 intersection(const CGAL::Bbox_2& a,
              const CGAL::Bbox_2& b)
 {
-  typedef typename boost::variant<Bbox_2> variant_type;
-  typedef typename boost::optional<variant_type> result_type;
+  typedef typename std::variant<Bbox_2> variant_type;
+  typedef typename std::optional<variant_type> result_type;
 
   if(!do_intersect(a, b))
     return result_type();

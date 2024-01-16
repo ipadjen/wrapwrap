@@ -4,8 +4,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_3/include/CGAL/Intersections_3/internal/Iso_cuboid_3_Ray_3_do_intersect.h $
-// $Id: Iso_cuboid_3_Ray_3_do_intersect.h c2d1adf 2021-06-23T17:34:48+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_3/include/CGAL/Intersections_3/internal/Iso_cuboid_3_Ray_3_do_intersect.h $
+// $Id: include/CGAL/Intersections_3/internal/Iso_cuboid_3_Ray_3_do_intersect.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -20,16 +20,17 @@
 #include <CGAL/Intersections_3/internal/Bbox_3_Segment_3_do_intersect.h>
 // for CGAL::internal::do_intersect_bbox_segment_aux
 
-// inspired from http://cag.csail.mit.edu/~amy/papers/box-jgt.pdf
+// inspired from https://people.csail.mit.edu/amy/papers/box-jgt.pdf
 
 namespace CGAL {
 namespace Intersections {
 namespace internal {
 
 template <class K>
-bool do_intersect(const typename K::Ray_3& ray,
-                  const typename K::Iso_cuboid_3& ic,
-                  const K&)
+typename K::Boolean
+do_intersect(const typename K::Ray_3& ray,
+             const typename K::Iso_cuboid_3& ic,
+             const K&)
 {
   typedef typename K::FT FT;
   typedef typename K::Point_3 Point_3;
@@ -51,9 +52,11 @@ bool do_intersect(const typename K::Ray_3& ray,
 }
 
 template <class K>
-bool do_intersect(const typename K::Iso_cuboid_3& ic,
-                  const typename K::Ray_3& ray,
-                  const K& k) {
+typename K::Boolean
+do_intersect(const typename K::Iso_cuboid_3& ic,
+             const typename K::Ray_3& ray,
+             const K& k)
+{
   return do_intersect(ray, ic, k);
 }
 

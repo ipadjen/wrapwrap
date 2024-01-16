@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/Mesh_3/initialize_triangulation_from_gray_image.h $
-// $Id: initialize_triangulation_from_gray_image.h 7c9e452 2021-02-12T17:20:46+01:00 Jane Tournois
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_3/include/CGAL/Mesh_3/initialize_triangulation_from_gray_image.h $
+// $Id: include/CGAL/Mesh_3/initialize_triangulation_from_gray_image.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

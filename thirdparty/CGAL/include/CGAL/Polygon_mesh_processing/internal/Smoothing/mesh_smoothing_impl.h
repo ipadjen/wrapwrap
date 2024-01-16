@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/Smoothing/mesh_smoothing_impl.h $
-// $Id: mesh_smoothing_impl.h 29ddd67 2020-02-06T17:14:16+01:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/Smoothing/mesh_smoothing_impl.h $
+// $Id: include/CGAL/Polygon_mesh_processing/internal/Smoothing/mesh_smoothing_impl.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -161,8 +161,9 @@ public:
       put(marks, e, false);
     for(edge_descriptor e : edge_range)
       put(marks, e, true);
-
+#ifdef CGAL_PMP_SMOOTHING_DEBUG
     int flipped_n = 0;
+#endif
     while(!edge_range.empty())
     {
       edge_descriptor e = edge_range.back();
@@ -172,8 +173,9 @@ public:
 
       if(should_be_flipped(e))
       {
+#ifdef CGAL_PMP_SMOOTHING_DEBUG
         ++flipped_n;
-
+#endif
         halfedge_descriptor h = halfedge(e, mesh_);
 
 #ifdef CGAL_PMP_SMOOTHING_DEBUG_PP
@@ -384,15 +386,15 @@ private:
                     T* residual) const
     {
       // Defining this because I haven't found much difference empirically (auto-diff being maybe
-      // a couple % faster), but numeric differenciation should be stronger in the face
-      // of difficult cases. Leaving the auto-differenciation formulation in case somebody really
+      // a couple % faster), but numeric differentiation should be stronger in the face
+      // of difficult cases. Leaving the auto-differentiation formulation in case somebody really
       // cares about the extra speed.
 #define CGAL_CERES_USE_NUMERIC_DIFFERENCIATION
 
 #ifdef CGAL_CERES_USE_NUMERIC_DIFFERENCIATION
       residual[0] = evaluate(x[0], y[0], z[0]);
 #else
-      // Computations must be explicit so that automatic differenciation can be used
+      // Computations must be explicit so that automatic differentiation can be used
       T dqx = qx - x[0];
       T dqy = qy - y[0];
       T dqz = qz - z[0];
@@ -426,10 +428,10 @@ public:
 
     const FT S_av = compute_average_area_around(v);
 
-    const FT initial_x = vp.x();
-    const FT initial_y = vp.y();
-    const FT initial_z = vp.z();
-    FT x = initial_x, y = initial_y, z = initial_z;
+    const double initial_x = CGAL::to_double(vp.x());
+    const double initial_y = CGAL::to_double(vp.y());
+    const double initial_z = CGAL::to_double(vp.z());
+    double x = initial_x, y = initial_y, z = initial_z;
 
     ceres::Problem problem;
 
@@ -466,7 +468,7 @@ public:
 //    std::cout << "y : " << initial_y << " -> " << y << "\n";
 //    std::cout << "z : " << initial_z << " -> " << z << "\n";
 
-    return Vector(x - initial_x, y - initial_y, z - initial_z);
+    return Vector(FT(x - initial_x), FT(y - initial_y), FT(z - initial_z));
 #else
     CGAL_USE(v);
     return CGAL::NULL_VECTOR;

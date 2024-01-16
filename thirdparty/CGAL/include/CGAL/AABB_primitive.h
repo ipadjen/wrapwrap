@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/AABB_tree/include/CGAL/AABB_primitive.h $
-// $Id: AABB_primitive.h 3b52e46 2022-05-24T10:02:15+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/AABB_tree/include/CGAL/AABB_primitive.h $
+// $Id: include/CGAL/AABB_primitive.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -53,8 +53,10 @@ public:
  * The two property maps which are template parameters of the class enable to get the datum and the reference point of
  * the primitive from the identifier. The last template parameter controls whether the primitive class holds a copy of the datum.
  *
- * \cgalModels `AABBPrimitive` if `ExternalPropertyMaps` is `CGAL::Tag_false`.
- * \cgalModels `AABBPrimitiveWithSharedData` if `ExternalPropertyMaps` is `CGAL::Tag_true`.
+ * \cgalModelsBareBegin
+ * \cgalModelsBare{`AABBPrimitive` if `ExternalPropertyMaps` is `CGAL::Tag_false`}
+ * \cgalModelsBare{`AABBPrimitiveWithSharedData` if `ExternalPropertyMaps` is `CGAL::Tag_true`}
+ * \cgalModelsBareEnd
  *
  * \tparam ObjectPropertyMap is a model of `ReadablePropertyMap` with `Id` as
  *           `key_type`. It must be a model of `CopyConstructible`, `DefaultConstructible`, and `CopyAssignable`.

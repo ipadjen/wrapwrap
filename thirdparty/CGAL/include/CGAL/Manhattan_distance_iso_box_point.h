@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Spatial_searching/include/CGAL/Manhattan_distance_iso_box_point.h $
-// $Id: Manhattan_distance_iso_box_point.h d6398b5 2022-02-02T09:27:30+00:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Spatial_searching/include/CGAL/Manhattan_distance_iso_box_point.h $
+// $Id: include/CGAL/Manhattan_distance_iso_box_point.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

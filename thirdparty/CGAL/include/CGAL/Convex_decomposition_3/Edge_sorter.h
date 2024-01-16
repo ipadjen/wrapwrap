@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Convex_decomposition_3/include/CGAL/Convex_decomposition_3/Edge_sorter.h $
-// $Id: Edge_sorter.h 1a08127 2020-11-18T07:43:12+00:00 Giles Bathgate
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Convex_decomposition_3/include/CGAL/Convex_decomposition_3/Edge_sorter.h $
+// $Id: include/CGAL/Convex_decomposition_3/Edge_sorter.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

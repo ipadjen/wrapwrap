@@ -3,17 +3,22 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Bounding_volumes/include/CGAL/Approximate_min_ellipsoid_d/Khachiyan_approximation_impl.h $
-// $Id: Khachiyan_approximation_impl.h 54529af 2022-06-01T10:53:10+01:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Bounding_volumes/include/CGAL/Approximate_min_ellipsoid_d/Khachiyan_approximation_impl.h $
+// $Id: include/CGAL/Approximate_min_ellipsoid_d/Khachiyan_approximation_impl.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Kaspar Fischer <fischerk@inf.ethz.ch>
 
+#ifndef CGAL_APPROX_MIN_ELLIPSOID_KHACHIYAN_APPROX_IMPL_H
+#define CGAL_APPROX_MIN_ELLIPSOID_KHACHIYAN_APPROX_IMPL_H
+
+#include <CGAL/license/Bounding_volumes.h>
+
 // Note: whenever a comment refers to "Khachiyan's paper" then the
 // paper "Rounding of polytopes in the real number model of
-// computation" is ment (Mathematics of Operations Research, Vol. 21,
-// No. 2, May 1996).  Nontheless, most comments refer to the
+// computation" is meant (Mathematics of Operations Research, Vol. 21,
+// No. 2, May 1996).  Nonetheless, most comments refer to the
 // accompanying documentation sheet (and not to the above paper), see
 // the file(s) in documentation/.
 
@@ -298,7 +303,7 @@ namespace CGAL {
     CGAL_APPEL_LOG("appel","  Largest excess after initialization is " <<
               to_double(ex[ex_max]) << "." << "\n");
 
-    // Accoding to Khachiyam (Lemma 3, eq. (2.20) in "Rounding of
+    // According to Khachiyam (Lemma 3, eq. (2.20) in "Rounding of
     // polytopes in the real number model of computation"), the
     // following eps makes (*) hold:
     eps = n-1;
@@ -343,7 +348,7 @@ namespace CGAL {
     max_error_m_all = (std::max)(max_error,max_error_m_all);
     max_error_m = max_error;
     #endif
-    CGAL_APPEL_LOG("appel","  The represenation error in m is: " <<
+    CGAL_APPEL_LOG("appel","  The representation error in m is: " <<
               to_double(max_error) << (max_error == FT(0)?
               " (zero)" : "") << "." << "\n");
 
@@ -663,3 +668,5 @@ namespace CGAL {
   }
 
 }
+
+#endif // CGAL_APPROX_MIN_ELLIPSOID_KHACHIYAN_APPROX_IMPL_H

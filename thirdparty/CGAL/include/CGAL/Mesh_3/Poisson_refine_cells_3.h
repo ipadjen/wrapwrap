@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Poisson_surface_reconstruction_3/include/CGAL/Mesh_3/Poisson_refine_cells_3.h $
-// $Id: Poisson_refine_cells_3.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Poisson_surface_reconstruction_3/include/CGAL/Mesh_3/Poisson_refine_cells_3.h $
+// $Id: include/CGAL/Mesh_3/Poisson_refine_cells_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -70,7 +70,7 @@ public:
     : Triangulation_mesher_level_traits_3<Tr>(t), criteria(crit) {}
 
 protected:
-  /* --- protected datas --- */
+  /* --- protected data --- */
   //  Tr& tr; /**< The triangulation itself. */
   Criteria criteria; /**< Meshing criteria for tetrahedra. */
 
@@ -187,7 +187,7 @@ public:
     : Base(t, crit), surface(s), oracle(o) {}
 
 public:
-  /* \name Overriden functions of this level */
+  /* \name Overridden functions of this level */
  Zone conflicts_zone_impl(const Point& p, Cell_handle c) const
   {
     Zone zone;
@@ -256,7 +256,7 @@ public:
   }
 
 protected:
-  /* --- protected datas --- */
+  /* --- protected data --- */
   Surface& surface;
   Oracle& oracle;
 

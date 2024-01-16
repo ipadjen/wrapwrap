@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/AABB_traversal_traits_with_transformation.h $
-// $Id: AABB_traversal_traits_with_transformation.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/AABB_traversal_traits_with_transformation.h $
+// $Id: include/CGAL/Polygon_mesh_processing/internal/AABB_traversal_traits_with_transformation.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -27,7 +27,6 @@
 #include <CGAL/Simple_cartesian.h>
 
 #include <CGAL/Aff_transformation_3.h>
-#include <boost/mpl/if.hpp>
 
 namespace CGAL {
 

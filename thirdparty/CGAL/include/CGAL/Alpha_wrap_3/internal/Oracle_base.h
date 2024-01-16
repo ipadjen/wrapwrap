@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Alpha_wrap_3/include/CGAL/Alpha_wrap_3/internal/Oracle_base.h $
-// $Id: Oracle_base.h 06053d2 2022-05-24T10:02:57+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Alpha_wrap_3/include/CGAL/Alpha_wrap_3/internal/Oracle_base.h $
+// $Id: include/CGAL/Alpha_wrap_3/internal/Oracle_base.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mael Rouxel-Labbé
@@ -144,6 +144,8 @@ public:
 
   bool empty() const { return m_tree_ptr->empty(); }
   bool do_call() const { return (!empty() || base().do_call()); }
+
+  void clear() { m_tree_ptr->clear() && base().clear(); }
 
 public:
   typename AABB_tree::Bounding_box bbox() const
@@ -313,11 +315,12 @@ public:
   bool empty() const { return m_tree_ptr->empty(); }
   bool do_call() const { return !empty(); }
 
+  void clear() { m_tree_ptr->clear(); }
+
 public:
   typename AABB_tree::Bounding_box bbox() const
   {
     CGAL_precondition(!empty());
-
     return tree().bbox();
   }
 

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/STL_Extension/include/CGAL/for_each.h $
-// $Id: for_each.h 6ae64e7 2020-03-27T16:41:53+01:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/STL_Extension/include/CGAL/for_each.h $
+// $Id: include/CGAL/for_each.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Simon Giraudot
@@ -102,8 +102,8 @@ void for_each (const Range& range,
                                         <typename Range::const_iterator>::reference)>& functor)
 {
 #ifndef CGAL_LINKED_WITH_TBB
-  CGAL_static_assertion_msg (!(boost::is_convertible<ConcurrencyTag, Parallel_tag>::value),
-                             "Parallel_tag is enabled but TBB is unavailable.");
+  static_assert (!std::is_convertible<ConcurrencyTag, Parallel_tag>::value,
+                 "Parallel_tag is enabled but TBB is unavailable.");
 #endif
 
   internal::for_each<const Range&>
@@ -118,8 +118,8 @@ void for_each (Range& range,
                                         <typename Range::iterator>::reference)>& functor)
 {
 #ifndef CGAL_LINKED_WITH_TBB
-  CGAL_static_assertion_msg (!(boost::is_convertible<ConcurrencyTag, Parallel_tag>::value),
-                             "Parallel_tag is enabled but TBB is unavailable.");
+  static_assert (!std::is_convertible<ConcurrencyTag, Parallel_tag>::value,
+                 "Parallel_tag is enabled but TBB is unavailable.");
 #endif
 
   internal::for_each<Range&>

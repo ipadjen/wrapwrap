@@ -3,13 +3,13 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Installation/include/CGAL/license/Polygon_mesh_processing/geometric_repair.h $
-// $Id: geometric_repair.h 5a992f6 2022-11-22T10:31:34+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Installation/include/CGAL/license/Polygon_mesh_processing/geometric_repair.h $
+// $Id: include/CGAL/license/Polygon_mesh_processing/geometric_repair.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Andreas Fabri
 //
-// Warning: this file is generated, see include/CGAL/licence/README.md
+// Warning: this file is generated, see include/CGAL/license/README.md
 
 #ifndef CGAL_LICENSE_POLYGON_MESH_PROCESSING_GEOMETRIC_REPAIR_H
 #define CGAL_LICENSE_POLYGON_MESH_PROCESSING_GEOMETRIC_REPAIR_H

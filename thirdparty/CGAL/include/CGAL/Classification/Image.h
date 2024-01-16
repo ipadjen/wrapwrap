@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Classification/include/CGAL/Classification/Image.h $
-// $Id: Image.h 43014ba 2020-04-02T10:28:50+02:00 Simon Giraudot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Classification/include/CGAL/Classification/Image.h $
+// $Id: include/CGAL/Classification/Image.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Simon Giraudot
@@ -16,6 +16,7 @@
 
 #include <map>
 #include <memory>
+#include <CGAL/assertions.h>
 
 #define CGAL_CLASSIFICATION_IMAGE_SIZE_LIMIT 100000000
 
@@ -38,12 +39,15 @@ class Image
   std::shared_ptr<Map> m_sparse;
   Type m_default;
 
-  // Forbid using copy constructor
-  Image (const Image&)
-  {
-  }
 
 public:
+  // Forbid using copy constructor
+  // Make it public for a strange VC++ std17 boost-1_82 error
+  // https://github.com/boostorg/core/issues/148
+  Image(const Image&)
+  {
+      CGAL_assertion(false);
+  }
 
   Image () : m_width(0), m_height(0), m_depth(0)
   {

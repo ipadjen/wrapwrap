@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/NewKernel_d/include/CGAL/NewKernel_d/Kernel_3_interface.h $
-// $Id: Kernel_3_interface.h cf54055 2021-02-14T01:16:52+01:00 Marc Glisse
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/NewKernel_d/include/CGAL/NewKernel_d/Kernel_3_interface.h $
+// $Id: include/CGAL/NewKernel_d/Kernel_3_interface.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Marc Glisse

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_geometry_traits/Bezier_point_2.h $
-// $Id: Bezier_point_2.h 8682f9b 2020-08-24T11:45:17+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_geometry_traits/Bezier_point_2.h $
+// $Id: include/CGAL/Arr_geometry_traits/Bezier_point_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -88,7 +88,7 @@ private:
     unsigned int        _xid;       /*!< Serial number of the originating
                                          x-monotone curve. */
     Bez_point_bound     _bpb;       /*!< Bounding information for the
-                                         point: bouding control polygon,
+                                         point: bounding control polygon,
                                          point type, etc. */
     Algebraic          *p_t;        /*!< The algebraic parameter for the
                                          point (if available). */
@@ -240,7 +240,7 @@ private:
      * Set the serial number of the originating x-monotone curve.
      * \param xid the new serial number of the originating x-monotone curve.
      * \pre The current xid() is 0.
-     * \pre xid is possitive.
+     * \pre xid is positive.
      */
     void set_xid (unsigned int xid)
     {
@@ -253,7 +253,7 @@ private:
   };
 
   /*! \struct Subcurve
-   * Auxilary structure for the vertical_position() function.
+   * Auxiliary structure for the vertical_position() function.
    */
   typedef typename Bounding_traits::Control_points   Control_points;
   typedef typename Bounding_traits::NT               BoundNT;
@@ -1421,7 +1421,7 @@ bool _Bezier_point_2_rep<RatKer, AlgKer, NtTrt, BndTrt>::_refine ()
     CGAL_assertion(_origs.size() == 2);
 
     // Obtain the other curve that originates the intersection point and use
-    // it to refine its reprsentation.
+    // it to refine its representation.
     Orig_iter    org_it = _origs.begin();
     ++org_it;
     Originator&  orig2 = *org_it;

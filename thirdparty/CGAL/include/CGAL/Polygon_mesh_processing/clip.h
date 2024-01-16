@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/clip.h $
-// $Id: clip.h 7d5e498 2022-09-13T12:32:17+02:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/clip.h $
+// $Id: include/CGAL/Polygon_mesh_processing/clip.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -444,8 +444,8 @@ generic_clip_impl(
   typedef typename GetVertexPointMap<TriangleMesh,
                                      NamedParameters2>::type Vpm2;
 
-  CGAL_static_assertion((std::is_same<typename boost::property_traits<Vpm>::value_type,
-                                      typename boost::property_traits<Vpm>::value_type>::value));
+  static_assert(std::is_same<typename boost::property_traits<Vpm>::value_type,
+                             typename boost::property_traits<Vpm>::value_type>::value);
 
   Vpm vpm1 = choose_parameter(get_parameter(np1, internal_np::vertex_point),
                               get_property_map(boost::vertex_point, tm1));
@@ -721,7 +721,7 @@ bool clip(TriangleMesh& tm,
   using params::get_parameter;
   using params::choose_parameter;
 
-  if(boost::begin(faces(tm))==boost::end(faces(tm))) return true;
+  if(std::begin(faces(tm))==std::end(faces(tm))) return true;
 
   CGAL::Bbox_3 bbox = ::CGAL::Polygon_mesh_processing::bbox(tm);
 
@@ -831,7 +831,7 @@ bool clip(TriangleMesh& tm,
   using params::get_parameter;
   using params::choose_parameter;
 
-  if(boost::begin(faces(tm))==boost::end(faces(tm))) return true;
+  if(std::begin(faces(tm))==std::end(faces(tm))) return true;
   TriangleMesh clipper;
 
   make_hexahedron(iso_cuboid[0], iso_cuboid[1], iso_cuboid[2], iso_cuboid[3],
@@ -872,7 +872,8 @@ bool clip(TriangleMesh& tm,
   *   \cgalParamNEnd
   *
   *   \cgalParamNBegin{visitor}
-  *     \cgalParamDescription{a visitor used to track the creation of new faces}
+  *     \cgalParamDescription{(`np_tm` only) a visitor used to track a series of events such as the creation
+  *                           of new faces, edges... in both `tm` and `splitter`.}
   *     \cgalParamType{a class model of `PMPCorefinementVisitor`}
   *     \cgalParamDefault{`Corefinement::Default_visitor<TriangleMesh>`}
   *   \cgalParamNEnd

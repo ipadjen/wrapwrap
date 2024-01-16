@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Triangulation_3/include/CGAL/Regular_triangulation_cell_base_with_weighted_circumcenter_3.h $
-// $Id: Regular_triangulation_cell_base_with_weighted_circumcenter_3.h dbbee66 2020-04-02T18:31:00+05:30 rathod-sahaab
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Triangulation_3/include/CGAL/Regular_triangulation_cell_base_with_weighted_circumcenter_3.h $
+// $Id: include/CGAL/Regular_triangulation_cell_base_with_weighted_circumcenter_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Monique Teillaud <Monique.Teillaud@sophia.inria.fr>
@@ -19,10 +19,9 @@
 #include <CGAL/license/Triangulation_3.h>
 
 #include <CGAL/basic.h>
-#include <CGAL/triangulation_assertions.h>
+#include <CGAL/assertions.h>
 #include <CGAL/Regular_triangulation_cell_base_3.h>
 
-#include <boost/mpl/if.hpp>
 #include <boost/mpl/identity.hpp>
 
 namespace CGAL {

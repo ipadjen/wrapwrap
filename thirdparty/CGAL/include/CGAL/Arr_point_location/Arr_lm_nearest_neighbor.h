@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_point_location/Arr_lm_nearest_neighbor.h $
-// $Id: Arr_lm_nearest_neighbor.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_point_location/Arr_lm_nearest_neighbor.h $
+// $Id: include/CGAL/Arr_point_location/Arr_lm_nearest_neighbor.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Idit Haran   <haranidi@post.tau.ac.il>
@@ -26,8 +26,8 @@
 #include <CGAL/Arr_point_location_result.h>
 #include <CGAL/Arrangement_2/Arr_traits_adaptor_2.h>
 
-#include <boost/variant.hpp>
-#include <boost/optional.hpp>
+#include <variant>
+#include <optional>
 
 namespace CGAL {
 

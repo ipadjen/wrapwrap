@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_Bezier_curve_traits_2.h $
-// $Id: Arr_Bezier_curve_traits_2.h 40152a2 2020-06-13T16:43:09+03:00 Efi Fogel
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_Bezier_curve_traits_2.h $
+// $Id: include/CGAL/Arr_Bezier_curve_traits_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s): Ron Wein     <wein@post.tau.ac.il>
@@ -138,7 +138,7 @@ public:
     m_owner (false)
   {}
 
-  /*! Assignmnet operator. */
+  /*! Assignment operator. */
   Self& operator= (const Self& tr)
   {
     if (this == &tr)
@@ -499,7 +499,7 @@ public:
     template <typename OutputIterator>
     OutputIterator operator() (const Curve_2& B, OutputIterator oi) const
     {
-      typedef boost::variant<Point_2, X_monotone_curve_2>
+      typedef std::variant<Point_2, X_monotone_curve_2>
                                                 Make_x_monotone_result;
       typedef typename Bounding_traits::Vertical_tangency_point
                                                 Vertical_tangency_point;
@@ -809,7 +809,7 @@ public:
                              m_traits.compare_y_at_x_2_object());
       CGAL_precondition_code(Equal_2 equal_2 = m_traits.equal_2_object());
       Compare_x_2 compare_x_2 = m_traits.compare_x_2_object();
-      // Check whether source and taget are two distinct points and they lie
+      // Check whether source and taeget are two distinct points and they lie
       // on the line.
       CGAL_precondition(compare_y_at_x_2(src, xcv) == EQUAL);
       CGAL_precondition(compare_y_at_x_2(tgt, xcv) == EQUAL);

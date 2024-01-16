@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/detect_features.h $
-// $Id: detect_features.h bb0b9a8 2022-03-07T15:32:37+01:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/detect_features.h $
+// $Id: include/CGAL/Polygon_mesh_processing/detect_features.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -18,7 +18,7 @@
 
 #include <CGAL/Kernel/global_functions_3.h>
 #include <CGAL/Polygon_mesh_processing/compute_normal.h>
-#include <CGAL/Polygon_mesh_processing/internal/named_params_helper.h>
+#include <CGAL/boost/graph/named_params_helper.h>
 #include <CGAL/boost/graph/properties.h>
 #include <CGAL/Polygon_mesh_processing/connected_components.h>
 
@@ -56,6 +56,8 @@ is_sharp(const typename boost::graph_traits<PolygonMesh>::halfedge_descriptor h,
   typedef typename GT::Vector_3                                                Vector_3;
 
   typedef typename boost::graph_traits<PolygonMesh>::halfedge_descriptor       halfedge_descriptor;
+
+  CGAL_precondition(is_valid_halfedge_descriptor(h, pmesh));
 
   if(is_border_edge(h, pmesh))
     return false;

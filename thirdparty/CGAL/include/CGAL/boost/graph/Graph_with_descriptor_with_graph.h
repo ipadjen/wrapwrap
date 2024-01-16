@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/BGL/include/CGAL/boost/graph/Graph_with_descriptor_with_graph.h $
-// $Id: Graph_with_descriptor_with_graph.h 590ddf8 2021-10-08T15:38:47+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/BGL/include/CGAL/boost/graph/Graph_with_descriptor_with_graph.h $
+// $Id: include/CGAL/boost/graph/Graph_with_descriptor_with_graph.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -115,9 +115,7 @@ All internal properties of the underlying graph are forwarded.
 Property maps can be wrapped with `Graph_with_descriptor_with_graph_property_map`.
 \tparam Graph must be a model of a `FaceListGraph` and `HalfedgeListGraph`.
 
-\cgalModels `FaceListGraph`
-\cgalModels `HalfedgeListGraph`
-\cgalModels `MutableFaceGraph` if `Graph` is a model of `MutableFaceGraph`
+\cgalModels{FaceListGraph,HalfedgeListGraph,MutableFaceGraph if `Graph` is a model of `MutableFaceGraph`}
 */
 
 template<typename Graph_>
@@ -689,7 +687,7 @@ is_valid(const Graph_with_descriptor_with_graph<Graph> & w, bool verbose = false
   \ingroup PkgBGLAdaptors
     `Graph_with_descriptor_with_graph_property_map` enables to forward properties from a
      `Graph` to a `Graph_with_descriptor_with_graph`.
-    \cgalModels `Graph_with_descriptor_with_graph_property_map` the same property map concept as `PM`
+    \cgalModels{Graph_with_descriptor_with_graph_property_map the same property map concept as `PM`}
     @tparam Graph a model of the `FaceListGraph` and `HalfedgeListGraph` concepts.
     @tparam PM a property_map of a `Graph`.
 

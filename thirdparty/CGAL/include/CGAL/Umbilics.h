@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Ridges_3/include/CGAL/Umbilics.h $
-// $Id: Umbilics.h 1faa0e2 2021-04-28T10:55:26+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Ridges_3/include/CGAL/Umbilics.h $
+// $Id: include/CGAL/Umbilics.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Marc Pouget and Frédéric Cazals
@@ -31,7 +31,7 @@ enum Umbilic_type { NON_GENERIC_UMBILIC = 0, ELLIPTIC_UMBILIC, HYPERBOLIC_UMBILI
 
 //-------------------------------------------------------------------
 //Umbilic : stores umbilic data, its location given by a vertex, its
-//type and a circle of edges bording a disk containing the vertex
+//type and a circle of edges bordering a disk containing the vertex
 //------------------------------------------------------------------
 template < class TriangleMesh >
 class Umbilic
@@ -110,10 +110,10 @@ class Umbilic_approximation
   typedef typename boost::graph_traits<TriangleMesh>::vertex_iterator  Vertex_const_iterator;
 
   //requirements for the templates TriangleMesh and VertexFTMap or VertexVectorMap
-  CGAL_static_assertion((boost::is_same<vertex_descriptor, typename VertexFTMap::key_type>::value));
-  CGAL_static_assertion((boost::is_same<vertex_descriptor, typename VertexVectorMap::key_type>::value));
-  CGAL_static_assertion((boost::is_same<FT, typename VertexFTMap::value_type>::value));
-  CGAL_static_assertion((boost::is_same<Vector_3, typename VertexVectorMap::value_type>::value));
+  static_assert(std::is_same<vertex_descriptor, typename VertexFTMap::key_type>::value);
+  static_assert(std::is_same<vertex_descriptor, typename VertexVectorMap::key_type>::value);
+  static_assert(std::is_same<FT, typename VertexFTMap::value_type>::value);
+  static_assert(std::is_same<Vector_3, typename VertexVectorMap::value_type>::value);
 
   typedef CGAL::Umbilic<TriangleMesh> Umbilic;
 
@@ -192,7 +192,7 @@ compute(OutputIterator umbilics_it, FT size)
     vces.clear();
     contour.clear();
     is_umbilic = true;
-    //the size of neighbourhood is (size * OneRingSize)
+    //the size of neighborhood is (size * OneRingSize)
     poly_neighbors->compute_neighbors(vh, vces, contour, size);
 
 

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Triangulation_2/include/CGAL/Triangulation_face_base_2.h $
-// $Id: Triangulation_face_base_2.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Triangulation_2/include/CGAL/Triangulation_face_base_2.h $
+// $Id: include/CGAL/Triangulation_face_base_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -17,7 +17,7 @@
 
 
 #include <CGAL/config.h>
-#include <CGAL/triangulation_assertions.h>
+#include <CGAL/assertions.h>
 #include <CGAL/Triangulation_ds_face_base_2.h>
 
 namespace CGAL {

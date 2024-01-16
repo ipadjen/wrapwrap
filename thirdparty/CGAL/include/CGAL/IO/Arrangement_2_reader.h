@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/IO/Arrangement_2_reader.h $
-// $Id: Arrangement_2_reader.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/IO/Arrangement_2_reader.h $
+// $Id: include/CGAL/IO/Arrangement_2_reader.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -90,7 +90,7 @@ namespace CGAL {
     template <class Formatter>
     void operator()(Formatter& formatter)
     {
-      // Clear the exisiting arrangement so it contains no DCEL features.
+      // Clear the existing arrangement so it contains no DCEL features.
       m_arr_access.clear_all();
 
       // Read the arrangement dimensions.
@@ -197,7 +197,7 @@ namespace CGAL {
         // Read the x-monotone curve associated with the edge.
         formatter.read_x_monotone_curve(m_curve);
 
-        // Allocate a pair of new DCEL halfegdes and associate them with the
+        // Allocate a pair of new DCEL halfedges and associate them with the
         // x-monotone curve we read.
         new_he = m_arr_access.new_edge(&m_curve);
       }

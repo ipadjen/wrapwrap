@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Optimal_transportation_reconstruction_2/include/CGAL/OTR_2/Reconstruction_edge_2.h $
-// $Id: Reconstruction_edge_2.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Optimal_transportation_reconstruction_2/include/CGAL/OTR_2/Reconstruction_edge_2.h $
+// $Id: include/CGAL/OTR_2/Reconstruction_edge_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Fernando de Goes, Pierre Alliez, Ivo Vigan, Clément Jamin

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Snap_rounding_2/include/CGAL/Snap_rounding_kd_2.h $
-// $Id: Snap_rounding_kd_2.h 3c7eb2c 2020-01-07T15:31:07+01:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Snap_rounding_2/include/CGAL/Snap_rounding_kd_2.h $
+// $Id: include/CGAL/Snap_rounding_kd_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -19,15 +19,12 @@
 
 #include <list>
 #include <CGAL/basic.h>
-#include <CGAL/predicates_on_points_2.h>
 #include <iostream>
 #include <CGAL/predicates_on_points_2.h>
 #include <CGAL/utility.h>
 #include <CGAL/assertions.h>
 #include <CGAL/Dimension.h>
 #include <CGAL/number_type_config.h>
-
-#include <boost/type_traits/is_pointer.hpp>
 
 #include <CGAL/Kd_tree.h>
 #include <CGAL/Search_traits_2.h>
@@ -108,7 +105,7 @@ public:
 
 template<class Traits_, class SAVED_OBJECT>
 class Multiple_kd_tree {
-  CGAL_static_assertion_msg((boost::is_pointer<SAVED_OBJECT>::value), "SAVED_OBJECT is not a pointer.");
+  static_assert(std::is_pointer<SAVED_OBJECT>::value, "SAVED_OBJECT is not a pointer.");
 private:
   typedef Traits_                                       Traits;
   typedef typename Traits::FT                           NT;
@@ -411,7 +408,7 @@ public:
     int * kd_counter = new int[number_of_trees];
     std::size_t number_of_segments = seg_list.size();
 
-    // auxilary directions
+    // auxiliary directions
     Direction_list directions;
     double buffer_angle;
     Line_2 li;

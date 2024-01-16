@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_spherical_gaussian_map_3/Arr_transform_on_sphere.h $
-// $Id: Arr_transform_on_sphere.h 03a2d28 2020-06-14T10:47:45+03:00 Efi Fogel
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_spherical_gaussian_map_3/Arr_transform_on_sphere.h $
+// $Id: include/CGAL/Arr_spherical_gaussian_map_3/Arr_transform_on_sphere.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Naama mayer         <naamamay@post.tau.ac.il>
@@ -46,7 +46,7 @@ void Arr_transform_on_sphere(Arrangement & arr,
   typedef typename Arrangement::Halfedge_around_vertex_circulator
     Halfedge_around_vertex_circulator;
 
-  typedef boost::variant<Point_2, X_monotone_curve_2>     Make_x_monotone_result;
+  typedef std::variant<Point_2, X_monotone_curve_2>     Make_x_monotone_result;
 
   const Geometry_traits_2 * geom_traits = arr.geometry_traits();
   Topology_traits * topol_traits = arr.topology_traits();
@@ -103,7 +103,7 @@ void Arr_transform_on_sphere(Arrangement & arr,
         topol_traits->erase_redundant_vertex(&(*v_temp));
 
         // Merge the edges into a single one, and delete the vertex from the
-        // DCEL. (By default, the merge_edge() funtion deletes the vertex.)
+        // DCEL. (By default, the merge_edge() function deletes the vertex.)
         arr.merge_edge(havc, havc_next->twin() , merged_cv);
       }
     }
@@ -156,10 +156,10 @@ void Arr_transform_on_sphere(Arrangement & arr,
       auto it = objects.begin();
 
       // The curve that its left vertex lies on the identification curve
-      const auto* sub_cv1 = boost::get<X_monotone_curve_2>(&(*it));
+      const auto* sub_cv1 = std::get<X_monotone_curve_2>(&(*it));
       ++it;
-      //The curve that its rigth vertex lies on the identification curve
-      const auto* sub_cv2 = boost::get<X_monotone_curve_2>(&(*it));
+      //The curve that its right vertex lies on the identification curve
+      const auto* sub_cv2 = std::get<X_monotone_curve_2>(&(*it));
 
       bool eq1 = (*sub_cv1).source() == hei1->source()->point();
       bool eq2 = (*sub_cv2).target() == hei1->target()->point();

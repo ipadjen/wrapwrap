@@ -2,9 +2,9 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/GraphicsView/include/CGAL/Qt/CGAL_Qt_config.h $
-// $Id: CGAL_Qt_config.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
-// SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/GraphicsView/include/CGAL/Qt/CGAL_Qt_config.h $
+// $Id: include/CGAL/Qt/CGAL_Qt_config.h a484bfa $
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Laurent Rineau
@@ -12,10 +12,13 @@
 #ifndef CGAL_QT_CONFIG_H
 #define CGAL_QT_CONFIG_H
 
+#include <CGAL/license/GraphicsView.h>
+
+
 #include <QtCore/qglobal.h>
 
-#if defined(CGAL_Qt5_DLL)
-#  if defined(CGAL_Qt5_EXPORTS)
+#if defined(CGAL_Qt6_DLL)
+#  if defined(CGAL_Qt6_EXPORTS)
 #    define CGAL_QT_EXPORT Q_DECL_EXPORT
 #  else
 #    define CGAL_QT_EXPORT Q_DECL_IMPORT

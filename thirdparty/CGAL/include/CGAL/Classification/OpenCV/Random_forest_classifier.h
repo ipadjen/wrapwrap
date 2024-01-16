@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Classification/include/CGAL/Classification/OpenCV/Random_forest_classifier.h $
-// $Id: Random_forest_classifier.h 0e934b1 2020-08-04T13:16:13+02:00 Simon Giraudot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Classification/include/CGAL/Classification/OpenCV/Random_forest_classifier.h $
+// $Id: include/CGAL/Classification/OpenCV/Random_forest_classifier.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Simon Giraudot
@@ -47,7 +47,7 @@ namespace OpenCV {
 
   \note This class requires the \ref thirdpartyOpenCV library.
 
-  \cgalModels `CGAL::Classification::Classifier`
+  \cgalModels{CGAL::Classification::Classifier}
 */
 class Random_forest_classifier
 {

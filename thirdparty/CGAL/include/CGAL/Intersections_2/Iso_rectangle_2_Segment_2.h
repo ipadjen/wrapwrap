@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_2/include/CGAL/Intersections_2/Iso_rectangle_2_Segment_2.h $
-// $Id: Iso_rectangle_2_Segment_2.h fb37f69 2021-09-23T13:15:28+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_2/include/CGAL/Intersections_2/Iso_rectangle_2_Segment_2.h $
+// $Id: include/CGAL/Intersections_2/Iso_rectangle_2_Segment_2.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -53,21 +53,6 @@ protected:
     mutable typename K::FT              _min,
                                _max;
 };
-
-template <class K>
-inline bool do_intersect(
-    const typename K::Segment_2 &p1,
-    const typename K::Iso_rectangle_2 &p2,
-    const K&)
-{
-    typedef Segment_2_Iso_rectangle_2_pair<K> pair_t;
-    pair_t pair(&p1, &p2);
-    return pair.intersection_type() != pair_t::NO_INTERSECTION;
-}
-
-
-
-
 
 template <class K>
 typename CGAL::Intersection_traits
@@ -208,17 +193,26 @@ intersection_point() const
     return translated_point(_ref_point, construct_scaled_vector(_dir,_min));
 }
 
-
+template <class K>
+inline
+typename K::Boolean
+do_intersect(const typename K::Segment_2& s,
+             const typename K::Iso_rectangle_2& ir,
+             const K&)
+{
+  typedef Segment_2_Iso_rectangle_2_pair<K> pair_t;
+  pair_t pair(&s, &ir);
+  return pair.intersection_type() != pair_t::NO_INTERSECTION;
+}
 
 template <class K>
-inline bool do_intersect(
-    const typename K::Iso_rectangle_2 &p1,
-    const typename K::Segment_2 &p2,
-    const K&)
+inline
+typename K::Boolean
+do_intersect(const typename K::Iso_rectangle_2& ir,
+             const typename K::Segment_2& s,
+             const K& k)
 {
-    typedef Segment_2_Iso_rectangle_2_pair<K> pair_t;
-    pair_t pair(&p2, &p1);
-    return pair.intersection_type() != pair_t::NO_INTERSECTION;
+  return do_intersect(s, ir, k);
 }
 
 } // namespace internal
@@ -227,7 +221,7 @@ inline bool do_intersect(
 CGAL_INTERSECTION_FUNCTION(Segment_2, Iso_rectangle_2, 2)
 CGAL_DO_INTERSECT_FUNCTION(Segment_2, Iso_rectangle_2, 2)
 
-} //namespace CGAL
+} // namespace CGAL
 
 #include <CGAL/enable_warnings.h>
 

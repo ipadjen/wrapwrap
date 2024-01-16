@@ -3,11 +3,13 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Periodic_2_triangulation_2/include/CGAL/Periodic_2_triangulation_dummy_12.h $
-// $Id: Periodic_2_triangulation_dummy_12.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Periodic_2_triangulation_2/include/CGAL/Periodic_2_triangulation_dummy_12.h $
+// $Id: include/CGAL/Periodic_2_triangulation_dummy_12.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Nico Kruithof <Nico@nghk.nl>
+
+#include <CGAL/license/Periodic_2_triangulation_2.h>
 
 #ifdef CGAL_INCLUDE_FROM_PERIODIC_2_TRIANGULATION_2_H
 

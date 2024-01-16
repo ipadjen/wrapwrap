@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_processing_3/include/CGAL/Point_with_normal_3.h $
-// $Id: Point_with_normal_3.h 590ddf8 2021-10-08T15:38:47+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Point_set_processing_3/include/CGAL/Point_with_normal_3.h $
+// $Id: include/CGAL/Point_with_normal_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -120,7 +120,7 @@ private:
 /// Property map that accesses the normal vector from a Point_with_normal_3 object
 ///
 /// @heading Is Model for the Concepts:
-/// \cgalModels `LvaluePropertyMap`
+/// \cgalModels{LvaluePropertyMap}
 ///
 /// @heading Parameters:
 /// @param Gt Geometric traits class.

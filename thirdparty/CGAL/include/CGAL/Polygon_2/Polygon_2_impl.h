@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon/include/CGAL/Polygon_2/Polygon_2_impl.h $
-// $Id: Polygon_2_impl.h 4e519a3 2021-05-05T13:15:37+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon/include/CGAL/Polygon_2/Polygon_2_impl.h $
+// $Id: include/CGAL/Polygon_2/Polygon_2_impl.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -41,7 +41,6 @@ bool operator==( const Polygon_2<Traits_P,Container1_P> &x,
     return true;
   typedef typename Traits_P::Equal_2 Equal_2;
   typedef typename Traits_P::Point_2 Point_2;
-//  CGAL_polygon_precondition( (x.size() != 0) || (y.size() != 0));
   if ((x.size() == 0) && (y.size() == 0)) return true;
 
   if (x.size() != y.size()) return false;

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Triangulation/include/CGAL/Triangulation_data_structure.h $
-// $Id: Triangulation_data_structure.h 29d543c 2022-10-04T09:16:32+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Triangulation/include/CGAL/Triangulation_data_structure.h $
+// $Id: include/CGAL/Triangulation_data_structure.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)    : Samuel Hornus

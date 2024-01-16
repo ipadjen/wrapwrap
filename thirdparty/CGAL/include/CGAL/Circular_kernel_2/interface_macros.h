@@ -3,11 +3,13 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Circular_kernel_2/include/CGAL/Circular_kernel_2/interface_macros.h $
-// $Id: interface_macros.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Circular_kernel_2/include/CGAL/Circular_kernel_2/interface_macros.h $
+// $Id: include/CGAL/Circular_kernel_2/interface_macros.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Monique Teillaud, Sylvain Pion, Pedro Machado
+
+#include <CGAL/license/Circular_kernel_2.h>
 
 // Partially supported by the IST Programme of the EU as a Shared-cost
 // RTD (FET Open) Project under Contract No  IST-2000-26473
@@ -21,7 +23,7 @@
 // It's aimed at being included from within a kernel traits class, this
 // way we share more code.
 
-// It is the responsability of the including file to correctly set the 2
+// It is the responsibility of the including file to correctly set the 2
 // macros CGAL_Circular_Kernel_pred and CGAL_Circular_Kernel_cons.
 // And they are #undefed at the end of this file.
 

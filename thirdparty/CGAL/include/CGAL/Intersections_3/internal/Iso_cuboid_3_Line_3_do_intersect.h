@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_3/include/CGAL/Intersections_3/internal/Iso_cuboid_3_Line_3_do_intersect.h $
-// $Id: Iso_cuboid_3_Line_3_do_intersect.h e70a62a 2021-06-25T20:16:29+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_3/include/CGAL/Intersections_3/internal/Iso_cuboid_3_Line_3_do_intersect.h $
+// $Id: include/CGAL/Intersections_3/internal/Iso_cuboid_3_Line_3_do_intersect.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -23,7 +23,8 @@ namespace Intersections {
 namespace internal {
 
 template <class K>
-inline bool
+inline
+typename K::Boolean
 do_intersect(const typename K::Line_3& line,
              const typename K::Iso_cuboid_3& ic,
              const K&)
@@ -34,14 +35,15 @@ do_intersect(const typename K::Line_3& line,
   const Point_3& point = line.point();
   const Vector_3& v = line.to_vector();
 
-  return bbox_line_do_intersect_aux(point.x(), point.y(), point.z(),
-                                    v.x(), v.y(), v.z(),
-                                    (ic.min)().x(), (ic.min)().y(), (ic.min)().z(),
-                                    (ic.max)().x(), (ic.max)().y(), (ic.max)().z());
+  return bbox_line_do_intersect_aux<K>(point.x(), point.y(), point.z(),
+                                       v.x(), v.y(), v.z(),
+                                       (ic.min)().x(), (ic.min)().y(), (ic.min)().z(),
+                                       (ic.max)().x(), (ic.max)().y(), (ic.max)().z());
 }
 
 template <class K>
-inline bool
+inline
+typename K::Boolean
 do_intersect(const typename K::Iso_cuboid_3& ic,
              const typename K::Line_3& l,
              const K& k)

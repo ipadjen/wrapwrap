@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Shape_detection/include/CGAL/Shape_detection/Region_growing.h $
-// $Id: Region_growing.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Shape_detection/include/CGAL/Shape_detection/Region_growing.h $
+// $Id: include/CGAL/Shape_detection/Region_growing.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -14,10 +14,19 @@
 #ifndef CGAL_SHAPE_DETECTION_REGION_GROWING_HEADERS_H
 #define CGAL_SHAPE_DETECTION_REGION_GROWING_HEADERS_H
 
+/// \cond SKIP_IN_MANUAL
 #include <CGAL/license/Shape_detection.h>
+/// \endcond
+
+/**
+* \ingroup PkgShapeDetectionRef
+* \file CGAL/Shape_detection/Region_growing.h
+* A convenience header that includes all classes related to the region growing algorithm.
+*/
 
 #include <CGAL/Shape_detection/Region_growing/Region_growing.h>
-#include <CGAL/Shape_detection/Region_growing/Region_growing_on_point_set.h>
-#include <CGAL/Shape_detection/Region_growing/Region_growing_on_polygon_mesh.h>
+#include <CGAL/Shape_detection/Region_growing/Point_set.h>
+#include <CGAL/Shape_detection/Region_growing/Segment_set.h>
+#include <CGAL/Shape_detection/Region_growing/Polygon_mesh.h>
 
 #endif // CGAL_SHAPE_DETECTION_REGION_GROWING_HEADERS_H

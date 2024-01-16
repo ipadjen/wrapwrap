@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_3/include/CGAL/normal_vector_newell_3.h $
-// $Id: normal_vector_newell_3.h 5345986 2021-02-10T11:13:14+00:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Nef_3/include/CGAL/normal_vector_newell_3.h $
+// $Id: include/CGAL/normal_vector_newell_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

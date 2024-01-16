@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Number_types/include/CGAL/GMP/Gmpfi_type.h $
-// $Id: Gmpfi_type.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Number_types/include/CGAL/GMP/Gmpfi_type.h $
+// $Id: include/CGAL/GMP/Gmpfi_type.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author: Luis Peñaranda <luis.penaranda@gmx.com>
@@ -303,7 +303,7 @@ CGAL_GMPFI_CONSTRUCTOR_FROM_SCALAR(Gmpz);
         Gmpfi::Precision_type get_precision()const;
         Gmpfi round(Gmpfi::Precision_type)const;
 
-        // arithmetics
+        // arithmetic
 
         Gmpfi operator+()const;
         Gmpfi operator-()const;
@@ -427,7 +427,7 @@ Gmpfi Gmpfi::round(Gmpfi::Precision_type p)const{
         return Gmpfi(*this,p);
 }
 
-// arithmetics
+// arithmetic
 
 inline
 Gmpfi Gmpfi::operator+()const{

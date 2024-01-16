@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Periodic_3_triangulation_3/include/CGAL/Periodic_3_triangulation_hierarchy_3.h $
-// $Id: Periodic_3_triangulation_hierarchy_3.h a049e63 2020-09-25T16:55:18+02:00 Jane Tournois
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Periodic_3_triangulation_3/include/CGAL/Periodic_3_triangulation_hierarchy_3.h $
+// $Id: include/CGAL/Periodic_3_triangulation_hierarchy_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Olivier Devillers <Olivier.Devillers@sophia.inria.fr>
@@ -396,7 +396,7 @@ void
 Periodic_3_triangulation_hierarchy_3<PTr>::
 remove(Vertex_handle v)
 {
-  CGAL_triangulation_precondition(v != Vertex_handle());
+  CGAL_precondition(v != Vertex_handle());
   CGAL_expensive_precondition(is_vertex(v));
   for (int l = 0; l < maxlevel; ++l) {
     Vertex_handle u = v->up();
@@ -412,12 +412,12 @@ typename Periodic_3_triangulation_hierarchy_3<PTr>::Vertex_handle
 Periodic_3_triangulation_hierarchy_3<PTr>::
 move_point(Vertex_handle v, const Point & p)
 {
-  CGAL_triangulation_precondition(v != Vertex_handle());
+  CGAL_precondition(v != Vertex_handle());
   Vertex_handle old, ret;
 
   for (int l = 0; l < maxlevel; ++l) {
     Vertex_handle u = v->up();
-    CGAL_triangulation_assertion(hierarchy[l]->is_valid());
+    CGAL_assertion(hierarchy[l]->is_valid());
     Vertex_handle w = hierarchy[l]->move_point(v, p);
     if (l == 0) {
       ret = w;

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polynomial/include/CGAL/Polynomial/polynomial_gcd.h $
-// $Id: polynomial_gcd.h 26355e2 2020-06-25T12:31:21+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polynomial/include/CGAL/Polynomial/polynomial_gcd.h $
+// $Id: include/CGAL/Polynomial/polynomial_gcd.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

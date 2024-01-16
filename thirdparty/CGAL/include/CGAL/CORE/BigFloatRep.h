@@ -14,11 +14,11 @@
  *       Chen Li <chenli@cs.nyu.edu>
  *       Zilin Du <zilin@cs.nyu.edu>
  *
- * WWW URL: http://cs.nyu.edu/exact/
+ * WWW URL: https://cs.nyu.edu/exact/
  * Email: exact@cs.nyu.edu
  *
- * $URL: https://github.com/CGAL/cgal/blob/v5.5.2/CGAL_Core/include/CGAL/CORE/BigFloatRep.h $
- * $Id: BigFloatRep.h 6680a6e 2021-11-09T16:20:48+01:00 Sébastien Loriot
+ * $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/CGAL_Core/include/CGAL/CORE/BigFloatRep.h $
+ * $Id: include/CGAL/CORE/BigFloatRep.h a484bfa $
  * SPDX-License-Identifier: LGPL-3.0-or-later
  ***************************************************************************/
 
@@ -91,7 +91,7 @@ public:
   void normal();
   void bigNormal(BigInt&);
 
-  //  arithmetics
+  //  arithmetic
 public:
   void add(const BigFloatRep&, const BigFloatRep&);
   void sub(const BigFloatRep&, const BigFloatRep&);
@@ -314,7 +314,7 @@ inline void BigFloatRep::eliminateTrailingZeroes() {
   }
 }
 
-//  bultin functions
+//  builtin functions
 inline extLong BigFloatRep::lMSB() const {
   if (!isZeroIn())
     return extLong(floorLg(abs(m) - err)) + bits(exp);

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/GraphicsView/include/CGAL/Qt/GraphicsViewNavigation_impl.h $
-// $Id: GraphicsViewNavigation_impl.h a9795c3 2020-06-11T13:11:36+02:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/GraphicsView/include/CGAL/Qt/GraphicsViewNavigation_impl.h $
+// $Id: include/CGAL/Qt/GraphicsViewNavigation_impl.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

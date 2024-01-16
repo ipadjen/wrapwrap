@@ -3,13 +3,13 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Installation/include/CGAL/license/Orthtree.h $
-// $Id: Orthtree.h 8bc8f70 2021-06-17T11:44:41+02:00 Dmitry Anisimov
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Installation/include/CGAL/license/Orthtree.h $
+// $Id: include/CGAL/license/Orthtree.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Andreas Fabri
 //
-// Warning: this file is generated, see include/CGAL/licence/README.md
+// Warning: this file is generated, see include/CGAL/license/README.md
 
 #ifndef CGAL_LICENSE_ORTHTREE_H
 #define CGAL_LICENSE_ORTHTREE_H

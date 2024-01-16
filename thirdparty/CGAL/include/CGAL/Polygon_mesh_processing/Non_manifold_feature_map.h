@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/Non_manifold_feature_map.h $
-// $Id: Non_manifold_feature_map.h 64ead81 2021-10-08T15:28:13+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/Non_manifold_feature_map.h $
+// $Id: include/CGAL/Polygon_mesh_processing/Non_manifold_feature_map.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Sebastien Loriot
@@ -28,8 +28,8 @@ struct Non_manifold_feature_map
   typedef typename Graph_traits::halfedge_descriptor halfedge_descriptor;
   typedef dynamic_edge_property_t<std::size_t> Edge_to_id_tag;
   typedef dynamic_vertex_property_t<std::size_t> Vertex_to_id_tag;
-  typedef typename boost::property_map<PolygonMesh, Edge_to_id_tag>::type Edge_to_nm_id;
-  typedef typename boost::property_map<PolygonMesh, Vertex_to_id_tag>::type Vertex_to_nm_id;
+  typedef typename boost::property_map<PolygonMesh, Edge_to_id_tag>::const_type Edge_to_nm_id;
+  typedef typename boost::property_map<PolygonMesh, Vertex_to_id_tag>::const_type Vertex_to_nm_id;
   Edge_to_nm_id e_nm_id;
   Vertex_to_nm_id v_nm_id;
   std::vector< std::vector<edge_descriptor> > non_manifold_edges;
@@ -39,7 +39,7 @@ struct Non_manifold_feature_map
   {}
 
   template <class Vpm>
-  Non_manifold_feature_map(PolygonMesh& pm, Vpm vpm)
+  Non_manifold_feature_map(const PolygonMesh& pm, Vpm vpm)
     : e_nm_id(get(Edge_to_id_tag(), pm))
     , v_nm_id(get(Vertex_to_id_tag(), pm))
   {
@@ -98,6 +98,14 @@ struct Non_manifold_feature_map
         p.second.swap(non_manifold_edges.back());
       }
     }
+  }
+
+  void clear()
+  {
+    non_manifold_edges.clear();
+    non_manifold_vertices.clear();
+    e_nm_id = Edge_to_nm_id();
+    v_nm_id = Vertex_to_nm_id();
   }
 };
 

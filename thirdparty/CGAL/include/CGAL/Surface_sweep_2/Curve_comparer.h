@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_sweep_2/include/CGAL/Surface_sweep_2/Curve_comparer.h $
-// $Id: Curve_comparer.h 2a3fbc0 2019-11-19T09:47:44+02:00 Efi Fogel
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_sweep_2/include/CGAL/Surface_sweep_2/Curve_comparer.h $
+// $Id: include/CGAL/Surface_sweep_2/Curve_comparer.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Tali Zvi <talizvi@post.tau.ac.il>

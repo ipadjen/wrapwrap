@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/Polygon_mesh_slicer/Traversal_traits.h $
-// $Id: Traversal_traits.h 678b9d8 2022-06-24T11:09:06+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/Polygon_mesh_slicer/Traversal_traits.h $
+// $Id: include/CGAL/Polygon_mesh_processing/internal/Polygon_mesh_slicer/Traversal_traits.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

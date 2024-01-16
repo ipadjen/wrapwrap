@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Periodic_3_mesh_3/include/CGAL/Periodic_3_function_wrapper.h $
-// $Id: Periodic_3_function_wrapper.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Periodic_3_mesh_3/include/CGAL/Periodic_3_function_wrapper.h $
+// $Id: include/CGAL/Periodic_3_function_wrapper.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mael Rouxel-Labbé
@@ -18,7 +18,6 @@
 #include <CGAL/Periodic_3_mesh_triangulation_3.h>
 
 #include <boost/type_traits/is_function.hpp>
-#include <boost/mpl/if.hpp>
 
 namespace CGAL {
 
@@ -46,9 +45,9 @@ public:
   }
 
 private:
-  typedef typename boost::mpl::if_<boost::is_function<Function_>,
-                                   Function_*,
-                                   Function_>::type             Stored_function;
+  typedef std::conditional_t<std::is_function_v<Function_>,
+                             Function_*,
+                             Function_>                       Stored_function;
 
   /// Function to wrap
   Stored_function f_;

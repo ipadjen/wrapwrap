@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arrangement_2/arrangement_type_traits.h $
-// $Id: arrangement_type_traits.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arrangement_2/arrangement_type_traits.h $
+// $Id: include/CGAL/Arrangement_2/arrangement_type_traits.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -13,7 +13,7 @@
 
 /*!
   \file   arrangement_type_traits.h
-  \brief  The file contains meta-function related to the arrangement pakcage.
+  \brief  The file contains meta-function related to the arrangement package.
   Specifically, it contains the meta-function is_arrangement_2 that determines
   whether a given type is an arrangement.
 */
@@ -24,7 +24,7 @@
 #include <CGAL/license/Arrangement_on_surface_2.h>
 
 
-#include <boost/type_traits/integral_constant.hpp>
+#include <type_traits>
 
 namespace CGAL
 {
@@ -62,7 +62,7 @@ namespace CGAL
 
 // In the meanwhile we use a default implementation.
 template <class T>
-class is_arrangement_2 : public boost::false_type
+class is_arrangement_2 : public std::false_type
 {};
 
 //--------------------------------  Arrangement_2
@@ -74,7 +74,7 @@ class Arrangement_2;
 template <class GeomTraits_, class DCEL_>
 class is_arrangement_2<
   Arrangement_2<GeomTraits_, DCEL_>
-> : public boost::false_type
+> : public std::false_type
 {};
 
 
@@ -87,7 +87,7 @@ class Arrangement_on_surface_2;
 template <class GeomTraits_, class TopTraits_>
 class is_arrangement_2<
   Arrangement_on_surface_2<GeomTraits_, TopTraits_>
-> : public boost::true_type
+> : public std::true_type
 {};
 
 } // namespace CGAL

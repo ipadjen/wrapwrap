@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/BGL/include/CGAL/boost/graph/selection.h $
-// $Id: selection.h 4ef4f03 2022-11-25T10:14:16+01:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/BGL/include/CGAL/boost/graph/selection.h $
+// $Id: include/CGAL/boost/graph/selection.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Sebastien Loriot
@@ -207,13 +207,11 @@ struct Regularization_graph
       prevent_unselection (prevent_unselection)
   {
     labels.reserve(num_faces(fg));
-    std::size_t nb_selected = 0;
     for (fg_face_descriptor fd : faces(fg))
     {
       if (get(is_selected_map,fd))
       {
         labels.push_back(1);
-        ++ nb_selected;
       }
       else
         labels.push_back(0);
@@ -486,7 +484,7 @@ reduce_face_selection(
     \cgalParamNEnd
 
     \cgalParamNBegin{prevent_unselection}
-      \cgalParamDescription{Boolean used to indicate if selection can be only expanded or if it can also be shrinked.}
+      \cgalParamDescription{Boolean used to indicate if selection can be only expanded or if it can also be shrunk.}
       \cgalParamType{`bool`}
       \cgalParamDefault{`false`}
       \cgalParamExtra{The geometric traits class must be compatible with the vertex point type.}

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_processing_3/include/CGAL/remove_outliers.h $
-// $Id: remove_outliers.h 75b03e6 2022-01-10T15:33:04+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Point_set_processing_3/include/CGAL/remove_outliers.h $
+// $Id: include/CGAL/remove_outliers.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Laurent Saboret and Nader Salman and Pierre Alliez
@@ -20,7 +20,7 @@
 #include <CGAL/Point_set_processing_3/internal/Callback_wrapper.h>
 #include <CGAL/for_each.h>
 #include <CGAL/property_map.h>
-#include <CGAL/point_set_processing_assertions.h>
+#include <CGAL/assertions.h>
 #include <functional>
 
 #include <CGAL/Named_function_parameters.h>
@@ -206,12 +206,12 @@ remove_outliers(
   // precondition: at least one element in the container.
   // to fix: should have at least three distinct points
   // but this is costly to check
-  CGAL_point_set_processing_precondition(points.begin() != points.end());
+  CGAL_precondition(points.begin() != points.end());
 
   // precondition: at least 2 nearest neighbors
-  CGAL_point_set_processing_precondition(k >= 2);
+  CGAL_precondition(k >= 2);
 
-  CGAL_point_set_processing_precondition(threshold_percent >= 0 && threshold_percent <= 100);
+  CGAL_precondition(threshold_percent >= 0 && threshold_percent <= 100);
 
   Neighbor_query neighbor_query (points, point_map);
 

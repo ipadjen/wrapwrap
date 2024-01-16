@@ -3,15 +3,15 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Partition_2/include/CGAL/Partition_2/partition_y_monotone_2.h $
-// $Id: partition_y_monotone_2.h 5a36ff8 2020-12-04T08:02:26+00:00 Giles Bathgate
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Partition_2/include/CGAL/Partition_2/partition_y_monotone_2.h $
+// $Id: include/CGAL/Partition_2/partition_y_monotone_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Susan Hert <hert@mpi-sb.mpg.de>
 
 //
-// Implementaion of the algorithm from pp 49--55 of "Computational Geometry
+// Implementation of the algorithm from pp 49--55 of "Computational Geometry
 // Algorithms and  Applications" by de Berg, van Kreveld, Overmars, and
 // Schwarzkopf for producing a partitioning of a polygon into y-monotone
 // pieces.
@@ -39,7 +39,7 @@
 #include <CGAL/Partition_2/Partitioned_polygon_2.h>
 #include <CGAL/ch_selected_extreme_points_2.h>
 #include <CGAL/IO/Tee_for_output_iterator.h>
-#include <CGAL/Partition_2/partition_assertions.h>
+#include <CGAL/assertions.h>
 #include <CGAL/partition_is_valid_2.h>
 #include <CGAL/Partition_traits_2.h>
 #include <map>
@@ -426,7 +426,7 @@ OutputIterator partition_y_monotone_2(InputIterator first,
 #endif // no postcondition
 
    P_Polygon_2 polygon(first, beyond, traits);
-   CGAL_partition_precondition(
+   CGAL_precondition(
     orientation_2(polygon.begin(), polygon.end(), traits) == COUNTERCLOCKWISE);
 
    Circulator circ(polygon.begin(), polygon.end()), done = circ;
@@ -484,7 +484,7 @@ OutputIterator partition_y_monotone_2(InputIterator first,
 #endif
    polygon.partition(res, 0);
 
-   CGAL_partition_postcondition(
+   CGAL_postcondition(
        y_monotone_partition_is_valid_2(polygon.begin(), polygon.end(),
                                        res.output_so_far_begin(),
                                        res.output_so_far_end(), traits));

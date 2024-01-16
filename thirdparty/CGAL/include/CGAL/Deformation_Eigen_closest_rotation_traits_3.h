@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_deformation/include/CGAL/Deformation_Eigen_closest_rotation_traits_3.h $
-// $Id: Deformation_Eigen_closest_rotation_traits_3.h a98b548 2022-05-12T16:03:53+02:00 Sven Oesau
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_deformation/include/CGAL/Deformation_Eigen_closest_rotation_traits_3.h $
+// $Id: include/CGAL/Deformation_Eigen_closest_rotation_traits_3.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Gael Guennebaud and Ilker O. Yaz
@@ -12,6 +12,8 @@
 
 #ifndef CGAL_DEFORMATION_EIGEN_CLOSEST_ROTATION_TRAITS_3_H
 #define CGAL_DEFORMATION_EIGEN_CLOSEST_ROTATION_TRAITS_3_H
+
+#include <CGAL/license/Surface_mesh_deformation.h>
 
 #include <Eigen/Eigen>
 #include <Eigen/SVD>
@@ -21,7 +23,7 @@ namespace CGAL {
 /// A class to compute the closest rotation in Frobenius norm to a 3x3 Matrix using the \link thirdpartyEigen `Eigen` library \endlink.
 /// The internal computation relies on `Eigen::JacobiSVD<>` solver.
 ///
-/// \cgalModels `DeformationClosestRotationTraits_3`
+/// \cgalModels{DeformationClosestRotationTraits_3}
 class Deformation_Eigen_closest_rotation_traits_3{
 public:
 

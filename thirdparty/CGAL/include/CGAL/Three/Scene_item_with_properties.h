@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Three/include/CGAL/Three/Scene_item_with_properties.h $
-// $Id: Scene_item_with_properties.h 8f34457 2021-04-13T15:12:51+02:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Three/include/CGAL/Three/Scene_item_with_properties.h $
+// $Id: include/CGAL/Three/Scene_item_with_properties.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Maxime GIMENO
@@ -13,7 +13,7 @@
 #define SCENE_ITEM_WITH_PROPERTIES_H
 
 #include <CGAL/license/Three.h>
-
+#include <QtGlobal>
 #ifdef demo_framework_EXPORTS
 #  define DEMO_FRAMEWORK_EXPORT Q_DECL_EXPORT
 #else
@@ -26,11 +26,11 @@ namespace Three {
   class Scene_item;
 
 //! Base class to allow an item to copy properties from another.
-//! Properties reprensent the current state of an item : its color,
+//! Properties represent the current state of an item : its color,
 //! the position of its manipulated frame, ...
 class DEMO_FRAMEWORK_EXPORT Scene_item_with_properties {
 public:
-  virtual ~Scene_item_with_properties(){}
+  virtual ~Scene_item_with_properties();
  //!\brief Copies properties from another Scene_item.
  //!
  //! Override this function to specify what must be copied.

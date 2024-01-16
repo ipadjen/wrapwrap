@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Kernel_23/include/CGAL/Sphere_3.h $
-// $Id: Sphere_3.h e7357ac 2021-07-19T14:53:27+02:00 Marc Glisse
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Kernel_23/include/CGAL/Sphere_3.h $
+// $Id: include/CGAL/Sphere_3.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -18,11 +18,12 @@
 #define CGAL_SPHERE_3_H
 
 #include <CGAL/assertions.h>
-#include <boost/type_traits/is_same.hpp>
 #include <CGAL/Kernel/Return_base_tag.h>
 #include <CGAL/Bbox_3.h>
 #include <CGAL/representation_tags.h>
 #include <CGAL/Dimension.h>
+
+#include <type_traits>
 
 namespace CGAL {
 
@@ -36,7 +37,7 @@ class Sphere_3 : public R_::Kernel_base::Sphere_3
   typedef typename R_::Aff_transformation_3  Aff_transformation_3;
 
   typedef Sphere_3                           Self;
-  CGAL_static_assertion((boost::is_same<Self, typename R_::Sphere_3>::value));
+  static_assert(std::is_same<Self, typename R_::Sphere_3>::value);
 
 public:
 

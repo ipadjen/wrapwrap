@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_2/include/CGAL/Nef_2/iterator_tools.h $
-// $Id: iterator_tools.h 9d16a42 2020-06-15T17:07:35+02:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Nef_2/include/CGAL/Nef_2/iterator_tools.h $
+// $Id: include/CGAL/Nef_2/iterator_tools.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

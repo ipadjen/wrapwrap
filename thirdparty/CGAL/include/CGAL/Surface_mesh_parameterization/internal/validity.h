@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_parameterization/include/CGAL/Surface_mesh_parameterization/internal/validity.h $
-// $Id: validity.h 4ffc949 2022-02-03T17:11:20+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_parameterization/include/CGAL/Surface_mesh_parameterization/internal/validity.h $
+// $Id: include/CGAL/Surface_mesh_parameterization/internal/validity.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mael Rouxel-Labbé
@@ -26,9 +26,9 @@
 #include <CGAL/Polygon_mesh_processing/connected_components.h>
 
 #include <boost/iterator/function_output_iterator.hpp>
-#include <boost/utility/enable_if.hpp>
 #include <boost/range/has_range_iterator.hpp>
 #include <vector>
+#include <type_traits>
 
 namespace CGAL {
 
@@ -132,7 +132,7 @@ public:
     halfedge_descriptor h = halfedge(a->info(), mesh);
     halfedge_descriptor g = halfedge(b->info(), mesh);
 
-    // check for shared egde
+    // check for shared edge
     if(face(opposite(h, mesh), mesh) == b->info() ||
        face(opposite(prev(h, mesh), mesh), mesh) == b->info() ||
        face(opposite(next(h, mesh), mesh), mesh) == b->info()) {
@@ -242,9 +242,9 @@ template <typename TriangleMesh,
 bool is_one_to_one_mapping(const TriangleMesh& mesh,
                            const Faces_Container& faces,
                            const VertexUVMap uvmap,
-                           typename boost::enable_if<
-                              boost::has_range_iterator<Faces_Container>
-                           >::type* = nullptr)
+                           std::enable_if_t<
+                              boost::has_range_iterator<Faces_Container>::value
+                           >* = nullptr)
 {
   typedef typename boost::graph_traits<TriangleMesh>::vertex_descriptor    vertex_descriptor;
   typedef typename boost::graph_traits<TriangleMesh>::halfedge_descriptor  halfedge_descriptor;
@@ -272,11 +272,11 @@ bool is_one_to_one_mapping(const TriangleMesh& mesh,
     const Point_2& p1 = get(uvmap, vd1);
     const Point_2& p2 = get(uvmap, vd2);
 
-    Bbox_2 b = p0.bbox();
-    b += p1.bbox();
-    b += p2.bbox();
-
-    boxes.push_back(Box(b, fd));
+    NT bx[2] = { (std::min)(p0[0], (std::min)(p1[0], p2[0])),
+                 (std::min)(p0[1], (std::min)(p1[1], p2[1])) };
+    NT by[2] = { (std::max)(p0[0], (std::max)(p1[0], p2[0])),
+                 (std::max)(p0[1], (std::max)(p1[1], p2[1])) };
+    boxes.emplace_back(bx, by, fd);
   }
 
   std::vector<const Box*> boxes_ptr;

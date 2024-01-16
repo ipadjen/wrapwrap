@@ -9,8 +9,8 @@
 // and a STREP (FET Open) Project under Contract No  IST-006413
 // (ACS -- Algorithms for Complex Shapes)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Algebraic_kernel_for_spheres/include/CGAL/Algebraic_kernel_for_spheres/internal_functions_comparison_root_for_spheres_2_3.h $
-// $Id: internal_functions_comparison_root_for_spheres_2_3.h 82989ae 2021-03-01T13:11:00+01:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Algebraic_kernel_for_spheres/include/CGAL/Algebraic_kernel_for_spheres/internal_functions_comparison_root_for_spheres_2_3.h $
+// $Id: include/CGAL/Algebraic_kernel_for_spheres/internal_functions_comparison_root_for_spheres_2_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Monique Teillaud <Monique.Teillaud@sophia.inria.fr>

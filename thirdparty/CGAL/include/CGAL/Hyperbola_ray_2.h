@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Apollonius_graph_2/include/CGAL/Hyperbola_ray_2.h $
-// $Id: Hyperbola_ray_2.h 45b73ad 2021-05-12T15:45:07+02:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Apollonius_graph_2/include/CGAL/Hyperbola_ray_2.h $
+// $Id: include/CGAL/Hyperbola_ray_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

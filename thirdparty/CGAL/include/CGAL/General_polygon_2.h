@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Boolean_set_operations_2/include/CGAL/General_polygon_2.h $
-// $Id: General_polygon_2.h 420f37a 2021-09-23T16:28:23+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Boolean_set_operations_2/include/CGAL/General_polygon_2.h $
+// $Id: include/CGAL/General_polygon_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -38,6 +38,7 @@ public:
   typedef std::list<X_monotone_curve_2>              Containter;
   typedef typename Containter::iterator              Curve_iterator;
   typedef typename Containter::const_iterator        Curve_const_iterator;
+  typedef X_monotone_curve_2                         value_type;
 
 protected:
   std::list<X_monotone_curve_2>    m_xcurves;

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_3/include/CGAL/Intersections_3/internal/Segment_3_Segment_3_intersection.h $
-// $Id: Segment_3_Segment_3_intersection.h c2d1adf 2021-06-23T17:34:48+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_3/include/CGAL/Intersections_3/internal/Segment_3_Segment_3_intersection.h $
+// $Id: include/CGAL/Intersections_3/internal/Segment_3_Segment_3_intersection.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -76,8 +76,6 @@ intersection_collinear_segments(const typename K::Segment_3& s1,
 
 template<class K>
 struct L_p_visitor
-  : public boost::static_visitor<
-      typename Intersection_traits<K, typename K::Segment_3, typename K::Segment_3>::result_type>
 {
   typedef typename Intersection_traits<K, typename K::Segment_3, typename K::Segment_3>::result_type result_type;
 
@@ -117,7 +115,7 @@ intersection(const typename K::Segment_3& s1,
       v = internal::intersection(s1.supporting_line(), s2.supporting_line(), k);
 
   if(v)
-    return apply_visitor(L_p_visitor<K>(s1, s2) , *v);
+    return std::visit(L_p_visitor<K>(s1, s2) , *v);
 
   return intersection_return<typename K::Intersect_3, typename K::Segment_3, typename K::Segment_3>();
 }

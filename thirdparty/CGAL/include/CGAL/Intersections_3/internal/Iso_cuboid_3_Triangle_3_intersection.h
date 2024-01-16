@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_3/include/CGAL/Intersections_3/internal/Iso_cuboid_3_Triangle_3_intersection.h $
-// $Id: Iso_cuboid_3_Triangle_3_intersection.h c2d1adf 2021-06-23T17:34:48+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_3/include/CGAL/Intersections_3/internal/Iso_cuboid_3_Triangle_3_intersection.h $
+// $Id: include/CGAL/Intersections_3/internal/Iso_cuboid_3_Triangle_3_intersection.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -67,7 +67,7 @@ void clip_poly_halfspace(
       SP_type inter = k.intersect_3_object()(seg, pl);
       if(inter)
       {
-        Point* p_inter = boost::get<Point>(&*inter);
+        Point* p_inter = std::get_if<Point>(&*inter);
         if(p_inter
            && !(k.equal_3_object()(*p_inter, p1))
            && !(k.equal_3_object()(*p_inter, p2)))
@@ -90,7 +90,7 @@ void clip_poly_halfspace(
       SP_type inter = typename K::Intersect_3()(seg, pl);
       if(inter)
       {
-        Point* p_inter = boost::get<Point>(&*inter);
+        Point* p_inter = std::get_if<Point>(&*inter);
         if(p_inter
            && !(k.equal_3_object()(*p_inter, p1))
            && !(k.equal_3_object()(*p_inter, p2)))

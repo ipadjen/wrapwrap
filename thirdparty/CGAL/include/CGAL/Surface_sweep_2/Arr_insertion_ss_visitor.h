@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Surface_sweep_2/Arr_insertion_ss_visitor.h $
-// $Id: Arr_insertion_ss_visitor.h 6e1fc8a 2021-09-02T16:53:07+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Surface_sweep_2/Arr_insertion_ss_visitor.h $
+// $Id: include/CGAL/Surface_sweep_2/Arr_insertion_ss_visitor.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s): Baruch Zukerman <baruchzu@post.tau.ac.il>

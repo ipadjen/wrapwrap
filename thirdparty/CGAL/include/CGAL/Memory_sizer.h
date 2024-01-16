@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Profiling_tools/include/CGAL/Memory_sizer.h $
-// $Id: Memory_sizer.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Profiling_tools/include/CGAL/Memory_sizer.h $
+// $Id: include/CGAL/Memory_sizer.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Sylvain Pion, Andreas Fabri
@@ -125,7 +125,7 @@ private:
 
 #else // __APPLE__ is defined
 
-    // http://miknight.blogspot.com/2005/11/resident-set-size-in-mac-os-x.html
+    // https://miknight.blogspot.com/2005/11/resident-set-size-in-mac-os-x.html
                 // This is highly experimental. But still better than returning 0.
                 // It appears that we might need certain 'rights' to get access to the kernel
                 // task... It works if you have admin rights apparently

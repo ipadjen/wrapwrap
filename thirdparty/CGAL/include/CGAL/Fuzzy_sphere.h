@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Spatial_searching/include/CGAL/Fuzzy_sphere.h $
-// $Id: Fuzzy_sphere.h 65cde3c 2019-12-03T19:18:15+01:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Spatial_searching/include/CGAL/Fuzzy_sphere.h $
+// $Id: include/CGAL/Fuzzy_sphere.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -21,7 +21,6 @@
 #include <CGAL/Search_traits_adapter.h>
 
 #include <boost/type_traits.hpp>
-#include <boost/utility/enable_if.hpp>
 
 namespace CGAL {
 
@@ -154,11 +153,10 @@ public:
   Fuzzy_sphere(const SearchTraits& traits_=SearchTraits()):Base(traits_){}
 
   // Constructor for any point type that is not `SearchTraits::Point_d`
-  template <typename Point> // boost::disable_if requires a template argument to work
+  template <typename Point> // std::enable_if_t requires a template argument to work
   Fuzzy_sphere(const Point& center, FT radius, FT epsilon=FT(0),const SearchTraits& traits_=SearchTraits(),
-               typename boost::disable_if<
-               boost::is_same<typename SearchTraits::Point_d,
-               Point> >::type* = 0)
+               std::enable_if_t<
+                 !std::is_same<typename SearchTraits::Point_d,Point>::value >* = 0)
     : Base(center,radius,epsilon,traits_) {}
 
   Fuzzy_sphere(const typename SearchTraits::Point_d& center, FT radius, FT epsilon=FT(0),

@@ -6,8 +6,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/STL_Extension/include/CGAL/is_convertible.h $
-// $Id: is_convertible.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/STL_Extension/include/CGAL/is_convertible.h $
+// $Id: include/CGAL/is_convertible.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -17,8 +17,7 @@
 #ifndef CGAL_IS_CONVERTIBLE_H
 #define CGAL_IS_CONVERTIBLE_H
 
-#include <boost/type_traits/integral_constant.hpp>
-#include <boost/type_traits/is_convertible.hpp>
+#include <type_traits>
 #ifdef CGAL_USE_GMPXX
 #include <gmpxx.h>
 #endif
@@ -26,12 +25,12 @@
 namespace CGAL {
 
 template<class From,class To>struct is_implicit_convertible
-        : boost::is_convertible<From,To> {};
+        : std::is_convertible<From,To> {};
 
 #ifdef CGAL_USE_GMPXX
 // Work around a gmpxx misfeature
 template<class T>struct is_implicit_convertible<__gmp_expr<mpq_t,T>,mpz_class>
-        : boost::false_type {};
+        : std::false_type {};
 #endif
 
 // TODO: add is_explicit_convertible (using boost::is_constructible?)

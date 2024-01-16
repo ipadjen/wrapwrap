@@ -4,8 +4,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Classification/include/CGAL/Classification/Sum_of_weighted_features_classifier.h $
-// $Id: Sum_of_weighted_features_classifier.h 393ae7d 2021-05-12T15:03:53+02:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Classification/include/CGAL/Classification/Sum_of_weighted_features_classifier.h $
+// $Id: include/CGAL/Classification/Sum_of_weighted_features_classifier.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Simon Giraudot, Florent Lafarge
@@ -48,7 +48,7 @@ namespace Classification {
   \brief %Classifier based on the sum of weighted features with
   user-defined effects on labels.
 
-  \cgalModels `CGAL::Classification::Classifier`
+  \cgalModels{CGAL::Classification::Classifier}
 */
 class Sum_of_weighted_features_classifier
 {
@@ -898,7 +898,7 @@ private:
       std::size_t gt = j;
 
 #ifndef CGAL_LINKED_WITH_TBB
-      CGAL_static_assertion_msg (!(std::is_convertible<ConcurrencyTag, Parallel_tag>::value),
+      static_assert (!(std::is_convertible<ConcurrencyTag, Parallel_tag>::value),
                                  "Parallel_tag is enabled but TBB is unavailable.");
 #else
       if (std::is_convertible<ConcurrencyTag,Parallel_tag>::value)

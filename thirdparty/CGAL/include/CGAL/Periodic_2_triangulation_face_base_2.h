@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Periodic_2_triangulation_2/include/CGAL/Periodic_2_triangulation_face_base_2.h $
-// $Id: Periodic_2_triangulation_face_base_2.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Periodic_2_triangulation_2/include/CGAL/Periodic_2_triangulation_face_base_2.h $
+// $Id: include/CGAL/Periodic_2_triangulation_face_base_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Nico Kruithof <Nico@nghk.nl>
@@ -16,7 +16,7 @@
 
 
 #include <CGAL/basic.h>
-#include <CGAL/triangulation_assertions.h>
+#include <CGAL/assertions.h>
 #include <CGAL/Triangulation_utils_2.h>
 #include <CGAL/Triangulation_face_base_2.h>
 #include <CGAL/Dummy_tds_2.h>
@@ -64,7 +64,7 @@ public:
   /// Periodic functions
   int offset(int i) const
   {
-    CGAL_triangulation_precondition( i >= 0 && i < 3 );
+    CGAL_precondition( i >= 0 && i < 3 );
     return ((_off >> 2 * i) & 3);
   }
   bool has_zero_offsets() const

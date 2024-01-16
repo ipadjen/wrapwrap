@@ -4,8 +4,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_2/include/CGAL/Mesh_2/Lipschitz_sizing_field_2.h $
-// $Id: Lipschitz_sizing_field_2.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_2/include/CGAL/Mesh_2/Lipschitz_sizing_field_2.h $
+// $Id: include/CGAL/Mesh_2/Lipschitz_sizing_field_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -54,6 +54,7 @@ public:
   typedef Apollonius_graph_traits_2<Geom_traits> Apollonius_traits;
   typedef Apollonius_graph_2<Apollonius_traits> Apollonius_graph;
   typedef typename Apollonius_traits::Site_2 Site;
+  typedef typename Sizing_field_2<Tr>::FT FT;
 
 public:
   typedef std::list<Site> Site_set_2;
@@ -144,12 +145,12 @@ public:
     return *this;
   }
 
-  double operator()(const Point& p) const
+  FT operator()(const Point& p) const override
   {
     if(points.empty() || points.size() == 1)
-      return K;
+      return FT(K);
     Site ns = (*ag.nearest_neighbor(p)).site();
-    return K * weighted_distance(p, ns);
+    return FT(K * weighted_distance(p, ns));
   }
 
   void set_K(double k)

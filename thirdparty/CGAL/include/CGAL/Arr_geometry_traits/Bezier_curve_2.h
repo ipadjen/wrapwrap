@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_geometry_traits/Bezier_curve_2.h $
-// $Id: Bezier_curve_2.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_geometry_traits/Bezier_curve_2.h $
+// $Id: include/CGAL/Arr_geometry_traits/Bezier_curve_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -162,7 +162,7 @@ public:
 
     for (k = 0; pts_begin != pts_end; ++pts_begin, k++)
     {
-//SL: Acccording to the fact that all operations are based on polynomials
+//SL: According to the fact that all operations are based on polynomials
 //    duplicated control points can be allowed.
 //      // Make sure that we do not have two identical consecutive control
 //      // points.
@@ -423,7 +423,7 @@ public:
   }
 
   /*!
-   * Get an interator for the first control point.
+   * Get an iterator for the first control point.
    */
   Control_point_iterator control_points_begin () const
   {
@@ -431,7 +431,7 @@ public:
   }
 
   /*!
-   * Get a past-the-end interator for control points.
+   * Get a past-the-end iterator for control points.
    */
   Control_point_iterator control_points_end () const
   {

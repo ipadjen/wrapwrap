@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_2/include/CGAL/nearest_neighbor_delaunay_2.h $
-// $Id: nearest_neighbor_delaunay_2.h 7e62c02 2021-04-12T14:02:37+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Point_set_2/include/CGAL/nearest_neighbor_delaunay_2.h $
+// $Id: include/CGAL/nearest_neighbor_delaunay_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

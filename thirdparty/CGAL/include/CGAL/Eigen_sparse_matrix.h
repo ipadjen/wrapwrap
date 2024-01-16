@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Solver_interface/include/CGAL/Eigen_sparse_matrix.h $
-// $Id: Eigen_sparse_matrix.h 267a641 2021-05-31T14:01:08+02:00 Dmitry Anisimov
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Solver_interface/include/CGAL/Eigen_sparse_matrix.h $
+// $Id: include/CGAL/Eigen_sparse_matrix.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Gael Guennebaud
@@ -21,10 +21,10 @@ namespace CGAL {
 \ingroup PkgSolverInterfaceLS
 
 The class `Eigen_sparse_matrix` is a wrapper around `Eigen` matrix type
-<a href="http://eigen.tuxfamily.org/dox/classEigen_1_1SparseMatrix.html">`Eigen::SparseMatrix`</a>
+<a href="https://eigen.tuxfamily.org/dox/classEigen_1_1SparseMatrix.html">`Eigen::SparseMatrix`</a>
 that represents general matrices, be they symmetric or not.
 
-\cgalModels `SparseLinearAlgebraTraits_d::Matrix`
+\cgalModels{SparseLinearAlgebraTraits_d::Matrix}
 
 \tparam T Number type.
 
@@ -202,8 +202,8 @@ public:
   /// Read access to a matrix coefficient.
   ///
   /// \warning Complexity:
-  /// - O(log(n)) if the matrix is already built.
-  /// - O(n) if the matrix is not built.
+  /// - \cgalBigO{log(n)} if the matrix is already built.
+  /// - \cgalBigO{n} if the matrix is not built.
   /// `n` being the number of entries in the matrix.
   ///
   /// \pre 0 <= i < row_dimension().
@@ -298,14 +298,14 @@ private:
 
 
 /*!
-\ingroup PkgSolverInterfaceRefLS
+\ingroup PkgSolverInterfaceLS
 
 The class `Eigen_sparse_symmetric_matrix` is a wrapper around `Eigen` matrix type
-<a href="http://eigen.tuxfamily.org/dox/classEigen_1_1SparseMatrix.html">`Eigen::SparseMatrix` </a>
+<a href="https://eigen.tuxfamily.org/dox/classEigen_1_1SparseMatrix.html">`Eigen::SparseMatrix` </a>
 
 Since the matrix is symmetric, only the lower triangle part is stored.
 
-\cgalModels `SparseLinearAlgebraTraits_d::Matrix`
+\cgalModels{SparseLinearAlgebraTraits_d::Matrix}
 
 \tparam T Number type.
 

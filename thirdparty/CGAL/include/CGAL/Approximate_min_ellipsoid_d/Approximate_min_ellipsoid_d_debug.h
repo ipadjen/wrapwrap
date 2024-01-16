@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Bounding_volumes/include/CGAL/Approximate_min_ellipsoid_d/Approximate_min_ellipsoid_d_debug.h $
-// $Id: Approximate_min_ellipsoid_d_debug.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Bounding_volumes/include/CGAL/Approximate_min_ellipsoid_d/Approximate_min_ellipsoid_d_debug.h $
+// $Id: include/CGAL/Approximate_min_ellipsoid_d/Approximate_min_ellipsoid_d_debug.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -98,7 +98,7 @@ namespace CGAL {
       {
         // Here's where we maintain the only instance: (Notice that it
         // gets constructed automatically the first time instance() is
-        // called, and that it gets disposed of (if ever contructed) at
+        // called, and that it gets disposed of (if ever constructed) at
         // program termination.)
         static Logger instance;
         return instance;
@@ -183,7 +183,7 @@ namespace CGAL {
       //   created and started.  Otherwise, the timer with name name is
       //   restarted.
       //
-      // - lapse(name): Retuns the number of seconds which have elapsed
+      // - lapse(name): Returns the number of seconds which have elapsed
       //   since start(name) was called last.
       //   Precondition: start(name) has been called once.
     {
@@ -201,7 +201,7 @@ namespace CGAL {
       {
         // Here's where we maintain the only instance: (Notice that it
         // gets constructed automatically the first time instance() is
-        // called, and that it gets disposed of (if ever contructed) at
+        // called, and that it gets disposed of (if ever constructed) at
         // program termination.)
         static Timer instance;
         return instance;
@@ -255,7 +255,7 @@ namespace CGAL {
 
     class Eps_export_2 {
     // An instance of the following class accepts circles and ellipses
-    // and procudes an Enhanced-PostScript figure.
+    // and produces an Enhanced-PostScript figure.
     public:
       enum Stroke_mode { Solid=0, Solid_filled=1, Dashed=2 };
       enum Label_mode { None, Angle, Random_angle };

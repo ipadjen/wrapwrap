@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/TDS_2/include/CGAL/Triangulation_ds_vertex_2.h $
-// $Id: Triangulation_ds_vertex_2.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/TDS_2/include/CGAL/Triangulation_ds_vertex_2.h $
+// $Id: include/CGAL/Triangulation_ds_vertex_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -17,7 +17,7 @@
 
 
 #include <CGAL/basic.h>
-#include <CGAL/triangulation_assertions.h>
+#include <CGAL/assertions.h>
 
 namespace CGAL {
 
@@ -68,7 +68,7 @@ public:
   bool is_valid(bool verbose = false, int level = 0);
 
 private:
-  // used to implement deprected access to circulators
+  // used to implement deprecated access to circulators
   Vertex_handle handle();
 };
 
@@ -105,13 +105,13 @@ Triangulation_ds_vertex_2<Vb> ::
 is_valid(bool verbose, int level)
 {
   bool result = Vb::is_valid(verbose, level);
-  CGAL_triangulation_assertion(result);
+  CGAL_assertion(result);
   if (this->face() != Face_handle()) { // face==nullptr if dim <0
     result = result && ( &*this->face()->vertex(0) == this ||
                          &*this->face()->vertex(1) == this ||
                          &*this->face()->vertex(2) == this );
   }
-  CGAL_triangulation_assertion(result);
+  CGAL_assertion(result);
   return result;
 }
 

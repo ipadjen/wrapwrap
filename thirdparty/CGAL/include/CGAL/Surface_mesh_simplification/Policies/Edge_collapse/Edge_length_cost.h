@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_simplification/include/CGAL/Surface_mesh_simplification/Policies/Edge_collapse/Edge_length_cost.h $
-// $Id: Edge_length_cost.h ff09c5d 2019-10-25T16:35:53+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_simplification/include/CGAL/Surface_mesh_simplification/Policies/Edge_collapse/Edge_length_cost.h $
+// $Id: include/CGAL/Surface_mesh_simplification/Policies/Edge_collapse/Edge_length_cost.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Fernando Cacciola <fernando.cacciola@geometryfactory.com>
@@ -27,9 +27,9 @@ public:
   Edge_length_cost() {}
 
   template <typename Profile, typename T>
-  boost::optional<typename Profile::FT> operator()(const Profile& profile, const T& /*placement*/) const
+  std::optional<typename Profile::FT> operator()(const Profile& profile, const T& /*placement*/) const
   {
-    typedef boost::optional<typename Profile::FT>                     result_type;
+    typedef std::optional<typename Profile::FT>                     result_type;
     return result_type(profile.geom_traits().compute_squared_distance_3_object()(profile.p0(), profile.p1()));
   }
 };

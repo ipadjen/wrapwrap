@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Kernel_d/include/CGAL/Kernel_d/function_objects.h $
-// $Id: function_objects.h 8bb22d5 2020-03-26T14:23:37+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Kernel_d/include/CGAL/Kernel_d/function_objects.h $
+// $Id: include/CGAL/Kernel_d/function_objects.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -76,22 +76,22 @@ public:
 
   template <typename F>
   struct result<F(Line_d, Line_d)>
-  { typedef boost::optional< boost::variant< Point_d, Line_d > > type; };
+  { typedef std::optional< std::variant< Point_d, Line_d > > type; };
 
   template <typename F>
   struct result<F(Segment_d, Line_d)>
-  { typedef boost::optional< boost::variant< Point_d, Segment_d > > type; };
+  { typedef std::optional< std::variant< Point_d, Segment_d > > type; };
   template <typename F>
   struct result<F(Line_d, Segment_d)> : result<F(Segment_d, Line_d)>
   { };
 
   template <typename F>
   struct result<F(Segment_d, Segment_d)>
-  { typedef boost::optional< boost::variant< Point_d, Segment_d > > type; };
+  { typedef std::optional< std::variant< Point_d, Segment_d > > type; };
 
   template <typename F>
   struct result<F(Ray_d, Line_d)>
-  { typedef boost::optional< boost::variant< Point_d, Ray_d > > type; };
+  { typedef std::optional< std::variant< Point_d, Ray_d > > type; };
 
   template <typename F>
   struct result<F(Line_d, Ray_d)> : result<F(Ray_d, Line_d)>
@@ -99,7 +99,7 @@ public:
 
   template <typename F>
   struct result<F(Ray_d, Segment_d)>
-  { typedef boost::optional< boost::variant< Point_d, Segment_d > > type; };
+  { typedef std::optional< std::variant< Point_d, Segment_d > > type; };
 
   template <typename F>
   struct result<F(Segment_d, Ray_d)> : result<F(Ray_d, Segment_d)>
@@ -107,25 +107,25 @@ public:
 
   template <typename F>
   struct result<F(Ray_d, Ray_d)>
-  { typedef boost::optional< boost::variant< Point_d, Segment_d, Ray_d > > type; };
+  { typedef std::optional< std::variant< Point_d, Segment_d, Ray_d > > type; };
 
   template <typename F>
   struct result<F(Hyperplane_d, Line_d)>
-  { typedef boost::optional< boost::variant< Point_d, Line_d > > type; };
+  { typedef std::optional< std::variant< Point_d, Line_d > > type; };
   template <typename F>
   struct result<F(Line_d, Hyperplane_d)> : result<F(Hyperplane_d, Line_d)>
   { };
 
   template <typename F>
   struct result<F(Hyperplane_d, Ray_d)>
-  { typedef boost::optional< boost::variant< Point_d, Ray_d > > type; };
+  { typedef std::optional< std::variant< Point_d, Ray_d > > type; };
   template <typename F>
   struct result<F(Ray_d, Hyperplane_d)> : result<F(Hyperplane_d, Ray_d)>
   { };
 
   template <typename F>
   struct result<F(Hyperplane_d, Segment_d)>
-  { typedef boost::optional< boost::variant< Point_d, Segment_d > > type; };
+  { typedef std::optional< std::variant< Point_d, Segment_d > > type; };
   template <typename F>
   struct result<F(Segment_d, Hyperplane_d)> : result<F(Hyperplane_d, Segment_d)>
   { };

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Convex_decomposition_3/include/CGAL/Convex_decomposition_3/YVertical_wall_builder.h $
-// $Id: YVertical_wall_builder.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Convex_decomposition_3/include/CGAL/Convex_decomposition_3/YVertical_wall_builder.h $
+// $Id: include/CGAL/Convex_decomposition_3/YVertical_wall_builder.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -14,8 +14,9 @@
 
 #include <CGAL/license/Convex_decomposition_3.h>
 
-
-#include<CGAL/Nef_3/SNC_decorator.h>
+#include <CGAL/Modifier_base.h>
+#include <CGAL/Nef_3/SNC_decorator.h>
+#include <CGAL/Convex_decomposition_3/is_reflex_sedge.h>
 #include <CGAL/Convex_decomposition_3/Single_wall_creator3.h>
 #include <CGAL/Convex_decomposition_3/External_structure_builder.h>
 

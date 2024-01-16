@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_3/include/CGAL/draw_nef_3.h $
-// $Id: draw_nef_3.h 2df2398 2022-03-07T17:37:54+01:00 Guillaume Damiand
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Nef_3/include/CGAL/draw_nef_3.h $
+// $Id: include/CGAL/draw_nef_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -131,21 +131,23 @@ protected:
       ++fc;
       while(fc!=f->facet_cycles_end())
       {
-        se = SHalfedge_const_handle(fc);
-        hc_start=se;
-        hc_end=hc_start;
-        CGAL_For_all(hc_start, hc_end) {
-          Vertex_const_handle vh=hc_start->source()->center_vertex();
-          viewer.add_point_in_face(vh->point(),
-                                   viewer.get_vertex_normal(vh));
+        if(fc.is_shalfedge())
+        {
+          se = SHalfedge_const_handle(fc);
+          hc_start=se;
+          hc_end=hc_start;
+          CGAL_For_all(hc_start, hc_end) {
+            Vertex_const_handle vh=hc_start->source()->center_vertex();
+            viewer.add_point_in_face(vh->point(),
+                                     viewer.get_vertex_normal(vh));
+          }
+          viewer.add_point_in_face(hc_start->source()->center_vertex()->point(),
+                                   viewer.get_vertex_normal(hc_start->source()->center_vertex()));
+          viewer.add_point_in_face(lastvh->point(),
+                                   viewer.get_vertex_normal(lastvh));
         }
-        viewer.add_point_in_face(hc_start->source()->center_vertex()->point(),
-                                 viewer.get_vertex_normal(hc_start->source()->center_vertex()));
-        viewer.add_point_in_face(lastvh->point(),
-                                 viewer.get_vertex_normal(lastvh));
         ++fc;
       }
-
       viewer.face_end();
       facets_done[f]=true;
       n_faces++;

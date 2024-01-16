@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_processing_3/include/CGAL/pca_estimate_normals.h $
-// $Id: pca_estimate_normals.h bccf399 2022-11-08T10:51:46+01:00 Jane Tournois
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Point_set_processing_3/include/CGAL/pca_estimate_normals.h $
+// $Id: include/CGAL/pca_estimate_normals.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Pierre Alliez and Laurent Saboret
@@ -23,7 +23,7 @@
 #include <CGAL/for_each.h>
 #include <CGAL/linear_least_squares_fitting_3.h>
 #include <CGAL/property_map.h>
-#include <CGAL/point_set_processing_assertions.h>
+#include <CGAL/assertions.h>
 #include <CGAL/Memory_sizer.h>
 #include <functional>
 
@@ -186,10 +186,10 @@ pca_estimate_normals(
   // precondition: at least one element in the container.
   // to fix: should have at least three distinct points
   // but this is costly to check
-  CGAL_point_set_processing_precondition(points.begin() != points.end());
+  CGAL_precondition(points.begin() != points.end());
 
   // precondition: at least 2 nearest neighbors
-  CGAL_point_set_processing_precondition(k >= 2);
+  CGAL_precondition(k >= 2);
 
   std::size_t memory = CGAL::Memory_sizer().virtual_size();
   CGAL_TRACE_STREAM << (memory >> 20) << " Mb allocated\n";

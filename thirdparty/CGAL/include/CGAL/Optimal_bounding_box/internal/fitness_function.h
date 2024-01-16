@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Optimal_bounding_box/include/CGAL/Optimal_bounding_box/internal/fitness_function.h $
-// $Id: fitness_function.h e9d41d7 2020-04-21T10:03:00+02:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Optimal_bounding_box/include/CGAL/Optimal_bounding_box/internal/fitness_function.h $
+// $Id: include/CGAL/Optimal_bounding_box/internal/fitness_function.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -39,8 +39,10 @@ compute_fitness(const typename Traits::Matrix& R, // rotation matrix
   CGAL_assertion(points.size() >= 3);
 
   FT xmin, ymin, zmin, xmax, ymax, zmax;
-  xmin = ymin = zmin = FT{(std::numeric_limits<double>::max)()};
-  xmax = ymax = zmax = FT{std::numeric_limits<double>::lowest()};
+  //cast from double to float looses data, so cast with {} is not allowed
+  //cast from double to exact types also works
+  xmin = ymin = zmin = FT((std::numeric_limits<double>::max)());
+  xmax = ymax = zmax = FT(std::numeric_limits<double>::lowest());
 
   for(const Point& pt : points)
   {
@@ -81,8 +83,10 @@ compute_fitness_if_smaller(const typename Traits::Matrix& R, // rotation matrix
   CGAL_assertion(points.size() >= 3);
 
   FT xmin, ymin, zmin, xmax, ymax, zmax;
-  xmin = ymin = zmin = FT{(std::numeric_limits<double>::max)()};
-  xmax = ymax = zmax = FT{std::numeric_limits<double>::lowest()};
+  //cast from double to float looses data, so cast with {} is not allowed
+  //cast from double to exact types also works
+  xmin = ymin = zmin = FT((std::numeric_limits<double>::max)());
+  xmax = ymax = zmax = FT(std::numeric_limits<double>::lowest());
 
   // compute every 1%, with a minimum of 1000 iterations
   const std::size_t pn = points.size();

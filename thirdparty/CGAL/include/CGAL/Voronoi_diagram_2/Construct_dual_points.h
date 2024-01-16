@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Voronoi_diagram_2/include/CGAL/Voronoi_diagram_2/Construct_dual_points.h $
-// $Id: Construct_dual_points.h 942d461 2021-05-05T16:59:22+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Voronoi_diagram_2/include/CGAL/Voronoi_diagram_2/Construct_dual_points.h $
+// $Id: include/CGAL/Voronoi_diagram_2/Construct_dual_points.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

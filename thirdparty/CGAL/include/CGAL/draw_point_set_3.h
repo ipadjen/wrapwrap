@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_3/include/CGAL/draw_point_set_3.h $
-// $Id: draw_point_set_3.h 2bbcabe 2021-11-11T17:23:37+01:00 Guillaume Damiand
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Point_set_3/include/CGAL/draw_point_set_3.h $
+// $Id: include/CGAL/draw_point_set_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -22,8 +22,8 @@ namespace CGAL {
 /*!
 \ingroup PkgDrawPointSet3D
 
-opens a new window and draws `aps`, an instance of the `CGAL::Point_set_3` class. A call to this function is blocking, that is the program continues as soon as the user closes the window. This function requires `CGAL_Qt5`, and is only available if the macro `CGAL_USE_BASIC_VIEWER` is defined.
-Linking with the cmake target `CGAL::CGAL_Basic_viewer` will link with `CGAL_Qt5` and add the definition `CGAL_USE_BASIC_VIEWER`.
+opens a new window and draws `aps`, an instance of the `CGAL::Point_set_3` class. A call to this function is blocking, that is the program continues as soon as the user closes the window. This function requires `CGAL_Qt6`, and is only available if the macro `CGAL_USE_BASIC_VIEWER` is defined.
+Linking with the cmake target `CGAL::CGAL_Basic_viewer` will link with `CGAL_Qt6` and add the definition `CGAL_USE_BASIC_VIEWER`.
 \tparam PS an instance of the `CGAL::Point_set_3` class.
 \param aps the point set to draw.
 

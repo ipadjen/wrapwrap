@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Straight_skeleton_2/include/CGAL/Straight_skeleton_items_2.h $
-// $Id: Straight_skeleton_items_2.h b6333ed 2020-10-05T18:29:34+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Straight_skeleton_2/include/CGAL/Straight_skeleton_items_2.h $
+// $Id: include/CGAL/Straight_skeleton_items_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Fernando Cacciola <fernando_cacciola@ciudad.com.ar>
@@ -35,7 +35,8 @@ public:
   template<class Refs, class Traits>
   struct Halfedge_wrapper
   {
-    typedef Straight_skeleton_halfedge_base_2 < Refs > Halfedge;
+    typedef typename Traits::FT FT ;
+    typedef Straight_skeleton_halfedge_base_2 < Refs, FT > Halfedge;
   };
 
   template<class Refs, class Traits>

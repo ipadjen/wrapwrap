@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_3/include/CGAL/Nef_3/SNC_decorator.h $
-// $Id: SNC_decorator.h 1009acb 2022-03-10T18:24:07+00:00 Giles Bathgate
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Nef_3/include/CGAL/Nef_3/SNC_decorator.h $
+// $Id: include/CGAL/Nef_3/SNC_decorator.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -36,7 +36,7 @@
 #include <CGAL/Nef_2/debug.h>
 
 #ifndef CGAL_I_DO_WANT_TO_USE_GENINFO
-#include <boost/any.hpp>
+#include <any>
 #endif
 
 namespace CGAL {
@@ -157,7 +157,7 @@ class SNC_decorator : public SNC_const_decorator<Map> {
   #ifdef CGAL_I_DO_WANT_TO_USE_GENINFO
   typedef void* GenPtr;
   #else
-  typedef boost::any GenPtr;
+  typedef std::any GenPtr;
   #endif
 
   SNC_decorator() : Base(), sncp_() {}

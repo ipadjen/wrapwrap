@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polyline_simplification_2/include/CGAL/Polyline_simplification_2/Squared_distance_cost.h $
-// $Id: Squared_distance_cost.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polyline_simplification_2/include/CGAL/Polyline_simplification_2/Squared_distance_cost.h $
+// $Id: include/CGAL/Polyline_simplification_2/Squared_distance_cost.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Andreas Fabri, Fernando Cacciola
@@ -34,7 +34,7 @@ namespace Polyline_simplification_2
 
 /// This class is a cost function which calculates the cost as the square of the distance between the original and simplified polylines.
 ///
-/// \cgalModels `PolylineSimplificationCostFunction`.
+/// \cgalModels{PolylineSimplificationCostFunction}
 class Squared_distance_cost
 {
 
@@ -50,7 +50,7 @@ public:
   /// is model of  `PolylineSimplificationVertexBase_2`.
 
     template<class CDT>
-    boost::optional<typename CDT::Geom_traits::FT>
+    std::optional<typename CDT::Geom_traits::FT>
     operator()(const Constrained_triangulation_plus_2<CDT>& pct
                , typename Constrained_triangulation_plus_2<CDT>::Vertices_in_constraint_iterator vicq)const
   {
@@ -66,8 +66,8 @@ public:
     Construct_segment        construct_segment        = pct.geom_traits().construct_segment_2_object() ;
     typedef typename Constrained_triangulation_plus_2<CDT>::Vertices_in_constraint_iterator Vertices_in_constraint_iterator;
 
-    Vertices_in_constraint_iterator vicp = boost::prior(vicq);
-    Vertices_in_constraint_iterator vicr = boost::next(vicq);
+    Vertices_in_constraint_iterator vicp = std::prev(vicq);
+    Vertices_in_constraint_iterator vicr = std::next(vicq);
 
     Point const& lP = (*vicp)->point();
     Point const& lR = (*vicr)->point();

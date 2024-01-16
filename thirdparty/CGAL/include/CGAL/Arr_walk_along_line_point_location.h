@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_walk_along_line_point_location.h $
-// $Id: Arr_walk_along_line_point_location.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_walk_along_line_point_location.h $
+// $Id: include/CGAL/Arr_walk_along_line_point_location.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -183,7 +183,7 @@ protected:
   /*!
    * Find the first halfedge around a given target vertex, when going clockwise
    * from "6 o'clock" around this vertex (when shooting up) or starting from
-   * "12 o'clock (when shooting down).
+   * "12 o'clock" (when shooting down).
    * \param v The given vertex.
    * \param shoot_up If (true) we should start from "6 o'clock",
    *                 if (false) we should start from "12 o'clock".

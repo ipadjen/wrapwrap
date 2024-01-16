@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Poisson_surface_reconstruction_3/include/CGAL/poisson_surface_reconstruction.h $
-// $Id: poisson_surface_reconstruction.h f43c55f 2022-01-13T09:43:22+01:00 Stéphane Laurent
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Poisson_surface_reconstruction_3/include/CGAL/poisson_surface_reconstruction.h $
+// $Id: include/CGAL/poisson_surface_reconstruction.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Simon Giraudot

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Shape_regularization/include/CGAL/Shape_regularization/internal/Unique_segments_2.h $
-// $Id: Unique_segments_2.h 6d3176e 2022-01-07T14:42:25+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Shape_regularization/include/CGAL/Shape_regularization/internal/Unique_segments_2.h $
+// $Id: include/CGAL/Shape_regularization/internal/Unique_segments_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

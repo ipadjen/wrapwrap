@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Envelope_2/include/CGAL/Envelope_2/Env_divide_and_conquer_2.h $
-// $Id: Env_divide_and_conquer_2.h 35fd91b 2020-08-20T16:03:29+02:00 Ahmed Essam
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Envelope_2/include/CGAL/Envelope_2/Env_divide_and_conquer_2.h $
+// $Id: include/CGAL/Envelope_2/Env_divide_and_conquer_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Ron Wein   <wein@post.tau.ac.il>
@@ -18,7 +18,7 @@
 #include <CGAL/Arr_enums.h>
 #include <CGAL/Arrangement_2/Arr_traits_adaptor_2.h>
 
-#include <boost/optional.hpp>
+#include <optional>
 
 #include <vector>
 
@@ -116,9 +116,7 @@ public:
   {
     // Subdivide the curves into x-monotone subcurves.
     CurvesIterator                     it;
-    std::list<CGAL::Object>            objects;
-    std::list<CGAL::Object>::iterator  obj_it;
-    X_monotone_curve_2                 xcv;
+    std::list<std::variant<Point_2, X_monotone_curve_2>> objects;
     std::list<X_monotone_curve_2>      x_curves;
 
     for (it = begin; it != end; it++)
@@ -127,10 +125,10 @@ public:
       objects.clear();
       traits->make_x_monotone_2_object()(*it, std::back_inserter(objects));
 
-      for (obj_it = objects.begin(); obj_it != objects.end(); ++obj_it)
+      for (auto obj_it = objects.begin(); obj_it != objects.end(); ++obj_it)
       {
-        if(CGAL::assign (xcv, *obj_it))
-          x_curves.push_back (xcv);
+        if(const X_monotone_curve_2* xcv_ptr = std::get_if<X_monotone_curve_2>(&(*obj_it)))
+          x_curves.push_back (*xcv_ptr);
       }
     }
 

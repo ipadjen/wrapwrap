@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Minkowski_sum_2/include/CGAL/Polygon_vertical_decomposition_2.h $
-// $Id: Polygon_vertical_decomposition_2.h 414103f 2022-02-21T17:17:34+02:00 Efi Fogel
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Minkowski_sum_2/include/CGAL/Polygon_vertical_decomposition_2.h $
+// $Id: include/CGAL/Polygon_vertical_decomposition_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Efi Fogel   <efifogel@gmail.com>
@@ -93,7 +93,7 @@ private:
 
   // Data members:
   const Traits_2* m_traits;
-  bool m_own_traits;    // inidicates whether the kernel should be freed up.
+  bool m_own_traits;    // indicates whether the kernel should be freed up.
 
   Compare_x_2 f_cmp_x;
   Intersect_2 f_intersect;
@@ -274,13 +274,13 @@ private:
   // Construct the vertical decomposition of the given arrangement.
   void vertical_decomposition(Arrangement_2& arr) const
   {
-    // For each vertex in the arrangment, locate the feature that lies
+    // For each vertex in the arrangement, locate the feature that lies
     // directly below it and the feature that lies directly above it.
     Vert_decomp_list vd_list;
     CGAL::decompose(arr, std::back_inserter(vd_list));
 
     // Go over the vertices (given in ascending lexicographical xy-order),
-    // and add segements to the feautres below and above it.
+    // and add segments to the feautres below and above it.
     typename Vert_decomp_list::iterator it, prev = vd_list.end();
     for (it = vd_list.begin(); it != vd_list.end(); ++it) {
       // If the feature above the previous vertex is not the current vertex,

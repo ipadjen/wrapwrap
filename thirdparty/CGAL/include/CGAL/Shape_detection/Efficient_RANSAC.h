@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Shape_detection/include/CGAL/Shape_detection/Efficient_RANSAC.h $
-// $Id: Efficient_RANSAC.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Shape_detection/include/CGAL/Shape_detection/Efficient_RANSAC.h $
+// $Id: include/CGAL/Shape_detection/Efficient_RANSAC.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -14,7 +14,15 @@
 #ifndef CGAL_SHAPE_DETECTION_EFFICIENT_RANSAC_HEADERS_H
 #define CGAL_SHAPE_DETECTION_EFFICIENT_RANSAC_HEADERS_H
 
+/// \cond SKIP_IN_MANUAL
 #include <CGAL/license/Shape_detection.h>
+/// \endcond
+
+/**
+* \ingroup PkgShapeDetectionRef
+* \file CGAL/Shape_detection/Efficient_RANSAC.h
+* A convenience header that includes all classes related to the efficient RANSAC algorithm.
+*/
 
 #include <CGAL/Shape_detection/Efficient_RANSAC/Efficient_RANSAC.h>
 #include <CGAL/Shape_detection/Efficient_RANSAC/Efficient_RANSAC_traits.h>

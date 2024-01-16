@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Three/include/CGAL/Three/Edge_container.h $
-// $Id: Edge_container.h f79ec02 2021-06-28T13:11:28+02:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Three/include/CGAL/Three/Edge_container.h $
+// $Id: include/CGAL/Three/Edge_container.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Maxime Gimeno
@@ -63,11 +63,11 @@ struct DEMO_FRAMEWORK_EXPORT Edge_container :public Primitive_container
   //! \brief initGL creates the `Vbo`s and `Vao`s of this `Edge_container`.
   //! \attention It must be called within a valid OpenGL context. The `draw()` function of an item is always a safe place to call this.
   //!
-  //! \todo Is it a good idea to call InitGL of each item in the scene so the developper doesn't have to worry about this in each draw() of each item ?
-  //!`.
+  //! \todo Is it a good idea to call InitGL of each item in the scene so the developer doesn't have to worry about this in each draw() of each item ?
+  //!
   //! \param viewer the active `Viewer_interface`.
   //!
-  void initGL(Viewer_interface *viewer)  Q_DECL_OVERRIDE;
+  void initGL(Viewer_interface *viewer)  override;
 
   //!
   //! \brief draw is the function that actually renders the data.
@@ -75,9 +75,9 @@ struct DEMO_FRAMEWORK_EXPORT Edge_container :public Primitive_container
   //! \param is_color_uniform must be `false` if `VBOs`[`Colors`] is not empty, `true` otherwise.
   //!
   void draw(CGAL::Three::Viewer_interface* viewer,
-            bool is_color_uniform)  Q_DECL_OVERRIDE;
+            bool is_color_uniform)  override;
 
-  void initializeBuffers(Viewer_interface *viewer) Q_DECL_OVERRIDE;
+  void initializeBuffers(Viewer_interface *viewer) override;
 
   /// \name Getters and Setters for the shaders parameters.
   ///

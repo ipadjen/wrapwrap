@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/QP_solver/include/CGAL/QP_models.h $
-// $Id: QP_models.h 4e519a3 2021-05-05T13:15:37+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/QP_solver/include/CGAL/QP_models.h $
+// $Id: include/CGAL/QP_models.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -1514,7 +1514,7 @@ private:
         return this->err2("expected number after '%' in section '%'",
                           t, D_section);
 
-      // multiply by two if approriate:
+      // multiply by two if appropriate:
       if (multiply_by_two)
         val *= NT(2);
 

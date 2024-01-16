@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Triangulation_3/include/CGAL/Triangulation_cell_base_3.h $
-// $Id: Triangulation_cell_base_3.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Triangulation_3/include/CGAL/Triangulation_cell_base_3.h $
+// $Id: include/CGAL/Triangulation_cell_base_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Monique Teillaud <Monique.Teillaud@sophia.inria.fr>
@@ -19,7 +19,6 @@
 
 
 #include <CGAL/basic.h>
-#include <CGAL/triangulation_assertions.h>
 #include <CGAL/Triangulation_ds_cell_base_3.h>
 
 namespace CGAL {

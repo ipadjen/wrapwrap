@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polynomial/include/CGAL/Polynomial/modular_gcd_utcf_dfai.h $
-// $Id: modular_gcd_utcf_dfai.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polynomial/include/CGAL/Polynomial/modular_gcd_utcf_dfai.h $
+// $Id: include/CGAL/Polynomial/modular_gcd_utcf_dfai.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -152,7 +152,7 @@ Polynomial<NT> modular_gcd_utcf_dfai(
     while(!solved){
         do{
             //---------------------------------------
-            //choose prime not deviding f1 or f2
+            //choose prime not dividing f1 or f2
             MScalar tmp1, tmp2;
             do{
                 prime_index++;

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Convex_hull_2/include/CGAL/IO/Tee_for_output_iterator.h $
-// $Id: Tee_for_output_iterator.h 319383c 2020-05-20T09:47:58+02:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Convex_hull_2/include/CGAL/IO/Tee_for_output_iterator.h $
+// $Id: include/CGAL/IO/Tee_for_output_iterator.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

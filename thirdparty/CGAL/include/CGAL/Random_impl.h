@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Random_numbers/include/CGAL/Random_impl.h $
-// $Id: Random_impl.h 52164b1 2019-10-19T15:34:59+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Random_numbers/include/CGAL/Random_impl.h $
+// $Id: include/CGAL/Random_impl.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -23,6 +23,7 @@
 #include <ctime>
 #include <iostream>
 #include <sstream>
+#include <cstdint>
 
 namespace CGAL {
 
@@ -40,7 +41,7 @@ Random()
     std::time( &s);
     seed = (unsigned int)s;
     // initialize random numbers generator
-    rng.seed(static_cast<boost::int32_t>(seed));
+    rng.seed(static_cast<std::int32_t>(seed));
     random_value = get_int(0, 1<<15);
 }
 
@@ -55,7 +56,7 @@ Random(internal::Random_print_seed)
     seed = (unsigned int)s;
     std::cerr << "CGAL::Random()::get_seed() = " << seed << std::endl;
     // initialize random numbers generator
-    rng.seed(static_cast<boost::int32_t>(seed));
+    rng.seed(static_cast<std::int32_t>(seed));
     random_value = get_int(0, 1<<15);
 }
 
@@ -65,7 +66,7 @@ Random( unsigned int  seed)
     : val(0), seed(seed)
 {
     // initialize random numbers generator
-    rng.seed(static_cast<boost::int32_t>(seed));
+    rng.seed(static_cast<std::int32_t>(seed));
     random_value = get_int(0, 1<<15);
 }
 

@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Kernel_23/include/CGAL/Exact_kernel_selector.h $
-// $Id: Exact_kernel_selector.h 561cc66 2022-06-29T12:30:35+02:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Kernel_23/include/CGAL/Exact_kernel_selector.h $
+// $Id: include/CGAL/Exact_kernel_selector.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Sylvain Pion,

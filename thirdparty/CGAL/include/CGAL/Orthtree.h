@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Orthtree/include/CGAL/Orthtree.h $
-// $Id: Orthtree.h e3b3774 2022-11-15T17:00:48+01:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Orthtree/include/CGAL/Orthtree.h $
+// $Id: include/CGAL/Orthtree.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Jackson Campolattaro, Simon Giraudot, Cédric Portaneri, Tong Zhao
@@ -277,7 +277,7 @@ public:
 
   // Non-necessary but just to be clear on the rule of 5:
 
-  // assignement operators deleted (PointRange is a ref)
+  // assignment operators deleted (PointRange is a ref)
   Orthtree& operator= (const Orthtree& other) = delete;
   Orthtree& operator= (Orthtree&& other) = delete;
   // Destructor

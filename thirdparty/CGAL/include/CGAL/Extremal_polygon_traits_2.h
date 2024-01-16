@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Inscribed_areas/include/CGAL/Extremal_polygon_traits_2.h $
-// $Id: Extremal_polygon_traits_2.h d8d5f1d 2021-01-05T18:41:11+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Inscribed_areas/include/CGAL/Extremal_polygon_traits_2.h $
+// $Id: include/CGAL/Extremal_polygon_traits_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -16,7 +16,7 @@
 #include <CGAL/license/Inscribed_areas.h>
 
 
-#include <CGAL/Optimisation/assertions.h>
+#include <CGAL/assertions.h>
 #include <CGAL/squared_distance_2.h>
 #include <CGAL/Polygon_2.h>
 #include <boost/function.hpp>
@@ -83,7 +83,7 @@ struct Extremal_polygon_area_traits_2 {
     int number_of_points(
                          static_cast<int>(iterator_distance( points_begin,
                                                              points_end)));
-    CGAL_optimisation_precondition( number_of_points > min_k());
+    CGAL_precondition( number_of_points > min_k());
 
     // this gives the area of the triangle of two points with
     // the root:
@@ -136,7 +136,7 @@ protected:
 };
 
 } //namespace CGAL
-#include <CGAL/Optimisation/assertions.h>
+
 #include <cmath>
 #ifdef CGAL_USE_LEDA
 #include <CGAL/leda_real.h>
@@ -221,11 +221,11 @@ struct Extremal_polygon_perimeter_traits_2 {
     using std::less;
     using std::max_element;
 
-    CGAL_optimisation_precondition_code(
+    CGAL_precondition_code(
       int number_of_points(
                            static_cast<int>(iterator_distance( points_begin,
                                                                points_end)));)
-    CGAL_optimisation_precondition( number_of_points > min_k());
+    CGAL_precondition( number_of_points > min_k());
 
     // kind of messy, but first we have to have something
     // like Distance (function object) ...

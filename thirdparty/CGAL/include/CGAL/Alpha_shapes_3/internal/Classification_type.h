@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Alpha_shapes_3/include/CGAL/Alpha_shapes_3/internal/Classification_type.h $
-// $Id: Classification_type.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Alpha_shapes_3/include/CGAL/Alpha_shapes_3/internal/Classification_type.h $
+// $Id: include/CGAL/Alpha_shapes_3/internal/Classification_type.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

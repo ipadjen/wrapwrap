@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/NewKernel_d/include/CGAL/NewKernel_d/Vector/array.h $
-// $Id: array.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/NewKernel_d/include/CGAL/NewKernel_d/Vector/array.h $
+// $Id: include/CGAL/NewKernel_d/Vector/array.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Marc Glisse
@@ -12,7 +12,6 @@
 #ifndef CGAL_VECTOR_ARRAY_H
 #define CGAL_VECTOR_ARRAY_H
 #include <boost/type_traits/is_arithmetic.hpp>
-#include <boost/utility/enable_if.hpp>
 #include <CGAL/Dimension.h>
 #include <CGAL/NewKernel_d/utils.h>
 #include <CGAL/array.h>
@@ -39,10 +38,10 @@ template<class NT_,class Dim_,class Max_dim_=Dim_> struct Array_vector {
         struct Rebind_dimension {
           typedef Array_vector< NT, D2, D3 > Other;
         };
-        template<class> struct Property : boost::false_type {};
+        template<class> struct Property : std::false_type {};
 
         static const unsigned d_=Max_dim_::value;
-        CGAL_static_assertion(d_ != (unsigned)UNKNOWN_DIMENSION);
+        static_assert(d_ != (unsigned)UNKNOWN_DIMENSION);
 
         typedef std::array<NT,d_> Vector;
         struct Construct_vector {

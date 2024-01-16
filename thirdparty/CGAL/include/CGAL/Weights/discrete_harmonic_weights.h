@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Weights/include/CGAL/Weights/discrete_harmonic_weights.h $
-// $Id: discrete_harmonic_weights.h 5f89766 2022-10-20T17:17:06+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Weights/include/CGAL/Weights/discrete_harmonic_weights.h $
+// $Id: include/CGAL/Weights/discrete_harmonic_weights.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -142,7 +142,7 @@ typename Kernel::FT discrete_harmonic_weight(const CGAL::Point_3<Kernel>& p0,
   \tparam PointMap a model of `ReadablePropertyMap` whose key type is `VertexRange::value_type` and
                    value type is `Point_2`. The default is `CGAL::Identity_property_map`.
 
-  \cgalModels `BarycentricWeights_2`
+  \cgalModels{BarycentricWeights_2}
 */
 template<typename VertexRange,
          typename GeomTraits,

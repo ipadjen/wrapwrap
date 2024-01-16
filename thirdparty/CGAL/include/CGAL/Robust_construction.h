@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Filtered_kernel/include/CGAL/Robust_construction.h $
-// $Id: Robust_construction.h 52164b1 2019-10-19T15:34:59+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Filtered_kernel/include/CGAL/Robust_construction.h $
+// $Id: include/CGAL/Robust_construction.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Sylvain Pion, Mariette Yvinec, Laurent Rineau
@@ -16,7 +16,7 @@
 
 namespace CGAL {
 
-// This template class is a functor adaptor targetting geometric constructions.
+// This template class is a functor adaptor targeting geometric constructions.
 //
 // They are "robust" in the following sense : the input and output are
 // approximate (doubles), but the internal computation tries to guarantees the

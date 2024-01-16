@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesher_level/include/CGAL/Mesh_2/Output_stream.h $
-// $Id: Output_stream.h 52164b1 2019-10-19T15:34:59+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesher_level/include/CGAL/Mesh_2/Output_stream.h $
+// $Id: include/CGAL/Mesh_2/Output_stream.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

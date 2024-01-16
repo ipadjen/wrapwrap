@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org);
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Stream_support/include/CGAL/IO/GOCAD.h $
-// $Id: GOCAD.h 10b0af3 2022-01-13T14:43:34+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Stream_support/include/CGAL/IO/GOCAD.h $
+// $Id: include/CGAL/IO/GOCAD.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Andreas Fabri
@@ -24,11 +24,11 @@
 #include <CGAL/use.h>
 
 #include <boost/range/value_type.hpp>
-#include <boost/utility/enable_if.hpp>
 
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include <type_traits>
 
 namespace CGAL {
 
@@ -195,7 +195,7 @@ bool read_GOCAD(std::istream& is,
                 PolygonRange& polygons,
                 const CGAL_NP_CLASS& np = parameters::default_values()
 #ifndef DOXYGEN_RUNNING
-                , typename boost::enable_if<internal::is_Range<PolygonRange> >::type* = nullptr
+                , std::enable_if_t<internal::is_Range<PolygonRange>::value>* = nullptr
 #endif
                 )
 {
@@ -240,7 +240,7 @@ bool read_GOCAD(const std::string& fname,
                 PolygonRange& polygons,
                 const CGAL_NP_CLASS& np = parameters::default_values()
 #ifndef DOXYGEN_RUNNING
-                , typename boost::enable_if<internal::is_Range<PolygonRange> >::type* = nullptr
+                , std::enable_if_t<internal::is_Range<PolygonRange>::value>* = nullptr
 #endif
                 )
 {
@@ -348,7 +348,7 @@ bool write_GOCAD(std::ostream& os,
                  const PolygonRange& polygons,
                  const CGAL_NP_CLASS& np = parameters::default_values()
 #ifndef DOXYGEN_RUNNING
-                 , typename boost::enable_if<internal::is_Range<PolygonRange> >::type* = nullptr
+                 , std::enable_if_t<internal::is_Range<PolygonRange>::value>* = nullptr
 #endif
                  )
 {
@@ -390,7 +390,7 @@ bool write_GOCAD(const std::string& fname,
                  const PolygonRange& polygons,
                  const CGAL_NP_CLASS& np = parameters::default_values()
 #ifndef DOXYGEN_RUNNING
-                 , typename boost::enable_if<internal::is_Range<PolygonRange> >::type* = nullptr
+                 , std::enable_if_t<internal::is_Range<PolygonRange>::value>* = nullptr
 #endif
                  )
 {

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Optimal_transportation_reconstruction_2/include/CGAL/Optimal_transportation_reconstruction_2.h $
-// $Id: Optimal_transportation_reconstruction_2.h 793801c 2023-01-03T07:36:46+00:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Optimal_transportation_reconstruction_2/include/CGAL/Optimal_transportation_reconstruction_2.h $
+// $Id: include/CGAL/Optimal_transportation_reconstruction_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Fernando de Goes, Pierre Alliez, Ivo Vigan, Clément Jamin
@@ -34,7 +34,6 @@
 #include <boost/multi_index/ordered_index.hpp>
 #include <boost/multi_index/identity.hpp>
 #include <CGAL/boost/iterator/transform_iterator.hpp>
-#include <boost/type_traits/is_float.hpp>
 
 namespace CGAL {
 
@@ -230,11 +229,11 @@ public:
 
   /// @}
 
-  /// \name Settting Parameters
+  /// \name Setting Parameters
   /// @{
   /*!
           If `sample_size == 0`, the simplification is performed using an exhaustive priority queue.
-          If `sample_size` is stricly positive the simplification is performed using a
+          If `sample_size` is strictly positive the simplification is performed using a
           multiple choice approach, ie, a best-choice selection in a random sample of
           edge collapse operators, of size `sample_size`. A typical value for the sample
           size is 15, but this value must be enlarged when targeting a very coarse simplification.
@@ -1185,9 +1184,9 @@ public:
   // number type (like a multiprecision), the coordinates of the points
   // will increase a lot due to the relocation step. These functions
   // simply turn a relocated point to a rounded to double version.
-  void relocate_on_the_double_grid(Point&, boost::true_type) const
+  void relocate_on_the_double_grid(Point&, std::true_type) const
   {}
-  void relocate_on_the_double_grid(Point& p, boost::false_type) const
+  void relocate_on_the_double_grid(Point& p, std::false_type) const
   {
     double x=to_double(m_traits.compute_x_2_object()(p));
     double y=to_double(m_traits.compute_y_2_object()(p));
@@ -1196,7 +1195,7 @@ public:
   void relocate_on_the_double_grid(Point& p) const
   {
     relocate_on_the_double_grid(p,
-      typename boost::is_float<typename Traits::FT>::type());
+      typename std::is_floating_point<typename Traits::FT>::type());
   }
 
   Point compute_relocation(Vertex_handle vertex) const {

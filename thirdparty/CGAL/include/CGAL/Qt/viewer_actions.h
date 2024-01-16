@@ -6,8 +6,8 @@
  This file is part of a fork of the QGLViewer library version 2.7.0.
 
 *****************************************************************************/
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/GraphicsView/include/CGAL/Qt/viewer_actions.h $
-// $Id: viewer_actions.h 06995b5 2020-09-30T16:28:25+02:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/GraphicsView/include/CGAL/Qt/viewer_actions.h $
+// $Id: include/CGAL/Qt/viewer_actions.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-only
 #ifndef VIEWER_ACTIONS_H
 #define VIEWER_ACTIONS_H

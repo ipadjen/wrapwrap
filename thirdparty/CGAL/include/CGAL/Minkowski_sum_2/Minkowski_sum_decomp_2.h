@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Minkowski_sum_2/include/CGAL/Minkowski_sum_2/Minkowski_sum_decomp_2.h $
-// $Id: Minkowski_sum_decomp_2.h 414103f 2022-02-21T17:17:34+02:00 Efi Fogel
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Minkowski_sum_2/include/CGAL/Minkowski_sum_2/Minkowski_sum_decomp_2.h $
+// $Id: include/CGAL/Minkowski_sum_2/Minkowski_sum_decomp_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Ron Wein   <wein_r@yahoo.com>
@@ -75,11 +75,11 @@ private:
   // Data members:
   const Decomposition_strategy1* m_decomposition_strategy1;
   const Decomposition_strategy2* m_decomposition_strategy2;
-  bool m_own_strategy1;   // inidicates whether the stategy should be freed up.
-  bool m_own_strategy2;   // inidicates whether the stategy should be freed up.
+  bool m_own_strategy1;   // indicates whether the strategy should be freed up.
+  bool m_own_strategy2;   // indicates whether the strategy should be freed up.
 
   const Traits_2* m_traits;
-  bool m_own_traits;      // inidicates whether the kernel should be freed up.
+  bool m_own_traits;      // indicates whether the kernel should be freed up.
 
   Compare_angle_2         f_compare_angle;
   Translate_point_2       f_add;
@@ -348,7 +348,7 @@ public:
   }
 
 private:
-  /*! Merge mergable edges
+  /*! Merge mergeable edges
    * \param arr (in) The underlying arrangement.
    */
   void simplify(Arrangement_2& arr) const

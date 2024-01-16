@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Triangulation_on_sphere_2/include/CGAL/Delaunay_triangulation_on_sphere_traits_2.h $
-// $Id: Delaunay_triangulation_on_sphere_traits_2.h 76b6649 2021-04-29T23:22:47+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Triangulation_on_sphere_2/include/CGAL/Delaunay_triangulation_on_sphere_traits_2.h $
+// $Id: include/CGAL/Delaunay_triangulation_on_sphere_traits_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mariette Yvinec,
@@ -22,7 +22,7 @@
 #include <CGAL/Has_conversion.h>
 #include <CGAL/Spherical_kernel_3.h>
 #include <CGAL/squared_distance_3.h>
-#include <CGAL/triangulation_assertions.h>
+#include <CGAL/assertions.h>
 
 #include <CGAL/enum.h>
 
@@ -101,14 +101,14 @@ public:
     // Check if r is on the same side of the plane orthogonal to the plane (c,p,q)
     // and going through c and p as q
     const Orientation op = _lk.coplanar_orientation_3_object()(_center, p, q, r);
-    CGAL_triangulation_assertion(op != COLLINEAR);
+    CGAL_assertion(op != COLLINEAR);
     if(op == NEGATIVE)
       return false;
 
     // Check if r is on the same side of the plane orthogonal to the plane (c,p,q)
     // and going through c and q as p
     const Orientation oq = _lk.coplanar_orientation_3_object()(_center, q, p, r);
-    CGAL_triangulation_assertion(oq != COLLINEAR);
+    CGAL_assertion(oq != COLLINEAR);
     if(oq == NEGATIVE)
       return false;
 

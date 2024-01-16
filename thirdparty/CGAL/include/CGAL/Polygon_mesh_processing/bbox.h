@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/bbox.h $
-// $Id: bbox.h bb0b9a8 2022-03-07T15:32:37+01:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/bbox.h $
+// $Id: include/CGAL/Polygon_mesh_processing/bbox.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -21,7 +21,7 @@
 #include <boost/graph/graph_traits.hpp>
 
 #include <CGAL/Named_function_parameters.h>
-#include <CGAL/Polygon_mesh_processing/internal/named_params_helper.h>
+#include <CGAL/boost/graph/named_params_helper.h>
 
 namespace CGAL {
 
@@ -179,6 +179,8 @@ namespace CGAL {
       using parameters::choose_parameter;
       using parameters::get_parameter;
 
+      CGAL_precondition(is_valid_edge_descriptor(ed, pmesh));
+
       typename GetVertexPointMap<PolygonMesh, NamedParameters>::const_type
         vpm = choose_parameter(get_parameter(np, internal_np::vertex_point),
                                get_const_property_map(CGAL::vertex_point, pmesh));
@@ -233,6 +235,8 @@ namespace CGAL {
     {
       using parameters::choose_parameter;
       using parameters::get_parameter;
+
+      CGAL_precondition(is_valid_face_descriptor(fd, pmesh));
 
       typename GetVertexPointMap<PolygonMesh, NamedParameters>::const_type
         vpm = choose_parameter(get_parameter(np, internal_np::vertex_point),

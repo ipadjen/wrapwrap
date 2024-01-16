@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/NewKernel_d/include/CGAL/NewKernel_d/Wrapper/Segment_d.h $
-// $Id: Segment_d.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/NewKernel_d/include/CGAL/NewKernel_d/Wrapper/Segment_d.h $
+// $Id: include/CGAL/NewKernel_d/Wrapper/Segment_d.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Marc Glisse
@@ -35,7 +35,7 @@ class Segment_d : public Get_type<typename R_::Kernel_base, Segment_tag>::type
   typedef typename Get_functor<Kbase, Segment_extremity_tag>::type CSEBase;
 
   typedef Segment_d                            Self;
-  CGAL_static_assertion((boost::is_same<Self, typename Get_type<R_, Segment_tag>::type>::value));
+  static_assert(std::is_same<Self, typename Get_type<R_, Segment_tag>::type>::value);
 
 public:
 
@@ -57,7 +57,7 @@ public:
 
   typedef          R_                       R;
 
-  template<class...U,class=typename std::enable_if<!std::is_same<std::tuple<typename std::decay<U>::type...>,std::tuple<Segment_d> >::value>::type> explicit Segment_d(U&&...u)
+  template<class...U,class=std::enable_if_t<!std::is_same<std::tuple<typename std::decay<U>::type...>,std::tuple<Segment_d> >::value>> explicit Segment_d(U&&...u)
           : Rep(CSBase()(std::forward<U>(u)...)){}
 
 //  // called from Construct_point_d

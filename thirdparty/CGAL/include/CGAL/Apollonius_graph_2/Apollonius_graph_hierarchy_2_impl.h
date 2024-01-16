@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Apollonius_graph_2/include/CGAL/Apollonius_graph_2/Apollonius_graph_hierarchy_2_impl.h $
-// $Id: Apollonius_graph_hierarchy_2_impl.h 4e519a3 2021-05-05T13:15:37+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Apollonius_graph_2/include/CGAL/Apollonius_graph_2/Apollonius_graph_hierarchy_2_impl.h $
+// $Id: include/CGAL/Apollonius_graph_2/Apollonius_graph_hierarchy_2_impl.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -54,7 +54,7 @@ Apollonius_graph_hierarchy_2
 }
 
 
-//Assignement
+//Assignment
 template<class Gt, class Agds, class LTag>
 Apollonius_graph_hierarchy_2<Gt,Agds,LTag> &
 Apollonius_graph_hierarchy_2<Gt,Agds,LTag>::
@@ -332,8 +332,8 @@ void
 Apollonius_graph_hierarchy_2<Gt,Agds,LTag>::
 remove(Vertex_handle v)
 {
-  CGAL_triangulation_precondition( v != Vertex_handle());
-  CGAL_triangulation_precondition( !is_infinite(v));
+  CGAL_precondition( v != Vertex_handle());
+  CGAL_precondition( !is_infinite(v));
 
   // get the hidden circles
   typename Apollonius_graph_base::Site_list wp_list;

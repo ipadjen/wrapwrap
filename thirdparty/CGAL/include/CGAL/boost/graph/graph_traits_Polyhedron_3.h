@@ -2,15 +2,18 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polyhedron/include/CGAL/boost/graph/graph_traits_Polyhedron_3.h $
-// $Id: graph_traits_Polyhedron_3.h 10834e4 2020-06-30T16:37:59+02:00 Laurent Rineau
-// SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polyhedron/include/CGAL/boost/graph/graph_traits_Polyhedron_3.h $
+// $Id: include/CGAL/boost/graph/graph_traits_Polyhedron_3.h a484bfa $
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Andreas Fabri, Fernando Cacciola
 
 #ifndef CGAL_BOOST_GRAPH_GRAPH_TRAITS_POLYHEDRON_3_H
 #define CGAL_BOOST_GRAPH_GRAPH_TRAITS_POLYHEDRON_3_H
+
+#include <CGAL/license/Polyhedron.h>
+
 
 #include <CGAL/boost/graph/graph_traits_HalfedgeDS.h>
 
@@ -491,8 +494,9 @@ namespace boost {
 
 #endif //CGAL_NO_DEPRECATED_CODE
 
-#undef CGAL_HDS_PARAM_
-
 #include <CGAL/boost/graph/properties_Polyhedron_3.h>
+#include <CGAL/boost/graph/properties_Polyhedron_3_time_stamp.h>
+#include <CGAL/boost/graph/properties_Polyhedron_3_features.h>
+#undef CGAL_HDS_PARAM_
 
 #endif // CGAL_BOOST_GRAPH_GRAPH_TRAITS_POLYHEDRON_3_H

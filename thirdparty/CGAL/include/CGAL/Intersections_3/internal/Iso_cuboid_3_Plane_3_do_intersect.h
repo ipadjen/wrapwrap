@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_3/include/CGAL/Intersections_3/internal/Iso_cuboid_3_Plane_3_do_intersect.h $
-// $Id: Iso_cuboid_3_Plane_3_do_intersect.h c2d1adf 2021-06-23T17:34:48+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_3/include/CGAL/Intersections_3/internal/Iso_cuboid_3_Plane_3_do_intersect.h $
+// $Id: include/CGAL/Intersections_3/internal/Iso_cuboid_3_Plane_3_do_intersect.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -79,15 +79,16 @@ Uncertain<bool> get_min_max(const typename K::Vector_3& p,
 }
 
 template <class K, class Box3> // Iso_cuboid_3 or Bbox_3
-bool do_intersect_plane_box(const typename K::Plane_3& plane,
-                            const Box3& bbox,
-                            const K&)
+typename K::Boolean do_intersect_plane_box(const typename K::Plane_3& plane,
+                                           const Box3& bbox,
+                                           const K&)
 {
   typedef typename K::Point_3 Point_3;
 
   Point_3 p_max, p_min;
   Uncertain<bool> b = get_min_max<K>(plane.orthogonal_vector(), bbox, p_min, p_max);
-  if(is_certain(b)){
+  if(is_certain(b))
+  {
     return ! (plane.oriented_side(p_max) == ON_NEGATIVE_SIDE ||
               plane.oriented_side(p_min) == ON_POSITIVE_SIDE);
   }
@@ -114,17 +115,19 @@ bool do_intersect_plane_box(const typename K::Plane_3& plane,
 }
 
 template <class K>
-bool do_intersect(const typename K::Plane_3& plane,
-                  const typename K::Iso_cuboid_3& bbox,
-                  const K& k)
+typename K::Boolean
+do_intersect(const typename K::Plane_3& plane,
+             const typename K::Iso_cuboid_3& bbox,
+             const K& k)
 {
   return do_intersect_plane_box(plane, bbox, k);
 }
 
 template <class K>
-bool do_intersect(const typename K::Iso_cuboid_3& bbox,
-                  const typename K::Plane_3& plane,
-                  const K& k)
+typename K::Boolean
+do_intersect(const typename K::Iso_cuboid_3& bbox,
+             const typename K::Plane_3& plane,
+             const K& k)
 {
   return do_intersect_plane_box(plane, bbox, k);
 }

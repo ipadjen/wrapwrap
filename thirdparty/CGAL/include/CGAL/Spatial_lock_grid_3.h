@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/STL_Extension/include/CGAL/Spatial_lock_grid_3.h $
-// $Id: Spatial_lock_grid_3.h 288c283 2021-08-30T19:24:59+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/STL_Extension/include/CGAL/Spatial_lock_grid_3.h $
+// $Id: include/CGAL/Spatial_lock_grid_3.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Clement Jamin
@@ -209,7 +209,7 @@ public:
     int index_x = static_cast<int>( (CGAL::to_double(point.x()) - m_bbox.xmin()) * m_resolution_x);
     //index_x = std::max( 0, std::min(index_x, m_num_grid_cells_per_axis - 1) );
     index_x =
-      (index_x < 0 ?
+      (index_x < 0 ? /// @TODO: use std::clamp
         0
         : (index_x >= m_num_grid_cells_per_axis ?
             m_num_grid_cells_per_axis - 1
@@ -556,7 +556,7 @@ public:
         }
         else if (old_value > this_thread_priority)
         {
-          // Another "more prioritary" thread owns the lock, we back off
+          // Another "more priority" thread owns the lock, we back off
           return false;
         }
         else

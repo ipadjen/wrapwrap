@@ -6,8 +6,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Kernel_d/include/CGAL/Kernel_d/interface_macros_d.h $
-// $Id: interface_macros_d.h 52164b1 2019-10-19T15:34:59+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Kernel_d/include/CGAL/Kernel_d/interface_macros_d.h $
+// $Id: include/CGAL/Kernel_d/interface_macros_d.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Herve Bronnimann, Sylvain Pion, Susan Hert
@@ -16,7 +16,7 @@
 // It's aimed at being included from within a kernel traits class, this
 // way we share more code.
 
-// It is the responsability of the including file to correctly set the 2
+// It is the responsibility of the including file to correctly set the 2
 // macros CGAL_Kernel_pred, CGAL_Kernel_cons and CGAL_Kernel_obj.
 // And they are #undefed at the end of this file.
 

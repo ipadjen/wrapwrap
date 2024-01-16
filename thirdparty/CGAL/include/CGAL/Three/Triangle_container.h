@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Three/include/CGAL/Three/Triangle_container.h $
-// $Id: Triangle_container.h f79ec02 2021-06-28T13:11:28+02:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Three/include/CGAL/Three/Triangle_container.h $
+// $Id: include/CGAL/Three/Triangle_container.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Maxime Gimeno
@@ -68,7 +68,7 @@ struct DEMO_FRAMEWORK_EXPORT Triangle_container :public Primitive_container
   //!
   //! \param viewer the active `Viewer_interface`.
   //!
-  void initGL(CGAL::Three::Viewer_interface* viewer) Q_DECL_OVERRIDE;
+  void initGL(CGAL::Three::Viewer_interface* viewer) override;
 
   //!
   //! \brief draw is the function that actually renders the data.
@@ -76,9 +76,9 @@ struct DEMO_FRAMEWORK_EXPORT Triangle_container :public Primitive_container
   //! \param is_color_uniform must be `false` if the color buffers are not empty, `true` otherwise.
   //!
   void draw(CGAL::Three::Viewer_interface* viewer,
-            bool is_color_uniform)  Q_DECL_OVERRIDE;
+            bool is_color_uniform)  override;
 
-  void initializeBuffers(Viewer_interface *viewer) Q_DECL_OVERRIDE;
+  void initializeBuffers(Viewer_interface *viewer) override;
   /// \name Getters and Setters for the shaders parameters.
   ///
   /// Each of those depends of the `OpenGL_program_IDs` this container is using.

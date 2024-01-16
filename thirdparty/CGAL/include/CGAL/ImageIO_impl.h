@@ -5,8 +5,8 @@
 //
 // This file is part of the ImageIO Library, and as been adapted for CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/CGAL_ImageIO/include/CGAL/ImageIO_impl.h $
-// $Id: ImageIO_impl.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/CGAL_ImageIO/include/CGAL/ImageIO_impl.h $
+// $Id: include/CGAL/ImageIO_impl.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later
 //
 
@@ -887,7 +887,7 @@ _image* _readNonInterlacedImage(const char *name) {
 
 
 /* Write inrimage given in inr in file name. If file name's suffix is
-   .gz, the image is gziped. If file name's suffix is .hdr, the image
+   .gz, the image is gzipped. If file name's suffix is .hdr, the image
    is written in ANALYZE format. If file name is nullptr, image is written
    on stdout */
 CGAL_INLINE_FUNCTION
@@ -1242,7 +1242,7 @@ static void _swapImageData( _image *im )
    Swap bytes depending on the endianness and the current architecture  */
 CGAL_INLINE_FUNCTION
 int _readImageData(_image *im) {
-  unsigned long size, nread;
+  std::size_t size, nread;
 
   if(im->openMode != OM_CLOSE) {
     size = im->xdim * im->ydim * im->zdim * im->vdim * im->wdim;
@@ -1279,7 +1279,7 @@ int _readImageData(_image *im) {
    Swap bytes depending on the endianness and the current architecture. */
 CGAL_INLINE_FUNCTION
 int _readNonInterlacedImageData(_image *im) {
-  unsigned long size, nread;
+  std::size_t size, nread;
   unsigned char **vp, *buf;
   unsigned int i, j, k, v, w;
 
@@ -1356,7 +1356,7 @@ int _readNonInterlacedImageData(_image *im) {
    been read by _readImageHeader. The image buffer is interlaced. */
 CGAL_INLINE_FUNCTION
 int _readNonInterlacedFileData(_image *im) {
-  unsigned long size, nread;
+  std::size_t size, nread;
   unsigned char *ptr1, *vp, *buf;
   unsigned int i, j, k, v, w;
 

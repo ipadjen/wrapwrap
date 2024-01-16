@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_simplification/include/CGAL/Surface_mesh_simplification/Policies/Edge_collapse/GarlandHeckbert_probabilistic_plane_policies.h $
-// $Id: GarlandHeckbert_probabilistic_plane_policies.h 776cfd6 2022-03-31T23:24:20+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_simplification/include/CGAL/Surface_mesh_simplification/Policies/Edge_collapse/GarlandHeckbert_probabilistic_plane_policies.h $
+// $Id: include/CGAL/Surface_mesh_simplification/Policies/Edge_collapse/GarlandHeckbert_probabilistic_plane_policies.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Baskin Burak Senbaslar,
@@ -64,7 +64,7 @@ public:
   { }
 
   Probabilistic_plane_quadric_calculator(TriangleMesh& tmesh,
-                                         typename boost::enable_if<std::is_same<Face_variance_map, Default_FVM> >::type* = nullptr)
+                                         std::enable_if_t<std::is_same<Face_variance_map, Default_FVM>::value >* = nullptr)
   {
     // try to initialize the face variance map using the estimated variance
     // parameters are constants defined for this class

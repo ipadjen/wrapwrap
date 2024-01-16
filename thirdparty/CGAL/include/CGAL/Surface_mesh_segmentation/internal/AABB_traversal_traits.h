@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_segmentation/include/CGAL/Surface_mesh_segmentation/internal/AABB_traversal_traits.h $
-// $Id: AABB_traversal_traits.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_segmentation/include/CGAL/Surface_mesh_segmentation/internal/AABB_traversal_traits.h $
+// $Id: include/CGAL/Surface_mesh_segmentation/internal/AABB_traversal_traits.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Ilker O. Yaz
@@ -23,7 +23,7 @@ namespace CGAL
 
 /**
  * @class Special case for ray/segment-triangle
- * the only difference with the offical one (Listing_intersection_traits) is that
+ * the only difference with the official one (Listing_intersection_traits) is that
  * is the do_intersect which is made prior to the intersection call.
  */
 template<typename AABBTraits, typename Query, typename Output_iterator>
@@ -54,7 +54,7 @@ public:
 
     if ( GeomTraits().do_intersect_3_object()(query,
          primitive.datum(m_traits.shared_data())) ) {
-      boost::optional<Intersection_and_primitive_id> intersection
+      std::optional<Intersection_and_primitive_id> intersection
         = m_traits.intersection_object()(query, primitive);
       if(intersection) {
         *m_out_it++ = *intersection;

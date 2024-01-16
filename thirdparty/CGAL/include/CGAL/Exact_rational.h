@@ -7,12 +7,15 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Number_types/include/CGAL/Exact_rational.h $
-// $Id: Exact_rational.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Number_types/include/CGAL/Exact_rational.h $
+// $Id: include/CGAL/Exact_rational.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Laurent Rineau
+
+#ifndef CGAL_EXACT_RATIONAL_H
+#define CGAL_EXACT_RATIONAL_H
 
 #include <CGAL/Number_types/internal/Exact_type_selector.h>
 
@@ -27,10 +30,7 @@ It is a typedef of another number type. Its exact definition depends on
 the availability the third-party libraries \gmp, \core, and \leda. \cgal must
 be configured with at least one of those libraries.
 
-\cgalModels `Field`
-\cgalModels `RealEmbeddable`
-\cgalModels `Fraction`
-\cgalModels `FromDoubleConstructible`
+\cgalModels{Field,RealEmbeddable,Fraction,FromDoubleConstructible}
 
 */
 #if DOXYGEN_RUNNING
@@ -39,8 +39,10 @@ typedef unspecified_type Exact_rational;
 
 #else // not DOXYGEN_RUNNING
 
-typedef internal::Exact_field_selector<double>::Type Exact_rational;
+using Exact_rational = internal::Exact_NT_backend<internal::Default_exact_nt_backend>::Rational;
 
 #endif
 
 } /* end namespace CGAL */
+
+#endif // CGAL_EXACT_RATIONAL_H

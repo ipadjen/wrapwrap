@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Kernel_23/include/CGAL/Kernel_checker.h $
-// $Id: Kernel_checker.h 371db97 2020-08-20T14:12:16+02:00 Dmitry Anisimov
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Kernel_23/include/CGAL/Kernel_checker.h $
+// $Id: include/CGAL/Kernel_checker.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

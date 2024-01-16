@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Boolean_set_operations_2/include/CGAL/Boolean_set_operations_2/Gps_agg_op_surface_sweep_2.h $
-// $Id: Gps_agg_op_surface_sweep_2.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Boolean_set_operations_2/include/CGAL/Boolean_set_operations_2/Gps_agg_op_surface_sweep_2.h $
+// $Id: include/CGAL/Boolean_set_operations_2/Gps_agg_op_surface_sweep_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Baruch Zukerman <baruchzu@post.tau.ac.il>
@@ -110,7 +110,7 @@ public:
 
       event = this->_allocate_event(vh->point(), event_type,
                                     ARR_INTERIOR, ARR_INTERIOR);
-      // \todo When the boolean set operations are exteneded to support
+      // \todo When the boolean set operations are extended to support
       //       unbounded curves, we will need here a special treatment.
 
       #ifndef CGAL_ARRANGEMENT_ON_SURFACE_2_H
@@ -150,7 +150,7 @@ public:
         if (res == SMALLER || q_iter == q_end) {
           event = this->_allocate_event(vh->point(), event_type,
                                         ARR_INTERIOR, ARR_INTERIOR);
-          // \todo When the boolean set operations are exteneded to support
+          // \todo When the boolean set operations are extended to support
           //       unbounded curves, we will need here a special treatment.
 
           #ifndef CGAL_ARRANGEMENT_ON_SURFACE_2_H

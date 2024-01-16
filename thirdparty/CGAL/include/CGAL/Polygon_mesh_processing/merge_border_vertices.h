@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/merge_border_vertices.h $
-// $Id: merge_border_vertices.h 5a992f6 2022-11-22T10:31:34+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/merge_border_vertices.h $
+// $Id: include/CGAL/Polygon_mesh_processing/merge_border_vertices.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -20,7 +20,7 @@
 #include <CGAL/boost/graph/properties.h>
 #include <CGAL/Polygon_mesh_processing/border.h>
 #include <CGAL/Named_function_parameters.h>
-#include <CGAL/Polygon_mesh_processing/internal/named_params_helper.h>
+#include <CGAL/boost/graph/named_params_helper.h>
 #include <CGAL/Polygon_mesh_processing/stitch_borders.h>
 
 #include <algorithm>
@@ -65,7 +65,7 @@ struct Less_on_point_of_target
 // Given a container of vectors of halfedges whose target are geometrically identical,
 // check that the intervals described by these pairs are either disjoint or nested.
 // This is done to ensure valid combinatorics when we merge the vertices.
-// If incompatible (overlapping) intervals are found, the pair representating the longest
+// If incompatible (overlapping) intervals are found, the pair representing the longest
 // interval (arbitrary choice) is removed from the candidate list.
 template <typename VPM, typename PolygonMesh>
 void sanitize_candidates(const std::vector<std::pair<typename boost::graph_traits<PolygonMesh>::halfedge_descriptor, std::size_t> >& cycle_hedges,
@@ -204,7 +204,7 @@ void detect_identical_mergeable_vertices(
   }
 }
 
-// \ingroup PMP_repairing_grp
+// \ingroup PMP_combinatorial_repair_grp
 //
 // merges target vertices of a list of halfedges.
 // Halfedges must be sorted in the list.
@@ -222,7 +222,7 @@ void merge_vertices_in_range(const HalfedgeRange& sorted_hedges,
   typedef typename boost::graph_traits<PolygonMesh>::halfedge_descriptor halfedge_descriptor;
   typedef typename boost::graph_traits<PolygonMesh>::vertex_descriptor vertex_descriptor;
 
-  halfedge_descriptor in_h_kept = *boost::begin(sorted_hedges);
+  halfedge_descriptor in_h_kept = *std::begin(sorted_hedges);
   halfedge_descriptor out_h_kept = next(in_h_kept, pm);
   vertex_descriptor v_kept = target(in_h_kept, pm);
 
@@ -259,7 +259,7 @@ void merge_vertices_in_range(const HalfedgeRange& sorted_hedges,
 
 } // end of internal
 
-/// \ingroup PMP_repairing_grp
+/// \ingroup PMP_combinatorial_repair_grp
 ///
 /// merges identical vertices around a cycle of boundary edges.
 ///
@@ -292,6 +292,8 @@ void merge_duplicated_vertices_in_boundary_cycle(typename boost::graph_traits<Po
   using parameters::get_parameter;
   using parameters::choose_parameter;
 
+  CGAL_precondition(is_valid_halfedge_descriptor(h, pm));
+
   Vpm vpm = choose_parameter(get_parameter(np, internal_np::vertex_point),
                              get_const_property_map(vertex_point, pm));
 
@@ -317,7 +319,7 @@ void merge_duplicated_vertices_in_boundary_cycle(typename boost::graph_traits<Po
   }
 }
 
-/// \ingroup PMP_repairing_grp
+/// \ingroup PMP_combinatorial_repair_grp
 ///
 /// extracts boundary cycles and merges the duplicated vertices of each cycle.
 ///

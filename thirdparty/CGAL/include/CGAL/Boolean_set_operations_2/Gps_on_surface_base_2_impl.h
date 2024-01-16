@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Boolean_set_operations_2/include/CGAL/Boolean_set_operations_2/Gps_on_surface_base_2_impl.h $
-// $Id: Gps_on_surface_base_2_impl.h 4dbf509 2021-11-03T16:47:12+02:00 Efi Fogel
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Boolean_set_operations_2/include/CGAL/Boolean_set_operations_2/Gps_on_surface_base_2_impl.h $
+// $Id: include/CGAL/Boolean_set_operations_2/Gps_on_surface_base_2_impl.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -631,7 +631,7 @@ template <class Traits_, class TopTraits_, class ValidationPolicy>
 
   typedef Arr_bfs_scanner<Arrangement_on_surface_2, Counting_output_iterator>
     Arr_bfs_scanner;
-  //counting_output_operator CTOR reqires a parameter
+  //counting_output_operator CTOR requires a parameter
   std::size_t cc = 0;
   Arr_bfs_scanner scanner(this->m_traits, Counting_output_iterator(&cc));
   scanner.scan(*(this->m_arr));

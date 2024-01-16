@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Minkowski_sum_2/include/CGAL/Minkowski_sum_2/Decomposition_strategy_adapter.h $
-// $Id: Decomposition_strategy_adapter.h 414103f 2022-02-21T17:17:34+02:00 Efi Fogel
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Minkowski_sum_2/include/CGAL/Minkowski_sum_2/Decomposition_strategy_adapter.h $
+// $Id: include/CGAL/Minkowski_sum_2/Decomposition_strategy_adapter.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Ron Wein   <wein_r@yahoo.com>
@@ -48,7 +48,7 @@ protected:
 
   // Data members:
   const Traits_2* m_traits;
-  bool m_own_traits;      // inidicates whether the kernel should be freed up.
+  bool m_own_traits;      // indicates whether the kernel should be freed up.
 
 public:
   // The pointer to the traits and the flag that indicate ownership should be

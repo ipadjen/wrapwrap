@@ -6,8 +6,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Stream_support/include/CGAL/IO/polygon_soup_io.h $
-// $Id: polygon_soup_io.h 10b0af3 2022-01-13T14:43:34+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Stream_support/include/CGAL/IO/polygon_soup_io.h $
+// $Id: include/CGAL/IO/polygon_soup_io.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mael Rouxel-Labbé
@@ -100,7 +100,7 @@ bool read_polygon_soup(const std::string& fname,
   else if(ext == "ts")
     return read_GOCAD(fname, points, polygons, np);
 #ifdef CGAL_USE_VTK
-  else if(ext == "ts")
+  else if(ext == "vtp")
     return read_VTP(fname, points, polygons, np);
 #endif
 

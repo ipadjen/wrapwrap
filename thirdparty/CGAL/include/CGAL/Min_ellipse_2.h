@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Bounding_volumes/include/CGAL/Min_ellipse_2.h $
-// $Id: Min_ellipse_2.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Bounding_volumes/include/CGAL/Min_ellipse_2.h $
+// $Id: include/CGAL/Min_ellipse_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -203,7 +203,7 @@ class Min_ellipse_2 {
     const Point&
     support_point( std::size_t i) const
     {
-        CGAL_optimisation_precondition(i <  number_of_support_points());
+        CGAL_precondition(i <  number_of_support_points());
         return( support_points[ i]);
     }
     // ellipse
@@ -281,7 +281,7 @@ class Min_ellipse_2 {
             tco.ellipse.set( );
             break;
           default:
-            CGAL_optimisation_assertion( ( n_support_points >= 0) &&
+            CGAL_assertion( ( n_support_points >= 0) &&
                                          ( n_support_points <= 5) ); }
     }
 
@@ -360,7 +360,7 @@ class Min_ellipse_2 {
         // initialize ellipse
         tco.ellipse.set();
 
-        CGAL_optimisation_postcondition( is_empty());
+        CGAL_postcondition( is_empty());
     }
 
     inline
@@ -373,7 +373,7 @@ class Min_ellipse_2 {
         // initialize ellipse
         tco.ellipse.set();
 
-        CGAL_optimisation_postcondition( is_empty());
+        CGAL_postcondition( is_empty());
     }
 
     // constructor for one point
@@ -388,7 +388,7 @@ class Min_ellipse_2 {
         support_points[ 0] = p;
         tco.ellipse.set( p);
 
-        CGAL_optimisation_postcondition( is_degenerate());
+        CGAL_postcondition( is_degenerate());
     }
 
     // constructor for two points
@@ -409,7 +409,7 @@ class Min_ellipse_2 {
         // compute me
         me( points.end(), 0);
 
-        CGAL_optimisation_postcondition( is_degenerate());
+        CGAL_postcondition( is_degenerate());
     }
 
     // constructor for three points

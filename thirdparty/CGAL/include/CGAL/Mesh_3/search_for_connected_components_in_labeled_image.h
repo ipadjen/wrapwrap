@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/Mesh_3/search_for_connected_components_in_labeled_image.h $
-// $Id: search_for_connected_components_in_labeled_image.h a8877c5 2022-10-25T17:24:57+02:00 Jane Tournois
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_3/include/CGAL/Mesh_3/search_for_connected_components_in_labeled_image.h $
+// $Id: include/CGAL/Mesh_3/search_for_connected_components_in_labeled_image.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -47,7 +47,7 @@ search_for_connected_components_in_labeled_image(const CGAL::Image_3& image,
   const std::size_t nz = image.zdim();
   const std::size_t size = nx * ny * nz;
 
-  typedef boost::uint16_t uint;
+  typedef std::uint16_t uint;
 
   if(nx > 65535 || ny > 65535 || nz > 65535)
   {
@@ -95,9 +95,9 @@ search_for_connected_components_in_labeled_image(const CGAL::Image_3& image,
           % (long)static_evaluate<Image_word_type>(image.image(), i, j, k)
           % number_of_connected_components
           % (int)current_label;
-#endif // CGAL_MESH_3_SEARCH_FOR_CONNECTED_COMPONENTS_IN_LABELED_IMAGE_VERBOSE
 
         int nb_voxels = 0;
+#endif // CGAL_MESH_3_SEARCH_FOR_CONNECTED_COMPONENTS_IN_LABELED_IMAGE_VERBOSE
 
         Indices_queue queue;
         Indices indices(i, j ,k, 0);
@@ -135,7 +135,9 @@ search_for_connected_components_in_labeled_image(const CGAL::Image_3& image,
             {
               visited[offset] = true;
               second_pass[offset] = false;
+#ifdef CGAL_MESH_3_SEARCH_FOR_CONNECTED_COMPONENTS_IN_LABELED_IMAGE_VERBOSE
               ++nb_voxels;
+#endif
               boost::get<0>(bbox_min) = (std::min)(i, boost::get<0>(bbox_min));
               boost::get<0>(bbox_max) = (std::max)(i, boost::get<0>(bbox_max));
               boost::get<1>(bbox_min) = (std::min)(j, boost::get<1>(bbox_min));

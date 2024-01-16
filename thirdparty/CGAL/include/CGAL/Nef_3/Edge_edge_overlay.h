@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_3/include/CGAL/Nef_3/Edge_edge_overlay.h $
-// $Id: Edge_edge_overlay.h 521c72d 2021-10-04T13:22:00+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Nef_3/include/CGAL/Nef_3/Edge_edge_overlay.h $
+// $Id: include/CGAL/Nef_3/Edge_edge_overlay.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -487,7 +487,7 @@ public:
           sce[1-i] = svc;
           --svc;
           if(svc->circle().oriented_side(sv[0]->point()) == os1) {
-            // sedges are only on one side "
+            // sedges are only on one side
             sce[i] = scb[1-i] = sce[1-i];
             empty_c[1-i] = true;
             done = true;

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Boolean_set_operations_2/include/CGAL/Boolean_set_operations_2/Gps_bfs_base_visitor.h $
-// $Id: Gps_bfs_base_visitor.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Boolean_set_operations_2/include/CGAL/Boolean_set_operations_2/Gps_bfs_base_visitor.h $
+// $Id: include/CGAL/Boolean_set_operations_2/Gps_bfs_base_visitor.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -57,7 +57,7 @@ public:
     //! discovered_face
 /*! discovered_face is called by Gps_bfs_scanner when it reveals a new face
     during a BFS scan. In the BFS traversal we are going from old_face to
-    new_face throught the half-edge he.
+    new_face through the half-edge he.
   \param old_face The face that was already revealed
   \param new_face The face that we have just now revealed
   \param he The half-edge that is used to traverse between them.

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Linear_cell_complex/include/CGAL/Linear_cell_complex_bgl_min_items.h $
-// $Id: Linear_cell_complex_bgl_min_items.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Linear_cell_complex/include/CGAL/Linear_cell_complex_bgl_min_items.h $
+// $Id: include/CGAL/Linear_cell_complex_bgl_min_items.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Guillaume Damiand <guillaume.damiand@liris.cnrs.fr>

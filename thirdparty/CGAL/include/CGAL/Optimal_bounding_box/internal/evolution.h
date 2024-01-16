@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Optimal_bounding_box/include/CGAL/Optimal_bounding_box/internal/evolution.h $
-// $Id: evolution.h 6fe47ed 2020-05-06T12:10:48+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Optimal_bounding_box/include/CGAL/Optimal_bounding_box/internal/evolution.h $
+// $Id: include/CGAL/Optimal_bounding_box/internal/evolution.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -85,7 +85,7 @@ public:
       Simplex offspring;
       for(int j=0; j<4; ++j)
       {
-        const FT r{m_rng.get_double()};
+        const FT r{m_rng.uniform_01<FT>()};
         const FT fitnessA = m_population[group1[i]][j].fitness();
         const FT fitnessB = m_population[group2[i]][j].fitness();
         const FT threshold = (fitnessA < fitnessB) ? uweight : lweight;
@@ -129,7 +129,7 @@ public:
               const std::size_t nelder_mead_iterations,
               const std::size_t max_random_mutations = 0)
   {
-    // stopping criteria prameters
+    // stopping criteria parameters
     FT prev_fit_value = 0;
     const FT tolerance = 1e-10;
     int stale = 0;

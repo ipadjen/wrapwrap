@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Three/include/CGAL/Three/Three.h $
-// $Id: Three.h 720b2dd 2021-08-30T12:47:10+02:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Three/include/CGAL/Three/Three.h $
+// $Id: include/CGAL/Three/Three.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

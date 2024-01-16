@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Subdivision_method_3/include/CGAL/Subdivision_method_3/internal/subdivision_hosts_impl_3.h $
-// $Id: subdivision_hosts_impl_3.h 4ffc949 2022-02-03T17:11:20+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Subdivision_method_3/include/CGAL/Subdivision_method_3/internal/subdivision_hosts_impl_3.h $
+// $Id: include/CGAL/Subdivision_method_3/internal/subdivision_hosts_impl_3.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -81,6 +81,7 @@ void PQQ_1step(Poly& p, VertexPointMap vpm, Mask mask) {
   int i=0;
   std::unordered_map<vertex_descriptor,int> v_index;
   for(vertex_descriptor vh : p_vertices){
+    vertex_point_buffer[i] = get(vpm, vh);
     v_index[vh]= i++;
   }
 

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/IO/File_binary_mesh_3.h $
-// $Id: File_binary_mesh_3.h 4e519a3 2021-05-05T13:15:37+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/SMDS_3/include/CGAL/IO/File_binary_mesh_3.h $
+// $Id: include/CGAL/IO/File_binary_mesh_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -13,23 +13,38 @@
 #ifndef CGAL_IO_FILE_BINARY_MESH_3_H
 #define CGAL_IO_FILE_BINARY_MESH_3_H
 
-#include <CGAL/license/Triangulation_3.h>
+#include <CGAL/license/SMDS_3.h>
 
 
 #include <iostream>
 #include <string>
 #include <limits>
-#include <CGAL/Mesh_3/io_signature.h>
+#include <CGAL/SMDS_3/io_signature.h>
 
 namespace CGAL {
 
 namespace IO {
 
+  /**
+   * @ingroup PkgSMDS3IOFunctions
+   * @brief outputs a mesh complex to the CGAL binary file format (`.binary.cgal`).
+   *
+   * @tparam C3T3 Type of mesh complex, model of `MeshComplex_3InTriangulation_3`
+   *
+   * @param os the output stream, opened in binary mode
+   * @param c3t3 the mesh complex
+   *
+   * @sa `CGAL::IO::load_binary_file()`
+   */
 template <class C3T3>
 bool
 save_binary_file(std::ostream& os,
-                 const C3T3& c3t3,
-                 bool binary = true)
+                 const C3T3& c3t3
+#ifdef DOXYGEN_RUNNING
+                 )
+#else
+               , bool binary = true)
+#endif
 {
   typedef typename C3T3::Triangulation::Geom_traits::FT FT;
   if(binary) os << "binary ";
@@ -44,6 +59,17 @@ save_binary_file(std::ostream& os,
   // call operator!() twice, because operator bool() is C++11
 }
 
+/**
+ * @ingroup PkgSMDS3IOFunctions
+ * @brief loads a mesh complex from a file written in CGAL binary file format (`.binary.cgal`).
+ *
+ * @tparam C3T3 Type of mesh complex, model of `MeshComplex_3InTriangulation_3`
+ *
+ * @param is the input stream, opened in binary mode
+ * @param c3t3 the mesh complex
+ *
+ * @sa `CGAL::IO::save_binary_file()`
+ */
 template <class C3T3>
 bool load_binary_file(std::istream& is, C3T3& c3t3)
 {

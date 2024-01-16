@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Boolean_set_operations_2/include/CGAL/Gps_circle_segment_traits_2.h $
-// $Id: Gps_circle_segment_traits_2.h e2a77e5 2020-05-24T11:18:01+02:00 Marc Glisse
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Boolean_set_operations_2/include/CGAL/Gps_circle_segment_traits_2.h $
+// $Id: include/CGAL/Gps_circle_segment_traits_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

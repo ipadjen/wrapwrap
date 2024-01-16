@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Periodic_2_triangulation_2/include/CGAL/Periodic_2_triangulation_hierarchy_2.h $
-// $Id: Periodic_2_triangulation_hierarchy_2.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Periodic_2_triangulation_2/include/CGAL/Periodic_2_triangulation_hierarchy_2.h $
+// $Id: include/CGAL/Periodic_2_triangulation_hierarchy_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Olivier Devillers <Olivivier.Devillers@sophia.inria.fr>
@@ -209,7 +209,7 @@ Periodic_2_triangulation_hierarchy_2(const Periodic_2_triangulation_hierarchy_2<
 }
 
 
-//Assignement
+//Assignment
 template <class PTr>
 Periodic_2_triangulation_hierarchy_2<PTr> &
 Periodic_2_triangulation_hierarchy_2<PTr>::
@@ -455,13 +455,13 @@ typename Periodic_2_triangulation_hierarchy_2<PTr>::Vertex_handle
 Periodic_2_triangulation_hierarchy_2<PTr>::
 move_if_no_collision(Vertex_handle v, const Point &p)
 {
-  CGAL_triangulation_precondition(v != Vertex_handle());
+  CGAL_precondition(v != Vertex_handle());
   Vertex_handle old, ret;
 
   for (int l = 0; l < m_maxlevel; ++l)
     {
       Vertex_handle u = v->up();
-      CGAL_triangulation_assertion(hierarchy[l]->is_valid());
+      CGAL_assertion(hierarchy[l]->is_valid());
       Vertex_handle w = hierarchy[l]->move_if_no_collision(v, p);
       if (l == 0)
         {
@@ -491,13 +491,13 @@ typename Periodic_2_triangulation_hierarchy_2<PTr>::Vertex_handle
 Periodic_2_triangulation_hierarchy_2<PTr>::
 move_point(Vertex_handle v, const Point &p)
 {
-  CGAL_triangulation_precondition(v != Vertex_handle());
+  CGAL_precondition(v != Vertex_handle());
   Vertex_handle old, ret;
 
   for (int l = 0; l < m_maxlevel; ++l)
     {
       Vertex_handle u = v->up();
-      CGAL_triangulation_assertion(hierarchy[l]->is_valid());
+      CGAL_assertion(hierarchy[l]->is_valid());
       Vertex_handle w = hierarchy[l]->move_point(v, p);
       if (l == 0)
         {

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_topology_traits/Arr_unb_planar_vert_decomp_helper.h $
-// $Id: Arr_unb_planar_vert_decomp_helper.h 5985db1 2021-07-28T16:17:10+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_topology_traits/Arr_unb_planar_vert_decomp_helper.h $
+// $Id: include/CGAL/Arr_topology_traits/Arr_unb_planar_vert_decomp_helper.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s): Ron Wein   <wein@post.tau.ac.il>
@@ -46,9 +46,9 @@ public:
   typedef typename Arrangement_2::Halfedge_const_handle Halfedge_const_handle;
   typedef typename Arrangement_2::Face_const_handle     Face_const_handle;
 
-  typedef boost::variant<Vertex_const_handle, Halfedge_const_handle,
+  typedef std::variant<Vertex_const_handle, Halfedge_const_handle,
                          Face_const_handle>             Cell_type;
-  typedef boost::optional<Cell_type>                    Vert_type;
+  typedef std::optional<Cell_type>                    Vert_type;
 
 protected:
   typedef typename Arrangement_2::Topology_traits       Topology_traits;

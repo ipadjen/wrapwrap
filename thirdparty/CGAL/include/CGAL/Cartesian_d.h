@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Kernel_d/include/CGAL/Cartesian_d.h $
-// $Id: Cartesian_d.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Kernel_d/include/CGAL/Cartesian_d.h $
+// $Id: include/CGAL/Cartesian_d.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -21,7 +21,7 @@
 #include <CGAL/representation_tags.h>
 #include <CGAL/Kernel_d/function_objects.h>
 #include <CGAL/Linear_algebraCd.h>
-#include <vector>
+#include <CGAL/Kernel/Same_uncertainty.h>
 
 #include <CGAL/Kernel_d/Kernel_classesCd.h>
 #include <CGAL/Kernel_d/PointCd.h>
@@ -71,7 +71,7 @@ public:
 
   typedef typename Point_d_base::Cartesian_const_iterator Cartesian_const_iterator_d;
 
-    // Boolean   had originally been Bool. It was renamed to avoid a conflict
+    // Boolean had originally been Bool. It was renamed to avoid a conflict
     // between a macro defined in Xlib.h poorly chosen to have the same name,
     // that is 'Bool'.
     typedef typename Same_uncertainty_nt<bool, FT>::type

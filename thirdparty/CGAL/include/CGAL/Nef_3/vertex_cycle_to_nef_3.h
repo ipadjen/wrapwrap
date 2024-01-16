@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_3/include/CGAL/Nef_3/vertex_cycle_to_nef_3.h $
-// $Id: vertex_cycle_to_nef_3.h 30e536b 2021-03-01T08:06:48+00:00 Giles Bathgate
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Nef_3/include/CGAL/Nef_3/vertex_cycle_to_nef_3.h $
+// $Id: include/CGAL/Nef_3/vertex_cycle_to_nef_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -28,10 +28,7 @@
 #include <CGAL/Constrained_triangulation_plus_2.h>
 
 // Nef polyhedra
-#include <CGAL/Nef_polyhedron_3.h>
-#include <CGAL/Nef_3/SNC_structure.h>
-#include <CGAL/Nef_3/SNC_constructor.h>
-#include <CGAL/Nef_3/SNC_point_locator.h>
+#include <CGAL/Nef_3/SNC_indexed_items.h>
 
 namespace CGAL {
 

@@ -2,15 +2,18 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Triangulation_2/include/CGAL/boost/graph/graph_traits_Triangulation_2.h $
-// $Id: graph_traits_Triangulation_2.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
-// SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Triangulation_2/include/CGAL/boost/graph/graph_traits_Triangulation_2.h $
+// $Id: include/CGAL/boost/graph/graph_traits_Triangulation_2.h a484bfa $
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Andreas Fabri, Fernando Cacciola
 
 #ifndef CGAL_GRAPH_TRAITS_TRIANGULATION_2_H
 #define CGAL_GRAPH_TRAITS_TRIANGULATION_2_H
+
+#include <CGAL/license/Triangulation_2.h>
+
 
 #include <CGAL/Triangulation_2.h>
 #include <CGAL/boost/graph/properties_Triangulation_2.h>

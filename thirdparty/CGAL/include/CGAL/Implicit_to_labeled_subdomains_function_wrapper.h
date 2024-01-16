@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Periodic_3_mesh_3/include/CGAL/Implicit_to_labeled_subdomains_function_wrapper.h $
-// $Id: Implicit_to_labeled_subdomains_function_wrapper.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Periodic_3_mesh_3/include/CGAL/Implicit_to_labeled_subdomains_function_wrapper.h $
+// $Id: include/CGAL/Implicit_to_labeled_subdomains_function_wrapper.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mikhail Bogdanov
@@ -15,7 +15,6 @@
 #include <CGAL/license/Periodic_3_mesh_3.h>
 
 #include <boost/type_traits/is_function.hpp>
-#include <boost/mpl/if.hpp>
 
 #if defined(BOOST_MSVC)
 #  pragma warning(push)
@@ -47,9 +46,9 @@ public:
   }
 
 private:
-  typedef typename boost::mpl::if_<boost::is_function<Function_>,
-                                   Function_*,
-                                   Function_>::type Stored_function;
+  typedef std::conditional_t<std::is_function_v<Function_>,
+                             Function_*,
+                             Function_> Stored_function;
 
   /// Function to wrap
   Stored_function f_;

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/BGL/include/CGAL/boost/graph/generators.h $
-// $Id: generators.h 0994eed 2022-03-02T11:23:49+01:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/BGL/include/CGAL/boost/graph/generators.h $
+// $Id: include/CGAL/boost/graph/generators.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Maxime Gimeno,
@@ -195,6 +195,11 @@ make_quad(typename boost::graph_traits<Graph>::vertex_descriptor v0,
           typename boost::graph_traits<Graph>::vertex_descriptor v3,
           Graph& g)
 {
+  CGAL_precondition(is_valid_vertex_descriptor(v0, g) &&
+                    is_valid_vertex_descriptor(v1, g) &&
+                    is_valid_vertex_descriptor(v2, g) &&
+                    is_valid_vertex_descriptor(v3, g));
+
   typedef typename boost::graph_traits<Graph>::halfedge_descriptor halfedge_descriptor;
   typedef typename boost::graph_traits<Graph>::face_descriptor face_descriptor;
   halfedge_descriptor h0 = halfedge(add_edge(g), g);

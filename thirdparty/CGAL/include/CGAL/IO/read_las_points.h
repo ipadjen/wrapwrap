@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_processing_3/include/CGAL/IO/read_las_points.h $
-// $Id: read_las_points.h 10b0af3 2022-01-13T14:43:34+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Point_set_processing_3/include/CGAL/IO/read_las_points.h $
+// $Id: include/CGAL/IO/read_las_points.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Simon Giraudot
@@ -18,12 +18,11 @@
 
 #include <CGAL/property_map.h>
 #include <CGAL/value_type_traits.h>
-#include <CGAL/point_set_processing_assertions.h>
 #include <CGAL/Kernel_traits.h>
 
 #include <CGAL/Named_function_parameters.h>
 #include <CGAL/boost/graph/named_params_helper.h>
-#include <CGAL/is_iterator.h>
+#include <CGAL/type_traits/is_iterator.h>
 
 #include <boost/version.hpp>
 #include <boost/cstdint.hpp>
@@ -476,7 +475,7 @@ bool read_LAS(std::istream& is,
 
 template <typename OutputIterator, typename CGAL_NP_TEMPLATE_PARAMETERS>
 bool read_LAS(std::istream& is, OutputIterator output, const CGAL_NP_CLASS& np = parameters::default_values(),
-              typename std::enable_if<CGAL::is_iterator<OutputIterator>::value>::type* = nullptr)
+              std::enable_if_t<CGAL::is_iterator<OutputIterator>::value>* = nullptr)
 {
   return read_LAS<typename value_type_traits<OutputIterator>::type>(is, output, np);
 }

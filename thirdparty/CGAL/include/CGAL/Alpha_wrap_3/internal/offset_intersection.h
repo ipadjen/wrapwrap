@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Alpha_wrap_3/include/CGAL/Alpha_wrap_3/internal/offset_intersection.h $
-// $Id: offset_intersection.h 57cf9e0 2022-04-19T14:55:15+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Alpha_wrap_3/include/CGAL/Alpha_wrap_3/internal/offset_intersection.h $
+// $Id: include/CGAL/Alpha_wrap_3/internal/offset_intersection.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Pierre Alliez

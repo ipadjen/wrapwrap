@@ -4,8 +4,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Number_types/include/CGAL/MP_Float_impl.h $
-// $Id: MP_Float_impl.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Number_types/include/CGAL/MP_Float_impl.h $
+// $Id: include/CGAL/MP_Float_impl.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -69,7 +69,7 @@ void MP_Float::construct_from_builtin_fp_type(T d)
 
     CGAL_assertion(is_finite(d));
 
-    // This is subtle, because ints are not symetric against 0.
+    // This is subtle, because ints are not symmetric against 0.
 
     // First, scale d, and adjust exp accordingly.
     while (d <  INTERN_MP_FLOAT::trunc_min || d >  INTERN_MP_FLOAT::trunc_max) {

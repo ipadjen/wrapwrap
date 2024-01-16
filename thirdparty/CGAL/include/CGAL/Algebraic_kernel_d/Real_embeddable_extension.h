@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d/Real_embeddable_extension.h $
-// $Id: Real_embeddable_extension.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Algebraic_kernel_d/include/CGAL/Algebraic_kernel_d/Real_embeddable_extension.h $
+// $Id: include/CGAL/Algebraic_kernel_d/Real_embeddable_extension.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -54,7 +54,7 @@ namespace internal {
 // TODO: Implement array in source code file
 //    extern const signed char floor_log2_4bit[16]; // see src/floor_log2_4bit.C
 
-// Don't define default, results in more convinient compiler messages
+// Don't define default, results in more convenient compiler messages
 template< class Type > class Real_embeddable_extension;
 // {
 // public:

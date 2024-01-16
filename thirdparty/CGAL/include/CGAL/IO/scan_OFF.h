@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polyhedron/include/CGAL/IO/scan_OFF.h $
-// $Id: scan_OFF.h 00ca021 2020-08-04T12:59:08+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polyhedron/include/CGAL/IO/scan_OFF.h $
+// $Id: include/CGAL/IO/scan_OFF.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

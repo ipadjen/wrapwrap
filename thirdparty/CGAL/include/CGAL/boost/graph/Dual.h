@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/BGL/include/CGAL/boost/graph/Dual.h $
-// $Id: Dual.h 590ddf8 2021-10-08T15:38:47+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/BGL/include/CGAL/boost/graph/Dual.h $
+// $Id: include/CGAL/boost/graph/Dual.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -44,7 +44,7 @@ error.
 
 \tparam Primal_ must be a model of `FaceGraph`
 
-\cgalModels `FaceGraph`
+\cgalModels{FaceGraph}
 
 */
 template <typename Primal_>
@@ -458,7 +458,7 @@ out_degree(typename boost::graph_traits<Dual<P> >::vertex_descriptor v,
            const Dual<P>& dual)
 {
   const typename Dual<P>::Primal& primal = dual.primal();
-  return boost::distance(halfedges_around_face(halfedge(v,primal),primal));
+  return halfedges_around_face(halfedge(v,primal),primal).size();
 }
 
  template <typename P>

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Circular_kernel_3/include/CGAL/Circular_kernel_3/Circular_arc_3.h $
-// $Id: Circular_arc_3.h c529418 2021-03-23T14:06:16+01:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Circular_kernel_3/include/CGAL/Circular_kernel_3/Circular_arc_3.h $
+// $Id: include/CGAL/Circular_kernel_3/Circular_arc_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Monique Teillaud, Sylvain Pion, Pedro Machado,
@@ -80,7 +80,7 @@ namespace CGAL {
         // we can optimize the computations of the sign (for the has_on functor),
         // by computing the vector s-c and t-s, in order to use them directly on
         // another compute_sign_of_cross_product function
-        // we can save time computing the substractions
+        // we can save time computing the subtractions
         // the problem is: more memory space is needed
         _sign_cross_product =
           CGAL::SphericalFunctors::compute_sign_of_cross_product<SK>(s,t,c.center());
@@ -167,11 +167,11 @@ namespace CGAL {
          CGAL_kernel_precondition(sols1.size() > 0);
          CGAL_kernel_precondition(sols2.size() > 0);
          const std::pair<typename SK::Circular_arc_point_3, unsigned>& pair1=
-            *boost::get<std::pair<typename SK::Circular_arc_point_3, unsigned> >(
+            *std::get<std::pair<typename SK::Circular_arc_point_3, unsigned> >(
               &sols1[(sols1.size()==1)?(0):(less_xyz_s1?0:1)]
             );
          const std::pair<typename SK::Circular_arc_point_3, unsigned>& pair2=
-            *boost::get<std::pair<typename SK::Circular_arc_point_3, unsigned> >(
+            *std::get<std::pair<typename SK::Circular_arc_point_3, unsigned> >(
               &sols2[(sols2.size()==1)?(0):(less_xyz_s2?0:1)]
             );
          // the source and target must be different
@@ -194,11 +194,11 @@ namespace CGAL {
          CGAL_kernel_precondition(sols1.size() > 0);
          CGAL_kernel_precondition(sols2.size() > 0);
          const std::pair<typename SK::Circular_arc_point_3, unsigned>& pair1=
-           *boost::get<std::pair<typename SK::Circular_arc_point_3, unsigned> >(
+           *std::get<std::pair<typename SK::Circular_arc_point_3, unsigned> >(
               &sols1[(sols1.size()==1)?(0):(less_xyz_p1?0:1)]
             );
          const std::pair<typename SK::Circular_arc_point_3, unsigned>& pair2=
-           *boost::get<std::pair<typename SK::Circular_arc_point_3, unsigned> >(
+           *std::get<std::pair<typename SK::Circular_arc_point_3, unsigned> >(
               &sols2[(sols2.size()==1)?(0):(less_xyz_p2?0:1)]
             );
          // the source and target must be different

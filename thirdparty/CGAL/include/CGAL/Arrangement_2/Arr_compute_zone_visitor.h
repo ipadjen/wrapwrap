@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arrangement_2/Arr_compute_zone_visitor.h $
-// $Id: Arr_compute_zone_visitor.h 0626eb0 2020-06-11T12:32:33+03:00 Efi Fogel
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arrangement_2/Arr_compute_zone_visitor.h $
+// $Id: include/CGAL/Arrangement_2/Arr_compute_zone_visitor.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -20,13 +20,13 @@
  * Definition of the Arr_compute_zone_visitor class.
  */
 
-#include <boost/variant.hpp>
+#include <variant>
 
 namespace CGAL {
 
 /*! \class
  * A visitor class for Arrangement_zone_2 that outputs the zone of an
- * x-monotone curve. Specifically, it outputs handles to the the arrangment
+ * x-monotone curve. Specifically, it outputs handles to the the arrangement
  * cells that the x-monotone curve intersects.
  * The class should be templated by an Arrangement_2 class, and by an
  * output iterator of a variant of types of handles to the arrangement cells
@@ -54,11 +54,11 @@ private:
   const Halfedge_handle      invalid_he;   // Invalid halfedge.
   const Vertex_handle        invalid_v;    // Invalid vertex.
 
-  OutputIterator&            out_iter;     // for outputing the zone objects.
-                                           // Its value type is boost::variant.
-  bool                       output_left;  // Determines wheter we should
+  OutputIterator&            out_iter;     // for outputting the zone objects.
+                                           // Its value type is std::variant.
+  bool                       output_left;  // Determines whether we should
                                            // output the left end point of a
-                                           // subcurve (to avoid outputing
+                                           // subcurve (to avoid outputting
                                            // the same feature twice).
 
 public:
@@ -97,7 +97,7 @@ public:
                         Vertex_handle left_v, Halfedge_handle left_he,
                         Vertex_handle right_v, Halfedge_handle right_he)
   {
-    typedef boost::variant<Vertex_handle, Halfedge_handle, Face_handle>
+    typedef std::variant<Vertex_handle, Halfedge_handle, Face_handle>
                                                                 Zone_result;
 
     if (output_left) {
@@ -138,7 +138,7 @@ public:
                         Halfedge_handle he,
                         Vertex_handle left_v, Vertex_handle right_v)
   {
-    typedef boost::variant<Vertex_handle, Halfedge_handle, Face_handle>
+    typedef std::variant<Vertex_handle, Halfedge_handle, Face_handle>
                                                                 Zone_result;
 
     if (output_left) {

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Tetrahedral_remeshing/include/CGAL/Tetrahedral_remeshing/internal/compute_c3t3_statistics.h $
-// $Id: compute_c3t3_statistics.h 4b87443 2022-12-05T12:20:06+01:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Tetrahedral_remeshing/include/CGAL/Tetrahedral_remeshing/internal/compute_c3t3_statistics.h $
+// $Id: include/CGAL/Tetrahedral_remeshing/internal/compute_c3t3_statistics.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -39,7 +39,7 @@ void compute_statistics(const Triangulation& tr,
   typedef typename Tr::Cell_handle   Cell_handle;
   typedef typename Tr::Vertex_handle Vertex_handle;
   typedef typename Gt::Point_3       Point;
-  typedef typename Tr::Finite_facets_iterator Finite_facets_iterator;
+  typedef typename Tr::Facet         Facet;
   typedef typename Tr::Finite_cells_iterator  Finite_cells_iterator;
   typedef typename Tr::Cell::Subdomain_index  Subdomain_index;
 
@@ -55,11 +55,10 @@ void compute_statistics(const Triangulation& tr,
   double max_dihedral_angle = 0.;
   double min_dihedral_angle = 180.;
 
-  for (Finite_facets_iterator fit = tr.finite_facets_begin();
-       fit != tr.finite_facets_end(); ++fit)
+  for (Facet f : tr.finite_facets())
   {
-    const Cell_handle cell = fit->first;
-    const int& index = fit->second;
+    const Cell_handle cell = f.first;
+    const int& index = f.second;
     if (!get(cell_selector, cell) || !get(cell_selector, cell->neighbor(index)))
       continue;
 

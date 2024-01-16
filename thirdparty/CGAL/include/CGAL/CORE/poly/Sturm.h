@@ -19,7 +19,7 @@
  *   It is very important that the BigFloats used in these intervals
  *   have no error at the beginning, and this is maintained
  *   by refinement.  Note that if x, y are error-free BigFloats,
- *   then (x+y)/2 may not be error-free (in current implementaion.
+ *   then (x+y)/2 may not be error-free (in current implementation.
  *   We have to call a special "exact divide by 2" method,
  *   (x+y).div2() for this purpose.
  *
@@ -37,11 +37,11 @@
  *  Author:  Chee Yap and Sylvain Pion, Vikram Sharma
  *  Date:    July 20, 2002
  *
- * WWW URL: http://cs.nyu.edu/exact/
+ * WWW URL: https://cs.nyu.edu/exact/
  * Email: exact@cs.nyu.edu
  *
- * $URL: https://github.com/CGAL/cgal/blob/v5.5.2/CGAL_Core/include/CGAL/CORE/poly/Sturm.h $
- * $Id: Sturm.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+ * $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/CGAL_Core/include/CGAL/CORE/poly/Sturm.h $
+ * $Id: include/CGAL/CORE/poly/Sturm.h a484bfa $
  * SPDX-License-Identifier: LGPL-3.0-or-later
  ***************************************************************************/
 

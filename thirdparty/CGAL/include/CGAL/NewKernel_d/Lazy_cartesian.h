@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/NewKernel_d/include/CGAL/NewKernel_d/Lazy_cartesian.h $
-// $Id: Lazy_cartesian.h 74c029c 2021-09-09T11:44:36+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/NewKernel_d/include/CGAL/NewKernel_d/Lazy_cartesian.h $
+// $Id: include/CGAL/NewKernel_d/Lazy_cartesian.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Marc Glisse
@@ -15,6 +15,7 @@
 #include <CGAL/basic.h>
 #include <CGAL/algorithm.h>
 #include <CGAL/Lazy.h>
+#include <CGAL/Lazy_exact_nt.h>
 #include <CGAL/Default.h>
 #include <CGAL/NewKernel_d/Filtered_predicate2.h>
 #include <CGAL/iterator_from_indices.h>
@@ -259,9 +260,9 @@ struct Lazy_cartesian :
     void set_dimension(int dim){ak.set_dimension(dim);ek.set_dimension(dim);}
 
     // For compilers that do not handle [[no_unique_address]]
-    typedef boost::mpl::and_<
-      internal::Do_not_store_kernel<AK_>,
-      internal::Do_not_store_kernel<EK_> > Do_not_store_kernel;
+    typedef std::bool_constant<
+      internal::Do_not_store_kernel<AK_>::value &&
+      internal::Do_not_store_kernel<EK_>::value > Do_not_store_kernel;
 
     typedef typename EK_::Dimension Dimension; // ?
     typedef Lazy_cartesian Self;

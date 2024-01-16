@@ -2,15 +2,18 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh/include/CGAL/boost/graph/properties_Surface_mesh_time_stamp.h $
-// $Id: properties_Surface_mesh_time_stamp.h 52164b1 2019-10-19T15:34:59+02:00 Sébastien Loriot
-// SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh/include/CGAL/boost/graph/properties_Surface_mesh_time_stamp.h $
+// $Id: include/CGAL/boost/graph/properties_Surface_mesh_time_stamp.h a484bfa $
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Andreas Fabri
 
 #ifndef CGAL_PROPERTIES_SURFACE_MESH_TIME_STAMP_H
 #define CGAL_PROPERTIES_SURFACE_MESH_TIME_STAMP_H
+
+#include <CGAL/license/Surface_mesh.h>
+
 
 #ifndef DOXYGEN_RUNNING
 
@@ -59,7 +62,7 @@ namespace CGAL {
 
 #define CGAL_PROPERTY_SURFACE_MESH_RETURN_TYPE(Tag) \
   typename boost::lazy_disable_if<                      \
-     boost::is_const<P>,                                \
+     std::is_const<P>,                                \
      Get_pmap_of_surface_mesh<P, Tag >                  \
    >::type
 

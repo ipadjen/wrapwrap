@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Stream_support/include/CGAL/IO/OFF/File_header_OFF_impl.h $
-// $Id: File_header_OFF_impl.h ab49226 2021-04-09T13:13:56+02:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Stream_support/include/CGAL/IO/OFF/File_header_OFF_impl.h $
+// $Id: include/CGAL/IO/OFF/File_header_OFF_impl.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -348,7 +348,7 @@ std::istream& operator>>( std::istream& in, File_header_OFF& h) {
     // Read remaining size value(s).
     int n_h;
     if ( h.binary()) {
-        boost::int32_t a, b, c;
+        std::int32_t a, b, c;
         I_Binary_read_big_endian_integer32( in, a);
         if ( h.n_dimensional()) {
             h.set_dimension( a);

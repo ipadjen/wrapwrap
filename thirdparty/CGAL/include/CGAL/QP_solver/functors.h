@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/QP_solver/include/CGAL/QP_solver/functors.h $
-// $Id: functors.h 1257ec0 2022-05-09T18:25:41+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/QP_solver/include/CGAL/QP_solver/functors.h $
+// $Id: include/CGAL/QP_solver/functors.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Skin_surface_3/include/CGAL/make_union_of_balls_3.h $
-// $Id: make_union_of_balls_3.h 152a084 2021-09-21T13:34:58+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Skin_surface_3/include/CGAL/make_union_of_balls_3.h $
+// $Id: include/CGAL/make_union_of_balls_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

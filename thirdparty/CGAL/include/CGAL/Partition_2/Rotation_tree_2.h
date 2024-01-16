@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Partition_2/include/CGAL/Partition_2/Rotation_tree_2.h $
-// $Id: Rotation_tree_2.h b8aa255 2022-11-17T19:40:38+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Partition_2/include/CGAL/Partition_2/Rotation_tree_2.h $
+// $Id: include/CGAL/Partition_2/Rotation_tree_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -108,7 +108,7 @@ public:
 
 
    // the point that comes first in the right-to-left ordering is first
-   // in the ordering, after the auxilliary points p_minus_inf and p_inf
+   // in the ordering, after the auxiliary points p_minus_inf and p_inf
    Self_iterator rightmost_point_ref()
    {
       return this->begin();

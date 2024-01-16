@@ -4,8 +4,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_2/include/CGAL/Mesh_2/Do_not_refine_edges.h $
-// $Id: Do_not_refine_edges.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_2/include/CGAL/Mesh_2/Do_not_refine_edges.h $
+// $Id: include/CGAL/Mesh_2/Do_not_refine_edges.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -54,7 +54,7 @@ public:
   Do_not_refine_edges(Tr& tr_)
     : Super(tr_) {}
 
-  /** \name FUNCTIONS NEEDED BY Mesher_level OVERIDDEN BY THIS CLASS. */
+  /** \name FUNCTIONS NEEDED BY Mesher_level OVERRIDDEN BY THIS CLASS. */
 
   void scan_triangulation_impl()
   {

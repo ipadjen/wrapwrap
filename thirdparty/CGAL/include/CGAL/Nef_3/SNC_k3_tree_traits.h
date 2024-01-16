@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_3/include/CGAL/Nef_3/SNC_k3_tree_traits.h $
-// $Id: SNC_k3_tree_traits.h 263c168 2022-03-10T18:24:07+00:00 Giles Bathgate
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Nef_3/include/CGAL/Nef_3/SNC_k3_tree_traits.h $
+// $Id: include/CGAL/Nef_3/SNC_k3_tree_traits.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -185,7 +185,7 @@ Comparison_result cr;
 
 /*
    An edge is considered intersecting a plane if its endpoints lie on the
-   plane or if they lie on diferent sides.  Partial tangency is not considered
+   plane or if they lie on different sides.  Partial tangency is not considered
    as intersection, due the fact that a lower dimensional face (the vertex)
    should be already reported as an object intersecting the plane.
  */
@@ -209,9 +209,9 @@ Side_of_plane<SNC_decorator>::operator()(Halfedge_handle e) {
 
 
 /*
-   As for the edges, if a facet is tanget to the plane it is not considered as
-   a interesection since lower dimensional faces, like the edges and vertices
-   where the tangency occurrs, should be reported as the objects intersecting
+   As for the edges, if a facet is tangent to the plane it is not considered as
+   a intersection since lower dimensional faces, like the edges and vertices
+   where the tangency occurs, should be reported as the objects intersecting
    the plane.
    So, an intersection is reported if all vertices of the facet lie on plane,
    for which it is only necessary to check three vertices, or if the facet

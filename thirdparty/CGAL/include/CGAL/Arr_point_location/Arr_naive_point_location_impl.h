@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_point_location/Arr_naive_point_location_impl.h $
-// $Id: Arr_naive_point_location_impl.h 8d95fb8 2021-08-11T18:37:30+03:00 Efi Fogel
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_point_location/Arr_naive_point_location_impl.h $
+// $Id: include/CGAL/Arr_point_location/Arr_naive_point_location_impl.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -52,7 +52,7 @@ Arr_naive_point_location<Arrangement>::locate(const Point_2& p) const
       return make_result(hh);
   }
 
-  // Go over all faces an locate the innermost one that contains the query
+  // Go over all faces and locate the innermost one that contains the query
   // point in its interior.
   Face_const_handle f_inner;
   const Face_const_handle invalid_f;

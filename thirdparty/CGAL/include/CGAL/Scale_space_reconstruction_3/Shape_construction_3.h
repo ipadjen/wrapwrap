@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Scale_space_reconstruction_3/include/CGAL/Scale_space_reconstruction_3/Shape_construction_3.h $
-// $Id: Shape_construction_3.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Scale_space_reconstruction_3/include/CGAL/Scale_space_reconstruction_3/Shape_construction_3.h $
+// $Id: include/CGAL/Scale_space_reconstruction_3/Shape_construction_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s):      Thijs van Lankveld
@@ -117,7 +117,7 @@ public:
     /** Important note: Shape_construction_3 does not take responsibility for destroying
      *  the object after use.
      *
-     *  \tparam InputIterator an interator over the points.
+     *  \tparam InputIterator an iterator over the points.
      *  The iterator should point to a model of Point.
      *  \param begin is an iterator to the first point of the shape.
      *  \param end is a past-the-end iterator for the points.

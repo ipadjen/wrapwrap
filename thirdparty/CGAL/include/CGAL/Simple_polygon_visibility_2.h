@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Visibility_2/include/CGAL/Simple_polygon_visibility_2.h $
-// $Id: Simple_polygon_visibility_2.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Visibility_2/include/CGAL/Simple_polygon_visibility_2.h $
+// $Id: include/CGAL/Simple_polygon_visibility_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -205,7 +205,7 @@ namespace CGAL {
 
   mutable Arr_point_location point_location;
 
-  /*! Stack of visibile points; manipulated when going through the sequence
+  /*! Stack of visible points; manipulated when going through the sequence
     of input vertices; contains the vertices of the visibility region after
     the run of the algorithm*/
   mutable std::stack<Point_2> stack;
@@ -306,7 +306,7 @@ namespace CGAL {
     Location_result result = point_location.ray_shoot_up(q);
 
     if(const Halfedge_const_handle* e =
-       boost::get<Halfedge_const_handle>(&(result)))
+       std::get_if<Halfedge_const_handle>(&(result)))
       {
         CGAL_assertion((*e)->face() == face);
         Point_2 p(q.x(),
@@ -321,7 +321,7 @@ namespace CGAL {
         return (*e)->next()->ccb();
       }
     else if (const Vertex_const_handle* v =
-             boost::get<Vertex_const_handle>(&(result)))
+             std::get_if<Vertex_const_handle>(&(result)))
       {
         Halfedge_around_vertex_const_circulator cir =
         (*v)->incident_halfedges();
@@ -340,7 +340,7 @@ namespace CGAL {
 
 
   /*! Main method of the algorithm - initializes the stack and variables
-    and calles the corresponding methods acc. to the algorithm's state;
+    and calls the corresponding methods acc. to the algorithm's state;
     'q' - query point;
     'i' - current vertex' index
     'w' - endpoint of ray shot from query point */
@@ -589,7 +589,7 @@ namespace CGAL {
     }
   }
 
-  /*! Find the first edge interecting the segment (v_0, s_t) */
+  /*! Find the first edge intersecting the segment (v_0, s_t) */
   void scanb(Size_type& i, Point_2& w) const {
     if ( i == vertices.size() - 1 ) {
       upcase = FINISH;

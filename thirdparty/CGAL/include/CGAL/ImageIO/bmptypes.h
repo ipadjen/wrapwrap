@@ -3,8 +3,8 @@
 //
 // This file is part of the ImageIO Library, and as been adapted for CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/CGAL_ImageIO/include/CGAL/ImageIO/bmptypes.h $
-// $Id: bmptypes.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/CGAL_ImageIO/include/CGAL/ImageIO/bmptypes.h $
+// $Id: include/CGAL/ImageIO/bmptypes.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later
 //
 //
@@ -39,10 +39,10 @@
 
 typedef char            CGAL_INT8;
 typedef short           CGAL_INT16;
-typedef boost::int32_t  CGAL_INT32;
+typedef std::int32_t  CGAL_INT32;
 typedef unsigned char   CGAL_UINT8;
 typedef unsigned short  CGAL_UINT16;
-typedef boost::uint32_t CGAL_UINT32;
+typedef std::uint32_t CGAL_UINT32;
 
 /*****************************************************************************
 *
@@ -129,7 +129,7 @@ typedef struct Bitmapfileheader
  * BITMAPARRAYHEADER is used to establish a linked list of Bitmapfileheader
  * structures for a bitmap file with multiple images in it.  There is no
  * equivalent structure in the Windows SDK.  Its analogues in the OS/2 toolkit
- * are the BITMAPARRAYFILEHEADER and BITMAPARRAYFILEHEADER2 strucutres.
+ * are the BITMAPARRAYFILEHEADER and BITMAPARRAYFILEHEADER2 structures.
  *
  * A Bitmapfileheader structure is always concatenated to the end of a
  * BITMAPARRAYHEADER structure.

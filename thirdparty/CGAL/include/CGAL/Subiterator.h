@@ -3,15 +3,18 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Principal_component_analysis/include/CGAL/Subiterator.h $
-// $Id: Subiterator.h 3efe2ec 2021-03-31T09:40:19+02:00 Simon Giraudot
-// SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Principal_component_analysis/include/CGAL/Subiterator.h $
+// $Id: include/CGAL/Subiterator.h a484bfa $
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Simon Giraudot
 //
 
 #ifndef CGAL_PCA_SUBITERATOR_H
 #define CGAL_PCA_SUBITERATOR_H
+
+#include <CGAL/license/Principal_component_analysis.h>
+
 
 #include <boost/iterator/iterator_facade.hpp>
 

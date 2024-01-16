@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Spatial_searching/include/CGAL/Point_container.h $
-// $Id: Point_container.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Spatial_searching/include/CGAL/Point_container.h $
+// $Id: include/CGAL/Point_container.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -25,7 +25,7 @@
 #include <CGAL/Kd_tree_rectangle.h>
 #include <CGAL/Spatial_searching/internal/Get_dimension_tag.h>
 
-#include <boost/optional.hpp>
+#include <optional>
 
 namespace CGAL {
 
@@ -45,8 +45,8 @@ public:
 private:
   Traits traits;
   // the iterator range of the Point_container
-  boost::optional<iterator> m_b ;
-  boost::optional<iterator> m_e ;
+  std::optional<iterator> m_b ;
+  std::optional<iterator> m_e ;
 
   int built_coord;    // a coordinate for which the pointer list is built
   Kd_tree_rectangle<FT,D> bbox;       // bounding box, i.e. rectangle of node

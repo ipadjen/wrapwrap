@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Classification/include/CGAL/Classification/ETHZ/internal/random-forest/forest.hpp $
-// $Id: forest.hpp 7599bbe 2020-10-01T13:53:02+02:00 Simon Giraudot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Classification/include/CGAL/Classification/ETHZ/internal/random-forest/forest.hpp $
+// $Id: include/CGAL/Classification/ETHZ/internal/random-forest/forest.hpp a484bfa $
 // SPDX-License-Identifier: LicenseRef-RFL
 // License notice in Installation/LICENSE.RFL
 //
@@ -164,7 +164,7 @@ public:
           f (seed_start, sample_idxes, trees, samples, labels, params.n_in_bag_samples, split_generator);
 
 #ifndef CGAL_LINKED_WITH_TBB
-        CGAL_static_assertion_msg (!(std::is_convertible<ConcurrencyTag, Parallel_tag>::value),
+        static_assert (!(std::is_convertible<ConcurrencyTag, Parallel_tag>::value),
                                    "Parallel_tag is enabled but TBB is unavailable.");
 #else
         if (std::is_convertible<ConcurrencyTag,Parallel_tag>::value)

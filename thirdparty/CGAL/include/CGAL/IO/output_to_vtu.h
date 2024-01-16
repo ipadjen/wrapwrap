@@ -5,8 +5,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/IO/output_to_vtu.h $
-// $Id: output_to_vtu.h fb6f703 2021-05-04T14:07:49+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/SMDS_3/include/CGAL/IO/output_to_vtu.h $
+// $Id: include/CGAL/IO/output_to_vtu.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Laurent RINEAU, Stephane Tayeb, Maxime Gimeno
@@ -14,13 +14,13 @@
 #ifndef CGAL_OUTPUT_TO_VTU_H
 #define CGAL_OUTPUT_TO_VTU_H
 
-#include <CGAL/license/Mesh_3.h>
+#include <CGAL/license/SMDS_3.h>
 
 #include <CGAL/assertions.h>
 #include <CGAL/IO/io.h>
 #include <CGAL/IO/VTK.h>
 
-#include <boost/variant.hpp>
+#include <variant>
 
 #include <iostream>
 #include <vector>
@@ -273,7 +273,7 @@ enum VTU_ATTRIBUTE_TYPE{
   SIZE_TYPE
 };
 
-typedef boost::variant<const std::vector<double>*, const std::vector<uint8_t>*, const std::vector<std::size_t>* > Vtu_attributes;
+typedef std::variant<const std::vector<double>*, const std::vector<uint8_t>*, const std::vector<std::size_t>* > Vtu_attributes;
 
 template <class C3T3>
 void output_to_vtu_with_attributes(std::ostream& os,
@@ -314,15 +314,15 @@ void output_to_vtu_with_attributes(std::ostream& os,
   os << "    <CellData Scalars=\""<<attributes.front().first<<"\">\n";
   for(std::size_t i = 0; i< attributes.size(); ++i)
   {
-    switch(attributes[i].second.which()){
+    switch(attributes[i].second.index()){
     case 0:
-      write_attribute_tag(os,attributes[i].first, *boost::get<const std::vector<double>* >(attributes[i].second), binary,offset);
+      write_attribute_tag(os,attributes[i].first, *std::get<const std::vector<double>* >(attributes[i].second), binary,offset);
       break;
     case 1:
-      write_attribute_tag(os,attributes[i].first, *boost::get<const std::vector<uint8_t>* >(attributes[i].second), binary,offset);
+      write_attribute_tag(os,attributes[i].first, *std::get<const std::vector<uint8_t>* >(attributes[i].second), binary,offset);
       break;
     default:
-      write_attribute_tag(os,attributes[i].first, *boost::get<const std::vector<std::size_t>* >(attributes[i].second), binary,offset);
+      write_attribute_tag(os,attributes[i].first, *std::get<const std::vector<std::size_t>* >(attributes[i].second), binary,offset);
       break;
     }
   }
@@ -333,25 +333,39 @@ void output_to_vtu_with_attributes(std::ostream& os,
     os << "<AppendedData encoding=\"raw\">\n_";
     write_c3t3_points(os,tr,V); // fills V if the mode is BINARY
     write_cells(os,c3t3,V);
-    for(std::size_t i = 0; i< attributes.size(); ++i)
-      switch(attributes[i].second.which()){
+    for(std::size_t i = 0; i< attributes.size(); ++i) {
+      switch(attributes[i].second.index()){
       case 0:
-        write_attributes(os, *boost::get<const std::vector<double>* >(attributes[i].second));
+        write_attributes(os, *std::get<const std::vector<double>* >(attributes[i].second));
         break;
       case 1:
-        write_attributes(os, *boost::get<const std::vector<uint8_t>* >(attributes[i].second));
+        write_attributes(os, *std::get<const std::vector<uint8_t>* >(attributes[i].second));
         break;
       default:
-        write_attributes(os, *boost::get<const std::vector<std::size_t>* >(attributes[i].second));
+        write_attributes(os, *std::get<const std::vector<std::size_t>* >(attributes[i].second));
         break;
       }
+    }
+    os << "\n</AppendedData>\n";
   }
   os << "</VTKFile>\n";
 }
 
 } // namespace internal
 
-//public API
+//! \ingroup PkgSMDS3ExportFunctions
+//!
+//! \brief exports a tetrahedral mesh complex using the `UnstructuredGrid` XML format.
+//!
+//! \tparam C3T3 a model of `MeshComplexWithFeatures_3InTriangulation_3`.
+//!
+//! \param os the stream used for writing
+//! \param c3t3 the mesh complex
+//! \param mode decides if the data should be written in binary (`IO::BINARY`)
+//!   or in ASCII (`IO::ASCII`).
+//!  If the mode is binary, then the stream `os` must be opened in binary mode.
+//! \see \ref IOStreamVTK
+//!
 template <class C3T3>
 void output_to_vtu(std::ostream& os,
                const C3T3& c3t3,

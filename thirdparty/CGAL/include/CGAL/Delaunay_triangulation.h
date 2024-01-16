@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Triangulation/include/CGAL/Delaunay_triangulation.h $
-// $Id: Delaunay_triangulation.h ec01356 2020-12-15T22:18:12+01:00 Marc Glisse
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Triangulation/include/CGAL/Delaunay_triangulation.h $
+// $Id: include/CGAL/Delaunay_triangulation.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)    : Samuel Hornus
@@ -130,12 +130,12 @@ private:
     // Wrapper
     struct Side_of_oriented_subsphere_d
     {
-      boost::optional<Flat_orientation_d>* fop;
+      std::optional<Flat_orientation_d>* fop;
       Construct_flat_orientation_d cfo;
       In_flat_side_of_oriented_sphere_d ifsoos;
 
       Side_of_oriented_subsphere_d(
-        boost::optional<Flat_orientation_d>& x,
+        std::optional<Flat_orientation_d>& x,
         Construct_flat_orientation_d const&y,
         In_flat_side_of_oriented_sphere_d const&z)
       : fop(&x), cfo(y), ifsoos(z) {}
@@ -145,7 +145,7 @@ private:
       {
         if(!*fop)
           *fop=cfo(a,b);
-        return ifsoos(fop->get(),a,b,p);
+        return ifsoos(fop->value(),a,b,p);
       }
     };
 public:
@@ -416,7 +416,7 @@ Delaunay_triangulation<DCTraits, TDS>
     Dark_triangulation dark_side(
       maximal_dimension(),
       flat_orientation_ ?
-      std::pair<int, const Flat_orientation_d *>(current_dimension(), flat_orientation_.get_ptr())
+      std::pair<int, const Flat_orientation_d *>(current_dimension(), &flat_orientation_.value())
       : std::pair<int, const Flat_orientation_d *>((std::numeric_limits<int>::max)(), (Flat_orientation_d*) nullptr) );
 
     Dark_s_handle dark_s;
@@ -523,7 +523,7 @@ Delaunay_triangulation<DCTraits, TDS>
     // 2. Find corresponding Facet on boundary of dark zone
     // 3. stitch.
 
-    // 1. Build a facet on the boudary of the light zone:
+    // 1. Build a facet on the boundary of the light zone:
     Full_cell_handle light_s = *simps.begin();
     Facet light_ft(light_s, light_s->index(v));
 

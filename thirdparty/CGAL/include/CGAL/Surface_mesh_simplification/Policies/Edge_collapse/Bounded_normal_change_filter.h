@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_simplification/include/CGAL/Surface_mesh_simplification/Policies/Edge_collapse/Bounded_normal_change_filter.h $
-// $Id: Bounded_normal_change_filter.h e1c1e1f 2020-11-04T11:28:02+00:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_simplification/include/CGAL/Surface_mesh_simplification/Policies/Edge_collapse/Bounded_normal_change_filter.h $
+// $Id: include/CGAL/Surface_mesh_simplification/Policies/Edge_collapse/Bounded_normal_change_filter.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Andreas Fabri
@@ -15,7 +15,7 @@
 #include<CGAL/Surface_mesh_simplification/internal/Common.h>
 #include <CGAL/property_map.h>
 
-#include <boost/optional.hpp>
+#include <optional>
 
 namespace CGAL {
 namespace Surface_mesh_simplification {
@@ -31,8 +31,8 @@ public:
 
 
   template <typename Profile>
-  boost::optional<typename Profile::Point>
-  operator()(const Profile& profile, boost::optional<typename Profile::Point> op) const
+  std::optional<typename Profile::Point>
+  operator()(const Profile& profile, std::optional<typename Profile::Point> op) const
   {
     typedef typename Profile::VertexPointMap                              Vertex_point_map;
 
@@ -78,7 +78,7 @@ public:
            Vector n2 = gt.construct_cross_product_vector_3_object()(eq2p, eq2r);
 
            if(!is_positive(gt.compute_scalar_product_3_object()(n1, n2)))
-             return boost::optional<typename Profile::Point>();
+             return std::optional<typename Profile::Point>();
 
            ++it;
          }

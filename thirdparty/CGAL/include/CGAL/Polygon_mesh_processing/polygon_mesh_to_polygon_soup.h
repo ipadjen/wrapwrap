@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/polygon_mesh_to_polygon_soup.h $
-// $Id: polygon_mesh_to_polygon_soup.h 5a992f6 2022-11-22T10:31:34+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/polygon_mesh_to_polygon_soup.h $
+// $Id: include/CGAL/Polygon_mesh_processing/polygon_mesh_to_polygon_soup.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -39,7 +39,7 @@ struct PM_to_PS_point_converter
 {
   PS_Point operator()(const PM_Point& p) const
   {
-    CGAL_static_assertion((std::is_convertible<PM_Point, PS_Point>::value));
+    static_assert(std::is_convertible<PM_Point, PS_Point>::value);
     return PS_Point(p);
   }
 };
@@ -55,7 +55,7 @@ struct PM_to_PS_point_converter<PM_Point, std::array<PS_FT, 3> >
 
 } // namespace internal
 
-/// \ingroup PMP_repairing_grp
+/// \ingroup PMP_combinatorial_repair_grp
 ///
 /// adds the vertices and faces of a mesh into a (possibly non-empty) polygon soup.
 ///
@@ -84,7 +84,7 @@ struct PM_to_PS_point_converter<PM_Point, std::array<PS_FT, 3> >
 ///
 /// \cgalAdvancedBegin
 /// `PolygonRange` can also be a model of the concepts `RandomAccessContainer` and `BackInsertionSequence`
-/// whose value type is an array, but it is the user's responsability to ensure that
+/// whose value type is an array, but it is the user's responsibility to ensure that
 /// all faces have the same number of vertices, and that this number is equal to the size of the array.
 /// \cgalAdvancedEnd
 ///

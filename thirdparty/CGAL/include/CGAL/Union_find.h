@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Union_find/include/CGAL/Union_find.h $
-// $Id: Union_find.h fcd4e57 2020-05-22T11:29:03+02:00 Marc Glisse
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Union_find/include/CGAL/Union_find.h $
+// $Id: include/CGAL/Union_find.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

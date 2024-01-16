@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/Mesh_3/Facet_criteria_visitor_with_balls.h $
-// $Id: Facet_criteria_visitor_with_balls.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_3/include/CGAL/Mesh_3/Facet_criteria_visitor_with_balls.h $
+// $Id: include/CGAL/Mesh_3/Facet_criteria_visitor_with_balls.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -50,8 +50,8 @@ public:
 
   typedef typename Tr::Bare_point      Bare_point;
   typedef typename Tr::Weighted_point  Weighted_point;
-  typedef typename Tr::Geom_traits     Gt;
-  typedef typename Gt::FT              FT;
+  typedef typename Tr::Geom_traits     GT;
+  typedef typename GT::FT              FT;
 
   int wp_nb_;
   double radius_ortho_shpere;
@@ -68,13 +68,13 @@ public:
     , radius_ortho_shpere(0.)
     , ratio(0.)
   {
-    typename Gt::Compare_weighted_squared_radius_3 compare_sq_radius =
+    typename GT::Compare_weighted_squared_radius_3 compare_sq_radius =
       tr.geom_traits().compare_weighted_squared_radius_3_object();
-    typename Gt::Compute_weight_3 cw =
+    typename GT::Compute_weight_3 cw =
       tr.geom_traits().compute_weight_3_object();
-    typename Gt::Construct_point_3 cp =
+    typename GT::Construct_point_3 cp =
       tr.geom_traits().construct_point_3_object();
-    typename Gt::Squared_radius_orthogonal_sphere sq_radius_ortho_sphere =
+    typename GT::Squared_radius_orthogonal_sphere sq_radius_ortho_sphere =
       tr.geom_traits().compute_squared_radius_smallest_orthogonal_sphere_3_object();
 
     Weighted_point wp1 = tr.point(fh.first, (fh.second+1)&3);

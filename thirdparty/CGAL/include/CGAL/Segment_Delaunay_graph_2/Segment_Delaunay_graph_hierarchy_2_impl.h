@@ -3,14 +3,17 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Segment_Delaunay_graph_2/include/CGAL/Segment_Delaunay_graph_2/Segment_Delaunay_graph_hierarchy_2_impl.h $
-// $Id: Segment_Delaunay_graph_hierarchy_2_impl.h 4e519a3 2021-05-05T13:15:37+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Segment_Delaunay_graph_2/include/CGAL/Segment_Delaunay_graph_2/Segment_Delaunay_graph_hierarchy_2_impl.h $
+// $Id: include/CGAL/Segment_Delaunay_graph_2/Segment_Delaunay_graph_hierarchy_2_impl.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Menelaos Karavelas <mkaravel@iacm.forth.gr>
 
+#ifndef CGAL_SEGMENT_DELAUNAY_GRAPH_2_SDG_HIERARCHY_IMPL_H
+#define CGAL_SEGMENT_DELAUNAY_GRAPH_2_SDG_HIERARCHY_IMPL_H
 
+#include <CGAL/license/Segment_Delaunay_graph_2.h>
 
 
 // class implementation continued
@@ -1145,3 +1148,5 @@ file_input(std::istream& is)
 
 
 // EOF
+
+#endif //CGAL_SEGMENT_DELAUNAY_GRAPH_2_SDG_HIERARCHY_IMPL_H

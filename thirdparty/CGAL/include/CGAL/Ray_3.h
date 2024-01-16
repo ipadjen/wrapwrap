@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Kernel_23/include/CGAL/Ray_3.h $
-// $Id: Ray_3.h 8fa0f55 2021-05-27T10:27:38+02:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Kernel_23/include/CGAL/Ray_3.h $
+// $Id: include/CGAL/Ray_3.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -18,7 +18,6 @@
 #define CGAL_RAY_3_H
 
 #include <CGAL/assertions.h>
-#include <boost/type_traits/is_same.hpp>
 #include <CGAL/Kernel/Return_base_tag.h>
 #include <CGAL/representation_tags.h>
 #include <CGAL/Dimension.h>
@@ -37,7 +36,7 @@ class Ray_3 : public R_::Kernel_base::Ray_3
   typedef typename R_::Aff_transformation_3  Aff_transformation_3;
 
   typedef Ray_3                            Self;
-  CGAL_static_assertion((boost::is_same<Self, typename R_::Ray_3>::value));
+  static_assert(std::is_same<Self, typename R_::Ray_3>::value);
 
 public:
 

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_sweep_2/include/CGAL/Surface_sweep_2/Random_access_output_iterator.h $
-// $Id: Random_access_output_iterator.h 2c490b7 2020-10-20T15:17:24+02:00 Simon Giraudot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_sweep_2/include/CGAL/Surface_sweep_2/Random_access_output_iterator.h $
+// $Id: include/CGAL/Surface_sweep_2/Random_access_output_iterator.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Baruch Zukerman <baruchzu@post.tau.ac.il>

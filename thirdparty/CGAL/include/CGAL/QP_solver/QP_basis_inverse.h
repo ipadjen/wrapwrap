@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/QP_solver/include/CGAL/QP_solver/QP_basis_inverse.h $
-// $Id: QP_basis_inverse.h a925a64 2021-01-05T18:42:53+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/QP_solver/include/CGAL/QP_solver/QP_basis_inverse.h $
+// $Id: include/CGAL/QP_solver/QP_basis_inverse.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

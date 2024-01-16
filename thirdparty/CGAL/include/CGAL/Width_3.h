@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polytope_distance_d/include/CGAL/Width_3.h $
-// $Id: Width_3.h 521c72d 2021-10-04T13:22:00+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polytope_distance_d/include/CGAL/Width_3.h $
+// $Id: include/CGAL/Width_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -264,7 +264,7 @@ class Width_3 {
 
   // *** NEIGHBORS_OF ***
   //----------------------
-  //To compute the neighbors of a vertex. The vertex is implicitely given
+  //To compute the neighbors of a vertex. The vertex is implicitly given
   //as the vertex the halfedge points to.
   template <class Halfedge_handle_, class Vertex_handle_>
     void neighbors_of(const Halfedge_handle_& h,
@@ -294,7 +294,7 @@ class Width_3 {
   }
 
   //During the algorithm we have to build union and minus set
-  //of two sets and check wheater two sets are cutting each othe ror not
+  //of two sets and check whether two sets are cutting each other or not
 
   // *** SETMINUS ***
   //------------------

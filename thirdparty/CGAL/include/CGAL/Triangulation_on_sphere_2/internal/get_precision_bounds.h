@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Triangulation_on_sphere_2/include/CGAL/Triangulation_on_sphere_2/internal/get_precision_bounds.h $
-// $Id: get_precision_bounds.h bd5a54e 2021-03-24T13:30:58+01:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Triangulation_on_sphere_2/include/CGAL/Triangulation_on_sphere_2/internal/get_precision_bounds.h $
+// $Id: include/CGAL/Triangulation_on_sphere_2/internal/get_precision_bounds.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mael Rouxel-Labbé
@@ -25,7 +25,7 @@ namespace CGAL {
 namespace Triangulations_on_sphere_2 {
 namespace internal {
 
-// @todo could do something more suble than requiring exact SQRT representation (Root_of_2 etc.)
+// @todo could do something more subtle than requiring exact SQRT representation (Root_of_2 etc.)
 template <typename FT,
           bool has_exact_rep =
             is_same_or_derived<

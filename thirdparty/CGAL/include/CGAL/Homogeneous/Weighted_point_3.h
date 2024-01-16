@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Homogeneous_kernel/include/CGAL/Homogeneous/Weighted_point_3.h $
-// $Id: Weighted_point_3.h 4e519a3 2021-05-05T13:15:37+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Homogeneous_kernel/include/CGAL/Homogeneous/Weighted_point_3.h $
+// $Id: include/CGAL/Homogeneous/Weighted_point_3.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mariette Yvinec

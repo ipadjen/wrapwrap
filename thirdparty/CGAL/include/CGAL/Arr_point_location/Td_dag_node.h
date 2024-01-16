@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_point_location/Td_dag_node.h $
-// $Id: Td_dag_node.h 319383c 2020-05-20T09:47:58+02:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_point_location/Td_dag_node.h $
+// $Id: include/CGAL/Arr_point_location/Td_dag_node.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Michal Balas <balasmic@post.tau.ac.il>
@@ -28,7 +28,7 @@
 #include <list>
 #include <functional>
 
-#include <boost/variant.hpp>
+#include <variant>
 
 namespace CGAL {
 
@@ -112,7 +112,7 @@ protected:
 
   public:
 
-    class clear_neighbors_visitor : public boost::static_visitor< void  >
+    class clear_neighbors_visitor
     {
     public:
       void operator()(Td_active_trapezoid& t) const
@@ -142,10 +142,10 @@ protected:
     //d'tor
     ~Node()
     {
-      boost::apply_visitor(clear_neighbors_visitor(), m_data);
+      std::visit(clear_neighbors_visitor(), m_data);
     }
 
-    bool is_inner_node() const //MICHAL: a node with only left child (like removed node) will be concidered as a leaf
+    bool is_inner_node() const //MICHAL: a node with only left child (like removed node) will be considered as a leaf
     {
       //return !!m_left_child && !!m_right_child;
       return (!m_left_child.is_null() && !m_right_child.is_null());

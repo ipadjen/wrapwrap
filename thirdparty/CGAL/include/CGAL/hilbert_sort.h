@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Spatial_sorting/include/CGAL/hilbert_sort.h $
-// $Id: hilbert_sort.h f5d2fb2 2021-09-01T16:41:36+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Spatial_sorting/include/CGAL/hilbert_sort.h $
+// $Id: include/CGAL/hilbert_sort.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Christophe Delage

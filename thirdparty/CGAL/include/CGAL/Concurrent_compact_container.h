@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/STL_Extension/include/CGAL/Concurrent_compact_container.h $
-// $Id: Concurrent_compact_container.h 440a8df 2022-02-03T08:41:04+00:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/STL_Extension/include/CGAL/Concurrent_compact_container.h $
+// $Id: include/CGAL/Concurrent_compact_container.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Clement Jamin
@@ -35,8 +35,6 @@
 
 #include <tbb/enumerable_thread_specific.h>
 #include <tbb/queuing_mutex.h>
-
-#include <boost/mpl/if.hpp>
 
 namespace CGAL {
 
@@ -542,9 +540,14 @@ public:
     return false;
   }
 
-  bool owns_dereferencable(const_iterator cit) const
+  bool owns_dereferenceable(const_iterator cit) const
   {
     return cit != end() && owns(cit);
+  }
+
+  CGAL_DEPRECATED bool owns_dereferencable(const_iterator cit) const
+  {
+    return owns_dereferenceable(cit);
   }
 
   /** Reserve method to ensure that the capacity of the Concurrent_compact_container be
@@ -749,7 +752,7 @@ void Concurrent_compact_container<T, Allocator>::merge(Self &d)
 #else // not  CGAL_CONCURRENT_COMPACT_CONTAINER_APPROXIMATE_SIZE
   m_capacity += d.m_capacity;
 #endif // not  CGAL_CONCURRENT_COMPACT_CONTAINER_APPROXIMATE_SIZE
-  // It seems reasonnable to take the max of the block sizes.
+  // It seems reasonable to take the max of the block sizes.
   m_block_size = (std::max)(m_block_size, d.m_block_size);
   // Clear d.
   d.init();

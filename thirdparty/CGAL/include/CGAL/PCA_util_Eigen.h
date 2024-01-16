@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Principal_component_analysis/include/CGAL/PCA_util_Eigen.h $
-// $Id: PCA_util_Eigen.h 7d716c0 2021-04-06T08:38:56+02:00 Simon Giraudot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Principal_component_analysis/include/CGAL/PCA_util_Eigen.h $
+// $Id: include/CGAL/PCA_util_Eigen.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Pierre Alliez and Sylvain Pion and Ankit Gupta and Simon Giraudot
@@ -368,7 +368,7 @@ assemble_covariance_matrix_3(InputIterator first,
     transformation << radius, 0.0, 0.0,
                       0.0, radius, 0.0,
                       0.0, 0.0, radius;
-    FT volume = (FT)(4.0/3.0) * radius * t.squared_radius();
+    FT volume =  radius * t.squared_radius();
 
     // skip zero measure primitives
     if(volume == (FT)0.0)
@@ -377,8 +377,9 @@ assemble_covariance_matrix_3(InputIterator first,
     // Find the 2nd order moment for the sphere wrt to the origin by an affine transformation.
 
     // Transform the standard 2nd order moment using the transformation matrix
-    transformation = (3.0/4.0) * volume * transformation * moment * transformation.transpose();
+    transformation = volume * transformation * moment * transformation.transpose();
 
+    volume *= FT(4.0 / 3.0);
     // Translate the 2nd order moment to the center of the sphere.
     FT x0 = t.center().x();
     FT y0 = t.center().y();
@@ -453,7 +454,7 @@ assemble_covariance_matrix_3(InputIterator first,
     transformation << radius, 0.0,    0.0,
                       0.0,    radius, 0.0,
                       0.0,    0.0,    radius;
-    FT area = (FT)4.0 * t.squared_radius();
+    FT area = t.squared_radius();
 
     // skip zero measure primitives
     if(area == (FT)0.0)
@@ -462,8 +463,9 @@ assemble_covariance_matrix_3(InputIterator first,
     // Find the 2nd order moment for the sphere wrt to the origin by an affine transformation.
 
     // Transform the standard 2nd order moment using the transformation matrix
-    transformation = (1.0/4.0) * area * transformation * moment * transformation.transpose();
+    transformation = area * transformation * moment * transformation.transpose();
 
+    area *= FT(4.0);
     // Translate the 2nd order moment to the center of the sphere.
     FT x0 = t.center().x();
     FT y0 = t.center().y();

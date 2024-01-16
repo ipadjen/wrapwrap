@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_point_location/Td_active_vertex.h $
-// $Id: Td_active_vertex.h 97cac65 2021-07-23T10:59:49+02:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_point_location/Td_active_vertex.h $
+// $Id: include/CGAL/Arr_point_location/Td_active_vertex.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s): Oren Nechushtan   <theoren@math.tau.ac.il>
@@ -17,11 +17,11 @@
 #include <CGAL/license/Arrangement_on_surface_2.h>
 
 /*! \file
- * Defintion of the Td_active_vertex<Td_traits> class.
+ * Definition of the Td_active_vertex<Td_traits> class.
  */
 
 #include <CGAL/Arr_point_location/Trapezoidal_decomposition_2.h>
-#include <boost/variant.hpp>
+#include <variant>
 #include <memory>
 
 
@@ -44,7 +44,7 @@ namespace CGAL {
  * when one of the four sides is on the parameter space boundary.
  * Trapezoids are created as active and become inactive when Remove() member
  * function called.
- * Each trapezoid has at most four neighbouring trapezoids.
+ * Each trapezoid has at most four neighboring trapezoids.
  * X_trapezoid structure can represent a real trapezoid, a Td-edge or an
  * edge-end (end point).
  */

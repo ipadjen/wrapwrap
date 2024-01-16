@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Voronoi_diagram_2/include/CGAL/Voronoi_diagram_2/Circulator_adaptors.h $
-// $Id: Circulator_adaptors.h 2e47630 2021-11-10T09:28:05+01:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Voronoi_diagram_2/include/CGAL/Voronoi_diagram_2/Circulator_adaptors.h $
+// $Id: include/CGAL/Voronoi_diagram_2/Circulator_adaptors.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

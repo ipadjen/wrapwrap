@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Solver_interface/include/CGAL/GLPK_mixed_integer_program_traits.h $
-// $Id: GLPK_mixed_integer_program_traits.h 267a641 2021-05-31T14:01:08+02:00 Dmitry Anisimov
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Solver_interface/include/CGAL/GLPK_mixed_integer_program_traits.h $
+// $Id: include/CGAL/GLPK_mixed_integer_program_traits.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Liangliang Nan
@@ -56,7 +56,7 @@ int bound_type(FT lb, FT ub)
 ///      `CGAL::SCIP_mixed_integer_program_traits`, or derive a new
 ///      model from `CGAL::Mixed_integer_program_traits`.
 ///
-/// \cgalModels `MixedIntegerProgramTraits`
+/// \cgalModels{MixedIntegerProgramTraits}
 ///
 /// \sa `SCIP_mixed_integer_program_traits`
 template <typename FT>

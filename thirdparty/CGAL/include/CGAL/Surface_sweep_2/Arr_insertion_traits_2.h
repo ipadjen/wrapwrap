@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Surface_sweep_2/Arr_insertion_traits_2.h $
-// $Id: Arr_insertion_traits_2.h 4158542 2020-04-01T12:31:51+03:00 Efi Fogel
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Surface_sweep_2/Arr_insertion_traits_2.h $
+// $Id: include/CGAL/Surface_sweep_2/Arr_insertion_traits_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -18,7 +18,7 @@
 
 /*! \file
  *
- * Defintion of the Arr_insertion_traits_2<Traits,Arrangement> class.
+ * Definition of the Arr_insertion_traits_2<Traits,Arrangement> class.
  */
 
 #include <CGAL/Surface_sweep_2/Arr_basic_insertion_traits_2.h>
@@ -98,9 +98,9 @@ public:
                               OutputIterator oi)
     {
       typedef std::pair<Point_2, Multiplicity>          Intersection_point;
-      typedef boost::variant<Intersection_point, X_monotone_curve_2>
+      typedef std::variant<Intersection_point, X_monotone_curve_2>
                                                         Intersection_result;
-      typedef boost::variant<Intersection_point, Base_x_monotone_curve_2>
+      typedef std::variant<Intersection_point, Base_x_monotone_curve_2>
                                                         Intersection_base_result;
 
       Halfedge_handle invalid_he;
@@ -120,13 +120,13 @@ public:
       // X_monotone_curve_2
       for (const auto& xection : xections) {
         const Intersection_point*
-          p_p = boost::get<Intersection_point>(&xection);
+          p_p = std::get_if<Intersection_point>(&xection);
         if (p_p != nullptr) {
-          *oi++ = Intersection_result(xection);
+          *oi++ = Intersection_result(*p_p);
           continue;
         }
         const Base_x_monotone_curve_2* base_cv_p =
-          boost::get<Base_x_monotone_curve_2>(&xection);
+          std::get_if<Base_x_monotone_curve_2>(&xection);
         CGAL_assertion(base_cv_p);
 
         // Add halfedge handles to the resulting curve.

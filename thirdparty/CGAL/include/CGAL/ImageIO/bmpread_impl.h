@@ -3,8 +3,8 @@
 //
 // This file is part of the ImageIO Library, and as been adapted for CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/CGAL_ImageIO/include/CGAL/ImageIO/bmpread_impl.h $
-// $Id: bmpread_impl.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/CGAL_ImageIO/include/CGAL/ImageIO/bmpread_impl.h $
+// $Id: include/CGAL/ImageIO/bmpread_impl.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later
 //
 //
@@ -699,7 +699,7 @@ void reflectYchar(char *image, int width, int height)
  * start of a BITMAPARRAYHEADER.  These functions will leave the file pointer
  * on the byte after the image's color table.
  *
- * The coordinate speaces in the returned arrays will have an upper-left
+ * The coordinate spaces in the returned arrays will have an upper-left
  * origin.   As before, a non-zero return value indicates that something went
  * wrong.
  *

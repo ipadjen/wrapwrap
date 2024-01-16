@@ -9,9 +9,9 @@
 // and a STREP (FET Open) Project under Contract No  IST-006413
 // (ACS -- Algorithms for Complex Shapes)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Circular_kernel_3/include/CGAL/Spherical_kernel_type_equality_wrapper.h $
-// $Id: Spherical_kernel_type_equality_wrapper.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
-// SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Circular_kernel_3/include/CGAL/Spherical_kernel_type_equality_wrapper.h $
+// $Id: include/CGAL/Spherical_kernel_type_equality_wrapper.h a484bfa $
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Monique Teillaud <Monique.Teillaud@sophia.inria.fr>
 //             Sylvain Pion
@@ -21,6 +21,9 @@
 
 #ifndef CGAL_SPHERICAL_KERNEL_TYPE_EQUALITY_WRAPPER_H
 #define CGAL_SPHERICAL_KERNEL_TYPE_EQUALITY_WRAPPER_H
+
+#include <CGAL/license/Circular_kernel_3.h>
+
 
 #include <CGAL/user_classes.h>
 #include <CGAL/Circular_arc_point_3.h>

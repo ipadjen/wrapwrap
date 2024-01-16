@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/NewKernel_d/include/CGAL/NewKernel_d/Vector/determinant_of_vectors_small_dim_internal.h $
-// $Id: determinant_of_vectors_small_dim_internal.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/NewKernel_d/include/CGAL/NewKernel_d/Vector/determinant_of_vectors_small_dim_internal.h $
+// $Id: include/CGAL/NewKernel_d/Vector/determinant_of_vectors_small_dim_internal.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Marc Glisse
@@ -46,7 +46,7 @@ struct CGAL_CLASS
     };
   template<class P,class=void> struct Property : LA::template Property<P> {};
   template<class D> struct Property<CGAL_TAG, D> :
-    boost::true_type {};
+    std::true_type {};
 
   static NT CGAL_FUNC(Vector const&a, Vector const&b){
     return CGAL::determinant_of_vectors<NT>(a,b);
@@ -69,7 +69,7 @@ struct CGAL_CLASS
     };
   template<class P,class=void> struct Property : LA::template Property<P> {};
   template<class D> struct Property<CGAL_TAG, D> :
-    boost::true_type {};
+    std::true_type {};
 
   static NT CGAL_FUNC(Vector const&a, Vector const&b,
       Vector const&c){
@@ -93,7 +93,7 @@ struct CGAL_CLASS
     };
   template<class P,class=void> struct Property : LA::template Property<P> {};
   template<class D> struct Property<CGAL_TAG, D> :
-    boost::true_type {};
+    std::true_type {};
 
   static NT CGAL_FUNC(Vector const&a, Vector const&b,
       Vector const&c, Vector const&d){
@@ -117,7 +117,7 @@ struct CGAL_CLASS
     };
   template<class P,class=void> struct Property : LA::template Property<P> {};
   template<class D> struct Property<CGAL_TAG, D> :
-    boost::true_type {};
+    std::true_type {};
 
   static NT CGAL_FUNC(Vector const&a, Vector const&b,
       Vector const&c, Vector const&d, Vector const&e){
@@ -141,7 +141,7 @@ struct CGAL_CLASS
     };
   template<class P,class=void> struct Property : LA::template Property<P> {};
   template<class D> struct Property<CGAL_TAG, D> :
-    boost::true_type {};
+    std::true_type {};
 
   static NT CGAL_FUNC(Vector const&a, Vector const&b,
       Vector const&c, Vector const&d, Vector const&e, Vector const&f){

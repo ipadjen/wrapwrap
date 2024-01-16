@@ -14,11 +14,11 @@
  *       Chen Li <chenli@cs.nyu.edu>
  *       Zilin Du <zilin@cs.nyu.edu>
  *
- * WWW URL: http://cs.nyu.edu/exact/
+ * WWW URL: https://cs.nyu.edu/exact/
  * Email: exact@cs.nyu.edu
  *
- * $URL: https://github.com/CGAL/cgal/blob/v5.5.2/CGAL_Core/include/CGAL/CORE/CoreDefs_impl.h $
- * $Id: CoreDefs_impl.h 3e03d50 2021-05-05T15:32:22+02:00 Maxime Gimeno
+ * $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/CGAL_Core/include/CGAL/CORE/CoreDefs_impl.h $
+ * $Id: include/CGAL/CORE/CoreDefs_impl.h a484bfa $
  * SPDX-License-Identifier: LGPL-3.0-or-later
  ***************************************************************************/
 
@@ -42,7 +42,7 @@ namespace CORE {
 
 // Note from 2014: does not seem to be used anywhere, and it is not declared
 // in CoreDefs.h so it is not accessible
-// Left here for compatibilty when CGAL_HEADER_ONLY is not defined
+// Left here for compatibility when CGAL_HEADER_ONLY is not defined
 
 int IOErrorFlag = 0;
 

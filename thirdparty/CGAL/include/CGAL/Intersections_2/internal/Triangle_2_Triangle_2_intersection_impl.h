@@ -7,8 +7,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_2/include/CGAL/Intersections_2/internal/Triangle_2_Triangle_2_intersection_impl.h $
-// $Id: Triangle_2_Triangle_2_intersection_impl.h fb37f69 2021-09-23T13:15:28+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_2/include/CGAL/Intersections_2/internal/Triangle_2_Triangle_2_intersection_impl.h $
+// $Id: include/CGAL/Intersections_2/internal/Triangle_2_Triangle_2_intersection_impl.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

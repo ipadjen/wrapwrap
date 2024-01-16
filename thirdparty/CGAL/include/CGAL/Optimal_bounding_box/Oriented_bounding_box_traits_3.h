@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Optimal_bounding_box/include/CGAL/Optimal_bounding_box/Oriented_bounding_box_traits_3.h $
-// $Id: Oriented_bounding_box_traits_3.h b3968d2 2020-03-27T18:19:39+01:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Optimal_bounding_box/include/CGAL/Optimal_bounding_box/Oriented_bounding_box_traits_3.h $
+// $Id: include/CGAL/Optimal_bounding_box/Oriented_bounding_box_traits_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -36,7 +36,7 @@ namespace CGAL {
 ///
 /// \tparam K must be a model of `Kernel`
 ///
-/// \cgalModels `OrientedBoundingBoxTraits_3`
+/// \cgalModels{OrientedBoundingBoxTraits_3}
 ///
 template <typename K>
 class Oriented_bounding_box_traits_3

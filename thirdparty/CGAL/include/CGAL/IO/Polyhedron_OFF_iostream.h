@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polyhedron/include/CGAL/IO/Polyhedron_OFF_iostream.h $
-// $Id: Polyhedron_OFF_iostream.h 477353d 2022-04-20T15:55:50+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polyhedron/include/CGAL/IO/Polyhedron_OFF_iostream.h $
+// $Id: include/CGAL/IO/Polyhedron_OFF_iostream.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

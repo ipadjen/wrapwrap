@@ -4,8 +4,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_2/include/CGAL/Constrained_voronoi_diagram_2.h $
-// $Id: Constrained_voronoi_diagram_2.h 7e3af5c 2021-09-10T11:26:53+02:00 Jane Tournois
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_2/include/CGAL/Constrained_voronoi_diagram_2.h $
+// $Id: include/CGAL/Constrained_voronoi_diagram_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Jane Tournois, Raul Gallegos, Pierre Alliez
@@ -21,6 +21,7 @@
 #include <stack>
 #include <CGAL/iterator.h>
 #include <CGAL/tuple.h>
+#include <CGAL/assertions.h>
 #include <CGAL/Kernel/global_functions_2.h>
 
 namespace CGAL {
@@ -145,7 +146,7 @@ public:
 
 
 // Cdt should be of the type Constrained_Delaunay_triangulation_2
-// and the face base shoul be Constrained_Delaunay_triangulation_face_base_2
+// and the face base should be Constrained_Delaunay_triangulation_face_base_2
 template <class Cdt>
 class Constrained_voronoi_diagram_2
 {
@@ -415,8 +416,8 @@ template<typename Tr>
 Cvd_cell_2<Tr> dual(const Tr& tr,
                     const typename Tr::Vertex_handle& v)
 {
-  CGAL_triangulation_precondition( v != typename Tr::Vertex_handle());
-  CGAL_triangulation_precondition( !tr.is_infinite(v));
+  CGAL_precondition( v != typename Tr::Vertex_handle());
+  CGAL_precondition( !tr.is_infinite(v));
 
   Constrained_voronoi_diagram_2<Tr> diagram(tr);
   return diagram.cvd_cell(v);
@@ -436,8 +437,8 @@ Cvd_cell_2<Tr> dual(const Tr& tr,
 //  typedef Tr::Geom_traits::Ray_2    Ray;
 //  typedef Tr::Geom_traits::Vector_2 Vector_2;
 //
-//  CGAL_triangulation_precondition( v != Vertex_handle());
-//  CGAL_triangulation_precondition( !tr.is_infinite(v));
+//  CGAL_precondition( v != Vertex_handle());
+//  CGAL_precondition( !tr.is_infinite(v));
 //
 //  // The Circulator moves ccw.
 //  std::vector<Segment> segments;

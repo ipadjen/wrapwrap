@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Cone_spanners_2/include/CGAL/Cone_spanners_2/Plane_scan_tree_impl.h $
-// $Id: Plane_scan_tree_impl.h 72bf8cc 2021-09-15T07:07:18+01:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Cone_spanners_2/include/CGAL/Cone_spanners_2/Plane_scan_tree_impl.h $
+// $Id: include/CGAL/Cone_spanners_2/Plane_scan_tree_impl.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -139,8 +139,8 @@ public:
 
     /* Destructor.
      * Frees memory used for storing key-value pair, thus invalidating any
-     * exisitng pointers to any keys and/or values in the tree. During and
-     * after destruction, neighbour nodes are not guarenteed to be consistent.
+     * existing pointers to any keys and/or values in the tree. During and
+     * after destruction, neighbor nodes are not guaranteed to be consistent.
      * Specifically, the linked list along the leaves of the B+ tree is
      * invalidated. */
     virtual ~_Leaf() {

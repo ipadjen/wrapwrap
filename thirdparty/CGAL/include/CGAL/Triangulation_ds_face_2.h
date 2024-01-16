@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/TDS_2/include/CGAL/Triangulation_ds_face_2.h $
-// $Id: Triangulation_ds_face_2.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/TDS_2/include/CGAL/Triangulation_ds_face_2.h $
+// $Id: include/CGAL/Triangulation_ds_face_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -67,8 +67,8 @@ typename Triangulation_ds_face_2<Fb>::Vertex_handle
 Triangulation_ds_face_2<Fb>::
 mirror_vertex(int i) const
 {
-  CGAL_triangulation_precondition ( this->neighbor(i) != Face_handle()
-                                    && this->dimension() >= 1);
+  CGAL_precondition ( this->neighbor(i) != Face_handle()
+                      && this->dimension() >= 1);
   //return neighbor(i)->vertex(neighbor(i)->index(this->handle()));
   return this->neighbor(i)->vertex(mirror_index(i));
 }
@@ -79,8 +79,8 @@ Triangulation_ds_face_2<Fb>::
 mirror_index(int i) const
 {
   // return the index of opposite vertex in neighbor(i);
-  CGAL_triangulation_precondition (this->neighbor(i) != Face_handle() &&
-                                   this->dimension() >= 1);
+  CGAL_precondition (this->neighbor(i) != Face_handle() &&
+                     this->dimension() >= 1);
   if (this->dimension() == 1) {
     return 1 - (this->neighbor(i)->index(this->vertex(1-i)));
   }

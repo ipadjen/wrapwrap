@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Barycentric_coordinates_2/include/CGAL/Barycentric_coordinates_2/Delaunay_domain_2.h $
-// $Id: Delaunay_domain_2.h d03c669 2021-08-13T11:33:47+02:00 Dmitry Anisimov
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Barycentric_coordinates_2/include/CGAL/Barycentric_coordinates_2/Delaunay_domain_2.h $
+// $Id: include/CGAL/Barycentric_coordinates_2/Delaunay_domain_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -51,7 +51,7 @@ namespace Barycentric_coordinates {
     a model of `ReadablePropertyMap` whose key type is `VertexRange::value_type` and
     value type is `Point_2`. The default is `CGAL::Identity_property_map`.
 
-    \cgalModels `DiscretizedDomain_2`
+    \cgalModels{DiscretizedDomain_2}
   */
   template<
   typename VertexRange,

@@ -6,8 +6,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Stream_support/include/CGAL/IO/WKT/traits_point.h $
-// $Id: traits_point.h e6c767d 2021-05-12T15:45:07+02:00 Maxime Gimeno
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Stream_support/include/CGAL/IO/WKT/traits_point.h $
+// $Id: include/CGAL/IO/WKT/traits_point.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Maxime Gimeno

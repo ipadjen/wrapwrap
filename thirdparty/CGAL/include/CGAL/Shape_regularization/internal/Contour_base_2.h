@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Shape_regularization/include/CGAL/Shape_regularization/internal/Contour_base_2.h $
-// $Id: Contour_base_2.h fb8313a 2022-05-05T18:50:46+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Shape_regularization/include/CGAL/Shape_regularization/internal/Contour_base_2.h $
+// $Id: include/CGAL/Shape_regularization/internal/Contour_base_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -755,10 +755,10 @@ namespace internal {
       typename CGAL::cpp11::result_of<Intersect_2(Line_2, Line_2)>::type result
       = CGAL::intersection(line_1, line_2);
       if (result) {
-        if (const Line_2* line = boost::get<Line_2>(&*result)) {
+        if (const Line_2* line = std::get_if<Line_2>(&*result)) {
           return false;
         } else {
-          const Point_2* point = boost::get<Point_2>(&*result);
+          const Point_2* point = std::get_if<Point_2>(&*result);
           in_point = *point; return true;
         }
       }

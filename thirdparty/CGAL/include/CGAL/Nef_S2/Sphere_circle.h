@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_S2/include/CGAL/Nef_S2/Sphere_circle.h $
-// $Id: Sphere_circle.h 9cdf8ba 2022-04-02T18:10:06+01:00 Giles Bathgate
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Nef_S2/include/CGAL/Nef_S2/Sphere_circle.h $
+// $Id: include/CGAL/Nef_S2/Sphere_circle.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -57,7 +57,7 @@ Sphere_circle() : Base() {}
 /*{\Mcreate creates some great circle.}*/
 
 Sphere_circle(const Sphere_point<R>& p, const Sphere_point<R>&q)
-  : Base(Point_3(0,0,0),p,q)
+  : Base(CGAL::ORIGIN,p,q)
 /*{\Mcreate creates a great circle through $p$ and $q$.  If $p$ and
 $q$ are not antipodal on $S_2$, then this circle is unique and oriented
 such that a walk along |\Mvar| meets $p$ just before the shorter segment
@@ -104,9 +104,9 @@ Sphere_circle(Sphere_circle<R> c, const Sphere_point<R>& p)
 { CGAL_assertion(!c.has_on(p));
   if ( c.has_on_negative_side(p) ) c=c.opposite();
   if ( p == c.orthogonal_pole() )
-    *this = Sphere_circle<R>(Base(Point_3(0,0,0),p,CGAL::ORIGIN+c.base1()));
+    *this = Sphere_circle<R>(Base(CGAL::ORIGIN,p,CGAL::ORIGIN+c.base1()));
   else
-    *this = Sphere_circle<R>(Base(Point_3(0,0,0),p,c.orthogonal_pole()));
+    *this = Sphere_circle<R>(Base(CGAL::ORIGIN,p,c.orthogonal_pole()));
 }
 
 /*{\Moperations 4 2}*/

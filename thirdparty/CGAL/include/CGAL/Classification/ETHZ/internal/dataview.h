@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Classification/include/CGAL/Classification/ETHZ/internal/dataview.h $
-// $Id: dataview.h 26355e2 2020-06-25T12:31:21+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Classification/include/CGAL/Classification/ETHZ/internal/dataview.h $
+// $Id: include/CGAL/Classification/ETHZ/internal/dataview.h a484bfa $
 // SPDX-License-Identifier: LicenseRef-RFL
 // License notice in Installation/LICENSE.RFL
 //

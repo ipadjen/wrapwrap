@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Point_set_processing_3/include/CGAL/IO/write_las_points.h $
-// $Id: write_las_points.h 10b0af3 2022-01-13T14:43:34+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Point_set_processing_3/include/CGAL/IO/write_las_points.h $
+// $Id: include/CGAL/IO/write_las_points.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s) : Simon Giraudot
@@ -21,12 +21,11 @@
 #include <CGAL/boost/graph/named_params_helper.h>
 #include <CGAL/property_map.h>
 #include <CGAL/value_type_traits.h>
-#include <CGAL/point_set_processing_assertions.h>
 #include <CGAL/Kernel_traits.h>
+#include <CGAL/assertions.h>
 
 #include <boost/cstdint.hpp>
 #include <boost/version.hpp>
-#include <boost/utility/enable_if.hpp>
 
 #ifdef BOOST_MSVC
 #  pragma warning(push)
@@ -57,6 +56,7 @@
 #include <sstream>
 #include <string>
 #include <tuple>
+#include <type_traits>
 
 namespace CGAL {
 
@@ -164,7 +164,7 @@ namespace LAS {
    handlers. A `PropertyHandle` is a `std::pair<PropertyMap,
    LAS_property::Tag >` used to write a scalar value
    `LAS_property::Tag::type` as a %LAS property (for example,
-   writing an `int` vairable as an `int` %LAS property). An exception
+   writing an `int` variable as an `int` %LAS property). An exception
    is used for points that are written using a `std::tuple` object.
 
    See documentation of `read_LAS_with_properties()` for the
@@ -193,7 +193,7 @@ bool write_LAS_with_properties(std::ostream& os, ///< output stream.
                                LAS_property::Z> point_property, ///< property handler for points
                                PropertyHandler&& ... properties) ///< parameter pack of property handlers
 {
-  CGAL_point_set_processing_precondition(points.begin() != points.end());
+  CGAL_precondition(points.begin() != points.end());
 
   if(!os)
   {
@@ -282,7 +282,7 @@ bool write_LAS(std::ostream& os,
                const PointRange& points,
                const CGAL_NP_CLASS& np = parameters::default_values()
 #ifndef DOXYGEN_RUNNING
-               , typename boost::enable_if<internal::is_Range<PointRange> >::type* = nullptr
+               , std::enable_if_t<internal::is_Range<PointRange>::value>* = nullptr
 #endif
                )
 {
@@ -337,7 +337,7 @@ bool write_LAS(const std::string& filename,
                const PointRange& points,
                const CGAL_NP_CLASS& np = parameters::default_values()
 #ifndef DOXYGEN_RUNNING
-               , typename boost::enable_if<internal::is_Range<PointRange> >::type* = nullptr
+               , std::enable_if_t<internal::is_Range<PointRange>::value>* = nullptr
 #endif
                )
 {

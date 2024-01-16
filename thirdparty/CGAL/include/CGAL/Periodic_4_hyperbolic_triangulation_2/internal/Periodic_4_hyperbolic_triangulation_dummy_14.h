@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Periodic_4_hyperbolic_triangulation_2/include/CGAL/Periodic_4_hyperbolic_triangulation_2/internal/Periodic_4_hyperbolic_triangulation_dummy_14.h $
-// $Id: Periodic_4_hyperbolic_triangulation_dummy_14.h 98e4718 2021-08-26T11:33:39+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Periodic_4_hyperbolic_triangulation_2/include/CGAL/Periodic_4_hyperbolic_triangulation_2/internal/Periodic_4_hyperbolic_triangulation_dummy_14.h $
+// $Id: include/CGAL/Periodic_4_hyperbolic_triangulation_2/internal/Periodic_4_hyperbolic_triangulation_dummy_14.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Iordan Iordanov
@@ -251,7 +251,7 @@ insert_dummy_points(bool rational)
   for(Face_iterator fit = tds().faces_begin(); fit != tds().faces_end(); ++fit)
     this->make_canonical(fit);
 
-  CGAL_triangulation_assertion(is_valid(true));
+  CGAL_assertion(is_valid(true));
 
   return ret;
 }
@@ -260,4 +260,3 @@ insert_dummy_points(bool rational)
 } // namespace CGAL
 
 #endif // CGAL_PERIODIC_4_HYPERBOLIC_TRIANGULATION_DUMMY_14_H
-

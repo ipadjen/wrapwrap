@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/BGL/include/CGAL/boost/graph/IO/STL.h $
-// $Id: STL.h 1d4a0b9 2022-03-25T08:29:36+01:00 Andreas Fabri
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/BGL/include/CGAL/boost/graph/IO/STL.h $
+// $Id: include/CGAL/boost/graph/IO/STL.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Andreas Fabri
@@ -264,7 +264,7 @@ bool write_STL(std::ostream& os,
   if(get_mode(os) == BINARY)
   {
     os << "FileType: Binary                                                                ";
-    const boost::uint32_t N32 = static_cast<boost::uint32_t>(faces(g).size());
+    const std::uint32_t N32 = static_cast<std::uint32_t>(faces(g).size());
     os.write(reinterpret_cast<const char *>(&N32), sizeof(N32));
 
     for(const face_descriptor f : faces(g))

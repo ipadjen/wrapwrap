@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Arrangement_on_surface_2/include/CGAL/Arr_point_location/Arr_triangulation_pl_impl.h $
-// $Id: Arr_triangulation_pl_impl.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Arrangement_on_surface_2/include/CGAL/Arr_point_location/Arr_triangulation_pl_impl.h $
+// $Id: include/CGAL/Arr_point_location/Arr_triangulation_pl_impl.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -85,7 +85,7 @@ Arr_triangulation_point_location<Arrangement_2>::locate (const Point_2& p) const
    case CDT::EDGE:
     {
       CGAL_TRG_PRINT_DEBUG("locate type = edge"<<li );
-      //li is the index of the vertex OPOSITE to the edge
+      //li is the index of the vertex OPPOSITE to the edge
       if ( cdt.is_constrained(CDT_Edge(fh,li)) )
       {  //the edge found is an edge in the plannar map
         CGAL_TRG_PRINT_DEBUG("the edge is a constrained");
@@ -207,7 +207,7 @@ Arr_triangulation_point_location<Arrangement_2>::locate (const Point_2& p) const
 
 
 //----------------------------------------------------
-/*! triangulate the arrangement into a cdt (Constaint Delauney Triangulation):
+/*! triangulate the arrangement into a cdt (Constraint Delauney Triangulation):
 go over all halfedges, and insert each halfedge as a constraint to the cdt.
 */
 template <class Arrangement_2>
@@ -217,7 +217,7 @@ void Arr_triangulation_point_location<Arrangement_2>::clear_triangulation ()
 }
 
 //----------------------------------------------------
-/*! triangulate the arrangement into a cdt (Constaint Delauney Triangulation):
+/*! triangulate the arrangement into a cdt (Constraint Delauney Triangulation):
 go over all halfedges, and insert each halfedge as a constraint to the cdt.
 */
 template <class Arrangement_2>

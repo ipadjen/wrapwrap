@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_3/include/CGAL/Intersections_3/internal/tetrahedron_lines_intersections_3.h $
-// $Id: tetrahedron_lines_intersections_3.h c2d1adf 2021-06-23T17:34:48+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_3/include/CGAL/Intersections_3/internal/tetrahedron_lines_intersections_3.h $
+// $Id: include/CGAL/Intersections_3/internal/tetrahedron_lines_intersections_3.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -68,7 +68,7 @@ struct Tetrahedron_lines_intersection_3_base
       if(do_intersect(o, triangle))
       {
         tr_seg[i] = typename K::Intersect_3()(o, triangle);
-        if(boost::get<typename K::Segment_3>(&*tr_seg[i]) != nullptr)
+        if(std::get_if<typename K::Segment_3>(&*tr_seg[i]) != nullptr)
         {
           res_id = i;
           break;
@@ -91,7 +91,7 @@ struct Tetrahedron_lines_intersection_3_base
     {
       if(tr_seg[i])
       {
-        if(const typename K::Point_3* p = boost::get<typename K::Point_3>(&*tr_seg[i]))
+        if(const typename K::Point_3* p = std::get_if<typename K::Point_3>(&*tr_seg[i]))
         {
           if(res_points.empty())
           {

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Stream_support/include/CGAL/IO/VTK/VTK_writer.h $
-// $Id: VTK_writer.h 423ae6e 2020-01-24T17:48:02+01:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Stream_support/include/CGAL/IO/VTK/VTK_writer.h $
+// $Id: include/CGAL/IO/VTK/VTK_writer.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

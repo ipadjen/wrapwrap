@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org);
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Stream_support/include/CGAL/IO/STL/STL_reader.h $
-// $Id: STL_reader.h fb6f703 2021-05-04T14:07:49+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Stream_support/include/CGAL/IO/STL/STL_reader.h $
+// $Id: include/CGAL/IO/STL/STL_reader.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Andreas Fabri,
@@ -75,7 +75,7 @@ bool read_ASCII_facet(std::istream& is,
         return false;
       }
 
-      if(!(is >> iformat(x) >> iformat(y) >> iformat(z)))
+      if(!(is >> IO::iformat(x) >> IO::iformat(y) >> IO::iformat(z)))
       {
         if(verbose)
           std::cerr << "Error while reading point coordinates (premature end of file)" << std::endl;
@@ -209,7 +209,7 @@ bool parse_binary_STL(std::istream& is,
   int index = 0;
   std::map<Point, int> index_map;
 
-  boost::uint32_t N32;
+  std::uint32_t N32;
   if(!(is.read(reinterpret_cast<char*>(&N32), sizeof(N32))))
   {
     if(verbose)

@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/Mesh_3/sliver_criteria.h $
-// $Id: sliver_criteria.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_3/include/CGAL/Mesh_3/sliver_criteria.h $
+// $Id: include/CGAL/Mesh_3/sliver_criteria.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -36,9 +36,9 @@ template<typename Tr, //Triangulation
 class Sliver_criterion
 {
 public:
-  typedef typename Tr::Geom_traits Gt;
+  typedef typename Tr::Geom_traits GT;
   typedef typename Tr::Cell_handle Cell_handle;
-  typedef typename Gt::Tetrahedron_3 Tetrahedron_3;
+  typedef typename GT::Tetrahedron_3 Tetrahedron_3;
   typedef Cell_vector_ Cell_vector;
 
 public:
@@ -108,7 +108,7 @@ protected:
   typedef Sliver_criterion<Tr, update_sliver_cache> Base;
   typedef typename Base::Tetrahedron_3  Tetrahedron_3;
   typedef typename Base::Cell_vector    Cell_vector;
-  typedef typename Base::Gt             Gt;
+  typedef typename Base::GT             GT;
 
 public:
   typedef typename Base::Cell_handle    Cell_handle;
@@ -163,7 +163,7 @@ class Radius_ratio_criterion
 {
 protected:
   typedef Sliver_criterion<Tr, update_sliver_cache> Base;
-  typedef typename Base::Gt             Gt;
+  typedef typename Base::GT             GT;
   typedef typename Base::Tetrahedron_3  Tetrahedron_3;
   typedef typename Base::Cell_vector    Cell_vector;
   typedef Radius_ratio_criterion<Tr, update_sliver_cache> RR_criterion;

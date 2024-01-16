@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Skin_surface_3/include/CGAL/Triangulated_mixed_complex_observer_3.h $
-// $Id: Triangulated_mixed_complex_observer_3.h 1faa0e2 2021-04-28T10:55:26+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Skin_surface_3/include/CGAL/Triangulated_mixed_complex_observer_3.h $
+// $Id: include/CGAL/Triangulated_mixed_complex_observer_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

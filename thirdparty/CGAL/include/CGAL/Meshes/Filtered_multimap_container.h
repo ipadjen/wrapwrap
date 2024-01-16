@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Mesh_3/include/CGAL/Meshes/Filtered_multimap_container.h $
-// $Id: Filtered_multimap_container.h 4fc2f59 2020-07-31T16:17:56+02:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Mesh_3/include/CGAL/Meshes/Filtered_multimap_container.h $
+// $Id: include/CGAL/Meshes/Filtered_multimap_container.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Clement JAMIN
@@ -187,7 +187,7 @@ namespace CGAL {
     typedef typename Base::size_type size_type;
 
   protected:
-    // --- protected datas ---
+    // --- protected data ---
     Map container;
     Predicate test;
 

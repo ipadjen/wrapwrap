@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Barycentric_coordinates_2/include/CGAL/Barycentric_coordinates_2/segment_coordinates_2.h $
-// $Id: segment_coordinates_2.h 0e84898 2022-05-13T15:50:21+02:00 Sebastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Barycentric_coordinates_2/include/CGAL/Barycentric_coordinates_2/segment_coordinates_2.h $
+// $Id: include/CGAL/Barycentric_coordinates_2/segment_coordinates_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -245,7 +245,7 @@ namespace Barycentric_coordinates {
     /// Computes segment barycentric coordinates for a chosen query point with respect to both vertices of the segment.
     /// Computed coordinates are stored in the output iterator `output`.
     template<class OutputIterator>
-    inline boost::optional<OutputIterator> operator()(
+    inline std::optional<OutputIterator> operator()(
       const Point_2 &query_point, OutputIterator output)
     {
       return segment_coordinates_2(query_point, output);
@@ -280,7 +280,7 @@ namespace Barycentric_coordinates {
     // This function accepts a container of the type <a href="https://en.cppreference.com/w/cpp/container/vector">`std::vector`</a>
     // and returns an iterator of the type <a href="https://en.cppreference.com/w/cpp/iterator/back_insert_iterator">`std::back_insert_iterator`</a>
     // that is placed past-the-end of the resulting sequence of coordinate values.
-    inline boost::optional<std::back_insert_iterator<std::vector<FT> > > operator()(
+    inline std::optional<std::back_insert_iterator<std::vector<FT> > > operator()(
       const Point_2 &query_point, std::vector<FT> &output_vector)
     {
       output_vector.reserve(output_vector.size() + 2);
@@ -327,7 +327,7 @@ namespace Barycentric_coordinates {
 
     // Compute segment coordinates.
     template<class OutputIterator>
-    boost::optional<OutputIterator> segment_coordinates_2(
+    std::optional<OutputIterator> segment_coordinates_2(
       const Point_2 &query_point, OutputIterator &output) {
 
       // Project point on the segment and compute the first coordinate.
@@ -341,7 +341,7 @@ namespace Barycentric_coordinates {
       ++output;
 
       // Output both coordinates.
-      return boost::optional<OutputIterator>(output);
+      return std::optional<OutputIterator>(output);
     }
   };
 

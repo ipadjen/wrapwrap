@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Bounding_volumes/include/CGAL/Min_sphere_of_spheres_d/Min_sphere_of_spheres_d_support_set_impl.h $
-// $Id: Min_sphere_of_spheres_d_support_set_impl.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Bounding_volumes/include/CGAL/Min_sphere_of_spheres_d/Min_sphere_of_spheres_d_support_set_impl.h $
+// $Id: include/CGAL/Min_sphere_of_spheres_d/Min_sphere_of_spheres_d_support_set_impl.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -144,7 +144,7 @@ namespace CGAL_MINIBALL_NAMESPACE {
       copy_n<D>(t.center_cartesian_begin(*b[0]),center);
 
       if (m > 1) {
-        // compute the coeffients beta[i] and the center:
+        // compute the coefficients beta[i] and the center:
         for(unsigned int i=1; i<m; ++i) {
           beta[i] = (static_cast<FT>(delta[i]+eps[i])+sol[m]*phi[i])/alpha[i];
           for (int j=0; j<D; ++j)

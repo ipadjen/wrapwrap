@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Optimal_bounding_box/include/CGAL/Optimal_bounding_box/internal/nelder_mead_functions.h $
-// $Id: nelder_mead_functions.h f0f2799 2020-03-28T12:18:16+01:00 Mael
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Optimal_bounding_box/include/CGAL/Optimal_bounding_box/internal/nelder_mead_functions.h $
+// $Id: include/CGAL/Optimal_bounding_box/internal/nelder_mead_functions.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //

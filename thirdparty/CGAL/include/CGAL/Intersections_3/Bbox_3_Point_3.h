@@ -9,8 +9,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Intersections_3/include/CGAL/Intersections_3/Bbox_3_Point_3.h $
-// $Id: Bbox_3_Point_3.h c2d1adf 2021-06-23T17:34:48+02:00 Mael Rouxel-Labbé
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Intersections_3/include/CGAL/Intersections_3/Bbox_3_Point_3.h $
+// $Id: include/CGAL/Intersections_3/Bbox_3_Point_3.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -30,8 +30,9 @@
 namespace CGAL {
 
 template<typename K>
-bool do_intersect(const CGAL::Bbox_3& box,
-                  const Point_3<K>& p)
+typename K::Boolean
+do_intersect(const CGAL::Bbox_3& box,
+             const Point_3<K>& p)
 {
   Point_3<K> bl(box.xmin(), box.ymin(), box.zmin()),
              tr(box.xmax(), box.ymax(), box.zmax());
@@ -40,8 +41,9 @@ bool do_intersect(const CGAL::Bbox_3& box,
 }
 
 template<typename K>
-bool do_intersect(const Point_3<K>& a,
-                  const CGAL::Bbox_3& b)
+typename K::Boolean
+do_intersect(const Point_3<K>& a,
+             const CGAL::Bbox_3& b)
 {
   return do_intersect(b,a);
 }

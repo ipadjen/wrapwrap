@@ -3,15 +3,18 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Triangulation_2/include/CGAL/apply_to_range.h $
-// $Id: apply_to_range.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
-// SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Triangulation_2/include/CGAL/apply_to_range.h $
+// $Id: include/CGAL/apply_to_range.h a484bfa $
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
 // Author(s)     : Radu Ursu
 
-#ifndef CGAL_apply_to_range_h
-#define CGAL_apply_to_range_h
+#ifndef CGAL_APPLY_TO_RANGE_H
+#define CGAL_APPLY_TO_RANGE_H
+
+#include <CGAL/license/Triangulation_2.h>
+
 
 #include <CGAL/Point_2.h>
 #include <CGAL/Unique_hash_map.h>
@@ -151,4 +154,4 @@ void apply_to_range(const Tr &t,
 
 }//end namespace
 
-#endif
+#endif //CGAL_APPLY_TO_RANGE_H

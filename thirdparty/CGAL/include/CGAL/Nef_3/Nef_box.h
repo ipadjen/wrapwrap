@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Nef_3/include/CGAL/Nef_3/Nef_box.h $
-// $Id: Nef_box.h 5945e48 2021-09-17T08:14:06+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Nef_3/include/CGAL/Nef_3/Nef_box.h $
+// $Id: include/CGAL/Nef_3/Nef_box.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Peter Hachenberger    <hachenberger@mpi-sb.mpg.de>
@@ -16,7 +16,11 @@
 
 #include <CGAL/box_intersection_d.h>
 #include <CGAL/Box_intersection_d/box_limits.h>
+#include <CGAL/Extended_cartesian.h>
+#include <CGAL/Extended_homogeneous.h>
 #include <CGAL/Filtered_kernel/internal/Static_filters/tools.h>
+#include <CGAL/Nef_3/SNC_intersection.h>
+#include <CGAL/Nef_3/SNC_const_decorator.h>
 
 namespace CGAL {
 

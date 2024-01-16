@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Jet_fitting_3/include/CGAL/Monge_via_jet_fitting.h $
-// $Id: Monge_via_jet_fitting.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Jet_fitting_3/include/CGAL/Monge_via_jet_fitting.h $
+// $Id: include/CGAL/Monge_via_jet_fitting.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Marc Pouget and Frédéric Cazals
@@ -151,7 +151,7 @@ public:
   //translate_p0 changes the origin of the world to p0 the first point
   //  of the input data points
   //change_world2fitting (coord of a vector in world) = coord of this
-  //  vector in fitting. The matrix tranform has as lines the coord of
+  //  vector in fitting. The matrix transform has as lines the coord of
   //  the basis vectors of fitting in the world coord.
   //idem for change_fitting2monge
   Aff_transformation translate_p0, change_world2fitting,
@@ -553,7 +553,7 @@ compute_Monge_coefficients(FT* A, std::size_t dprime,
 {
   //One has the equation w=J_A(u,v) of the fitted surface S
   // in the fitting_basis
-  //Substituing (u,v,w)=change_fitting2monge^{-1}(x,y,z)
+  //Substituting (u,v,w)=change_fitting2monge^{-1}(x,y,z)
   //One has the equation f(x,y,z)=0 on this surface S in the monge
   //  basis
   //The monge form of the surface at the origin is the bivariate fct

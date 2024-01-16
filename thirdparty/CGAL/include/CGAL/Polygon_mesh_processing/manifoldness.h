@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/manifoldness.h $
-// $Id: manifoldness.h 5a992f6 2022-11-22T10:31:34+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/manifoldness.h $
+// $Id: include/CGAL/Polygon_mesh_processing/manifoldness.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Sebastien Loriot,
@@ -16,7 +16,7 @@
 #include <CGAL/license/Polygon_mesh_processing/combinatorial_repair.h>
 
 #include <CGAL/Named_function_parameters.h>
-#include <CGAL/Polygon_mesh_processing/internal/named_params_helper.h>
+#include <CGAL/boost/graph/named_params_helper.h>
 
 #include <CGAL/algorithm.h>
 #include <CGAL/assertions.h>
@@ -33,7 +33,7 @@
 namespace CGAL {
 namespace Polygon_mesh_processing {
 
-/// \ingroup PMP_repairing_grp
+/// \ingroup PMP_combinatorial_repair_grp
 ///
 /// \brief returns whether a vertex of a polygon mesh is non-manifold.
 ///
@@ -284,7 +284,7 @@ std::size_t make_umbrella_manifold(typename boost::graph_traits<PolygonMesh>::ha
 
 } // end namespace internal
 
-/// \ingroup PMP_repairing_grp
+/// \ingroup PMP_combinatorial_repair_grp
 ///
 /// \brief collects the non-manifold vertices (if any) present in the mesh.
 ///
@@ -394,7 +394,7 @@ OutputIterator non_manifold_vertices(const PolygonMesh& pm,
   return out;
 }
 
-/// \ingroup PMP_repairing_grp
+/// \ingroup PMP_combinatorial_repair_grp
 ///
 /// duplicates all the non-manifold vertices of the input mesh.
 ///

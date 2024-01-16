@@ -11,11 +11,11 @@
  *       Zilin Du <zilin@cs.nyu.edu>
  *       Chee Yap <yap@cs.nyu.edu>
  *
- * WWW URL: http://cs.nyu.edu/exact/
+ * WWW URL: https://cs.nyu.edu/exact/
  * Email: exact@cs.nyu.edu
  *
- * $URL: https://github.com/CGAL/cgal/blob/v5.5.2/CGAL_Core/include/CGAL/CORE/CoreIO_impl.h $
- * $Id: CoreIO_impl.h 8d4aaa9 2022-11-30T11:55:32+00:00 Andreas Fabri
+ * $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/CGAL_Core/include/CGAL/CORE/CoreIO_impl.h $
+ * $Id: include/CGAL/CORE/CoreIO_impl.h a484bfa $
  * SPDX-License-Identifier: LGPL-3.0-or-later
  ***************************************************************************/
 
@@ -274,7 +274,7 @@ CGAL_INLINE_FUNCTION
 void writeToFile(const BigInt& z, std::ostream& out, int base, int charsPerLine) {
   BigInt c = abs(z);
 
-  // get the absoulte value string
+  // get the absolute value string
   char* buffer = new char[mpz_sizeinbase(c.get_mp(), base) + 2];
   mpz_get_str(buffer, base, c.get_mp());
   std::size_t length = std::strlen(buffer);
@@ -336,7 +336,7 @@ CGAL_INLINE_FUNCTION
 void writeToFile(const BigFloat& bf, std::ostream& out, int base, int charsPerLine) {
   BigInt c(CORE::abs(bf.m()));
 
-  // get the absoulte value string
+  // get the absolute value string
   char* buffer = new char[mpz_sizeinbase(c.get_mp(), base) + 2];
   mpz_get_str(buffer, base, c.get_mp());
   std::size_t length = std::strlen(buffer);

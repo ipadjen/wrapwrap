@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Bounding_volumes/include/CGAL/Min_quadrilateral_traits_2.h $
-// $Id: Min_quadrilateral_traits_2.h 0779373 2020-03-26T13:31:46+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Bounding_volumes/include/CGAL/Min_quadrilateral_traits_2.h $
+// $Id: include/CGAL/Min_quadrilateral_traits_2.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 //
@@ -18,7 +18,7 @@
 
 
 #include <CGAL/basic.h>
-#include <CGAL/Optimisation/assertions.h>
+#include <CGAL/assertions.h>
 #include <CGAL/Point_2.h>
 #include <CGAL/Direction_2.h>
 #include <CGAL/Polygon_2.h>
@@ -303,36 +303,36 @@ public:
     if (assign(tmp, tmpo)) {
       *o++ = tmp;
     } else {
-      CGAL_optimisation_assertion_code(bool test1 =)
+      CGAL_assertion_code(bool test1 =)
       assign(tmpl, tmpo);
-      CGAL_optimisation_assertion(test1);
+      CGAL_assertion(test1);
       *o++ = r.p1;
     }
     tmpo = isec(line(r.p3, r.d1), line(r.p2, r.d2));
     if (assign(tmp, tmpo)) {
       *o++ = tmp;
     } else {
-      CGAL_optimisation_assertion_code(bool test1 =)
+      CGAL_assertion_code(bool test1 =)
       assign(tmpl, tmpo);
-      CGAL_optimisation_assertion(test1);
+      CGAL_assertion(test1);
       *o++ = r.p2;
     }
     tmpo = isec(line(r.p3, r.d1), line(r.p4, r.d2));
     if (assign(tmp, tmpo)) {
       *o++ = tmp;
     } else {
-      CGAL_optimisation_assertion_code(bool test1 =)
+      CGAL_assertion_code(bool test1 =)
       assign(tmpl, tmpo);
-      CGAL_optimisation_assertion(test1);
+      CGAL_assertion(test1);
       *o++ = r.p3;
     }
     tmpo = isec(line(r.p1, r.d1), line(r.p4, r.d2));
     if (assign(tmp, tmpo)) {
       *o++ = tmp;
     } else {
-      CGAL_optimisation_assertion_code(bool test1 =)
+      CGAL_assertion_code(bool test1 =)
       assign(tmpl, tmpo);
-      CGAL_optimisation_assertion(test1);
+      CGAL_assertion(test1);
       *o++ = r.p3;
     }
     return o;

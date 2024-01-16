@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Surface_mesh_parameterization/include/CGAL/Surface_mesh_parameterization/orbifold_enums.h $
-// $Id: orbifold_enums.h 254d60f 2019-10-19T15:23:19+02:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Surface_mesh_parameterization/include/CGAL/Surface_mesh_parameterization/orbifold_enums.h $
+// $Id: include/CGAL/Surface_mesh_parameterization/orbifold_enums.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Mael Rouxel-Labbé
@@ -45,7 +45,7 @@ enum Cone_type
 
 /// \ingroup PkgSurfaceMeshParameterizationEnums
 ///
-/// The four Orbifold types available in the Orbifold Tutte parameterization.
+/// The four orbifold types available in the Orbifold Tutte parameterization.
 /// The different shapes result from the number of cones and the angle constraints
 /// at the cones.
 enum Orbifold_type
@@ -59,7 +59,7 @@ enum Orbifold_type
 /// \ingroup PkgSurfaceMeshParameterizationEnums
 /// \brief Convert the orbifold type to a literal message.
 /// \param orb_type the integer value in the enum
-/// \return the string describing the Orbifold type.
+/// \return the string describing the orbifold type.
 const char* get_orbifold_type(int orb_type)
 {
   // Messages corresponding to the different orbifold types.

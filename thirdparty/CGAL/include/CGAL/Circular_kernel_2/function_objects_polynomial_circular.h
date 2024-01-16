@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Circular_kernel_2/include/CGAL/Circular_kernel_2/function_objects_polynomial_circular.h $
-// $Id: function_objects_polynomial_circular.h 81d9556 2021-02-10T10:06:45+01:00 Dmitry Anisimov
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Circular_kernel_2/include/CGAL/Circular_kernel_2/function_objects_polynomial_circular.h $
+// $Id: include/CGAL/Circular_kernel_2/function_objects_polynomial_circular.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Monique Teillaud, Sylvain Pion, Pedro Machado
@@ -308,7 +308,7 @@ namespace CircularFunctors {
     operator()(const Circular_arc_2 &A, OutputIterator res) const
       {
         typedef std::pair<bool, bool>                  relat_pos;
-        typedef std::pair< CGAL::Object, relat_pos>    Obj_descr_2;
+        typedef std::pair< Circular_arc_2, relat_pos>    Obj_descr_2;
         std::vector<Obj_descr_2> vec;
 
         CircularFunctors::advanced_make_xy_monotone<CK> (A, std::back_inserter(vec));

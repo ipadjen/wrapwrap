@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org)
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/CGAL_ImageIO/include/CGAL/Image_3_vtk_interface.h $
-// $Id: Image_3_vtk_interface.h 91d6635 2021-06-16T15:04:45+02:00 Laurent Rineau
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/CGAL_ImageIO/include/CGAL/Image_3_vtk_interface.h $
+// $Id: include/CGAL/Image_3_vtk_interface.h a484bfa $
 // SPDX-License-Identifier: LGPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Laurent Rineau
@@ -55,31 +55,31 @@ struct VTK_type_generator<char> {
 };
 
 template <>
-struct VTK_type_generator<boost::uint8_t> {
+struct VTK_type_generator<std::uint8_t> {
   static const int type = VTK_UNSIGNED_CHAR;
   typedef vtkUnsignedCharArray ArrayType;
 };
 
 template <>
-struct VTK_type_generator<boost::int16_t> {
+struct VTK_type_generator<std::int16_t> {
   static const int type = VTK_SHORT;
   typedef vtkShortArray ArrayType;
 };
 
 template <>
-struct VTK_type_generator<boost::uint16_t> {
+struct VTK_type_generator<std::uint16_t> {
   static const int type = VTK_UNSIGNED_SHORT;
   typedef vtkUnsignedShortArray ArrayType;
 };
 
 template <>
-struct VTK_type_generator<boost::int32_t> {
+struct VTK_type_generator<std::int32_t> {
   static const int type = VTK_INT;
   typedef vtkIntArray ArrayType;
 };
 
 template <>
-struct VTK_type_generator<boost::uint32_t> {
+struct VTK_type_generator<std::uint32_t> {
   static const int type = VTK_UNSIGNED_INT;
   typedef vtkUnsignedIntArray ArrayType;
 };

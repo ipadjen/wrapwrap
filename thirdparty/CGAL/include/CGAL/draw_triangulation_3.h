@@ -3,8 +3,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Triangulation_3/include/CGAL/draw_triangulation_3.h $
-// $Id: draw_triangulation_3.h 2bbcabe 2021-11-11T17:23:37+01:00 Guillaume Damiand
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Triangulation_3/include/CGAL/draw_triangulation_3.h $
+// $Id: include/CGAL/draw_triangulation_3.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s)     : Guillaume Damiand <guillaume.damiand@liris.cnrs.fr>
@@ -56,7 +56,7 @@ public:
   /// @param at3 the t3 to view
   /// @param title the title of the window
   /// @param anofaces if true, do not draw faces (faces are not computed; this can be
-  ///        usefull for very big object where this time could be long)
+  ///        useful for very big object where this time could be long)
   SimpleTriangulation3ViewerQt(QWidget* parent,
                                const T3& at3,
                                const char* title="Basic T3 Viewer",

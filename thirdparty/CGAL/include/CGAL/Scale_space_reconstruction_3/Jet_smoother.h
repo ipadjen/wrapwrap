@@ -2,8 +2,8 @@
 //
 // This file is part of CGAL (www.cgal.org).
 //
-// $URL: https://github.com/CGAL/cgal/blob/v5.5.2/Scale_space_reconstruction_3/include/CGAL/Scale_space_reconstruction_3/Jet_smoother.h $
-// $Id: Jet_smoother.h 8bb22d5 2020-03-26T14:23:37+01:00 Sébastien Loriot
+// $URL: https://github.com/CGAL/cgal/blob/v6.0-dev/Scale_space_reconstruction_3/include/CGAL/Scale_space_reconstruction_3/Jet_smoother.h $
+// $Id: include/CGAL/Scale_space_reconstruction_3/Jet_smoother.h a484bfa $
 // SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Author(s):      Simon Giraudot
@@ -32,7 +32,7 @@ namespace Scale_space_reconstruction_3
  *  %Smoother for scale space reconstruction based on
  *  `CGAL::jet_smooth_point_set()`.
  *
- *  \cgalModels CGAL::Scale_space_reconstruction_3::Smoother
+ *  \cgalModels{CGAL::Scale_space_reconstruction_3::Smoother}
  *
  *  \tparam Geom_traits geometric traits class. It must be a
  *  model of `DelaunayTriangulationTraits_3`. It must have a
@@ -52,8 +52,8 @@ template <typename Geom_traits,
 class Jet_smoother
 {
 public:
-  typedef typename Geom_traits::FT FT; ///< defines the point type.
-  typedef typename Geom_traits::Point_3 Point; ///< defines the point typ.e
+  typedef typename Geom_traits::FT FT; ///< defines the field number type.
+  typedef typename Geom_traits::Point_3 Point; ///< defines the point type.
 private:
 
   unsigned int m_k;
@@ -65,9 +65,9 @@ public:
   /**
    * Constructs a jet smoother.
    *
-   * \param k number of neighbors used.
+   * \param k number of neighbors used
    * \param degree_fitting fitting degree
-   * \param degree_monge monge degree
+   * \param degree_monge Monge degree
    */
   Jet_smoother (unsigned int k = 12,
                 unsigned int degree_fitting = 2,
