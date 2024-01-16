@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.2.0] -
+## [0.2.0] - 2024-01-16
 ### Changed
 - Updated CGAL's improvements to Alpha Wrapping
 
